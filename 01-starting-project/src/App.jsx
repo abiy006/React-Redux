@@ -4,17 +4,18 @@ import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButtton from './components/TabButton.jsx';
+import { EXAMPLES } from './data.js'; './data.js';
 
 function App() {
   // setSelectedTopic is a function that execute 2 processes
   //   1. it will update selectedTopic to the new value
   //   2. it will reexecute App() component function again
-  const [selectedTopic, setSelectedTopic] = useState('Please click a button!!');
+  const [selectedTopic, setSelectedTopic] = useState('components');
 
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
-    console.log(selectedTopic)
-}
+    // console.log(selectedTopic)
+  }
 
   return (
     <div>
@@ -38,10 +39,18 @@ function App() {
             {/* <TabButtton label='Components' /> */}
             <TabButtton onSelect={() => handleSelect('components')}>Components</TabButtton>
             <TabButtton onSelect={() => handleSelect('jsx')}>JSX</TabButtton>
-            <TabButtton onSelect={() => handleSelect('probs')}>Probs</TabButtton>
+            <TabButtton onSelect={() => handleSelect('props')}>Probs</TabButtton>
             <TabButtton onSelect={() => handleSelect('state')}>State</TabButtton>
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].titlex}</h3>
+            <p>{EXAMPLES[selectedTopic].descriptionx}</p>
+            <pre>
+              <code>
+                {EXAMPLES[selectedTopic].code}
+              </code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
