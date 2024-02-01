@@ -53,6 +53,7 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
+            {/* <TabButtton label='Components' /> */}
             <TabButtton
               isSelected={selectedTopic === 'components'}
               onSelect={() => handleSelect('components')}
