@@ -10,7 +10,7 @@ function App() {
   // setSelectedTopic is a function that execute 2 processes
   //   1. it will update selectedTopic to the new value
   //   2. it will reexecute App() component function again
-  const [selectedTopic, setSelectedTopic] = useState('components');
+  const [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
@@ -42,7 +42,7 @@ function App() {
             <TabButtton onSelect={() => handleSelect('props')}>Probs</TabButtton>
             <TabButtton onSelect={() => handleSelect('state')}>State</TabButtton>
           </menu>
-          <div id="tab-content">
+          {!selectedTopic ? (<p>Please select a topic.</p>) : (<div id="tab-content">
             <h3>{EXAMPLES[selectedTopic].titlex}</h3>
             <p>{EXAMPLES[selectedTopic].descriptionx}</p>
             <pre>
@@ -50,7 +50,8 @@ function App() {
                 {EXAMPLES[selectedTopic].code}
               </code>
             </pre>
-          </div>
+          </div>)}
+
         </section>
       </main>
     </div>
