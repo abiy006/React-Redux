@@ -1,3 +1,4 @@
+import { useState } from 'react';
 
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
@@ -5,11 +6,14 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButtton from './components/TabButton.jsx';
 
 function App() {
-  let tabContent = "Please click a button!";
+  // setSelectedTopic is a function that execute 2 processes
+  //   1. it will update selectedTopic to the new value
+  //   2. it will reexecute App() component function again
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button!!');
 
   function handleSelect(selectedButton) {
-    tabContent = selectedButton;
-    console.log(selectedButton)
+    setSelectedTopic(selectedButton);
+    console.log(selectedTopic)
 }
 
   return (
@@ -37,7 +41,7 @@ function App() {
             <TabButtton onSelect={() => handleSelect('probs')}>Probs</TabButtton>
             <TabButtton onSelect={() => handleSelect('state')}>State</TabButtton>
           </menu>
-          {tabContent}
+          {selectedTopic}
         </section>
       </main>
     </div>
