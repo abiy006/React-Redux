@@ -30,6 +30,8 @@ export default function Examples() {
   return (
     <Section title="Examples" id="examples">
       <Tabs 
+      // buttonsContainer={Section}//for custom componets only
+      ButtonsContainer="menu"
       buttons={
         <>
           <TabButton
