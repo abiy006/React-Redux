@@ -20,7 +20,10 @@ export default function GameBoard({ onSelectSquere, turns }) {
           <ol>
             {row.map((playerSymbol, colIndex) => (
               <li key={colIndex}>
-                <button onClick={() => onSelectSquere(rowIndex, colIndex)}>
+                <button
+                  onClick={() => onSelectSquere(rowIndex, colIndex)}
+                  disabled={playerSymbol !== null}
+                >
                   {playerSymbol}
                 </button>
               </li>
