@@ -1,42 +1,33 @@
-import { useState } from "react";
-
 const initialGameboard = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
 ];
 
-export default function GameBoard({ onSelectSquere, activePlayerSymbol }) {
-    const [gameBoad, setGameBoard] = useState(initialGameboard);
+export default function GameBoard({ onSelectSquere, turns }) {
+  let gameBoard = initialGameboard;
 
-    function handleSelectSquare(rowIndex, colIndex) {
-        setGameBoard((prevGameBoard) => {
-            // prevGameBoard[rowIndex][colIndex] = "X";
-            // return prevGameBoard;
+  for (const turn of turns) {
+    const { square, player } = turn;
+    const { row, col } = square;
 
-            
-            const updatedBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
-            // updatedBoard[rowIndex][colIndex] = "X";
-            updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
-            
-            return updatedBoard;
-        });
-
-        onSelectSquere();
-    }
-    return (
-        <ol id="game-board">
-            {gameBoad.map((row, rowIndex) => (
-                <li key={rowIndex}>
-                    <ol>
-                        {row.map((playerSymbol, colIndex) => (
-                            <li key={colIndex}>
-                                <button onClick={() => handleSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
-                            </li>
-                        ))}
-                    </ol>
-                </li>
+    gameBoard[row][col] = player;
+  }
+  return (
+    <ol id="game-board">
+      {gameBoard.map((row, rowIndex) => (
+        <li key={rowIndex}>
+          <ol>
+            {row.map((playerSymbol, colIndex) => (
+              <li key={colIndex}>
+                <button onClick={() => onSelectSquere(rowIndex, colIndex)}>
+                  {playerSymbol}
+                </button>
+              </li>
             ))}
-        </ol>
-    );
+          </ol>
+        </li>
+      ))}
+    </ol>
+  );
 }
