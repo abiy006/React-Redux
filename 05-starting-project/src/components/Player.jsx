@@ -6,6 +6,7 @@ export default function Player() {
 
   function handleClick() {
     setEnteredPlayerName(palyerName.current.value);
+    palyerName.current.value = "";
   }
   return (
     <section id="player">
