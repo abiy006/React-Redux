@@ -5,7 +5,7 @@ export default function Signup() {
     const fd = new FormData(event.target);
     // const enteredEmail = fd.get('email');
 
-    const acquisitionChannel = fd.getAll('acquisition');
+    const acquisitionChannel = fd.getAll("acquisition");
     const data = Object.fromEntries(fd.entries());
     data.acquisition = acquisitionChannel;
     console.log(data);
@@ -25,7 +25,13 @@ export default function Signup() {
       <div className="control-row">
         <div className="control">
           <label htmlFor="password">Password</label>
-          <input id="password" type="password" name="password" />
+          <input
+            id="password"
+            type="password"
+            name="password"
+            required
+            minLength={6}
+          />
         </div>
 
         <div className="control">
@@ -34,6 +40,7 @@ export default function Signup() {
             id="confirm-password"
             type="password"
             name="confirm-password"
+            required
           />
         </div>
       </div>
@@ -48,13 +55,13 @@ export default function Signup() {
 
         <div className="control">
           <label htmlFor="last-name">Last Name</label>
-          <input type="text" id="last-name" name="last-name" />
+          <input type="text" id="last-name" name="last-name" required />
         </div>
       </div>
 
       <div className="control">
         <label htmlFor="phone">What best describes your role?</label>
-        <select id="role" name="role">
+        <select id="role" name="role" required>
           <option value="student">Student</option>
           <option value="teacher">Teacher</option>
           <option value="employee">Employee</option>
@@ -93,7 +100,7 @@ export default function Signup() {
 
       <div className="control">
         <label htmlFor="terms-and-conditions">
-          <input type="checkbox" id="terms-and-conditions" name="terms" />I
+          <input type="checkbox" id="terms-and-conditions" name="terms" required />I
           agree to the terms and conditions
         </label>
       </div>
