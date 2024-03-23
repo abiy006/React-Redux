@@ -2,6 +2,7 @@
 //useDispatch for updating store data
 import { useSelector, useDispatch } from "react-redux";
 import classes from "./Counter.module.css";
+import { counterActions } from "../store/index";
 
 const Counter = () => {
   const dispatch = useDispatch();
@@ -9,19 +10,19 @@ const Counter = () => {
   const show = useSelector((state) => state.showCounter);
 
   const incrementHandler = () => {
-    dispatch({type: 'increment'})
+    dispatch(counterActions.increment());
   };
 
   const incrementby5Handler = () => {
-    dispatch({type: 'increment_by5', amount: 10})
+    dispatch(counterActions.incrementBy(100)); //{ type: SOME_UNIQUE_IDENTIFIER, payload: 100}
   };
 
   const decrementHandler = () => {
-    dispatch({type: 'decrement'})
+    dispatch(counterActions.decrement())
   };
 
   const toggleCounterHandler = () => {
-    dispatch({type: 'toggle'})
+    dispatch(counterActions.toggleCounter())
   };
 
   return (
@@ -30,7 +31,7 @@ const Counter = () => {
       {show && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={incrementHandler}>Increment</button>
-        <button onClick={incrementby5Handler}>Increment by 10</button>
+        <button onClick={incrementby5Handler}>Increment by 100</button>
         <button onClick={decrementHandler}>Decrement</button>
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
