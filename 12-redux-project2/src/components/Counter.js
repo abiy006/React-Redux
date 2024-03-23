@@ -2,18 +2,18 @@
 //useDispatch for updating store data
 import { useSelector, useDispatch } from "react-redux";
 import classes from "./Counter.module.css";
-import { counterActions } from "../store/counter";
+import { counterActions } from "../store/counter_slice";
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter.counter);
-  const show = useSelector((state) => state.counter.showCounter);
+  const counter = useSelector((state) => state.count.counter);
+  const show = useSelector((state) => state.count.showCounter);
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());
   };
 
-  const incrementby5Handler = () => {
+  const incrementByHandler = () => {
     dispatch(counterActions.incrementBy(100)); //{ type: SOME_UNIQUE_IDENTIFIER, payload: 100}
   };
 
@@ -31,7 +31,7 @@ const Counter = () => {
       {show && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={incrementHandler}>Increment</button>
-        <button onClick={incrementby5Handler}>Increment by 100</button>
+        <button onClick={incrementByHandler}>Increment by 100</button>
         <button onClick={decrementHandler}>Decrement</button>
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>

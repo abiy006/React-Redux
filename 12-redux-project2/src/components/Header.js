@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { authActions } from "../store/auth";
+// import { authActions } from "../store/auth_slice";
+import authSlice from "../store/auth_slice";
 
 import classes from "./Header.module.css";
 
@@ -8,7 +9,8 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
-    dispatch(authActions.logout());
+    // dispatch(authActions.logout());
+    dispatch(authSlice.actions.logout());
   }
 
   return (
