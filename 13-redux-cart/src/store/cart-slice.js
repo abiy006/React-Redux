@@ -9,7 +9,15 @@ const cartSlice = createSlice({
     },
     reducers: {
         addItemToCart(state, action) {
-            const 
+            const newItem = action.payload;
+            const existingItem = state.items.find(item => item.id === newItem.id);
+            if (!existingItem) {
+                state.items.push({
+                    itemId: newItem.id,
+                    price: newItem.price,
+                    
+                })
+            }
         },
         removeItemToCart(state) {
             state.cartIsVisible = !state.cartIsVisible;
