@@ -20,6 +20,7 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
+
     if (isInitial) {
       isInitial = false;
       return;
@@ -28,6 +29,7 @@ function App() {
     if (cart.changed) {
       dispatch(sendCartData(cart));
     }
+
   }, [cart, dispatch]);
 
   return (

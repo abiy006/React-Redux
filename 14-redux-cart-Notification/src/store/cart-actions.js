@@ -1,7 +1,6 @@
 import { uiActions } from "./ui-slice";
 import { cartActions } from "./cart-slice";
 
-
 export const fetchCartData = () => {
   return async (dispatch) => {
     const fetchData = async () => {
@@ -10,7 +9,7 @@ export const fetchCartData = () => {
       );
 
       if (!response.ok) {
-        throw new Error('Could not fetch cart data!');
+        throw new Error("Could not fetch cart data!");
       }
 
       const data = await response.json();
@@ -19,7 +18,11 @@ export const fetchCartData = () => {
     };
     try {
       const cartData = await fetchData();
-      dispatch(cartActions.replaceCart(cartData))
+      // dispatch(cartActions.replaceCart(cartData)); //check items if not empty
+      dispatch(cartActions.replaceCart({
+        items: cartData.items || [],
+        totalQuantity: cartData.totalQuantity,
+      }));
     } catch (error) {
       dispatch(
         uiActions.showNotification({
@@ -47,7 +50,11 @@ export const sendCartData = (cart) => {
         "https://react-http-6b4a6.firebaseio.com/cart.json",
         {
           method: "PUT",
-          body: JSON.stringify(cart),
+          // body: JSON.stringify(cart), //instade of sending the whole cart, create a new object and send only what you want, remove "changed" property forexample
+          body: JSON.stringify({
+            items: cart.items,
+            totalQuantity: cart.totalQuantity,
+          }),
         }
       );
 
