@@ -31,24 +31,31 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import HomePage from "./pages/Home";
-import EventsPage from "./pages/Events";
+import EventsPage, { loaderX as eventsLoaderX } from "./pages/Events";
 import EventDetailPage from "./pages/EventDetail";
 import NewEventPage from "./pages/NewEvent";
 import EditEventPage from "./pages/EditEvent";
 import RootLayout from "./pages/Root";
 import EventsRootLayout from "./pages/EventsRoot";
+import ErrorPage from "./pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       {
         path: "events",
         element: <EventsRootLayout />,
         children: [
-          { path: "", element: <EventsPage /> },
+          //Before the EventsPage rendered, the loader function is executed
+          {
+            index: true,
+            element: <EventsPage />,
+            loader: eventsLoaderX,
+          },
           { path: ":eventIdX", element: <EventDetailPage /> },
           { path: "new", element: <NewEventPage /> },
           { path: ":eventIdX/edit", element: <EditEventPage /> },
