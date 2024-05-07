@@ -6,11 +6,11 @@ import MainNavigation from "../components/MainNavigation";
 function ErrorPage() {
   const error = useRouteError();
 
-  let title = "An error occured!!";
-  let message = "Something went wrong!";
+  let title = "First - An error occured!!";
+  let message = "First - Something went wrong!";
 
   if (error.status === 500) {
-    message = JSON.parse(error.data).message;
+    message = error.data.message;
   }
 
   if (error.status === 404) {
