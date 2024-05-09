@@ -28,17 +28,18 @@ export async function action({ request, params }) {
   const response = await fetch("http://localhost:8080/events", {
     method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(eventData),
   });
 
-  if (!response.ok) {
-    throw json(
-      { message: "Could not save event." },
-      { status: 500 }
-    );
+  if (response.status === 422) {
+    return response;
   }
 
-  return redirect('/events')
+  if (!response.ok) {
+    throw json({ message: "Could not save event." }, { status: 500 });
+  }
+
+  return redirect("/events");
 }
