@@ -41,7 +41,8 @@ function MainNavigation() {
           </li>{" "}
           <li>
             <NavLink
-              to="/auth"
+              // to="/auth"
+              to="/auth?mode=login"// make the default login page when it clicked
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
