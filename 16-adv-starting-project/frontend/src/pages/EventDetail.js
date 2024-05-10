@@ -16,15 +16,14 @@ function EventDetailPage() {
     <>
       <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
         <Await resolve={event}>
-          {(loadEvent) => <EventItem event={loadEvent} />}
-        </Await>
-        <Await resolve={events}>
-          {(loadEvents) => <EventsList events={loadEvents} />}
+          {(loadedEvent) => <EventItem event={loadedEvent} />}
         </Await>
       </Suspense>
-
-      {/* <EventItem event={data.event} />
-      <EventsList events={} /> */}
+      <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
+        <Await resolve={events}>
+          {(loadedEvents) => <EventsList events={loadedEvents} />}
+        </Await>
+      </Suspense>
     </>
   );
 }
@@ -59,7 +58,7 @@ export async function loader({ request, params }) {
   const id = params.eventIdX;
 
   return defer({
-    event: loadEvent(id),
+    event: await loadEvent(id),// it will wait until this one is loaded 
     events: loadEvents(),
   });
 }
