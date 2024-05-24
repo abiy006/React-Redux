@@ -8,7 +8,7 @@ const DUMMY_EVENTS = [
     title: "some event",
     image:
       "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1o4msJ.img?w=800&h=435&q=60&m=2&f=jpg",
-    date: "2024-05-23"
+    date: "2024-05-23",
   },
   {
     id: "e2",
@@ -28,11 +28,25 @@ const DUMMY_EVENTS = [
 
 function StudentDashboard1() {
   const token = true;
-
+  const date = new Date();
+  console.log(date);
   return (
     <article className={classes.event}>
       <h1>All Events</h1>
-      <ul className={classes.list}>
+      {/* <h1>{DUMMY_EVENTS[1].image}</h1> */}
+      <Link>
+        <div className={classes.imgDiv}>
+          <img src={DUMMY_EVENTS[1].image} alt={DUMMY_EVENTS[1].title} />
+          <p>{date.toString()}</p>
+        </div>
+      </Link>
+      <h1 className={classes.headerFont}>Student Full Name</h1>
+      <div className={classes.content}>
+        <h2>{DUMMY_EVENTS[1].title}</h2>
+        <time>{DUMMY_EVENTS[1].date}</time>
+      </div>
+
+      {/* <ul className={classes.list}>
         {DUMMY_EVENTS.map((event) => (
           <li key={event.id} className={classes.item}>
             <Link>
@@ -44,7 +58,7 @@ function StudentDashboard1() {
             </Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       {token && (
         <menu className={classes.actions}>

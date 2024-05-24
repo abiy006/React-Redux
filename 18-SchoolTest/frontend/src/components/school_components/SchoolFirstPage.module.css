@@ -1,12 +1,26 @@
 .event {
-  max-width: 50rem;
+  /* max-width: 50rem; */
+  max-width: 95%;
   margin: 2rem auto;
   text-align: center;
+  background-color: var(--color-gray-500);
+}
+
+.imgDiv {
+  display: flex;
+  background-color: cornflowerblue;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.headerFont {
+  text-decoration: none;
+  color: #000;
 }
 
 .event img {
   /* width: 30rem; */
-  width: 100%;
+  width: 10%;
   border-radius: 4px;
 }
 
