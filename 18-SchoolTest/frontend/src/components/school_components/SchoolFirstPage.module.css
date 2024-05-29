@@ -89,8 +89,12 @@
 }
 
 .studentRapper {
-  max-width: 45%;
-  margin: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 40%;
+  min-width: fit-content;
+  margin: 2rem;
   text-align: center;
   background-color:darkgrey;
 }
@@ -100,12 +104,24 @@
   flex-direction: row;
   background-color: blue;
   justify-content: space-between;
-  list-style: none;
-  margin: 0;
-  padding: 0 0.5rem;
+
 }
 
 .weekNames_li {
   display: flex;
   background-color: red;
+  /* padding: 1rem; */
+}
+
+.weekNames_li a {
+  text-decoration: none;
+  margin: 0.75rem;
+  min-width: 2rem;
+}
+
+.weekNames_li p {
+  display: flex;
+  background-color: bisque;
+  margin: 0;
+  justify-content: center;
 }
