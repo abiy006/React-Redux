@@ -99,6 +99,12 @@
   background-color:darkgrey;
 }
 
+.studentRapper_p {
+  margin: 0;
+  padding: 0.5rem;
+  background-color:gray;
+}
+
 .weekNames_ul {
   display: flex;
   flex-direction: row;
@@ -124,4 +130,53 @@
   background-color: bisque;
   margin: 0;
   justify-content: center;
+}
+
+.selectMonth {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  background-color: gray;
+  align-items: center;
+  height: 2.5rem;
+}
+
+.yearDiv {
+  display: flex;
+  margin-left: 5rem;
+  justify-content: end;
+}
+
+.yearButton {
+  transform: rotate(90deg); /* Equal to rotateZ(45deg) */
+  background-color: pink;
+  margin: auto;
+}
+
+.parent_heading {
+  display: flex;
+background-color:darkolivegreen;
+margin: 0.1rem 0;
+}
+
+.parent_stud_name_p {
+  margin: 0;
+  width: 45%;
+  text-align: start;
+  background-color:darkgreen;
+}
+
+.parent_stud_name_a {
+  margin: 0;
+  width: 10%;
+  text-align: start;
+  background-color: aquamarine;
+  text-decoration: none;
+}
+
+.parent_stud_name_a_p {
+  margin: 0;
+  text-align: start;
+  background-color: gray;
 }
