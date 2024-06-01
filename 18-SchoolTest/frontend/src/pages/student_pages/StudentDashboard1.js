@@ -77,7 +77,8 @@ const DUMMY_SCHOOL_ACTIVITY_EVENTS = [
     title: "Event Full Name",
     image:
       "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
-    heading1: "1 Event name and it's small descriptions. if the description is more than x words your should point using three dots ...",
+    heading1:
+      "1 Event name and it's small descriptions. if the description is more than x words your should point using three dots ...",
     heading2: "Date of the event 1",
     heading3: ">>",
   },
@@ -86,9 +87,53 @@ const DUMMY_SCHOOL_ACTIVITY_EVENTS = [
     title: "Event Full Name",
     image:
       "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
-    heading1: "2 Event name and it's small descriptions. if the description is more than x words your should point using three dots ...",
+    heading1:
+      "2 Event name and it's small descriptions. if the description is more than x words your should point using three dots ...",
     heading2: "Date of the event 2",
     heading3: ">>",
+  },
+];
+
+const DUMMY_SCHOOL_MESSAGE_EVENTS = [
+  {
+    id: "e1",
+    title: "Event Full Name",
+    divCount: 6,
+    heading1: "From",
+    heading2: "To",
+    heading3: "Message",
+    heading4: "Date",
+    heading5: "Detail",
+  },
+  {
+    id: "e2",
+    title: "Event Full Name",
+    divCount: 6,
+    heading1: "From user1",
+    heading2: "To user2",
+    heading3: "Actual message tobe delivered",
+    heading4: "Sent message date",
+    heading5: ">>",
+  },
+  {
+    id: "e3",
+    title: "Event Full Name",
+    divCount: "6%",
+    heading1: "From user3",
+    heading2: "To All users",
+    heading3: "Actual message tobe delivered",
+    heading4: "Sent message date",
+    heading5: ">>",
+  },
+  {
+    id: "e4",
+    title: "Event Full Name",
+    divCount: 6,
+    heading1: "From user4",
+    heading2: "To All users",
+    heading3: "Actual message tobe delivered",
+    heading4: "Sent message date",
+    heading5: ">>",
   },
 ];
 
@@ -448,7 +493,13 @@ console.log(
     daysInMonth(monthDays, year)
 );
 
+
+
+
+
 function StudentDashboard1() {
+
+  const divcount = ""
   // const token = true;
   const date = new Date();
   const daysOfWeek = [
@@ -508,8 +559,6 @@ function StudentDashboard1() {
   console.log(
     `Hour is ${currentHour} and the minute is ${currentMinute} and the second is ${currentSecond} and the millisecond is ${currentMicrosecond}`
   );
-
-  // const x = daysInMonth(monthDays, year)
 
   return (
     <>
@@ -664,7 +713,12 @@ function StudentDashboard1() {
           </div>
           <div className={classes.parent_heading}>
             <p className={classes.parent_stud_name_p}>
-              {DUMMY_SCHOOL_ACTIVITY_EVENTS[1].heading1.length < 20 ? DUMMY_SCHOOL_ACTIVITY_EVENTS[1].heading1 : DUMMY_SCHOOL_ACTIVITY_EVENTS[1].heading1.split(/\s+/).slice(0, 5).join(' ') + '...'}
+              {DUMMY_SCHOOL_ACTIVITY_EVENTS[1].heading1.length < 20
+                ? DUMMY_SCHOOL_ACTIVITY_EVENTS[1].heading1
+                : DUMMY_SCHOOL_ACTIVITY_EVENTS[1].heading1
+                    .split(/\s+/)
+                    .slice(0, 5)
+                    .join(" ") + "..."}
             </p>
             <p className={classes.parent_stud_name_p}>
               {DUMMY_SCHOOL_ACTIVITY_EVENTS[1].heading2}
@@ -676,8 +730,13 @@ function StudentDashboard1() {
             </Link>
           </div>
           <div className={classes.parent_heading}>
-          <p className={classes.parent_stud_name_p}>
-              {DUMMY_SCHOOL_ACTIVITY_EVENTS[2].heading1.length < 20 ? DUMMY_SCHOOL_ACTIVITY_EVENTS[2].heading1 : DUMMY_SCHOOL_ACTIVITY_EVENTS[2].heading1.split(/\s+/).slice(0, 5).join(' ') + '...'}
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_SCHOOL_ACTIVITY_EVENTS[2].heading1.length < 20
+                ? DUMMY_SCHOOL_ACTIVITY_EVENTS[2].heading1
+                : DUMMY_SCHOOL_ACTIVITY_EVENTS[2].heading1
+                    .split(/\s+/)
+                    .slice(0, 5)
+                    .join(" ") + "..."}
             </p>
             <p className={classes.parent_stud_name_p}>
               {DUMMY_SCHOOL_ACTIVITY_EVENTS[2].heading2}
@@ -685,6 +744,79 @@ function StudentDashboard1() {
             <Link className={classes.parent_stud_name_a}>
               <p className={classes.parent_stud_name_a_p}>
                 {DUMMY_SCHOOL_ACTIVITY_EVENTS[2].heading3}
+              </p>
+            </Link>
+          </div>
+        </div>
+        {/* 5 */}
+        <div
+          className={classes.studentRapper}
+          divcount={DUMMY_SCHOOL_MESSAGE_EVENTS[0].divCount}
+        >
+          <h1>Events event name 5</h1>
+          <div className={classes.selectMonth}>
+            <button>{"<<"}</button>
+            <p>Month</p>
+            <button>{">>"}</button>
+          </div>
+
+          <div className={classes.parent_heading}>
+            <p
+              className={classes.dynamic_custom_p}
+              style={{
+                "--widthValue": divcount,
+                // "--marginBottom": props.marginBottom,
+              }}
+            >
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading1}
+            </p>
+            {/* <p className={classes.dynamic_custom_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading2}
+            </p>
+            <p className={classes.dynamic_custom_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading3}
+            </p>
+            <p className={classes.dynamic_custom_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading4}
+            </p>
+            <p className={classes.dynamic_custom_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading5}
+            </p> */}
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading2}
+            </p>
+            <p className={classes.parent_stud_name_a}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading4}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading5}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading1.length < 20
+                ? DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading1
+                : DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading1
+                    .split(/\s+/)
+                    .slice(0, 5)
+                    .join(" ") + "..."}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading3}
               </p>
             </Link>
           </div>

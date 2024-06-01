@@ -5,7 +5,6 @@
   text-align: center;
   /* background-color: var(--color-gray-500); */
   /* background-color:black; */
-
 }
 
 .event {
@@ -14,8 +13,8 @@
   margin: 2rem auto;
   text-align: center;
   /* background-color: var(--color-gray-500); */
-  background-color:cadetblue;
-  display:flex;
+  background-color: cadetblue;
+  display: flex;
   gap: 1rem;
   align-items: center;
   justify-content: center;
@@ -64,7 +63,7 @@
 
 .gradeSectionDiv {
   display: flex;
-  background-color:burlywood;
+  background-color: burlywood;
   padding: 1rem;
   justify-content: space-between;
 }
@@ -96,13 +95,13 @@
   min-width: 25rem;
   margin: 2rem;
   text-align: center;
-  background-color:darkgrey;
+  background-color: darkgrey;
 }
 
 .studentRapper_p {
   margin: 0;
   padding: 0.5rem;
-  background-color:gray;
+  background-color: gray;
 }
 
 .weekNames_ul {
@@ -110,7 +109,6 @@
   flex-direction: row;
   background-color: blue;
   justify-content: space-between;
-
 }
 
 .weekNames_li {
@@ -156,15 +154,15 @@
 
 .parent_heading {
   display: flex;
-background-color:darkolivegreen;
-margin: 0.1rem 0;
+  background-color: darkolivegreen;
+  margin: 0.1rem 0;
 }
 
 .parent_stud_name_p {
   margin: 0;
   width: 45%;
   text-align: start;
-  background-color:darkgreen;
+  background-color: darkgreen;
 }
 
 .parent_stud_name_a {
@@ -179,4 +177,13 @@ margin: 0.1rem 0;
   margin: 0;
   text-align: start;
   background-color: gray;
+}
+
+.dynamic_custom_p {
+  --widthValue: 0;
+  /* --widthColor: 0; */
+
+  width: var(--widthValue);
+  text-align: start;
+  /* background-color: var(--widthColor); */
 }
