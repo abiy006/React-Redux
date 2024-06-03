@@ -172,6 +172,45 @@ const DUMMY_EXAM_EVENTS = [
   },
 ];
 
+const DUMMY_HOMEWORK_EVENTS = [
+  {
+    id: "e1",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Subject",
+    heading2: "Homework due Date",
+    heading3: "Detail",
+  },
+  {
+    id: "e2",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Subject 1",
+    heading2: "June 6 - 02:00 AM",
+    heading3: ">>",
+  },
+  {
+    id: "e3",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Subject 2",
+    heading2: "June 7 - 03:00 AM",
+    heading3: ">>",
+  },
+  {
+    id: "e4",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Subject 3",
+    heading2: "June 8 - 03:30 AM",
+    heading3: ">>",
+  },
+];
+
 const DUMMY_EVENTS = [
   {
     id: "e1",
@@ -593,11 +632,10 @@ function StudentDashboard1() {
     <>
       <h1 className={classes.dashboard}>Events dashboard</h1>
       <article className={classes.event}>
-        
         {/* 1 */}
         <div className={classes.studentRapper}>
           <h1>Events event name 1</h1>
-           <Link>
+          <Link>
             <div className={classes.imgDiv}>
               <img
                 src={DUMMY_STUDENT_EVENTS[0].image}
@@ -626,7 +664,7 @@ function StudentDashboard1() {
 
             <div className={classes.yearDiv}>
               <p>Year</p>
-              <button className={classes.yearButton}>{"< >"}</button>
+              <button className={classes.yearButton}>{"<>"}</button>
             </div>
           </div>
 
@@ -807,30 +845,30 @@ function StudentDashboard1() {
               {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading5}
             </p>
           </div>
-            <div className={classes.div5_heading_div}>
-              <p className={classes.div5_heading_p}>
-                {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading1}
+          <div className={classes.div5_heading_div}>
+            <p className={classes.div5_heading_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading1}
+            </p>
+            <p className={classes.div5_heading_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading2}
+            </p>
+            <p className={classes.div5_heading_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3.length < 20
+                ? DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3
+                : DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3
+                    .split(/\s+/)
+                    .slice(0, 3)
+                    .join(" ") + "..."}
+            </p>
+            <p className={classes.div5_heading_p}>
+              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading4}
+            </p>
+            <Link className={classes.div5_heading_p_detail}>
+              <p className={classes.div5_heading_p_detail}>
+                {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading5}
               </p>
-              <p className={classes.div5_heading_p}>
-                {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading2}
-              </p>
-              <p className={classes.div5_heading_p}>
-                {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3.length < 20
-                  ? DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3
-                  : DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3
-                      .split(/\s+/)
-                      .slice(0, 3)
-                      .join(" ") + "..."}
-              </p>
-              <p className={classes.div5_heading_p}>
-                {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading4}
-              </p>
-              <Link className={classes.div5_heading_p_detail}>
-                <p className={classes.div5_heading_p_detail}>
-                  {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading5}
-                </p>
-              </Link>
-            </div>
+            </Link>
+          </div>
           <div className={classes.div5_heading_div}>
             <p className={classes.div5_heading_p}>
               {DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading1}
@@ -941,6 +979,129 @@ function StudentDashboard1() {
           <div className={classes.studentButton}>
             <button>Past exam report</button>
           </div>
+        </div>
+
+        {/* 7 */}
+        <div className={classes.studentRapper}>
+          <h1>Events event name 7</h1>
+          <p className={classes.studentRapper_p}>
+            {DUMMY_HOMEWORK_EVENTS[0].title}
+          </p>
+
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_HOMEWORK_EVENTS[0].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_HOMEWORK_EVENTS[0].heading2}
+            </p>
+            <p className={classes.parent_stud_name_a}>
+              {DUMMY_HOMEWORK_EVENTS[0].heading3}
+            </p>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_HOMEWORK_EVENTS[1].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_HOMEWORK_EVENTS[1].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_HOMEWORK_EVENTS[1].heading3}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_HOMEWORK_EVENTS[2].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_HOMEWORK_EVENTS[2].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_HOMEWORK_EVENTS[2].heading3}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_HOMEWORK_EVENTS[3].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_HOMEWORK_EVENTS[3].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_HOMEWORK_EVENTS[3].heading3}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.studentButton}>
+            <button>Past Homework report</button>
+          </div>
+        </div>
+
+        {/* 8 */}
+        <div className={classes.studentRapper}>
+          <h1>Events event name 8</h1>
+          <div className={classes.selectMonth}>
+            <button>{"<<"}</button>
+            <p>Month</p>
+            <button>{">>"}</button>
+
+            <div className={classes.yearDiv}>
+              <p>Year</p>
+              <button className={classes.yearButton}>{"<>"}</button>
+            </div>
+          </div>
+
+          <ul className={classes.weekNames_ul}>
+            {daysOfWeek2.map((event) => (
+              <li key={event} className={classes.weekNames_li}>
+                <Link>
+                  <p>{event}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul className={classes.weekNames_ul}>
+            {DUMMY_ATTENDANCE_WEEK1.map((event) => (
+              <li key={event.id} className={classes.weekNames_li}>
+                <Link>
+                  <p>{event.month_date_no}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul className={classes.weekNames_ul}>
+            {DUMMY_ATTENDANCE_WEEK2.map((event) => (
+              <li key={event.id} className={classes.weekNames_li}>
+                <Link>
+                  <p>{event.month_date_no}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul className={classes.weekNames_ul}>
+            {DUMMY_ATTENDANCE_WEEK3.map((event) => (
+              <li key={event.id} className={classes.weekNames_li}>
+                <Link>
+                  <p>{event.month_date_no}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul className={classes.weekNames_ul}>
+            {DUMMY_ATTENDANCE_WEEK4.map((event) => (
+              <li key={event.id} className={classes.weekNames_li}>
+                <Link>
+                  <p>{event.month_date_no}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* <ul className={classes.list}>

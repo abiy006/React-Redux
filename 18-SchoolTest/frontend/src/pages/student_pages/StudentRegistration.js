@@ -2,41 +2,59 @@ import { Link } from "react-router-dom";
 
 import classes from "../../components/school_components/StudentRegistration.module.css";
 
-const DUMMY_SCHOOL_MESSAGE_EVENTS = [
+const DUMMY_STUDENT_REG_EVENTS = [
+  {
+    id: "e0",
+    title: "Event registration output",
+    heading1: "No",
+    heading2: "ID",
+    heading3: "Name",
+    heading4: "Status",
+    heading5: "Detail",
+  },
   {
     id: "e1",
     title: "Event Full Name",
-    heading1: "From",
-    heading2: "To",
-    heading3: "Message",
-    heading4: "Date",
-    heading5: "Detail",
+    heading1: "1",
+    heading2: "AA001",
+    heading3: "Clickevent Full Name1",
+    heading4: "Registered",
+    heading5: ">>",
   },
   {
     id: "e2",
     title: "Event Full Name",
-    heading1: "From user1",
-    heading2: "To user2",
-    heading3: "Actual message tobe delivered",
-    heading4: "Sent message date",
+    heading1: "2",
+    heading2: "AA002",
+    heading3: "Clickevent Full Name2",
+    heading4: "Not Registered",
     heading5: ">>",
   },
   {
     id: "e3",
     title: "Event Full Name",
-    heading1: "From user3",
-    heading2: "To All users",
-    heading3: "Actual message tobe delivered",
-    heading4: "Sent message date",
+    heading1: "3",
+    heading2: "AA003",
+    heading3: "Clickevent Full Name3",
+    heading4: "Not Registered",
     heading5: ">>",
   },
   {
     id: "e4",
     title: "Event Full Name",
-    heading1: "From user4",
-    heading2: "To All users",
-    heading3: "Actual message tobe delivered",
-    heading4: "Sent message date",
+    heading1: "4",
+    heading2: "AA004",
+    heading3: "Clickevent Full Name4",
+    heading4: "Registered",
+    heading5: ">>",
+  },
+  {
+    id: "e5",
+    title: "Event Full Name",
+    heading1: "5",
+    heading2: "AA005",
+    heading3: "Clickevent Full Name5",
+    heading4: "Registered",
     heading5: ">>",
   },
 ];
@@ -151,100 +169,327 @@ function StudentDashboard1() {
             <p>student_registration_file.csv</p>
             <button>Register Students</button>
           </div>
-          
-          <h1>Events event name 5</h1>
-          <div className={classes.selectMonth}>
-            <button>{"<<"}</button>
-            <p>Month</p>
-            <button>{">>"}</button>
+
+          <h3>Event uploading status details...</h3>
+
+          <div className={classes.div5_heading_div}>
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading1}
+            </p>
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading2}
+            </p>
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading3}
+            </p>
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading4}
+            </p>
+            <p className={classes.div5_detail_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading5}
+            </p>
+          </div>
+          <div className={classes.div5_heading_div}>
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[1].heading1}
+            </p>
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[1].heading2}
+            </p>
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[1].heading3}
+            </p>
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[1].heading4}
+            </p>
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[1].heading5}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.div5_heading_div}>
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[2].heading1}
+            </p>
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[2].heading2}
+            </p>
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[2].heading3}
+            </p>
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[2].heading4}
+            </p>
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[2].heading5}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.div5_heading_div}>
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[3].heading1}
+            </p>
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[3].heading2}
+            </p>
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[3].heading3}
+            </p>
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[3].heading4}
+            </p>
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[3].heading5}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.div5_heading_div}>
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[4].heading1}
+            </p>
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[4].heading2}
+            </p>
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[4].heading3}
+            </p>
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[4].heading4}
+            </p>
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[4].heading5}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.div5_heading_div}>
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[5].heading1}
+            </p>
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[5].heading2}
+            </p>
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[5].heading3}
+            </p>
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[5].heading4}
+            </p>
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[5].heading5}
+              </p>
+            </Link>
+          </div>
+        </div>
+
+        {/* 2 */}
+        <div className={classes.studentRegistrationRapper}>
+          <div>
+            <h4>New Event registration form.</h4>
+          </div>
+          <div>
+            <label className={classes.input_lable}>
+              First name
+              <input />
+            </label>
+          </div>
+          <div>
+          <label className={classes.input_lable}>
+              Middle name
+              <input />
+            </label>
+          </div>
+          <div>
+          <label className={classes.input_lable}>
+              Last name
+              <input />
+            </label>
+          </div>
+
+          <div>
+            <label className={classes.input_lable}>
+              Grade
+              <select>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label className={classes.input_lable}>
+              Section
+              <select>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label className={classes.input_lable}>
+              Student Catagory
+              <select>
+                <option value="Group1">Group 1</option>
+                <option value="Group2">Group 2</option>
+                <option value="Group3">Group 3</option>
+              </select>
+            </label>
+          </div>
+
+          <div className={classes.gender_div}>
+            <label className={classes.radio_lable}>Male
+              <input type="radio" name="gender" value="male" />
+            </label>
+            <label className={classes.radio_lable}>Female
+              <input type="radio" name="gender" value="female" />
+            </label>
+          </div>
+
+          <div>
+            <label className={classes.input_lable}>
+              School payment term
+              <select>
+                <option value="school_payment1">School payment 1</option>
+                <option value="school_payment2">School payment 2</option>
+                <option value="school_payment3">School payment 3</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label className={classes.input_lable}>
+              Transport payment term
+              <select>
+                <option value="transport_payment1">Transport payment 1</option>
+                <option value="transport_payment2">Transport payment 2</option>
+                <option value="transport_payment3">Transport payment 3</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label className={classes.input_lable}>
+              Hostel payment term
+              <select>
+                <option value="Hostel_payment1">Hostel payment 1</option>
+                <option value="Hostel_payment2">Hostel payment 2</option>
+                <option value="Hostel_payment3">Hostel payment 3</option>
+              </select>
+            </label>
           </div>
 
           <div className={classes.div5_heading_div}>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading1}
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading1}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading2}
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading2}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading3}
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading3}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading4}
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading4}
             </p>
-            <p className={classes.div5_heading_p_detail}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[0].heading5}
+            <p className={classes.div5_detail_p}>
+              {DUMMY_STUDENT_REG_EVENTS[0].heading5}
             </p>
           </div>
           <div className={classes.div5_heading_div}>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading1}
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[1].heading1}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading2}
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[1].heading2}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3.length < 20
-                ? DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3
-                : DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading3
-                    .split(/\s+/)
-                    .slice(0, 3)
-                    .join(" ") + "..."}
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[1].heading3}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading4}
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[1].heading4}
             </p>
-            <Link className={classes.div5_heading_p_detail}>
-              <p className={classes.div5_heading_p_detail}>
-                {DUMMY_SCHOOL_MESSAGE_EVENTS[1].heading5}
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[1].heading5}
               </p>
             </Link>
           </div>
           <div className={classes.div5_heading_div}>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading1}
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[2].heading1}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading2}
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[2].heading2}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading3.length < 20
-                ? DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading3
-                : DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading3
-                    .split(/\s+/)
-                    .slice(0, 3)
-                    .join(" ") + "..."}
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[2].heading3}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading4}
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[2].heading4}
             </p>
-            <Link className={classes.div5_heading_p_detail}>
-              <p className={classes.div5_heading_p_detail}>
-                {DUMMY_SCHOOL_MESSAGE_EVENTS[2].heading5}
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[2].heading5}
               </p>
             </Link>
           </div>
           <div className={classes.div5_heading_div}>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[3].heading1}
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[3].heading1}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[3].heading2}
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[3].heading2}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[3].heading3.length < 20
-                ? DUMMY_SCHOOL_MESSAGE_EVENTS[3].heading3
-                : DUMMY_SCHOOL_MESSAGE_EVENTS[3].heading3
-                    .split(/\s+/)
-                    .slice(0, 3)
-                    .join(" ") + "..."}
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[3].heading3}
             </p>
-            <p className={classes.div5_heading_p}>
-              {DUMMY_SCHOOL_MESSAGE_EVENTS[3].heading4}
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[3].heading4}
             </p>
-            <Link className={classes.div5_heading_p_detail}>
-              <p className={classes.div5_heading_p_detail}>
-                {DUMMY_SCHOOL_MESSAGE_EVENTS[3].heading5}
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[3].heading5}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.div5_heading_div}>
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[4].heading1}
+            </p>
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[4].heading2}
+            </p>
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[4].heading3}
+            </p>
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[4].heading4}
+            </p>
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[4].heading5}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.div5_heading_div}>
+            <p className={classes.div5_no_p}>
+              {DUMMY_STUDENT_REG_EVENTS[5].heading1}
+            </p>
+            <p className={classes.div5_id_p}>
+              {DUMMY_STUDENT_REG_EVENTS[5].heading2}
+            </p>
+            <p className={classes.div5_name_p}>
+              {DUMMY_STUDENT_REG_EVENTS[5].heading3}
+            </p>
+            <p className={classes.div5_status_p}>
+              {DUMMY_STUDENT_REG_EVENTS[5].heading4}
+            </p>
+            <Link className={classes.div5_detail_p}>
+              <p className={classes.div5_detail_p}>
+                {DUMMY_STUDENT_REG_EVENTS[5].heading5}
               </p>
             </Link>
           </div>

@@ -114,13 +114,13 @@
 .weekNames_ul {
   display: flex;
   flex-direction: row;
-  background-color: blue;
+  background-color: gray;
   justify-content: space-between;
 }
 
 .weekNames_li {
   display: flex;
-  background-color: red;
+  /* background-color: red; */
   /* padding: 1rem; */
 }
 
