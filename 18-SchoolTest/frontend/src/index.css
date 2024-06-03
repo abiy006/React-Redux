@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  width: 98%;
+  /* background-color: bisque; */
 }
 
 :root {

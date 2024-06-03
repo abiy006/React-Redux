@@ -20,6 +20,7 @@ import { action as logoutAction } from './pages/Logout';
 import { checkAuthLoader, tokenLoader } from './util/auth';
 
 import StudentFirstPage from './pages/student_pages/StudentDashboard1';
+import StudentRegistrationPage from './pages/student_pages/StudentRegistration';
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
       {
         path: 'studentdashboard1',
         element: <StudentFirstPage />,
+        // action: newsletterAction,
+      },
+      {
+        path: 'sudentregistration',
+        element: <StudentRegistrationPage />,
         // action: newsletterAction,
       },
     ],
