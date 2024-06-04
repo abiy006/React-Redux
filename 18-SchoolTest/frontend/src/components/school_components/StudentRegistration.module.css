@@ -68,7 +68,7 @@
   background-color: rgb(57, 6, 116);
 }
 
-.div5_heading_div {
+.div5_heading_div, .div3 {
   display: flex;
   background-color: darkolivegreen;
   margin: 0.1rem 0;
@@ -137,12 +137,47 @@
   width: 20%;
 }
 
+.student_operation_btn_div, .student_crud_btn_div {
+  display: flex;
+  gap: 1rem;
+}
+
+.div3_no_p {
+  margin: 0;
+  width: 10%;
+  text-align: start;
+  background-color: darkgreen;
+  text-decoration: none;
+}
+
+.div3_id_p {
+  margin: 0;
+  width: 30%;
+  text-align: start;
+  background-color: darkgreen;
+}
+
+.div3_name_p {
+  margin: 0;
+  width: 60%;
+  text-align: start;
+  background-color: darkgreen;
+}
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+/* 
 
 .headerFont {
   text-decoration: none;
@@ -150,7 +185,6 @@
 }
 
 .event img {
-  /* width: 30rem; */
   width: 10%;
   border-radius: 4px;
 }
@@ -226,7 +260,6 @@
 .weekNames_li {
   display: flex;
   background-color: red;
-  /* padding: 1rem; */
 }
 
 .weekNames_li a {
@@ -260,7 +293,6 @@
 
 .yearButton {
   transform: rotate(90deg);
-  /* Equal to rotateZ(45deg) */
   background-color: pink;
   margin: auto;
 }
@@ -269,4 +301,4 @@
   display: flex;
   background-color: darkolivegreen;
   margin: 0.1rem 0;
-}
+} */

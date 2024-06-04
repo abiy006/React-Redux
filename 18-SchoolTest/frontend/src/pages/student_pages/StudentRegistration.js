@@ -59,6 +59,51 @@ const DUMMY_STUDENT_REG_EVENTS = [
   },
 ];
 
+const DUMMY_STUDENT_CRUD_EVENTS = [
+  {
+    id: "e0",
+    title: "Event School name",
+    heading1: "No",
+    heading2: "ID",
+    heading3: "Name",
+  },
+  {
+    id: "e1",
+    title: "Event Full Name",
+    heading1: "1",
+    heading2: "AA001",
+    heading3: "Clickevent Full Name1",
+  },
+  {
+    id: "e2",
+    title: "Event Full Name",
+    heading1: "2",
+    heading2: "AA002",
+    heading3: "Clickevent Full Name2",
+  },
+  {
+    id: "e3",
+    title: "Event Full Name",
+    heading1: "3",
+    heading2: "AA003",
+    heading3: "Clickevent Full Name3",
+  },
+  {
+    id: "e4",
+    title: "Event Full Name",
+    heading1: "4",
+    heading2: "AA004",
+    heading3: "Clickevent Full Name4",
+  },
+  {
+    id: "e5",
+    title: "Event Full Name",
+    heading1: "5",
+    heading2: "AA005",
+    heading3: "Clickevent Full Name5",
+  },
+];
+
 const dateObject = new Date();
 function daysInMonth(month, year) {
   switch (month) {
@@ -298,13 +343,13 @@ function StudentDashboard1() {
             </label>
           </div>
           <div>
-          <label className={classes.input_lable}>
+            <label className={classes.input_lable}>
               Middle name
               <input />
             </label>
           </div>
           <div>
-          <label className={classes.input_lable}>
+            <label className={classes.input_lable}>
               Last name
               <input />
             </label>
@@ -342,10 +387,12 @@ function StudentDashboard1() {
           </div>
 
           <div className={classes.gender_div}>
-            <label className={classes.radio_lable}>Male
+            <label className={classes.radio_lable}>
+              Male
               <input type="radio" name="gender" value="male" />
             </label>
-            <label className={classes.radio_lable}>Female
+            <label className={classes.radio_lable}>
+              Female
               <input type="radio" name="gender" value="female" />
             </label>
           </div>
@@ -493,6 +540,92 @@ function StudentDashboard1() {
               </p>
             </Link>
           </div>
+        </div>
+
+        {/* 3 */}
+        <div className={classes.studentRegistrationRapper}>
+          <h1>Events event name 3</h1>
+          <p className={classes.studentRapper_p}>
+            {DUMMY_STUDENT_CRUD_EVENTS[0].title}
+          </p>
+          <div className={classes.student_operation_btn_div}>
+            <button>Create a student +</button>
+            <input placeholder="Search a student" />
+            <button>Search</button>
+          </div>
+          <div className={classes.student_crud_btn_div}>
+            <button>Detail</button>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+
+          <div className={classes.div3}>
+            <p className={classes.div3_no_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[0].heading1}
+            </p>
+            <p className={classes.div3_id_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[0].heading2}
+            </p>
+            <p className={classes.div3_name_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[0].heading3}
+            </p>
+          </div>
+          <div className={classes.div3}>
+            <p className={classes.div3_no_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[1].heading1}
+            </p>
+            <p className={classes.div3_id_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[1].heading2}
+            </p>
+            <p className={classes.div3_name_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[1].heading3}
+            </p>
+          </div>
+          <div className={classes.div3}>
+            <p className={classes.div3_no_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[2].heading1}
+            </p>
+            <p className={classes.div3_id_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[2].heading2}
+            </p>
+            <p className={classes.div3_name_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[2].heading3}
+            </p>
+          </div>
+          <div className={classes.div3}>
+            <p className={classes.div3_no_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[3].heading1}
+            </p>
+            <p className={classes.div3_id_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[3].heading2}
+            </p>
+            <p className={classes.div3_name_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[3].heading3}
+            </p>
+          </div>
+          <div className={classes.div3}>
+            <p className={classes.div3_no_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[4].heading1}
+            </p>
+            <p className={classes.div3_id_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[4].heading2}
+            </p>
+            <p className={classes.div3_name_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[4].heading3}
+            </p>
+          </div>
+          <div className={classes.div3}>
+            <p className={classes.div3_no_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[5].heading1}
+            </p>
+            <p className={classes.div3_id_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[5].heading2}
+            </p>
+            <p className={classes.div3_name_p}>
+              {DUMMY_STUDENT_CRUD_EVENTS[5].heading3}
+            </p>
+          </div>
+
         </div>
 
         {/* <ul className={classes.list}>

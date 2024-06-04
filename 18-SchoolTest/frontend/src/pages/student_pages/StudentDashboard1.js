@@ -211,6 +211,84 @@ const DUMMY_HOMEWORK_EVENTS = [
   },
 ];
 
+const DUMMY_EVENTS_PAYMENT = [
+  {
+    id: "e1",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Payments",
+    heading2: "Staus",
+    heading3: "Detail",
+  },
+  {
+    id: "e2",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "School payment",
+    heading2: "Complete",
+    heading3: ">>",
+  },
+  {
+    id: "e3",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Transport payment",
+    heading2: "Pending",
+    heading3: ">>",
+  },
+  {
+    id: "e4",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Hostel payment",
+    heading2: "Pending",
+    heading3: ">>",
+  },
+];
+
+const DUMMY_PAYMENT_TERMS = [
+  {
+    id: "e1",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Payment terms",
+    heading2: "Per year",
+    heading3: "Detail",
+  },
+  {
+    id: "e2",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "School payment terms",
+    heading2: "4 times per year",
+    heading3: ">>",
+  },
+  {
+    id: "e3",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Transport payment terms",
+    heading2: "12 times per year",
+    heading3: ">>",
+  },
+  {
+    id: "e4",
+    title: "Event Full Name",
+    image:
+      "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1m1XfA.img?w=800&h=435&q=60&m=2&f=jpg",
+    heading1: "Hostel payment terms",
+    heading2: "Once in a year",
+    heading3: ">>",
+  },
+];
+
 const DUMMY_EVENTS = [
   {
     id: "e1",
@@ -1102,6 +1180,126 @@ function StudentDashboard1() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* 9 */}
+        <div className={classes.studentRapper}>
+          <h1>Events event name 9</h1>
+          <p className={classes.studentRapper_p}>
+            {DUMMY_EVENTS_PAYMENT[0].title}
+          </p>
+          <time>{date.toString()}</time>
+
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_EVENTS_PAYMENT[0].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_EVENTS_PAYMENT[0].heading2}
+            </p>
+            <p className={classes.parent_stud_name_a}>
+              {DUMMY_EVENTS_PAYMENT[0].heading3}
+            </p>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_EVENTS_PAYMENT[1].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_EVENTS_PAYMENT[1].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_EVENTS_PAYMENT[1].heading3}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_EVENTS_PAYMENT[2].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_EVENTS_PAYMENT[2].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_EVENTS_PAYMENT[2].heading3}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_EVENTS_PAYMENT[3].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_EVENTS_PAYMENT[3].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_EVENTS_PAYMENT[3].heading3}
+              </p>
+            </Link>
+          </div>
+        </div>
+
+        {/* 10 */}
+        <div className={classes.studentRapper}>
+          <h1>Events event name 10</h1>
+          <p className={classes.studentRapper_p}>
+            {DUMMY_PAYMENT_TERMS[0].title}
+          </p>
+          <time>{date.toString()}</time>
+
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_PAYMENT_TERMS[0].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_PAYMENT_TERMS[0].heading2}
+            </p>
+            <p className={classes.parent_stud_name_a}>
+              {DUMMY_PAYMENT_TERMS[0].heading3}
+            </p>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_PAYMENT_TERMS[1].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_PAYMENT_TERMS[1].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_PAYMENT_TERMS[1].heading3}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_PAYMENT_TERMS[2].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_PAYMENT_TERMS[2].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_PAYMENT_TERMS[2].heading3}
+              </p>
+            </Link>
+          </div>
+          <div className={classes.parent_heading}>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_PAYMENT_TERMS[3].heading1}
+            </p>
+            <p className={classes.parent_stud_name_p}>
+              {DUMMY_PAYMENT_TERMS[3].heading2}
+            </p>
+            <Link className={classes.parent_stud_name_a}>
+              <p className={classes.parent_stud_name_a_p}>
+                {DUMMY_PAYMENT_TERMS[3].heading3}
+              </p>
+            </Link>
+          </div>
         </div>
 
         {/* <ul className={classes.list}>
