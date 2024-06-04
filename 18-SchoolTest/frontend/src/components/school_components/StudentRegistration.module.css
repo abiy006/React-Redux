@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
+  width: 50%;
   min-width: 25rem;
   margin: 2rem auto;
   text-align: center;
@@ -43,7 +43,7 @@
 .stud_batch_upload_div h4 {
   margin: 0;
   padding: 0.5rem;
-  background-color: gray;
+  background-color: grey;
   width: 80%;
 }
 
@@ -61,11 +61,13 @@
   background-color: azure;
 }
 
-.studentRegistrationRapper h1 {
+.studentRegistrationRapper h1, h4 {
   display: flex;
   margin: 0;
   padding: 0.5rem;
-  background-color: rgb(57, 6, 116);
+  background-color: grey;
+  /* background-color: rgb(57, 6, 116); */
+  width: 100%;
 }
 
 .div5_heading_div, .div3 {
