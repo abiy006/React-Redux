@@ -21,6 +21,7 @@ import { checkAuthLoader, tokenLoader } from './util/auth';
 
 import StudentFirstPage from './pages/student_pages/StudentDashboard1';
 import StudentRegistrationPage, { loader as eventsLoader2 } from './pages/student_pages/StudentRegistration';
+import StudentCRUDPage, { loader as eventsLoader3 } from './pages/student_pages/StudentCRUD';
 
 const router = createBrowserRouter([
   {
@@ -89,6 +90,12 @@ const router = createBrowserRouter([
         path: 'sudentregistration',
         element: <StudentRegistrationPage />,
         loader: eventsLoader2,
+        // action: newsletterAction,
+      },
+      {
+        path: 'student_crud',
+        element: <StudentCRUDPage />,
+        loader: eventsLoader3,
         // action: newsletterAction,
       },
     ],
