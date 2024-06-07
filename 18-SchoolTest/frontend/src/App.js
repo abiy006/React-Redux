@@ -20,7 +20,7 @@ import { action as logoutAction } from './pages/Logout';
 import { checkAuthLoader, tokenLoader } from './util/auth';
 
 import StudentFirstPage from './pages/student_pages/StudentDashboard1';
-import StudentRegistrationPage from './pages/student_pages/StudentRegistration';
+import StudentRegistrationPage, { loader as eventsLoader2 } from './pages/student_pages/StudentRegistration';
 
 const router = createBrowserRouter([
   {
@@ -88,6 +88,7 @@ const router = createBrowserRouter([
       {
         path: 'sudentregistration',
         element: <StudentRegistrationPage />,
+        loader: eventsLoader2,
         // action: newsletterAction,
       },
     ],
