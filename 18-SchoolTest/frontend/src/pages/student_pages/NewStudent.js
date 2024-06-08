@@ -1,4 +1,4 @@
-import StudentForm from '../../components/school_components/StudentForm';
+import StudentForm from '../../components/student_components/StudentForm';
 
 function NewStudentPage() {
   return <StudentForm method="post" />;

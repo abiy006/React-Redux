@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import classes from "../../components/school_components/CSS/SchoolFirstPage.module.css";
+import classes from "../../components/student_components/CSS/SchoolFirstPage.module.css";
 
 const DUMMY_STUDENT_EVENTS = [
   {

@@ -1,11 +1,11 @@
 import { Suspense } from 'react';
 import { useLoaderData, json, defer, Await } from 'react-router-dom';
 
-import StudentsList from '../../components/school_components/StudentsList';
+import StudentsList from '../../components/student_components/StudentsList';
 
 // import { Link } from "react-router-dom";
 
-// import classes from "../../components/school_components/StudentRegistration.module.css";
+// import classes from "../../components/student_components/StudentRegistration.module.css";
 
 // const DUMMY_STUDENT_REG_EVENTS = [
 //   {

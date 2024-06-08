@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { useLoaderData, json, defer, Await } from 'react-router-dom';
 
-import StudentsList from '../../components/school_components/StudentsList';
+import StudentsList from '../../components/student_components/StudentsList';
 
 const dateObject = new Date();
 function daysInMonth(month, year) {

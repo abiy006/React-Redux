@@ -23,7 +23,8 @@ import StudentFirstPage from './pages/student_pages/StudentDashboard1';
 import StudentRegistrationPage, { loader as eventsLoader2 } from './pages/student_pages/StudentRegistration';
 import StudentCRUDPage, { loader as eventsLoader3 } from './pages/student_pages/StudentCRUD';
 import NewStudentPage from './pages/student_pages/NewStudent';
-import { action as manipulateStudentAction } from './components/school_components/StudentForm';
+import { action as manipulateStudentAction } from './components/student_components/StudentForm';
+import StudentsRootLayout from './pages/student_pages/StudentsRoot';
 
 const router = createBrowserRouter([
   {
@@ -102,7 +103,7 @@ const router = createBrowserRouter([
       // },
       {
         path: 'student_crud',
-        element: <EventsRootLayout />,
+        element: <StudentsRootLayout />,
         children: [
           {
             index: true,
@@ -131,7 +132,7 @@ const router = createBrowserRouter([
             path: 'new',
             element: <NewStudentPage />,
             action: manipulateStudentAction,
-            loader: checkAuthLoader,
+            // loader: checkAuthLoader,
           },
         ],
       },
