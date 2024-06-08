@@ -22,6 +22,8 @@ import { checkAuthLoader, tokenLoader } from './util/auth';
 import StudentFirstPage from './pages/student_pages/StudentDashboard1';
 import StudentRegistrationPage, { loader as eventsLoader2 } from './pages/student_pages/StudentRegistration';
 import StudentCRUDPage, { loader as eventsLoader3 } from './pages/student_pages/StudentCRUD';
+import NewStudentPage from './pages/student_pages/NewStudent';
+import { action as manipulateStudentAction } from './components/school_components/StudentForm';
 
 const router = createBrowserRouter([
   {
@@ -92,11 +94,46 @@ const router = createBrowserRouter([
         loader: eventsLoader2,
         // action: newsletterAction,
       },
+      // {
+      //   path: 'student_crud',
+      //   element: <StudentCRUDPage />,
+      //   loader: eventsLoader3,
+      //   // action: newsletterAction,
+      // },
       {
         path: 'student_crud',
-        element: <StudentCRUDPage />,
-        loader: eventsLoader3,
-        // action: newsletterAction,
+        element: <EventsRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <StudentCRUDPage />,
+            loader: eventsLoader3,
+          },
+          // {
+          //   path: ':eventId',
+          //   id: 'event-detail',
+          //   loader: eventDetailLoader,
+          //   children: [
+          //     {
+          //       index: true,
+          //       element: <EventDetailPage />,
+          //       action: deleteEventAction,
+          //     },
+          //     {
+          //       path: 'edit',
+          //       element: <EditEventPage />,
+          //       action: manipulateEventAction,
+          //       loader: checkAuthLoader,
+          //     },
+          //   ],
+          // },
+          {
+            path: 'new',
+            element: <NewStudentPage />,
+            action: manipulateStudentAction,
+            loader: checkAuthLoader,
+          },
+        ],
       },
     ],
   },

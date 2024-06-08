@@ -38,7 +38,7 @@ console.log(
     daysInMonth(monthDays, year)
 );
 
-function StudentDashboard1() {
+function StudentCRUD() {
   // const token = true;
   const date = new Date();
   const daysOfWeek = [
@@ -112,7 +112,7 @@ return (
 
 }
 
-export default StudentDashboard1;
+export default StudentCRUD;
 
 async function loadEvents() {
 const response = await fetch('http://localhost:8080/students');
