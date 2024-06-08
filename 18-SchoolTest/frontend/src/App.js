@@ -32,6 +32,7 @@ import StudentDetailPage, {
 import EditStudentPage from './pages/student_pages/EditStudent';
 
 import XRootLayout from './CRUDs/roots/XRoot';
+import XmaincrudPage, { loader as xLoader } from './CRUDs/pages/X_main_crud';
 
 const router = createBrowserRouter([
   {
@@ -135,6 +136,41 @@ const router = createBrowserRouter([
               },
             ],
           },
+          {
+            path: 'new',
+            element: <NewStudentPage />,
+            action: manipulateStudentAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+      {
+        path: 'x-crud',
+        element: <XRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <XmaincrudPage />,
+            loader: xLoader,
+          },
+          // {
+          //   path: ':studentId',
+          //   id: 'student-detail',
+          //   loader: studentDetailLoader,
+          //   children: [
+          //     {
+          //       index: true,
+          //       element: <StudentDetailPage />,
+          //       action: deleteStudentAction,
+          //     },
+          //     {
+          //       path: 'edit',
+          //       element: <EditStudentPage />,
+          //       action: manipulateStudentAction,
+          //       loader: checkAuthLoader,
+          //     },
+          //   ],
+          // },
           {
             path: 'new',
             element: <NewStudentPage />,

@@ -1,66 +1,56 @@
-const fs = require('node:fs/promises');
-
 const { v4: generateId } = require('uuid');
 
 const { NotFoundError } = require('../util/errors');
-
-async function readData() {
-  const data = await fs.readFile('events.json', 'utf8');
-  return JSON.parse(data);
-}
-
-async function writeData(data) {
-  await fs.writeFile('events.json', JSON.stringify(data));
-}
+const { readData, writeData } = require('./util_x_crud');
 
 async function getAll() {
   const storedData = await readData();
-  if (!storedData.events) {
+  if (!storedData.x_crud_routes) {
     throw new NotFoundError('Could not find any events.');
   }
-  return storedData.events;
+  return storedData.x_crud_routes;
 }
 
 async function get(id) {
   const storedData = await readData();
-  if (!storedData.events || storedData.events.length === 0) {
+  if (!storedData.students || storedData.students.length === 0) {
     throw new NotFoundError('Could not find any events.');
   }
 
-  const event = storedData.events.find((ev) => ev.id === id);
-  if (!event) {
+  const student = storedData.students.find((ev) => ev.id === id);
+  if (!student) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
 
-  return event;
+  return student;
 }
 
 async function add(data) {
   const storedData = await readData();
-  storedData.events.unshift({ ...data, id: generateId() });
+  storedData.students.unshift({ ...data, id: generateId() });
   await writeData(storedData);
 }
 
 async function replace(id, data) {
   const storedData = await readData();
-  if (!storedData.events || storedData.events.length === 0) {
+  if (!storedData.students || storedData.students.length === 0) {
     throw new NotFoundError('Could not find any events.');
   }
 
-  const index = storedData.events.findIndex((ev) => ev.id === id);
+  const index = storedData.students.findIndex((ev) => ev.id === id);
   if (index < 0) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
 
-  storedData.events[index] = { ...data, id };
+  storedData.students[index] = { ...data, id };
 
   await writeData(storedData);
 }
 
 async function remove(id) {
   const storedData = await readData();
-  const updatedData = storedData.events.filter((ev) => ev.id !== id);
-  await writeData({events: updatedData});
+  const updatedData = storedData.students.filter((ev) => ev.id !== id);
+  await writeData({ ...storedData, students: updatedData });
 }
 
 exports.getAll = getAll;
