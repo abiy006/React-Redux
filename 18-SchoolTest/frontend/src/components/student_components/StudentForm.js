@@ -10,7 +10,7 @@ import {
 import { getAuthToken } from '../../util/auth';
 import classes from './CSS/StudentForm.module.css';
 
-function EventForm({ method, event }) {
+function StudentForm({ method, student }) {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
@@ -37,7 +37,7 @@ function EventForm({ method, event }) {
           type="text"
           name="title"
           required
-          defaultValue={event ? event.title : ''}
+          defaultValue={student ? student.title : ''}
         />
       </p>
       <p>
@@ -47,7 +47,7 @@ function EventForm({ method, event }) {
           type="url"
           name="image"
           required
-          defaultValue={event ? event.image : ''}
+          defaultValue={student ? student.image : ''}
         />
       </p>
       <p>
@@ -57,7 +57,7 @@ function EventForm({ method, event }) {
           type="date"
           name="date"
           required
-          defaultValue={event ? event.date : ''}
+          defaultValue={student ? student.date : ''}
         />
       </p>
       <p>
@@ -67,7 +67,7 @@ function EventForm({ method, event }) {
           name="description"
           rows="5"
           required
-          defaultValue={event ? event.description : ''}
+          defaultValue={student ? student.description : ''}
         />
       </p>
       <div className={classes.actions}>
@@ -82,13 +82,13 @@ function EventForm({ method, event }) {
   );
 }
 
-export default EventForm;
+export default StudentForm;
 
 export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
 
-  const eventData = {
+  const studentData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
@@ -98,8 +98,8 @@ export async function action({ request, params }) {
   let url = 'http://localhost:8080/students';
 
   if (method === 'PATCH') {
-    const eventId = params.eventId;
-    url = 'http://localhost:8080/students/' + eventId;
+    const studentId = params.studentId;
+    url = 'http://localhost:8080/students/' + studentId;
   }
 
   const token = getAuthToken();
@@ -109,7 +109,7 @@ export async function action({ request, params }) {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify(eventData),
+    body: JSON.stringify(studentData),
   });
 
   if (response.status === 422) {
@@ -117,7 +117,7 @@ export async function action({ request, params }) {
   }
 
   if (!response.ok) {
-    throw json({ message: 'Could not save event.' }, { status: 500 });
+    throw json({ message: 'Could not save student.' }, { status: 500 });
   }
 
   return redirect('/student_crud');

@@ -1,6 +1,6 @@
 import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
 
-import classes from './StudentItem.module.css';
+import classes from './CSS/StudentItem.module.css';
 
 function StudentItem({ student }) {
   const token = useRouteLoaderData('root');
