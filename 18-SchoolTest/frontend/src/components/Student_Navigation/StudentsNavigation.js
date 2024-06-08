@@ -2,7 +2,7 @@ import { NavLink, useRouteLoaderData } from 'react-router-dom';
 
 import classes from './CSS/StudentsNavigation.module.css';
 
-function EventsNavigation() {
+function StudentsNavigation() {
   const token = useRouteLoaderData('root');
 
   return (
@@ -38,4 +38,4 @@ function EventsNavigation() {
   );
 }
 
-export default EventsNavigation;
+export default StudentsNavigation;

@@ -10,7 +10,7 @@ function StudentsList({students}) {
       <ul className={classes.list}>
         {students.map((student) => (
           <li key={student.id} className={classes.item}>
-            <Link to={`/sudents/${student.id}`}>
+            <Link to={`/student_crud/${student.id}`}>
               <img src={student.image} alt={student.title} />
               <div className={classes.content}>
                 <h2>{student.title}</h2>

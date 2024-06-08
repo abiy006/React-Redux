@@ -25,6 +25,11 @@ import StudentCRUDPage, { loader as eventsLoader3 } from './pages/student_pages/
 import NewStudentPage from './pages/student_pages/NewStudent';
 import { action as manipulateStudentAction } from './components/student_components/StudentForm';
 import StudentsRootLayout from './pages/student_pages/StudentsRoot';
+import StudentDetailPage, {
+  loader as studentDetailLoader,
+  action as deleteStudentAction,
+} from './pages/student_pages/StudentDetail';
+import EditStudentPage from './pages/student_pages/EditStudent';
 
 const router = createBrowserRouter([
   {
@@ -110,29 +115,29 @@ const router = createBrowserRouter([
             element: <StudentCRUDPage />,
             loader: eventsLoader3,
           },
-          // {
-          //   path: ':eventId',
-          //   id: 'event-detail',
-          //   loader: eventDetailLoader,
-          //   children: [
-          //     {
-          //       index: true,
-          //       element: <EventDetailPage />,
-          //       action: deleteEventAction,
-          //     },
-          //     {
-          //       path: 'edit',
-          //       element: <EditEventPage />,
-          //       action: manipulateEventAction,
-          //       loader: checkAuthLoader,
-          //     },
-          //   ],
-          // },
+          {
+            path: ':studentId',
+            id: 'student-detail',
+            loader: studentDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <StudentDetailPage />,
+                action: deleteStudentAction,
+              },
+              {
+                path: 'edit',
+                element: <EditStudentPage />,
+                action: manipulateStudentAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
           {
             path: 'new',
             element: <NewStudentPage />,
             action: manipulateStudentAction,
-            // loader: checkAuthLoader,
+            loader: checkAuthLoader,
           },
         ],
       },
