@@ -31,6 +31,8 @@ import StudentDetailPage, {
 } from './pages/student_pages/StudentDetail';
 import EditStudentPage from './pages/student_pages/EditStudent';
 
+import XRootLayout from './CRUDs/roots/XRoot';
+
 const router = createBrowserRouter([
   {
     path: '/',
