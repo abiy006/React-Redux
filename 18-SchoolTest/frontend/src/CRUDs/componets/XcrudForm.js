@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom';
 
 import { getAuthToken } from '../../util/auth';
-import classes from './CSS/StudentForm.module.css';
+import classes from '../CSS/XcrudForm.module.css';
 
-function StudentForm({ method, student }) {
+function XcrudForm({ method, student }) {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
@@ -82,24 +82,24 @@ function StudentForm({ method, student }) {
   );
 }
 
-export default StudentForm;
+export default XcrudForm;
 
 export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
 
-  const studentData = {
+  const xData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
     description: data.get('description'),
   };
 
-  let url = 'http://localhost:8080/students';
+  let url = 'http://localhost:8080/x_crud_routes';
 
   if (method === 'PATCH') {
-    const studentId = params.studentId;
-    url = 'http://localhost:8080/students/' + studentId;
+    const xId = params.xId;
+    url = 'http://localhost:8080/x_crud_routes/' + xId;
   }
 
   const token = getAuthToken();
@@ -109,7 +109,7 @@ export async function action({ request, params }) {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify(studentData),
+    body: JSON.stringify(xData),
   });
 
   if (response.status === 422) {
@@ -117,8 +117,8 @@ export async function action({ request, params }) {
   }
 
   if (!response.ok) {
-    throw json({ message: 'Could not save student.' }, { status: 500 });
+    throw json({ message: 'Could not save x.' }, { status: 500 });
   }
 
-  return redirect('/student_crud');
+  return redirect('/x-crud');
 }

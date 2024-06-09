@@ -32,7 +32,10 @@ import StudentDetailPage, {
 import EditStudentPage from './pages/student_pages/EditStudent';
 
 import XRootLayout from './CRUDs/roots/XRoot';
-import XmaincrudPage, { loader as xLoader } from './CRUDs/pages/X_main_crud';
+import XmaincrudPage, { loader as xLoader } from './CRUDs/pages/XMaincrud';
+
+import XNewCRUDPage from './CRUDs/pages/XNewcrud';
+import { action as manipulateXAction } from './CRUDs/componets/XcrudForm';
 
 const router = createBrowserRouter([
   {
@@ -173,8 +176,8 @@ const router = createBrowserRouter([
           // },
           {
             path: 'new',
-            element: <NewStudentPage />,
-            action: manipulateStudentAction,
+            element: <XNewCRUDPage />,
+            action: manipulateXAction,
             loader: checkAuthLoader,
           },
         ],
