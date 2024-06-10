@@ -98,8 +98,8 @@ export async function action({ request, params }) {
   let url = 'http://localhost:8080/x_crud_routes';
 
   if (method === 'PATCH') {
-    const studentId = params.studentId;
-    url = 'http://localhost:8080/x_crud_routes/' + studentId;
+    const xId = params.xId;// link to App.js file
+    url = 'http://localhost:8080/x_crud_routes/' + xId;
   }
 
   const token = getAuthToken();

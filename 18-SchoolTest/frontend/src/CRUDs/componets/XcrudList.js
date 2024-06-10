@@ -10,7 +10,7 @@ function StudentsList({x_crud_routes}) {
       <ul className={classes.list}>
         {x_crud_routes.map((student) => (
           <li key={student.id} className={classes.item}>
-            <Link to={`/student_crud/${student.id}`}>
+            <Link to={`/x-crud/${student.id}`}>
               <img src={student.image} alt={student.title} />
               <div className={classes.content}>
                 <h2>{student.title}</h2>

@@ -12,7 +12,7 @@ import StudentsList from '../../components/student_components/StudentsList';
 import { getAuthToken } from '../../util/auth';
 
 function StudentDetailPage() {
-  const { student, students } = useRouteLoaderData('student-detail');
+  const { student, students } = useRouteLoaderData('x-detail');
 
   return (
     <>
