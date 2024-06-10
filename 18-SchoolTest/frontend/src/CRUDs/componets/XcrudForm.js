@@ -10,7 +10,7 @@ import {
 import { getAuthToken } from '../../util/auth';
 import classes from '../CSS/XcrudForm.module.css';
 
-function XcrudForm({ method, student }) {
+function XcrudForm({ method, xcrud }) {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
@@ -37,7 +37,7 @@ function XcrudForm({ method, student }) {
           type="text"
           name="title"
           required
-          defaultValue={student ? student.title : ''}
+          defaultValue={xcrud ? xcrud.title : ''}
         />
       </p>
       <p>
@@ -47,7 +47,7 @@ function XcrudForm({ method, student }) {
           type="url"
           name="image"
           required
-          defaultValue={student ? student.image : ''}
+          defaultValue={xcrud ? xcrud.image : ''}
         />
       </p>
       <p>
@@ -57,7 +57,7 @@ function XcrudForm({ method, student }) {
           type="date"
           name="date"
           required
-          defaultValue={student ? student.date : ''}
+          defaultValue={xcrud ? xcrud.date : ''}
         />
       </p>
       <p>
@@ -67,7 +67,7 @@ function XcrudForm({ method, student }) {
           name="description"
           rows="5"
           required
-          defaultValue={student ? student.description : ''}
+          defaultValue={xcrud ? xcrud.description : ''}
         />
       </p>
       <div className={classes.actions}>
@@ -98,8 +98,8 @@ export async function action({ request, params }) {
   let url = 'http://localhost:8080/x_crud_routes';
 
   if (method === 'PATCH') {
-    const xId = params.xId;
-    url = 'http://localhost:8080/x_crud_routes/' + xId;
+    const studentId = params.studentId;
+    url = 'http://localhost:8080/x_crud_routes/' + studentId;
   }
 
   const token = getAuthToken();
