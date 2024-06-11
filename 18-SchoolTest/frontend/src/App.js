@@ -38,9 +38,11 @@ import XNewCRUDPage from './CRUDs/pages/XNewcrud';
 import { action as manipulateXAction } from './CRUDs/componets/XcrudForm';
 
 import XDetailPage, {
-  loader as studentDetailLoader,
-  action as deleteStudentAction,
-} from './pages/student_pages/StudentDetail';
+  loader as xDetailLoader,
+  action as deleteXAction,
+} from './CRUDs/pages/XDetail';
+
+import EditXPage from './CRUDs/pages/EditX';
 
 const router = createBrowserRouter([
   {
@@ -164,17 +166,17 @@ const router = createBrowserRouter([
           {
             path: ':xId',
             id: 'x-detail',
-            loader: studentDetailLoader,
+            loader: xDetailLoader,
             children: [
               {
                 index: true,
-                element: <StudentDetailPage />,
-                action: deleteStudentAction,
+                element: <XDetailPage />,
+                action: deleteXAction,
               },
               {
                 path: 'edit',
-                element: <EditStudentPage />,
-                action: manipulateStudentAction,
+                element: <EditXPage />,
+                action: manipulateXAction,
                 loader: checkAuthLoader,
               },
             ],

@@ -1,10 +1,10 @@
-.student {
+.x_crud_route {
   max-width: 50rem;
   margin: 2rem auto;
   text-align: center;
 }
 
-.student img {
+.x_crud_route img {
   width: 30rem;
   border-radius: 4px;
 }

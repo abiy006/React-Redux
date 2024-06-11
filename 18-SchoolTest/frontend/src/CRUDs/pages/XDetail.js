@@ -7,23 +7,23 @@ import {
   Await,
 } from 'react-router-dom';
 
-import StudentItem from '../../components/student_components/StudentItem';
-import StudentsList from '../../components/student_components/StudentsList';
+import XcrudItem from '../componets/XcrudItem';
+import XcrudList from '../componets/XcrudList';
 import { getAuthToken } from '../../util/auth';
 
 function StudentDetailPage() {
-  const { student, students } = useRouteLoaderData('x-detail');
+  const { x_crud_route, x_crud_routes } = useRouteLoaderData('x-detail');
 
   return (
     <>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={student}>
-          {(loadedEvent) => <StudentItem student={loadedEvent} />}
+        <Await resolve={x_crud_route}>
+          {(loadedEvent) => <XcrudItem x_crud_route={loadedEvent} />}
         </Await>
       </Suspense>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={students}>
-          {(loadedEvents) => <StudentsList students={loadedEvents} />}
+        <Await resolve={x_crud_routes}>
+          {(loadedEvents) => <XcrudList x_crud_routes={loadedEvents} />}
         </Await>
       </Suspense>
     </>
@@ -33,7 +33,7 @@ function StudentDetailPage() {
 export default StudentDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch('http://localhost:8080/students/' + id);
+  const response = await fetch('http://localhost:8080/x_crud_routes/' + id);
 
   if (!response.ok) {
     throw json(
@@ -44,12 +44,12 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData.student;
+    return resData.x_crud_route;
   }
 }
 
 async function loadEvents() {
-  const response = await fetch('http://localhost:8080/students');
+  const response = await fetch('http://localhost:8080/x_crud_routes');
 
   if (!response.ok) {
     // return { isError: true, message: 'Could not fetch events.' };
@@ -64,24 +64,24 @@ async function loadEvents() {
     );
   } else {
     const resData = await response.json();
-    return resData.students;
+    return resData.x_crud_routes;
   }
 }
 
 export async function loader({ request, params }) {
-  const id = params.studentId;
+  const id = params.xId;
 
   return defer({
-    student: await loadEvent(id),
-    students: loadEvents(),
+    x_crud_route: await loadEvent(id),
+    x_crud_routes: loadEvents(),
   });
 }
 
 export async function action({ params, request }) {
-  const studentId = params.studentId;
+  const xId = params.xId;
 
   const token = getAuthToken();
-  const response = await fetch('http://localhost:8080/students/' + studentId, {
+  const response = await fetch('http://localhost:8080/x_crud_routes/' + xId, {
     method: request.method,
     headers: {
       'Authorization': 'Bearer ' + token
@@ -96,5 +96,5 @@ export async function action({ params, request }) {
       }
     );
   }
-  return redirect('/student_crud');
+  return redirect('/x-crud');
 }
