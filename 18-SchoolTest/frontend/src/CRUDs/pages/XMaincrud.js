@@ -6,11 +6,11 @@ import XcrudList from '../componets/XcrudList';
 function StudentCRUD() {
   // const token = true;
 
-const { x_crud_routes } = useLoaderData();
+const { xcruds } = useLoaderData();
 return (
   <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-    <Await resolve={x_crud_routes}>
-      {(loadedEvents) => <XcrudList x_crud_routes={loadedEvents} />}
+    <Await resolve={xcruds}>
+      {(loadedEvents) => <XcrudList xcruds={loadedEvents} />}
     </Await>
   </Suspense>
 );
@@ -20,7 +20,7 @@ return (
 export default StudentCRUD;
 
 async function loadEvents() {
-const response = await fetch('http://localhost:8080/x_crud_routes');
+const response = await fetch('http://localhost:8080/xcruds');
 
 if (!response.ok) {
   throw json(
@@ -31,13 +31,13 @@ if (!response.ok) {
   );
 } else {
   const resData = await response.json();
-  return resData.x_crud_routes;
+  return resData.xcruds;
 }
 }
 
 export function loader() {
 return defer({
-  x_crud_routes: loadEvents(),
+  xcruds: loadEvents(),
 });
 }
 

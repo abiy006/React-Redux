@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getAll, get, add, replace, remove } = require('../data/x_crud_data');
+const { getAll, get, add, replace, remove } = require('../data/xcrud');
 const { checkAuth } = require('../util/auth');
 const {
   isValidText,
@@ -13,8 +13,8 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
   console.log(req.token);
   try {
-    const x_crud_routes = await getAll();
-    res.json({ x_crud_routes: x_crud_routes });
+    const xcruds = await getAll();
+    res.json({ xcruds: xcruds });
   } catch (error) {
     next(error);
   }
@@ -22,8 +22,8 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const student = await get(req.params.id);
-    res.json({ student: student });
+    const xcrud = await get(req.params.id);
+    res.json({ xcrud: xcrud });
   } catch (error) {
     next(error);
   }
@@ -62,7 +62,7 @@ router.post('/', async (req, res, next) => {
 
   try {
     await add(data);
-    res.status(201).json({ message: 'Event saved.', student: data });
+    res.status(201).json({ message: 'Event saved.', xcrud: data });
   } catch (error) {
     next(error);
   }
@@ -98,7 +98,7 @@ router.patch('/:id', async (req, res, next) => {
 
   try {
     await replace(req.params.id, data);
-    res.json({ message: 'Event updated.', student: data });
+    res.json({ message: 'Event updated.', xcrud: data });
   } catch (error) {
     next(error);
   }

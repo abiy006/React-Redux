@@ -88,18 +88,18 @@ export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
 
-  const xData = {
+  const xcrudData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
     description: data.get('description'),
   };
 
-  let url = 'http://localhost:8080/x_crud_routes';
+  let url = 'http://localhost:8080/xcruds';
 
   if (method === 'PATCH') {
-    const xId = params.xId;// link to App.js file
-    url = 'http://localhost:8080/x_crud_routes/' + xId;
+    const xcrudId = params.xcrudId;// link to App.js file
+    url = 'http://localhost:8080/xcruds/' + xcrudId;
   }
 
   const token = getAuthToken();
@@ -109,7 +109,7 @@ export async function action({ request, params }) {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify(xData),
+    body: JSON.stringify(xcrudData),
   });
 
   if (response.status === 422) {

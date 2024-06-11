@@ -2,7 +2,7 @@ import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
 
 import classes from '../CSS/StudentItem.module.css';
 
-function StudentItem({ x_crud_route }) {
+function StudentItem({ xcrud }) {
   const token = useRouteLoaderData('root');
   const submit = useSubmit();
 
@@ -15,11 +15,11 @@ function StudentItem({ x_crud_route }) {
   }
 
   return (
-    <article className={classes.x_crud_route}>
-      <img src={x_crud_route.image} alt={x_crud_route.title} />
-      <h1>{x_crud_route.title}</h1>
-      <time>{x_crud_route.date}</time>
-      <p>{x_crud_route.description}</p>
+    <article className={classes.xcrud}>
+      <img src={xcrud.image} alt={xcrud.title} />
+      <h1>{xcrud.title}</h1>
+      <time>{xcrud.date}</time>
+      <p>{xcrud.description}</p>
       {token && (
         <menu className={classes.actions}>
           <Link to="edit">Edit</Link>

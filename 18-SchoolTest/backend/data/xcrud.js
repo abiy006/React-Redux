@@ -1,56 +1,56 @@
 const { v4: generateId } = require('uuid');
 
 const { NotFoundError } = require('../util/errors');
-const { readData, writeData } = require('./util_x_crud');
+const { readData, writeData } = require('./util_xcrud');
 
 async function getAll() {
   const storedData = await readData();
-  if (!storedData.x_crud_routes) {
+  if (!storedData.xcruds) {
     throw new NotFoundError('Could not find any events.');
   }
-  return storedData.x_crud_routes;
+  return storedData.xcruds;
 }
 
 async function get(id) {
   const storedData = await readData();
-  if (!storedData.students || storedData.students.length === 0) {
+  if (!storedData.xcruds || storedData.xcruds.length === 0) {
     throw new NotFoundError('Could not find any events.');
   }
 
-  const student = storedData.students.find((ev) => ev.id === id);
-  if (!student) {
+  const xcrud = storedData.xcruds.find((ev) => ev.id === id);
+  if (!xcrud) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
 
-  return student;
+  return xcrud;
 }
 
 async function add(data) {
   const storedData = await readData();
-  storedData.students.unshift({ ...data, id: generateId() });
+  storedData.xcruds.unshift({ ...data, id: generateId() });
   await writeData(storedData);
 }
 
 async function replace(id, data) {
   const storedData = await readData();
-  if (!storedData.students || storedData.students.length === 0) {
+  if (!storedData.xcruds || storedData.xcruds.length === 0) {
     throw new NotFoundError('Could not find any events.');
   }
 
-  const index = storedData.students.findIndex((ev) => ev.id === id);
+  const index = storedData.xcruds.findIndex((ev) => ev.id === id);
   if (index < 0) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
 
-  storedData.students[index] = { ...data, id };
+  storedData.xcruds[index] = { ...data, id };
 
   await writeData(storedData);
 }
 
 async function remove(id) {
   const storedData = await readData();
-  const updatedData = storedData.students.filter((ev) => ev.id !== id);
-  await writeData({ ...storedData, students: updatedData });
+  const updatedData = storedData.xcruds.filter((ev) => ev.id !== id);
+  await writeData({ ...storedData, xcruds: updatedData });
 }
 
 exports.getAll = getAll;

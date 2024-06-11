@@ -12,18 +12,18 @@ import XcrudList from '../componets/XcrudList';
 import { getAuthToken } from '../../util/auth';
 
 function StudentDetailPage() {
-  const { x_crud_route, x_crud_routes } = useRouteLoaderData('x-detail');
+  const { xcrud, xcruds } = useRouteLoaderData('xcrud-detail');
 
   return (
     <>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={x_crud_route}>
-          {(loadedEvent) => <XcrudItem x_crud_route={loadedEvent} />}
+        <Await resolve={xcrud}>
+          {(loadedEvent) => <XcrudItem xcrud={loadedEvent} />}
         </Await>
       </Suspense>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={x_crud_routes}>
-          {(loadedEvents) => <XcrudList x_crud_routes={loadedEvents} />}
+        <Await resolve={xcruds}>
+          {(loadedEvents) => <XcrudList xcruds={loadedEvents} />}
         </Await>
       </Suspense>
     </>
@@ -33,7 +33,7 @@ function StudentDetailPage() {
 export default StudentDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch('http://localhost:8080/x_crud_routes/' + id);
+  const response = await fetch('http://localhost:8080/xcruds/' + id);
 
   if (!response.ok) {
     throw json(
@@ -44,12 +44,12 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData.x_crud_route;
+    return resData.xcrud;
   }
 }
 
 async function loadEvents() {
-  const response = await fetch('http://localhost:8080/x_crud_routes');
+  const response = await fetch('http://localhost:8080/xcruds');
 
   if (!response.ok) {
     // return { isError: true, message: 'Could not fetch events.' };
@@ -64,24 +64,24 @@ async function loadEvents() {
     );
   } else {
     const resData = await response.json();
-    return resData.x_crud_routes;
+    return resData.xcruds;
   }
 }
 
 export async function loader({ request, params }) {
-  const id = params.xId;
+  const id = params.xcrudId;
 
   return defer({
-    x_crud_route: await loadEvent(id),
-    x_crud_routes: loadEvents(),
+    xcrud: await loadEvent(id),
+    xcruds: loadEvents(),
   });
 }
 
 export async function action({ params, request }) {
-  const xId = params.xId;
+  const xcrudId = params.xcrudId;
 
   const token = getAuthToken();
-  const response = await fetch('http://localhost:8080/x_crud_routes/' + xId, {
+  const response = await fetch('http://localhost:8080/xcruds/' + xcrudId, {
     method: request.method,
     headers: {
       'Authorization': 'Bearer ' + token

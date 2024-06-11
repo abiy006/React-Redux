@@ -164,8 +164,8 @@ const router = createBrowserRouter([
             loader: xLoader,
           },
           {
-            path: ':xId',
-            id: 'x-detail',
+            path: ':xcrudId',
+            id: 'xcrud-detail',
             loader: xDetailLoader,
             children: [
               {
