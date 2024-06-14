@@ -44,6 +44,26 @@ import XDetailPage, {
 
 import EditXPage from './CRUDs/pages/EditX';
 
+import YRootLayout from './CRUDs2/roots/YRoot';
+import YmaincrudPage, { loader as yLoader } from './CRUDs2/pages/YMaincrud';
+import YNewCRUDPage from './CRUDs2/pages/YNewcrud';
+import { action as manipulateYAction } from './CRUDs2/componets/YcrudForm';
+import YDetailPage, {
+  loader as yDetailLoader,
+  action as deleteYAction,
+} from './CRUDs2/pages/YDetail';
+import EditYPage from './CRUDs2/pages/EditY';
+
+import ZRootLayout from './ZCRUD/roots/ZRoot';
+import ZmaincrudPage, { loader as ZLoader } from './ZCRUD/pages/ZMaincrud';
+import ZNewCRUDPage from './ZCRUD/pages/ZNewcrud';
+import { action as manipulateZAction } from './ZCRUD/componets/ZcrudForm';
+import ZDetailPage, {
+  loader as ZDetailLoader,
+  action as deleteZAction,
+} from './ZCRUD/pages/ZDetail';
+import EditZPage from './ZCRUD/pages/ZEdit';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -185,6 +205,76 @@ const router = createBrowserRouter([
             path: 'new',
             element: <XNewCRUDPage />,
             action: manipulateXAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+      {
+        path: 'y-crud',
+        element: <YRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <YmaincrudPage />,
+            loader: yLoader,
+          },
+          {
+            path: ':ycrudId',
+            id: 'ycrud-detail',
+            loader: yDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <YDetailPage />,
+                action: deleteYAction,
+              },
+              {
+                path: 'edit',
+                element: <EditYPage />,
+                action: manipulateYAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <YNewCRUDPage />,
+            action: manipulateYAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+      {
+        path: 'z-crud',
+        element: <ZRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <ZmaincrudPage />,
+            loader: ZLoader,
+          },
+          {
+            path: ':zcrudId',
+            id: 'zcrud-detail',
+            loader: ZDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <ZDetailPage />,
+                action: deleteZAction,
+              },
+              {
+                path: 'edit',
+                element: <EditZPage />,
+                action: manipulateZAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <ZNewCRUDPage />,
+            action: manipulateZAction,
             loader: checkAuthLoader,
           },
         ],
