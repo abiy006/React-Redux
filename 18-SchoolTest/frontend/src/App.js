@@ -64,6 +64,16 @@ import ZDetailPage, {
 } from './ZCRUD/pages/ZDetail';
 import EditZPage from './ZCRUD/pages/ZEdit';
 
+import ARootLayout from './ACRUD/roots/ARoot';
+import AmaincrudPage, { loader as ALoader } from './ACRUD/pages/AMaincrud';
+import ANewCRUDPage from './ZCRUD/pages/ZNewcrud';
+import { action as manipulateAAction } from './ACRUD/componets/AcrudForm';
+import ADetailPage, {
+  loader as ADetailLoader,
+  action as deleteAAction,
+} from './ACRUD/pages/ADetail';
+import EditAPage from './ACRUD/pages/AEdit';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -275,6 +285,41 @@ const router = createBrowserRouter([
             path: 'new',
             element: <ZNewCRUDPage />,
             action: manipulateZAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+      {
+        path: 'a-crud',
+        element: <ARootLayout />,
+        children: [
+          {
+            index: true,
+            element: <AmaincrudPage />,
+            loader: ALoader,
+          },
+          {
+            path: ':acrudId',
+            id: 'acrud-detail',
+            loader: ADetailLoader,
+            children: [
+              {
+                index: true,
+                element: <ADetailPage />,
+                action: deleteAAction,
+              },
+              {
+                path: 'edit',
+                element: <EditAPage />,
+                action: manipulateAAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <ANewCRUDPage />,
+            action: manipulateAAction,
             loader: checkAuthLoader,
           },
         ],

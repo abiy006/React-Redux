@@ -120,6 +120,16 @@ function MainNavigation() {
               Z-CRUD
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/a-crud"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              A-CRUD
+            </NavLink>
+          </li>
         </ul>
       </nav>
       {/* <NewsletterSignup /> */}
