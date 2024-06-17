@@ -10,7 +10,7 @@ import {
 import { getAuthToken } from '../../util/auth';
 import classes from '../CSS/YcrudForm.module.css';
 
-function ycrudForm({ method, ycrud }) {
+function YcrudForm({ method, ycrud }) {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
@@ -82,7 +82,7 @@ function ycrudForm({ method, ycrud }) {
   );
 }
 
-export default ycrudForm;
+export default YcrudForm;
 
 export async function action({ request, params }) {
   const method = request.method;
