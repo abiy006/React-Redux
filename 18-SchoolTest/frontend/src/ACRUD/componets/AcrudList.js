@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import classes from '../CSS/AList.module.css';
+import classes from '../CSS/AcrudList.module.css';
 
 function StudentsList({acruds}) {
 

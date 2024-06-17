@@ -64,15 +64,15 @@ import ZDetailPage, {
 } from './ZCRUD/pages/ZDetail';
 import EditZPage from './ZCRUD/pages/ZEdit';
 
-import ARootLayout from './ACRUD/roots/ARoot';
-import AmaincrudPage, { loader as ALoader } from './ACRUD/pages/AMaincrud';
-import ANewCRUDPage from './ZCRUD/pages/ZNewcrud';
+import ARootLayout from './ACRUD/roots/AcrudRoot';
+import AmaincrudPage, { loader as ALoader } from './ACRUD/pages/AcrudMain';
+import ANewCRUDPage from './ACRUD/pages/AcrudNew';
 import { action as manipulateAAction } from './ACRUD/componets/AcrudForm';
 import ADetailPage, {
   loader as ADetailLoader,
   action as deleteAAction,
-} from './ACRUD/pages/ADetail';
-import EditAPage from './ACRUD/pages/AEdit';
+} from './ACRUD/pages/AcrudDetail';
+import EditAPage from './ACRUD/pages/AcrudEdit';
 
 const router = createBrowserRouter([
   {

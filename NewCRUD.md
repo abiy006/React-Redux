@@ -74,3 +74,24 @@ import EditAPage from './ACRUD/pages/AEdit';
     </br>2.1 copy past and rename the xcruds file to target crud file
   3.  copy past and rename the xcruds.json file to target crud file
   4.  open app.js file and add the new target crud file paths
+
+
+
+
+Get-Childitem C:\Temp | Foreach-object { $OldName = $_.name; $NewName = $_.name -replace 'Acrud','Bcrud'; Rename-Item -Newname $NewName; Write-Output $("Renamed {0} to {1}" -f $OldName,$NewName)}
+
+
+Get-Childitem "frontend\src\ACRUD" -Recurse
+
+Copy-Item -Path "frontend\src\ACRUD\componets\*" -Destination "frontend\src\BCRUD\componets\" -Recurse
+Get-Childitem "frontend\src\BCRUD\componets\" | Foreach-object { $OldName = $_.name; $NewName = $_.name -replace 'Acrud','Bcrud'; Rename-Item -Path "frontend\src\BCRUD\componets\$OldName" -Newname $NewName; Write-Output $("Renamed {0} to {1}" -f $OldName,$NewName)}
+
+
+Get-Childitem "frontend\src\BCRUD\componets\" | Foreach-object { $FileName = $_.name; (Get-Content "frontend\src\BCRUD\componets\$FileName").Replace('Acrud', 'Bcrud') | Set-Content "frontend\src\BCRUD\componets\$FileName"}
+Get-Childitem "frontend\src\BCRUD\componets\" | Foreach-object { $FileName = $_.name; (Get-Content "frontend\src\BCRUD\componets\$FileName").Replace('acrud', 'bcrud') | Set-Content "frontend\src\BCRUD\componets\$FileName"}
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 import { NavLink, useRouteLoaderData } from 'react-router-dom';
 
-import classes from '../CSS/ANavigation.module.css';
+import classes from '../CSS/AcrudNavigation.module.css';
 
 function StudentsNavigation() {
   const token = useRouteLoaderData('root');

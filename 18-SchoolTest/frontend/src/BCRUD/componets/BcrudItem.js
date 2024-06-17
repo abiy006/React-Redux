@@ -1,8 +1,8 @@
 import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
 
-import classes from '../CSS/AcrudItem.module.css';
+import classes from '../CSS/AItem.module.css';
 
-function StudentItem({ acrud }) {
+function StudentItem({ bcrud }) {
   const token = useRouteLoaderData('root');
   const submit = useSubmit();
 
@@ -15,11 +15,11 @@ function StudentItem({ acrud }) {
   }
 
   return (
-    <article className={classes.acrud}>
-      <img src={acrud.image} alt={acrud.title} />
-      <h1>{acrud.title}</h1>
-      <time>{acrud.date}</time>
-      <p>{acrud.description}</p>
+    <article className={classes.bcrud}>
+      <img src={bcrud.image} alt={bcrud.title} />
+      <h1>{bcrud.title}</h1>
+      <time>{bcrud.date}</time>
+      <p>{bcrud.description}</p>
       {token && (
         <menu className={classes.actions}>
           <Link to="edit">Edit</Link>
