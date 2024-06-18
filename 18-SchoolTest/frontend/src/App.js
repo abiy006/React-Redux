@@ -74,6 +74,27 @@ import ADetailPage, {
 } from './ACRUD/pages/AcrudDetail';
 import EditAPage from './ACRUD/pages/AcrudEdit';
 
+import BcrudRootLayout from './BCRUD/roots/BcrudRoot';
+import BcrudMainPage, { loader as BcrudLoader } from './BCRUD/pages/BcrudMain';
+import BcrudNewPage from './BCRUD/pages/BcrudNew';
+import { action as manipulateBcrudAction } from './BCRUD/componets/BcrudForm';
+import BcrudDetailPage, {
+  loader as BcrudDetailLoader,
+  action as deleteBcrudAction,
+} from './BCRUD/pages/BcrudDetail';
+import EditBcrudPage from './BCRUD/pages/BcrudEdit';
+
+
+import CcrudRootLayout from './CCRUD/roots/CcrudRoot';
+import CcrudMainPage, { loader as CcrudLoader } from './CCRUD/pages/CcrudMain';
+import CcrudNewPage from './CCRUD/pages/CcrudNew';
+import { action as manipulateCcrudAction } from './CCRUD/componets/CcrudForm';
+import CcrudDetailPage, {
+  loader as CcrudDetailLoader,
+  action as deleteCcrudAction,
+} from './CCRUD/pages/CcrudDetail';
+import EditCcrudPage from './CCRUD/pages/CcrudEdit';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -320,6 +341,76 @@ const router = createBrowserRouter([
             path: 'new',
             element: <ANewCRUDPage />,
             action: manipulateAAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+      {
+        path: 'b-crud',
+        element: <BcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <BcrudMainPage />,
+            loader: BcrudLoader,
+          },
+          {
+            path: ':bcrudId',
+            id: 'bcrud-detail',
+            loader: BcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <BcrudDetailPage />,
+                action: deleteBcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditBcrudPage />,
+                action: manipulateBcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <BcrudNewPage />,
+            action: manipulateBcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+      {
+        path: 'c-crud',
+        element: <CcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <CcrudMainPage />,
+            loader: CcrudLoader,
+          },
+          {
+            path: ':ccrudId',
+            id: 'ccrud-detail',
+            loader: CcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <CcrudDetailPage />,
+                action: deleteCcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditCcrudPage />,
+                action: manipulateCcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <CcrudNewPage />,
+            action: manipulateCcrudAction,
             loader: checkAuthLoader,
           },
         ],

@@ -1,8 +1,8 @@
 import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
 
-import classes from '../CSS/BcrudItem.module.css';
+import classes from '../CSS/CcrudItem.module.css';
 
-function StudentItem({ bcrud }) {
+function StudentItem({ ccrud }) {
   const token = useRouteLoaderData('root');
   const submit = useSubmit();
 
@@ -15,11 +15,11 @@ function StudentItem({ bcrud }) {
   }
 
   return (
-    <article className={classes.bcrud}>
-      <img src={bcrud.image} alt={bcrud.title} />
-      <h1>{bcrud.title}</h1>
-      <time>{bcrud.date}</time>
-      <p>{bcrud.description}</p>
+    <article className={classes.ccrud}>
+      <img src={ccrud.image} alt={ccrud.title} />
+      <h1>{ccrud.title}</h1>
+      <time>{ccrud.date}</time>
+      <p>{ccrud.description}</p>
       {token && (
         <menu className={classes.actions}>
           <Link to="edit">Edit</Link>

@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
 
-import AcrudNavigation from '../navigations/AcrudNavigation';
+import CcrudNavigation from '../navigations/CcrudNavigation';
 
 function StudentsRootLayout() {
   return (
     <>
-      <AcrudNavigation />
+      <CcrudNavigation />
       <Outlet />
     </>
   );

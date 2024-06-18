@@ -1,6 +1,8 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 
+const ccrudRoutes = require('./routes/ccruds');
+const bcrudRoutes = require('./routes/bcruds');
 const acrudRoutes = require('./routes/acruds');
 const zcrudRoutes = require('./routes/zcruds');
 const ycrudRoutes = require('./routes/ycruds');
@@ -27,6 +29,8 @@ app.use('/xcruds', xcrudRoutes);
 app.use('/ycruds', ycrudRoutes);
 app.use('/zcruds', zcrudRoutes);
 app.use('/acruds', acrudRoutes);
+app.use('/bcruds', bcrudRoutes);
+app.use('/ccruds', ccrudRoutes);
 
 
 app.use((error, req, res, next) => {
