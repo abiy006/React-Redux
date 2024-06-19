@@ -1,6 +1,20 @@
 $varX = "DCRUD"
 $var1 = "Dcrud"
 
+$var2 = "c-crud"
+$var3 = "d-crud"
+
+$var4 = "C-CRUD"
+$var5 = "D-CRUD"
+
+$var6 = "CCRUD"
+
+$var7 = "ccruds"
+$var9 = "dcrud"
+
+$var8 = $var9 + "s"
+
+
 $varLayout = $var1 + "RootLayout"
 $varRoot = $var1 + "Root"
 
@@ -23,7 +37,7 @@ $varEditPage = "Edit" + $var1 + "Page"
 $varEdit = $var1 + "Edit"
 
 
-(Get-Content -path ./AppTest.js -Raw) -replace "THIS IS THE END OF CCRUD IMPORT CODES","THIS IS THE END OF CCRUDDDDD IMPORT CODES `n`n// THIS IS THE BEGINING OF $varX IMPORT CODES
+(Get-Content -path "frontend\src\App.js" -Raw) -replace "THIS IS THE END OF $var6 IMPORT CODES","THIS IS THE END OF $var6 IMPORT CODES `n`n// THIS IS THE BEGINING OF $varX IMPORT CODES
 import $varLayout from './$varX/roots/$varRoot';
 import $varMainPage, { loader as $varMainLoader } from './$varX/pages/$varMain';
 import $varNewPage from './$varX/pages/$varNew';
@@ -34,12 +48,12 @@ import $varDetailPage, {
 } from './$varX/pages/$varDetail';
 import $varEditPage from './$varX/pages/$varEdit';
 // THIS IS THE END OF $varX IMPORT CODES
-" | Set-Content -Path ./AppTest.js
+" | Set-Content -Path "frontend\src\App.js"
 
 
 
 
-(Get-Content -path ./AppTest.js -Raw) -replace "THIS IS THE END OF C-CRUD PATH","THIS IS THE END OF C-CRUD PATH EDITED `n`n// THIS IS THE BEGINING OF D-CRUD PATH
+(Get-Content -path "frontend\src\App.js" -Raw) -replace "THIS IS THE END OF $var4 PATH","THIS IS THE END OF $var4 PATH`n`n// THIS IS THE BEGINING OF $var5 PATH
       {
         path: 'd-crud',
         element: <$varLayout />,
@@ -75,5 +89,48 @@ import $varEditPage from './$varX/pages/$varEdit';
           },
         ],
       },
-// THIS IS THE END OF D-CRUD PATH
-" | Set-Content -Path ./AppTest.js
+// THIS IS THE END OF $var5 PATH
+" | Set-Content -Path "frontend\src\App.js"
+
+
+
+
+
+(Get-Content -path "frontend\src\components\MainNavigation.js" -Raw) -replace "THIS IS THE END OF $var4 NAV LINK","THIS IS THE END OF $var4 NAV LINK */ }`n`n{ /* THIS IS THE BEGINIG OF $var5 NAV LINK */ }
+          <li>
+            <NavLink
+              to='/$var3'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              $var5
+            </NavLink>
+          </li>
+{ /* THIS IS THE END OF $var5 NAV LINK" | Set-Content -Path "frontend\src\components\MainNavigation.js"
+
+
+
+$var1Form = $var1 + "Form.js"
+$var1List = $var1 + "List.js"
+
+(Get-Content -path "frontend\src\$varX\componets\$var1Form" -Raw) -replace $var2,$var3 | Set-Content -Path "frontend\src\$varX\componets\$var1Form"
+
+(Get-Content -path "frontend\src\$varX\componets\$var1List" -Raw) -replace $var2,$var3 | Set-Content -Path "frontend\src\$varX\componets\$var1List"
+
+
+$customVar = $var9 + "Routes"
+
+(Get-Content -path "backend\app.js" -Raw) -replace "THIS IS THE END OF $var7 require","THIS IS THE END OF $var7 require `n`n// THIS IS THE BEGINING OF $var8 require
+const $customVar = require('./routes/$var8');
+// THIS IS THE END OF $var8 require
+" | Set-Content -Path "backend\app.js"
+
+
+
+(Get-Content -path "backend\app.js" -Raw) -replace "THIS IS THE END OF $var7 use","THIS IS THE END OF $var7 use `n`n// THIS IS THE BEGINING OF $var8 use
+app.use('/$var8', $customVar);
+// THIS IS THE END OF $var8 use
+" | Set-Content -Path "backend\app.js"
+
+

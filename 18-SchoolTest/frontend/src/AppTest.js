@@ -94,7 +94,7 @@ import CcrudDetailPage, {
   action as deleteCcrudAction,
 } from './CCRUD/pages/CcrudDetail';
 import EditCcrudPage from './CCRUD/pages/CcrudEdit';
-// THIS IS THE END OF CCRUDDDDD IMPORT CODES 
+// THIS IS THE END OF CCRUD IMPORT CODES 
 
 // THIS IS THE BEGINING OF DCRUD IMPORT CODES
 import DcrudRootLayout from './DCRUD/roots/DcrudRoot';
@@ -179,12 +179,6 @@ const router = createBrowserRouter([
         loader: eventsLoader2,
         // action: newsletterAction,
       },
-      // {
-      //   path: 'student_crud',
-      //   element: <StudentCRUDPage />,
-      //   loader: eventsLoader3,
-      //   // action: newsletterAction,
-      // },
       {
         path: 'student_crud',
         element: <StudentsRootLayout />,

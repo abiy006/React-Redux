@@ -94,6 +94,20 @@ import CcrudDetailPage, {
   action as deleteCcrudAction,
 } from './CCRUD/pages/CcrudDetail';
 import EditCcrudPage from './CCRUD/pages/CcrudEdit';
+// THIS IS THE END OF CCRUDDDDD IMPORT CODES 
+
+// THIS IS THE BEGINING OF DCRUD IMPORT CODES
+import DcrudRootLayout from './DCRUD/roots/DcrudRoot';
+import DcrudMainPage, { loader as DcrudLoader } from './DCRUD/pages/DcrudMain';
+import DcrudNewPage from './DCRUD/pages/DcrudNew';
+import { action as manipulateDcrudAction } from './DCRUD/componets/DcrudForm';
+import DcrudDetailPage, {
+  loader as DcrudDetailLoader,
+  action as deleteDcrudAction,
+} from './DCRUD/pages/DcrudDetail';
+import EditDcrudPage from './DCRUD/pages/DcrudEdit';
+// THIS IS THE END OF DCRUD IMPORT CODES
+
 
 const router = createBrowserRouter([
   {
@@ -415,6 +429,47 @@ const router = createBrowserRouter([
           },
         ],
       },
+      // THIS IS THE END OF C-CRUD PATH EDITED 
+
+// THIS IS THE BEGINING OF D-CRUD PATH
+      {
+        path: 'd-crud',
+        element: <DcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <DcrudMainPage />,
+            loader: DcrudLoader,
+          },
+          {
+            path: ':dcrudId',
+            id: 'dcrud-detail',
+            loader: DcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <DcrudDetailPage />,
+                action: deleteDcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditDcrudPage />,
+                action: manipulateDcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <DcrudNewPage />,
+            action: manipulateDcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF D-CRUD PATH
+
+ 
     ],
   },
 ]);
@@ -424,3 +479,6 @@ function App() {
 }
 
 export default App;
+
+
+

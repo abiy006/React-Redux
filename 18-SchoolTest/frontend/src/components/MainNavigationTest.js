@@ -140,6 +140,7 @@ function MainNavigation() {
               B-CRUD
             </NavLink>
           </li>
+{/* THIS IS THE BEGINIG OF C-CRUD NAV LINK */}
           <li>
             <NavLink
               to="/c-crud"
@@ -150,7 +151,7 @@ function MainNavigation() {
               C-CRUD
             </NavLink>
           </li>
-{/* THIS IS THE ENDDDD OF C-CRUD NAV LINK */ }
+{/* THIS IS THE END OF C-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF D-CRUD NAV LINK */ }
           <li>
@@ -160,7 +161,7 @@ function MainNavigation() {
                 isActive ? classes.active : undefined
               }
             >
-              D-CRUD
+              C-CRUD
             </NavLink>
           </li>
 { /* THIS IS THE END OF D-CRUD NAV LINK */ }
@@ -172,5 +173,9 @@ function MainNavigation() {
 }
 
 export default MainNavigation;
+
+
+
+
 
 

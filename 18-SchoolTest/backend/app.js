@@ -1,7 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 
-const ccrudRoutes = require('./routes/ccruds');
+
 const bcrudRoutes = require('./routes/bcruds');
 const acrudRoutes = require('./routes/acruds');
 const zcrudRoutes = require('./routes/zcruds');
@@ -10,6 +10,12 @@ const xcrudRoutes = require('./routes/xcruds');
 const studentRoutes = require('./routes/students');
 const eventRoutes = require('./routes/events');
 const authRoutes = require('./routes/auth');
+const ccrudRoutes = require('./routes/ccruds');
+// THIS IS THE END OF ccruds require 
+
+// THIS IS THE BEGINING OF dcruds require
+const dcrudRoutes = require('./routes/dcruds');
+// THIS IS THE END OF dcruds require
 
 const app = express();
 
@@ -31,6 +37,11 @@ app.use('/zcruds', zcrudRoutes);
 app.use('/acruds', acrudRoutes);
 app.use('/bcruds', bcrudRoutes);
 app.use('/ccruds', ccrudRoutes);
+// THIS IS THE END OF ccruds use 
+
+// THIS IS THE BEGINING OF dcruds use
+app.use('/dcruds', dcrudRoutes);
+// THIS IS THE END OF dcruds use
 
 
 app.use((error, req, res, next) => {
@@ -40,3 +51,9 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
+
+
+
+

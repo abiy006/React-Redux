@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getAll, get, add, replace, remove } = require('../data/acrud');
+const { getAll, get, add, replace, remove } = require('../data/dcrud');
 const { checkAuth } = require('../util/auth');
 const {
   isValidText,
@@ -13,8 +13,8 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
   console.log(req.token);
   try {
-    const acruds = await getAll();
-    res.json({ acruds: acruds });
+    const dcruds = await getAll();
+    res.json({ dcruds: dcruds });
   } catch (error) {
     next(error);
   }
@@ -22,8 +22,8 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const acrud = await get(req.params.id);
-    res.json({ acrud: acrud });
+    const dcrud = await get(req.params.id);
+    res.json({ dcrud: dcrud });
   } catch (error) {
     next(error);
   }
@@ -62,7 +62,7 @@ router.post('/', async (req, res, next) => {
 
   try {
     await add(data);
-    res.status(201).json({ message: 'Event saved.', acrud: data });
+    res.status(201).json({ message: 'Event saved.', dcrud: data });
   } catch (error) {
     next(error);
   }
@@ -98,7 +98,7 @@ router.patch('/:id', async (req, res, next) => {
 
   try {
     await replace(req.params.id, data);
-    res.json({ message: 'Event updated.', acrud: data });
+    res.json({ message: 'Event updated.', dcrud: data });
   } catch (error) {
     next(error);
   }
