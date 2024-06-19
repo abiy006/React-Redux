@@ -35,3 +35,45 @@ import $varDetailPage, {
 import $varEditPage from './$varX/pages/$varEdit';
 // THIS IS THE END OF $varX IMPORT CODES
 " | Set-Content -Path ./AppTest.js
+
+
+
+
+(Get-Content -path ./AppTest.js -Raw) -replace "THIS IS THE END OF C-CRUD PATH","THIS IS THE END OF C-CRUD PATH EDITED `n`n// THIS IS THE BEGINING OF D-CRUD PATH
+      {
+        path: 'd-crud',
+        element: <$varLayout />,
+        children: [
+          {
+            index: true,
+            element: <$varMainPage />,
+            loader: $varMainLoader,
+          },
+          {
+            path: ':dcrudId',
+            id: 'dcrud-detail',
+            loader: $varDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <$varDetailPage />,
+                action: $varDeleteAction,
+              },
+              {
+                path: 'edit',
+                element: <$varEditPage />,
+                action: $varManipulateAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <$varNewPage />,
+            action: $varManipulateAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF D-CRUD PATH
+" | Set-Content -Path ./AppTest.js

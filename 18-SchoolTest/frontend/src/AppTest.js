@@ -107,6 +107,7 @@ import DcrudDetailPage, {
 } from './DCRUD/pages/DcrudDetail';
 import EditDcrudPage from './DCRUD/pages/DcrudEdit';
 // THIS IS THE END OF DCRUD IMPORT CODES
+ 
 
 
 const router = createBrowserRouter([
@@ -429,6 +430,46 @@ const router = createBrowserRouter([
           },
         ],
       },
+      // THIS IS THE END OF C-CRUD PATH EDITED 
+
+// THIS IS THE BEGINING OF D-CRUD PATH
+      {
+        path: 'd-crud',
+        element: <DcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <DcrudMainPage />,
+            loader: DcrudLoader,
+          },
+          {
+            path: ':dcrudId',
+            id: 'dcrud-detail',
+            loader: DcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <DcrudDetailPage />,
+                action: deleteDcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditDcrudPage />,
+                action: manipulateDcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <DcrudNewPage />,
+            action: manipulateDcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF D-CRUD PATH
+
     ],
   },
 ]);
@@ -438,6 +479,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
