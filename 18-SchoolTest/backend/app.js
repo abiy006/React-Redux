@@ -15,7 +15,17 @@ const ccrudRoutes = require('./routes/ccruds');
 
 // THIS IS THE BEGINING OF dcruds require
 const dcrudRoutes = require('./routes/dcruds');
-// THIS IS THE END OF dcruds require
+// THIS IS THE END OF dcruds require 
+
+// THIS IS THE BEGINING OF ecruds require
+const ecrudRoutes = require('./routes/ecruds');
+// THIS IS THE END OF ecruds require 
+
+// THIS IS THE BEGINING OF fcruds require
+const fcrudRoutes = require('./routes/fcruds');
+// THIS IS THE END OF fcruds require
+
+
 
 const app = express();
 
@@ -41,7 +51,17 @@ app.use('/ccruds', ccrudRoutes);
 
 // THIS IS THE BEGINING OF dcruds use
 app.use('/dcruds', dcrudRoutes);
-// THIS IS THE END OF dcruds use
+// THIS IS THE END OF dcruds use 
+
+// THIS IS THE BEGINING OF ecruds use
+app.use('/ecruds', ecrudRoutes);
+// THIS IS THE END OF ecruds use 
+
+// THIS IS THE BEGINING OF fcruds use
+app.use('/fcruds', fcrudRoutes);
+// THIS IS THE END OF fcruds use
+
+
 
 
 app.use((error, req, res, next) => {
@@ -51,6 +71,16 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
+
+
+
+
+
+
+
+
 
 
 

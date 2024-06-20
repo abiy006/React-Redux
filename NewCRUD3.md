@@ -1,11 +1,12 @@
-$Replace1 = "ccrud"
-$Replace2 = "dcrud"
+# NUMBER ONE
+$Replace1 = "dcrud"
+$Replace2 = "ecrud"
 
-$Replace3 = "Ccrud"
-$Replace4 = "Dcrud"
+$Replace3 = (Get-Culture).TextInfo.ToTitleCase($Replace1) #"Ccrud"
+$Replace4 = (Get-Culture).TextInfo.ToTitleCase($Replace2) #"Dcrud"
 
-$Replace5 = "CCRUD"
-$Replace6 = "DCRUD"
+$Replace5 = $Replace1.ToUpper() #"CCRUD"
+$Replace6 = $Replace2.ToUpper() #"DCRUD"
 
 #Frontend
 New-Item –itemtype Directory –path ".\frontend\src\" -Name $Replace6

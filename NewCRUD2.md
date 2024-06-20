@@ -1,18 +1,23 @@
-$varX = "DCRUD"
-$var1 = "Dcrud"
+# NUMBER TWO
 
-$var2 = "c-crud"
-$var3 = "d-crud"
+#FRONTEND
+$varA = "dcrud"
+$varB = "ecrud"
 
-$var4 = "C-CRUD"
-$var5 = "D-CRUD"
+$varX = $varB.ToUpper() #"DCRUD"
+$var1 = (Get-Culture).TextInfo.ToTitleCase($varB) #"Dcrud"
 
-$var6 = "CCRUD"
+$var2 = $varA.Insert(1,'-') #"c-crud"
+$var3 = $varB.Insert(1,'-') #"d-crud"
 
-$var7 = "ccruds"
-$var9 = "dcrud"
+$var4 = ($varA.ToUpper()).Insert(1,'-') #"C-CRUD"
+$var5 = ($varB.ToUpper()).Insert(1,'-') #"D-CRUD"
 
-$var8 = $var9 + "s"
+$var6 = $varA.ToUpper() #"CCRUD"
+
+$var7 = $varA + "s" #"ccruds"
+
+$var8 = $varB + "s" #"dcruds"
 
 
 $varLayout = $var1 + "RootLayout"
@@ -37,7 +42,7 @@ $varEditPage = "Edit" + $var1 + "Page"
 $varEdit = $var1 + "Edit"
 
 
-(Get-Content -path "frontend\src\App.js" -Raw) -replace "THIS IS THE END OF $var6 IMPORT CODES","THIS IS THE END OF $var6 IMPORT CODES `n`n// THIS IS THE BEGINING OF $varX IMPORT CODES
+(Get-Content -path "frontend\src\App.js" -Raw) -replace "THIS IS THE END OF $var6 IMPORT CODES","THIS IS THE END OF $var6 IMPORT CODES`n`n// THIS IS THE BEGINING OF $varX IMPORT CODES
 import $varLayout from './$varX/roots/$varRoot';
 import $varMainPage, { loader as $varMainLoader } from './$varX/pages/$varMain';
 import $varNewPage from './$varX/pages/$varNew';
@@ -52,10 +57,11 @@ import $varEditPage from './$varX/pages/$varEdit';
 
 
 
-
+$varAA = ":" + $varB + "Id"
+$varBB = $varB + "-detail"
 (Get-Content -path "frontend\src\App.js" -Raw) -replace "THIS IS THE END OF $var4 PATH","THIS IS THE END OF $var4 PATH`n`n// THIS IS THE BEGINING OF $var5 PATH
       {
-        path: 'd-crud',
+        path: '$var3',
         element: <$varLayout />,
         children: [
           {
@@ -64,8 +70,8 @@ import $varEditPage from './$varX/pages/$varEdit';
             loader: $varMainLoader,
           },
           {
-            path: ':dcrudId',
-            id: 'dcrud-detail',
+            path: '$varAA',
+            id: '$varBB',
             loader: $varDetailLoader,
             children: [
               {
@@ -114,12 +120,24 @@ import $varEditPage from './$varX/pages/$varEdit';
 $var1Form = $var1 + "Form.js"
 $var1List = $var1 + "List.js"
 
+$var1Navigation = $var1 + "Navigation.js"
+
+$var1Detail = $var1 + "Detail.js"
+
+
 (Get-Content -path "frontend\src\$varX\componets\$var1Form" -Raw) -replace $var2,$var3 | Set-Content -Path "frontend\src\$varX\componets\$var1Form"
 
 (Get-Content -path "frontend\src\$varX\componets\$var1List" -Raw) -replace $var2,$var3 | Set-Content -Path "frontend\src\$varX\componets\$var1List"
 
+(Get-Content -path "frontend\src\$varX\navigations\$var1Navigation" -Raw) -replace $var2,$var3 | Set-Content -Path "frontend\src\$varX\navigations\$var1Navigation"
 
-$customVar = $var9 + "Routes"
+(Get-Content -path "frontend\src\$varX\pages\$var1Detail" -Raw) -replace $var2,$var3 | Set-Content -Path "frontend\src\$varX\pages\$var1Detail"
+
+
+
+
+#BACKEND
+$customVar = $varB + "Routes"
 
 (Get-Content -path "backend\app.js" -Raw) -replace "THIS IS THE END OF $var7 require","THIS IS THE END OF $var7 require `n`n// THIS IS THE BEGINING OF $var8 require
 const $customVar = require('./routes/$var8');

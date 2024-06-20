@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom';
 
 import { getAuthToken } from '../../util/auth';
-import classes from '../CSS/DcrudForm.module.css';
+import classes from '../CSS/EcrudForm.module.css';
 
-function DcrudForm({ method, dcrud }) {
+function EcrudForm({ method, ecrud }) {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
@@ -37,7 +37,7 @@ function DcrudForm({ method, dcrud }) {
           type="text"
           name="title"
           required
-          defaultValue={dcrud ? dcrud.title : ''}
+          defaultValue={ecrud ? ecrud.title : ''}
         />
       </p>
       <p>
@@ -47,7 +47,7 @@ function DcrudForm({ method, dcrud }) {
           type="url"
           name="image"
           required
-          defaultValue={dcrud ? dcrud.image : ''}
+          defaultValue={ecrud ? ecrud.image : ''}
         />
       </p>
       <p>
@@ -57,7 +57,7 @@ function DcrudForm({ method, dcrud }) {
           type="date"
           name="date"
           required
-          defaultValue={dcrud ? dcrud.date : ''}
+          defaultValue={ecrud ? ecrud.date : ''}
         />
       </p>
       <p>
@@ -67,7 +67,7 @@ function DcrudForm({ method, dcrud }) {
           name="description"
           rows="5"
           required
-          defaultValue={dcrud ? dcrud.description : ''}
+          defaultValue={ecrud ? ecrud.description : ''}
         />
       </p>
       <div className={classes.actions}>
@@ -82,24 +82,24 @@ function DcrudForm({ method, dcrud }) {
   );
 }
 
-export default DcrudForm;
+export default EcrudForm;
 
 export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
 
-  const DcrudData = {
+  const EcrudData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
     description: data.get('description'),
   };
 
-  let url = 'http://localhost:8080/dcruds';
+  let url = 'http://localhost:8080/ecruds';
 
   if (method === 'PATCH') {
-    const dcrudId = params.dcrudId;// link to App.js file
-    url = 'http://localhost:8080/dcruds/' + dcrudId;
+    const ecrudId = params.ecrudId;// link to App.js file
+    url = 'http://localhost:8080/ecruds/' + ecrudId;
   }
 
   const token = getAuthToken();
@@ -109,7 +109,7 @@ export async function action({ request, params }) {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify(DcrudData),
+    body: JSON.stringify(EcrudData),
   });
 
   if (response.status === 422) {
@@ -120,7 +120,9 @@ export async function action({ request, params }) {
     throw json({ message: 'Could not save x.' }, { status: 500 });
   }
 
-  return redirect('/d-crud');
+  return redirect('/e-crud');
 }
+
+
 
 

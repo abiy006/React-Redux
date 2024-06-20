@@ -164,6 +164,32 @@ function MainNavigation() {
             </NavLink>
           </li>
 { /* THIS IS THE END OF D-CRUD NAV LINK */ }
+
+{ /* THIS IS THE BEGINIG OF E-CRUD NAV LINK */ }
+          <li>
+            <NavLink
+              to='/e-crud'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              E-CRUD
+            </NavLink>
+          </li>
+{ /* THIS IS THE END OF E-CRUD NAV LINK */ }
+
+{ /* THIS IS THE BEGINIG OF F-CRUD NAV LINK */ }
+          <li>
+            <NavLink
+              to='/f-crud'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              F-CRUD
+            </NavLink>
+          </li>
+{ /* THIS IS THE END OF F-CRUD NAV LINK */ }
         </ul>
       </nav>
       {/* <NewsletterSignup /> */}
@@ -172,5 +198,10 @@ function MainNavigation() {
 }
 
 export default MainNavigation;
+
+
+
+
+
 
 

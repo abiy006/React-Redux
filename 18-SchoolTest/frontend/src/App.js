@@ -108,6 +108,33 @@ import DcrudDetailPage, {
 import EditDcrudPage from './DCRUD/pages/DcrudEdit';
 // THIS IS THE END OF DCRUD IMPORT CODES
 
+// THIS IS THE BEGINING OF ECRUD IMPORT CODES
+import EcrudRootLayout from './ECRUD/roots/EcrudRoot';
+import EcrudMainPage, { loader as EcrudLoader } from './ECRUD/pages/EcrudMain';
+import EcrudNewPage from './ECRUD/pages/EcrudNew';
+import { action as manipulateEcrudAction } from './ECRUD/componets/EcrudForm';
+import EcrudDetailPage, {
+  loader as EcrudDetailLoader,
+  action as deleteEcrudAction,
+} from './ECRUD/pages/EcrudDetail';
+import EditEcrudPage from './ECRUD/pages/EcrudEdit';
+// THIS IS THE END OF ECRUD IMPORT CODES
+
+// THIS IS THE BEGINING OF FCRUD IMPORT CODES
+import FcrudRootLayout from './FCRUD/roots/FcrudRoot';
+import FcrudMainPage, { loader as FcrudLoader } from './FCRUD/pages/FcrudMain';
+import FcrudNewPage from './FCRUD/pages/FcrudNew';
+import { action as manipulateFcrudAction } from './FCRUD/componets/FcrudForm';
+import FcrudDetailPage, {
+  loader as FcrudDetailLoader,
+  action as deleteFcrudAction,
+} from './FCRUD/pages/FcrudDetail';
+import EditFcrudPage from './FCRUD/pages/FcrudEdit';
+// THIS IS THE END OF FCRUD IMPORT CODES
+
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -178,12 +205,6 @@ const router = createBrowserRouter([
         loader: eventsLoader2,
         // action: newsletterAction,
       },
-      // {
-      //   path: 'student_crud',
-      //   element: <StudentCRUDPage />,
-      //   loader: eventsLoader3,
-      //   // action: newsletterAction,
-      // },
       {
         path: 'student_crud',
         element: <StudentsRootLayout />,
@@ -429,7 +450,7 @@ const router = createBrowserRouter([
           },
         ],
       },
-      // THIS IS THE END OF C-CRUD PATH EDITED 
+      // THIS IS THE END OF C-CRUD PATH
 
 // THIS IS THE BEGINING OF D-CRUD PATH
       {
@@ -469,7 +490,85 @@ const router = createBrowserRouter([
       },
 // THIS IS THE END OF D-CRUD PATH
 
- 
+// THIS IS THE BEGINING OF E-CRUD PATH
+      {
+        path: 'e-crud',
+        element: <EcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <EcrudMainPage />,
+            loader: EcrudLoader,
+          },
+          {
+            path: ':ecrudId',
+            id: 'ecrud-detail',
+            loader: EcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <EcrudDetailPage />,
+                action: deleteEcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditEcrudPage />,
+                action: manipulateEcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <EcrudNewPage />,
+            action: manipulateEcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF E-CRUD PATH
+
+// THIS IS THE BEGINING OF F-CRUD PATH
+      {
+        path: 'f-crud',
+        element: <FcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <FcrudMainPage />,
+            loader: FcrudLoader,
+          },
+          {
+            path: ':fcrudId',
+            id: 'fcrud-detail',
+            loader: FcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <FcrudDetailPage />,
+                action: deleteFcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditFcrudPage />,
+                action: manipulateFcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <FcrudNewPage />,
+            action: manipulateFcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF F-CRUD PATH
+
+
+
+
     ],
   },
 ]);
@@ -479,6 +578,16 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,23 +7,23 @@ import {
   Await,
 } from 'react-router-dom';
 
-import DcrudItem from '../componets/DcrudItem';
-import DcrudList from '../componets/DcrudList';
+import FcrudItem from '../componets/FcrudItem';
+import FcrudList from '../componets/FcrudList';
 import { getAuthToken } from '../../util/auth';
 
 function StudentDetailPage() {
-  const { dcrud, dcruds } = useRouteLoaderData('dcrud-detail');
+  const { fcrud, fcruds } = useRouteLoaderData('fcrud-detail');
 
   return (
     <>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={dcrud}>
-          {(loadedEvent) => <DcrudItem dcrud={loadedEvent} />}
+        <Await resolve={fcrud}>
+          {(loadedEvent) => <FcrudItem fcrud={loadedEvent} />}
         </Await>
       </Suspense>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={dcruds}>
-          {(loadedEvents) => <DcrudList dcruds={loadedEvents} />}
+        <Await resolve={fcruds}>
+          {(loadedEvents) => <FcrudList fcruds={loadedEvents} />}
         </Await>
       </Suspense>
     </>
@@ -33,7 +33,7 @@ function StudentDetailPage() {
 export default StudentDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch('http://localhost:8080/dcruds/' + id);
+  const response = await fetch('http://localhost:8080/fcruds/' + id);
 
   if (!response.ok) {
     throw json(
@@ -44,12 +44,12 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData.dcrud;
+    return resData.fcrud;
   }
 }
 
 async function loadEvents() {
-  const response = await fetch('http://localhost:8080/dcruds');
+  const response = await fetch('http://localhost:8080/fcruds');
 
   if (!response.ok) {
     // return { isError: true, message: 'Could not fetch events.' };
@@ -64,24 +64,24 @@ async function loadEvents() {
     );
   } else {
     const resData = await response.json();
-    return resData.dcruds;
+    return resData.fcruds;
   }
 }
 
 export async function loader({ request, params }) {
-  const id = params.dcrudId;
+  const id = params.fcrudId;
 
   return defer({
-    dcrud: await loadEvent(id),
-    dcruds: loadEvents(),
+    fcrud: await loadEvent(id),
+    fcruds: loadEvents(),
   });
 }
 
 export async function action({ params, request }) {
-  const dcrudId = params.dcrudId;
+  const fcrudId = params.fcrudId;
 
   const token = getAuthToken();
-  const response = await fetch('http://localhost:8080/dcruds/' + dcrudId, {
+  const response = await fetch('http://localhost:8080/fcruds/' + fcrudId, {
     method: request.method,
     headers: {
       'Authorization': 'Bearer ' + token
@@ -96,6 +96,9 @@ export async function action({ params, request }) {
       }
     );
   }
-  return redirect('/d-crud');
+  return redirect('/f-crud');
 }
+
+
+
 
