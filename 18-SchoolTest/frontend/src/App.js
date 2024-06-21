@@ -394,7 +394,7 @@ const router = createBrowserRouter([
           },
         ],
       },
-      // THIS IS THE END OF C-CRUD PATH
+// THIS IS THE END OF C-CRUD PATH
 
 // THIS IS THE BEGINING OF D-CRUD PATH
       {
@@ -585,8 +585,6 @@ const router = createBrowserRouter([
         ],
       },
 // THIS IS THE END OF Y-CRUD PATH
-
-
 
 // THIS IS THE BEGINING OF E-CRUD PATH
       {
