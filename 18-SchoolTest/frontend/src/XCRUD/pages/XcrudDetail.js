@@ -7,23 +7,23 @@ import {
   Await,
 } from 'react-router-dom';
 
-import EcrudItem from '../componets/EcrudItem';
-import EcrudList from '../componets/EcrudList';
+import XcrudItem from '../componets/XcrudItem';
+import XcrudList from '../componets/XcrudList';
 import { getAuthToken } from '../../util/auth';
 
 function StudentDetailPage() {
-  const { ecrud, ecruds } = useRouteLoaderData('ecrud-detail');
+  const { xcrud, xcruds } = useRouteLoaderData('xcrud-detail');
 
   return (
     <>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={ecrud}>
-          {(loadedEvent) => <EcrudItem ecrud={loadedEvent} />}
+        <Await resolve={xcrud}>
+          {(loadedEvent) => <XcrudItem xcrud={loadedEvent} />}
         </Await>
       </Suspense>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={ecruds}>
-          {(loadedEvents) => <EcrudList ecruds={loadedEvents} />}
+        <Await resolve={xcruds}>
+          {(loadedEvents) => <XcrudList xcruds={loadedEvents} />}
         </Await>
       </Suspense>
     </>
@@ -33,7 +33,7 @@ function StudentDetailPage() {
 export default StudentDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch('http://localhost:8080/ecruds/' + id);
+  const response = await fetch('http://localhost:8080/xcruds/' + id);
 
   if (!response.ok) {
     throw json(
@@ -44,12 +44,12 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData.ecrud;
+    return resData.xcrud;
   }
 }
 
 async function loadEvents() {
-  const response = await fetch('http://localhost:8080/ecruds');
+  const response = await fetch('http://localhost:8080/xcruds');
 
   if (!response.ok) {
     // return { isError: true, message: 'Could not fetch events.' };
@@ -64,24 +64,24 @@ async function loadEvents() {
     );
   } else {
     const resData = await response.json();
-    return resData.ecruds;
+    return resData.xcruds;
   }
 }
 
 export async function loader({ request, params }) {
-  const id = params.ecrudId;
+  const id = params.xcrudId;
 
   return defer({
-    ecrud: await loadEvent(id),
-    ecruds: loadEvents(),
+    xcrud: await loadEvent(id),
+    xcruds: loadEvents(),
   });
 }
 
 export async function action({ params, request }) {
-  const ecrudId = params.ecrudId;
+  const xcrudId = params.xcrudId;
 
   const token = getAuthToken();
-  const response = await fetch('http://localhost:8080/ecruds/' + ecrudId, {
+  const response = await fetch('http://localhost:8080/xcruds/' + xcrudId, {
     method: request.method,
     headers: {
       'Authorization': 'Bearer ' + token
@@ -96,7 +96,7 @@ export async function action({ params, request }) {
       }
     );
   }
-  return redirect('/e-crud');
+  return redirect('/x-crud');
 }
 
 

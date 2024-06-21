@@ -6,7 +6,6 @@ const bcrudRoutes = require('./routes/bcruds');
 const acrudRoutes = require('./routes/acruds');
 const zcrudRoutes = require('./routes/zcruds');
 const ycrudRoutes = require('./routes/ycruds');
-const xcrudRoutes = require('./routes/xcruds');
 const studentRoutes = require('./routes/students');
 const eventRoutes = require('./routes/events');
 const authRoutes = require('./routes/auth');
@@ -19,12 +18,20 @@ const dcrudRoutes = require('./routes/dcruds');
 
 // THIS IS THE BEGINING OF ecruds require
 const ecrudRoutes = require('./routes/ecruds');
-// THIS IS THE END OF ecruds require 
+// THIS IS THE END OF ecruds require
 
 // THIS IS THE BEGINING OF fcruds require
 const fcrudRoutes = require('./routes/fcruds');
-// THIS IS THE END OF fcruds require
+// THIS IS THE END OF fcruds require 
 
+// THIS IS THE BEGINING OF gcruds require
+const gcrudRoutes = require('./routes/gcruds');
+// THIS IS THE END OF gcruds require 
+
+// THIS IS THE BEGINING OF xcruds require
+const xcrudRoutes = require('./routes/xcruds');
+// THIS IS THE END OF xcruds require
+ 
 
 
 const app = express();
@@ -41,7 +48,6 @@ app.use(authRoutes);
 
 app.use('/events', eventRoutes);
 app.use('/students', studentRoutes);
-app.use('/xcruds', xcrudRoutes);
 app.use('/ycruds', ycrudRoutes);
 app.use('/zcruds', zcrudRoutes);
 app.use('/acruds', acrudRoutes);
@@ -53,13 +59,24 @@ app.use('/ccruds', ccrudRoutes);
 app.use('/dcruds', dcrudRoutes);
 // THIS IS THE END OF dcruds use 
 
-// THIS IS THE BEGINING OF ecruds use
-app.use('/ecruds', ecrudRoutes);
-// THIS IS THE END OF ecruds use 
-
 // THIS IS THE BEGINING OF fcruds use
 app.use('/fcruds', fcrudRoutes);
-// THIS IS THE END OF fcruds use
+// THIS IS THE END OF fcruds use 
+
+// THIS IS THE BEGINING OF gcruds use
+app.use('/gcruds', gcrudRoutes);
+// THIS IS THE END OF gcruds use 
+
+// THIS IS THE BEGINING OF xcruds use
+app.use('/xcruds', xcrudRoutes);
+// THIS IS THE END OF xcruds use
+ 
+
+// THIS IS THE BEGINING OF ecruds use
+app.use('/ecruds', ecrudRoutes);
+// THIS IS THE END OF ecruds use
+
+
 
 
 
@@ -71,6 +88,14 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
+
+
+
+
+
+
 
 
 

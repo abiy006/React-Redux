@@ -1,16 +1,16 @@
 import { Suspense } from 'react';
 import { useLoaderData, json, defer, Await } from 'react-router-dom';
 
-import XcrudList from '../componets/XcrudList';
+import GcrudList from '../componets/GcrudList';
 
 function StudentCRUD() {
   // const token = true;
 
-const { xcruds } = useLoaderData();
+const { gcruds } = useLoaderData();
 return (
   <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-    <Await resolve={xcruds}>
-      {(loadedEvents) => <XcrudList xcruds={loadedEvents} />}
+    <Await resolve={gcruds}>
+      {(loadedEvents) => <GcrudList gcruds={loadedEvents} />}
     </Await>
   </Suspense>
 );
@@ -20,24 +20,24 @@ return (
 export default StudentCRUD;
 
 async function loadEvents() {
-const response = await fetch('http://localhost:8080/xcruds');
+const response = await fetch('http://localhost:8080/gcruds');
 
 if (!response.ok) {
   throw json(
-    { message: 'Could not fetch events.' },
+    { message: 'Could not fetch gcruds.' },
     {
       status: 500,
     }
   );
 } else {
   const resData = await response.json();
-  return resData.xcruds;
+  return resData.gcruds;
 }
 }
 
 export function loader() {
 return defer({
-  xcruds: loadEvents(),
+  gcruds: loadEvents(),
 });
 }
 

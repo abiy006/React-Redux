@@ -1,6 +1,6 @@
 import { NavLink, useRouteLoaderData } from 'react-router-dom';
 
-import classes from '../CSS/EcrudNavigation.module.css';
+import classes from '../CSS/XcrudNavigation.module.css';
 
 function StudentsNavigation() {
   const token = useRouteLoaderData('root');
@@ -11,7 +11,7 @@ function StudentsNavigation() {
         <ul className={classes.list}>
           <li>
             <NavLink
-              to="/e-crud"
+              to="/x-crud"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
@@ -23,7 +23,7 @@ function StudentsNavigation() {
           {token && (
             <li>
               <NavLink
-                to="/e-crud/new"
+                to="/x-crud/new"
                 className={({ isActive }) =>
                   isActive ? classes.active : undefined
                 }

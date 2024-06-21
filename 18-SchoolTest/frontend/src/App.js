@@ -31,19 +31,6 @@ import StudentDetailPage, {
 } from './pages/student_pages/StudentDetail';
 import EditStudentPage from './pages/student_pages/EditStudent';
 
-import XRootLayout from './CRUDs/roots/XRoot';
-import XmaincrudPage, { loader as xLoader } from './CRUDs/pages/XMaincrud';
-
-import XNewCRUDPage from './CRUDs/pages/XNewcrud';
-import { action as manipulateXAction } from './CRUDs/componets/XcrudForm';
-
-import XDetailPage, {
-  loader as xDetailLoader,
-  action as deleteXAction,
-} from './CRUDs/pages/XDetail';
-
-import EditXPage from './CRUDs/pages/EditX';
-
 import YRootLayout from './CRUDs2/roots/YRoot';
 import YmaincrudPage, { loader as yLoader } from './CRUDs2/pages/YMaincrud';
 import YNewCRUDPage from './CRUDs2/pages/YNewcrud';
@@ -108,18 +95,6 @@ import DcrudDetailPage, {
 import EditDcrudPage from './DCRUD/pages/DcrudEdit';
 // THIS IS THE END OF DCRUD IMPORT CODES
 
-// THIS IS THE BEGINING OF ECRUD IMPORT CODES
-import EcrudRootLayout from './ECRUD/roots/EcrudRoot';
-import EcrudMainPage, { loader as EcrudLoader } from './ECRUD/pages/EcrudMain';
-import EcrudNewPage from './ECRUD/pages/EcrudNew';
-import { action as manipulateEcrudAction } from './ECRUD/componets/EcrudForm';
-import EcrudDetailPage, {
-  loader as EcrudDetailLoader,
-  action as deleteEcrudAction,
-} from './ECRUD/pages/EcrudDetail';
-import EditEcrudPage from './ECRUD/pages/EcrudEdit';
-// THIS IS THE END OF ECRUD IMPORT CODES
-
 // THIS IS THE BEGINING OF FCRUD IMPORT CODES
 import FcrudRootLayout from './FCRUD/roots/FcrudRoot';
 import FcrudMainPage, { loader as FcrudLoader } from './FCRUD/pages/FcrudMain';
@@ -132,6 +107,42 @@ import FcrudDetailPage, {
 import EditFcrudPage from './FCRUD/pages/FcrudEdit';
 // THIS IS THE END OF FCRUD IMPORT CODES
 
+// THIS IS THE BEGINING OF GCRUD IMPORT CODES
+import GcrudRootLayout from './GCRUD/roots/GcrudRoot';
+import GcrudMainPage, { loader as GcrudLoader } from './GCRUD/pages/GcrudMain';
+import GcrudNewPage from './GCRUD/pages/GcrudNew';
+import { action as manipulateGcrudAction } from './GCRUD/componets/GcrudForm';
+import GcrudDetailPage, {
+  loader as GcrudDetailLoader,
+  action as deleteGcrudAction,
+} from './GCRUD/pages/GcrudDetail';
+import EditGcrudPage from './GCRUD/pages/GcrudEdit';
+// THIS IS THE END OF GCRUD IMPORT CODES
+
+// THIS IS THE BEGINING OF XCRUD IMPORT CODES
+import XcrudRootLayout from './XCRUD/roots/XcrudRoot';
+import XcrudMainPage, { loader as XcrudLoader } from './XCRUD/pages/XcrudMain';
+import XcrudNewPage from './XCRUD/pages/XcrudNew';
+import { action as manipulateXcrudAction } from './XCRUD/componets/XcrudForm';
+import XcrudDetailPage, {
+  loader as XcrudDetailLoader,
+  action as deleteXcrudAction,
+} from './XCRUD/pages/XcrudDetail';
+import EditXcrudPage from './XCRUD/pages/XcrudEdit';
+// THIS IS THE END OF XCRUD IMPORT CODES
+
+
+// THIS IS THE BEGINING OF ECRUD IMPORT CODES
+import EcrudRootLayout from './ECRUD/roots/EcrudRoot';
+import EcrudMainPage, { loader as EcrudLoader } from './ECRUD/pages/EcrudMain';
+import EcrudNewPage from './ECRUD/pages/EcrudNew';
+import { action as manipulateEcrudAction } from './ECRUD/componets/EcrudForm';
+import EcrudDetailPage, {
+  loader as EcrudDetailLoader,
+  action as deleteEcrudAction,
+} from './ECRUD/pages/EcrudDetail';
+import EditEcrudPage from './ECRUD/pages/EcrudEdit';
+// THIS IS THE END OF ECRUD IMPORT CODES
 
 
 
@@ -236,41 +247,6 @@ const router = createBrowserRouter([
             path: 'new',
             element: <NewStudentPage />,
             action: manipulateStudentAction,
-            loader: checkAuthLoader,
-          },
-        ],
-      },
-      {
-        path: 'x-crud',
-        element: <XRootLayout />,
-        children: [
-          {
-            index: true,
-            element: <XmaincrudPage />,
-            loader: xLoader,
-          },
-          {
-            path: ':xcrudId',
-            id: 'xcrud-detail',
-            loader: xDetailLoader,
-            children: [
-              {
-                index: true,
-                element: <XDetailPage />,
-                action: deleteXAction,
-              },
-              {
-                path: 'edit',
-                element: <EditXPage />,
-                action: manipulateXAction,
-                loader: checkAuthLoader,
-              },
-            ],
-          },
-          {
-            path: 'new',
-            element: <XNewCRUDPage />,
-            action: manipulateXAction,
             loader: checkAuthLoader,
           },
         ],
@@ -490,44 +466,6 @@ const router = createBrowserRouter([
       },
 // THIS IS THE END OF D-CRUD PATH
 
-// THIS IS THE BEGINING OF E-CRUD PATH
-      {
-        path: 'e-crud',
-        element: <EcrudRootLayout />,
-        children: [
-          {
-            index: true,
-            element: <EcrudMainPage />,
-            loader: EcrudLoader,
-          },
-          {
-            path: ':ecrudId',
-            id: 'ecrud-detail',
-            loader: EcrudDetailLoader,
-            children: [
-              {
-                index: true,
-                element: <EcrudDetailPage />,
-                action: deleteEcrudAction,
-              },
-              {
-                path: 'edit',
-                element: <EditEcrudPage />,
-                action: manipulateEcrudAction,
-                loader: checkAuthLoader,
-              },
-            ],
-          },
-          {
-            path: 'new',
-            element: <EcrudNewPage />,
-            action: manipulateEcrudAction,
-            loader: checkAuthLoader,
-          },
-        ],
-      },
-// THIS IS THE END OF E-CRUD PATH
-
 // THIS IS THE BEGINING OF F-CRUD PATH
       {
         path: 'f-crud',
@@ -566,6 +504,123 @@ const router = createBrowserRouter([
       },
 // THIS IS THE END OF F-CRUD PATH
 
+// THIS IS THE BEGINING OF G-CRUD PATH
+      {
+        path: 'g-crud',
+        element: <GcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <GcrudMainPage />,
+            loader: GcrudLoader,
+          },
+          {
+            path: ':gcrudId',
+            id: 'gcrud-detail',
+            loader: GcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <GcrudDetailPage />,
+                action: deleteGcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditGcrudPage />,
+                action: manipulateGcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <GcrudNewPage />,
+            action: manipulateGcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF G-CRUD PATH
+
+// THIS IS THE BEGINING OF X-CRUD PATH
+      {
+        path: 'x-crud',
+        element: <XcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <XcrudMainPage />,
+            loader: XcrudLoader,
+          },
+          {
+            path: ':xcrudId',
+            id: 'xcrud-detail',
+            loader: XcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <XcrudDetailPage />,
+                action: deleteXcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditXcrudPage />,
+                action: manipulateXcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <XcrudNewPage />,
+            action: manipulateXcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF X-CRUD PATH
+
+
+// THIS IS THE BEGINING OF E-CRUD PATH
+      {
+        path: 'e-crud',
+        element: <EcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <EcrudMainPage />,
+            loader: EcrudLoader,
+          },
+          {
+            path: ':ecrudId',
+            id: 'ecrud-detail',
+            loader: EcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <EcrudDetailPage />,
+                action: deleteEcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditEcrudPage />,
+                action: manipulateEcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <EcrudNewPage />,
+            action: manipulateEcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF E-CRUD PATH
+
+
+
 
 
 
@@ -578,6 +633,14 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
 
 
 

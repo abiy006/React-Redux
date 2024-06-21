@@ -92,16 +92,6 @@ function MainNavigation() {
           </li>
           <li>
             <NavLink
-              to="/x-crud"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              X-CRUD
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/y-crud"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
@@ -165,19 +155,6 @@ function MainNavigation() {
           </li>
 { /* THIS IS THE END OF D-CRUD NAV LINK */ }
 
-{ /* THIS IS THE BEGINIG OF E-CRUD NAV LINK */ }
-          <li>
-            <NavLink
-              to='/e-crud'
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              E-CRUD
-            </NavLink>
-          </li>
-{ /* THIS IS THE END OF E-CRUD NAV LINK */ }
-
 { /* THIS IS THE BEGINIG OF F-CRUD NAV LINK */ }
           <li>
             <NavLink
@@ -190,6 +167,45 @@ function MainNavigation() {
             </NavLink>
           </li>
 { /* THIS IS THE END OF F-CRUD NAV LINK */ }
+
+{ /* THIS IS THE BEGINIG OF G-CRUD NAV LINK */ }
+          <li>
+            <NavLink
+              to='/g-crud'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              G-CRUD
+            </NavLink>
+          </li>
+{ /* THIS IS THE END OF G-CRUD NAV LINK */ }
+
+{ /* THIS IS THE BEGINIG OF X-CRUD NAV LINK */ }
+          <li>
+            <NavLink
+              to='/x-crud'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              X-CRUD
+            </NavLink>
+          </li>
+{ /* THIS IS THE END OF X-CRUD NAV LINK */ }
+
+{ /* THIS IS THE BEGINIG OF E-CRUD NAV LINK */ }
+          <li>
+            <NavLink
+              to='/e-crud'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              E-CRUD
+            </NavLink>
+          </li>
+{ /* THIS IS THE END OF E-CRUD NAV LINK */ }
         </ul>
       </nav>
       {/* <NewsletterSignup /> */}
@@ -198,6 +214,10 @@ function MainNavigation() {
 }
 
 export default MainNavigation;
+
+
+
+
 
 
 

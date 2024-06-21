@@ -1,18 +1,21 @@
 # NUMBER ONE
-$Replace1 = "dcrud"
-$Replace2 = "ecrud"
+$Replace1 = "fcrud"
+$Replace2 = "gcrud"
 
 $Replace3 = (Get-Culture).TextInfo.ToTitleCase($Replace1) #"Ccrud"
 $Replace4 = (Get-Culture).TextInfo.ToTitleCase($Replace2) #"Dcrud"
 
-$Replace5 = $Replace1.ToUpper() #"CCRUD"
-$Replace6 = $Replace2.ToUpper() #"DCRUD"
+$Replace5 = $Replace3.ToUpper() #"CCRUD"
+$Replace6 = $Replace4.ToUpper() #"DCRUD"
 
 #Frontend
-New-Item –itemtype Directory –path ".\frontend\src\" -Name $Replace6
+New-Item -ItemType Directory -Path "frontend\src\" -Name $Replace6
+
 $Path1 = "frontend\src\$Replace5\*"
 $Path2 = "frontend\src\$Replace6\"
+
 Copy-Item -Path $Path1 -Destination $Path2 -Recurse
+
 Get-Childitem $Path2 | Foreach-object { $FolderName = $_.name; Get-Childitem $Path2$FolderName | Foreach-object { $OldName = $_.name; $NewName = $_.name -replace $Replace3, $Replace4; Rename-Item -Path "$Path2$FolderName\$OldName" -Newname $NewName; Write-Output $("Renamed {0} to {1}" -f $OldName,$NewName)}}
 Get-Childitem $Path2 | Foreach-object { $FolderName = $_.name; Get-Childitem $Path2$FolderName | Foreach-object { $FileName = $_.name; (Get-Content "$Path2$FolderName\$FileName").Replace($Replace3, $Replace4) | Set-Content "$Path2$FolderName\$FileName"}}
 Get-Childitem $Path2 | Foreach-object { $FolderName = $_.name; Get-Childitem $Path2$FolderName | Foreach-object { $FileName = $_.name; (Get-Content "$Path2$FolderName\$FileName").Replace($Replace1, $Replace2) | Set-Content "$Path2$FolderName\$FileName"}}
@@ -50,6 +53,3 @@ $BKPath7 = "backend\$BKFile7.json"
 $BKPath8 = "backend\$BKFile8.json"
 Copy-Item -Path $BKPath7 -Destination $BKPath8 -Recurse
 (Get-Content $BKPath8).Replace($Replace1, $Replace2) | Set-Content $BKPath8
-
-
-

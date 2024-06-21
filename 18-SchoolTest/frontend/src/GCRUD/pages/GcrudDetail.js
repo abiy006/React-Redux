@@ -7,23 +7,23 @@ import {
   Await,
 } from 'react-router-dom';
 
-import XcrudItem from '../componets/XcrudItem';
-import XcrudList from '../componets/XcrudList';
+import GcrudItem from '../componets/GcrudItem';
+import GcrudList from '../componets/GcrudList';
 import { getAuthToken } from '../../util/auth';
 
 function StudentDetailPage() {
-  const { xcrud, xcruds } = useRouteLoaderData('xcrud-detail');
+  const { gcrud, gcruds } = useRouteLoaderData('gcrud-detail');
 
   return (
     <>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={xcrud}>
-          {(loadedEvent) => <XcrudItem xcrud={loadedEvent} />}
+        <Await resolve={gcrud}>
+          {(loadedEvent) => <GcrudItem gcrud={loadedEvent} />}
         </Await>
       </Suspense>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={xcruds}>
-          {(loadedEvents) => <XcrudList xcruds={loadedEvents} />}
+        <Await resolve={gcruds}>
+          {(loadedEvents) => <GcrudList gcruds={loadedEvents} />}
         </Await>
       </Suspense>
     </>
@@ -33,7 +33,7 @@ function StudentDetailPage() {
 export default StudentDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch('http://localhost:8080/xcruds/' + id);
+  const response = await fetch('http://localhost:8080/gcruds/' + id);
 
   if (!response.ok) {
     throw json(
@@ -44,12 +44,12 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData.xcrud;
+    return resData.gcrud;
   }
 }
 
 async function loadEvents() {
-  const response = await fetch('http://localhost:8080/xcruds');
+  const response = await fetch('http://localhost:8080/gcruds');
 
   if (!response.ok) {
     // return { isError: true, message: 'Could not fetch events.' };
@@ -64,24 +64,24 @@ async function loadEvents() {
     );
   } else {
     const resData = await response.json();
-    return resData.xcruds;
+    return resData.gcruds;
   }
 }
 
 export async function loader({ request, params }) {
-  const id = params.xcrudId;
+  const id = params.gcrudId;
 
   return defer({
-    xcrud: await loadEvent(id),
-    xcruds: loadEvents(),
+    gcrud: await loadEvent(id),
+    gcruds: loadEvents(),
   });
 }
 
 export async function action({ params, request }) {
-  const xcrudId = params.xcrudId;
+  const gcrudId = params.gcrudId;
 
   const token = getAuthToken();
-  const response = await fetch('http://localhost:8080/xcruds/' + xcrudId, {
+  const response = await fetch('http://localhost:8080/gcruds/' + gcrudId, {
     method: request.method,
     headers: {
       'Authorization': 'Bearer ' + token
@@ -96,5 +96,10 @@ export async function action({ params, request }) {
       }
     );
   }
-  return redirect('/x-crud');
+  return redirect('/g-crud');
 }
+
+
+
+
+

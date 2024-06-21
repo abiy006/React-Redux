@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import classes from '../CSS/StudentsList.module.css';
+import classes from '../CSS/XcrudList.module.css';
 
 function StudentsList({xcruds}) {
 
@@ -25,3 +25,10 @@ function StudentsList({xcruds}) {
 }
 
 export default StudentsList;
+
+
+
+
+
+
+

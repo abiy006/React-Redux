@@ -88,7 +88,7 @@ export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
 
-  const xcrudData = {
+  const XcrudData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
@@ -109,7 +109,7 @@ export async function action({ request, params }) {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify(xcrudData),
+    body: JSON.stringify(XcrudData),
   });
 
   if (response.status === 422) {
@@ -122,3 +122,10 @@ export async function action({ request, params }) {
 
   return redirect('/x-crud');
 }
+
+
+
+
+
+
+

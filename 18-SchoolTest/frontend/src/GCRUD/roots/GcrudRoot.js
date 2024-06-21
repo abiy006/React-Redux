@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
 
-import XsNavigation from '../navigations/XsNavigation';
+import GcrudNavigation from '../navigations/GcrudNavigation';
 
 function StudentsRootLayout() {
   return (
     <>
-      <XsNavigation />
+      <GcrudNavigation />
       <Outlet />
     </>
   );
