@@ -24,7 +24,7 @@ const response = await fetch('http://localhost:8080/ycruds');
 
 if (!response.ok) {
   throw json(
-    { message: 'Could not fetch events.' },
+    { message: 'Could not fetch ycruds.' },
     {
       status: 500,
     }

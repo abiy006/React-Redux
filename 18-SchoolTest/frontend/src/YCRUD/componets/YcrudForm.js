@@ -88,7 +88,7 @@ export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
 
-  const ycrudData = {
+  const YcrudData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
@@ -109,7 +109,7 @@ export async function action({ request, params }) {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify(ycrudData),
+    body: JSON.stringify(YcrudData),
   });
 
   if (response.status === 422) {
@@ -122,3 +122,11 @@ export async function action({ request, params }) {
 
   return redirect('/y-crud');
 }
+
+
+
+
+
+
+
+

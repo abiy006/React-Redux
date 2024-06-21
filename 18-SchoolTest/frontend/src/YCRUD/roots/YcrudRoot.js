@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
 
-import YsNavigation from '../navigations/YsNavigation';
+import YcrudNavigation from '../navigations/YcrudNavigation';
 
 function StudentsRootLayout() {
   return (
     <>
-      <YsNavigation />
+      <YcrudNavigation />
       <Outlet />
     </>
   );

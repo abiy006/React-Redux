@@ -1,6 +1,6 @@
 import { NavLink, useRouteLoaderData } from 'react-router-dom';
 
-import classes from '../CSS/YsNavigation.module.css';
+import classes from '../CSS/YcrudNavigation.module.css';
 
 function StudentsNavigation() {
   const token = useRouteLoaderData('root');
@@ -39,3 +39,10 @@ function StudentsNavigation() {
 }
 
 export default StudentsNavigation;
+
+
+
+
+
+
+

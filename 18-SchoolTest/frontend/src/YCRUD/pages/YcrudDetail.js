@@ -96,5 +96,12 @@ export async function action({ params, request }) {
       }
     );
   }
-  return redirect('/x-crud');
+  return redirect('/y-crud');
 }
+
+
+
+
+
+
+

@@ -5,7 +5,6 @@ const express = require('express');
 const bcrudRoutes = require('./routes/bcruds');
 const acrudRoutes = require('./routes/acruds');
 const zcrudRoutes = require('./routes/zcruds');
-const ycrudRoutes = require('./routes/ycruds');
 const studentRoutes = require('./routes/students');
 const eventRoutes = require('./routes/events');
 const authRoutes = require('./routes/auth');
@@ -30,7 +29,12 @@ const gcrudRoutes = require('./routes/gcruds');
 
 // THIS IS THE BEGINING OF xcruds require
 const xcrudRoutes = require('./routes/xcruds');
-// THIS IS THE END OF xcruds require
+// THIS IS THE END OF xcruds require 
+
+// THIS IS THE BEGINING OF ycruds require
+const ycrudRoutes = require('./routes/ycruds');
+// THIS IS THE END OF ycruds require
+
  
 
 
@@ -48,7 +52,6 @@ app.use(authRoutes);
 
 app.use('/events', eventRoutes);
 app.use('/students', studentRoutes);
-app.use('/ycruds', ycrudRoutes);
 app.use('/zcruds', zcrudRoutes);
 app.use('/acruds', acrudRoutes);
 app.use('/bcruds', bcrudRoutes);
@@ -69,7 +72,12 @@ app.use('/gcruds', gcrudRoutes);
 
 // THIS IS THE BEGINING OF xcruds use
 app.use('/xcruds', xcrudRoutes);
-// THIS IS THE END OF xcruds use
+// THIS IS THE END OF xcruds use 
+
+// THIS IS THE BEGINING OF ycruds use
+app.use('/ycruds', ycrudRoutes);
+// THIS IS THE END OF ycruds use
+
  
 
 // THIS IS THE BEGINING OF ecruds use
@@ -88,6 +96,8 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
 
 
 

@@ -1,6 +1,6 @@
 # NUMBER ONE
-$Replace1 = "gcrud"
-$Replace2 = "xcrud"
+$Replace1 = "xcrud" #THIS IS THE EXISTING CRUD OPERATION
+$Replace2 = "ycrud" #THIS IS THE SUPPOSED TO BE CREATED CRUD OPERATION - THE NEW ONE
 
 $Replace3 = (Get-Culture).TextInfo.ToTitleCase($Replace1) #"Ccrud"
 $Replace4 = (Get-Culture).TextInfo.ToTitleCase($Replace2) #"Dcrud"

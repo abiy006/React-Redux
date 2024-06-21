@@ -31,16 +31,6 @@ import StudentDetailPage, {
 } from './pages/student_pages/StudentDetail';
 import EditStudentPage from './pages/student_pages/EditStudent';
 
-import YRootLayout from './CRUDs2/roots/YRoot';
-import YmaincrudPage, { loader as yLoader } from './CRUDs2/pages/YMaincrud';
-import YNewCRUDPage from './CRUDs2/pages/YNewcrud';
-import { action as manipulateYAction } from './CRUDs2/componets/YcrudForm';
-import YDetailPage, {
-  loader as yDetailLoader,
-  action as deleteYAction,
-} from './CRUDs2/pages/YDetail';
-import EditYPage from './CRUDs2/pages/EditY';
-
 import ZRootLayout from './ZCRUD/roots/ZRoot';
 import ZmaincrudPage, { loader as ZLoader } from './ZCRUD/pages/ZMaincrud';
 import ZNewCRUDPage from './ZCRUD/pages/ZNewcrud';
@@ -130,6 +120,19 @@ import XcrudDetailPage, {
 } from './XCRUD/pages/XcrudDetail';
 import EditXcrudPage from './XCRUD/pages/XcrudEdit';
 // THIS IS THE END OF XCRUD IMPORT CODES
+
+// THIS IS THE BEGINING OF YCRUD IMPORT CODES
+import YcrudRootLayout from './YCRUD/roots/YcrudRoot';
+import YcrudMainPage, { loader as YcrudLoader } from './YCRUD/pages/YcrudMain';
+import YcrudNewPage from './YCRUD/pages/YcrudNew';
+import { action as manipulateYcrudAction } from './YCRUD/componets/YcrudForm';
+import YcrudDetailPage, {
+  loader as YcrudDetailLoader,
+  action as deleteYcrudAction,
+} from './YCRUD/pages/YcrudDetail';
+import EditYcrudPage from './YCRUD/pages/YcrudEdit';
+// THIS IS THE END OF YCRUD IMPORT CODES
+
 
 
 // THIS IS THE BEGINING OF ECRUD IMPORT CODES
@@ -247,41 +250,6 @@ const router = createBrowserRouter([
             path: 'new',
             element: <NewStudentPage />,
             action: manipulateStudentAction,
-            loader: checkAuthLoader,
-          },
-        ],
-      },
-      {
-        path: 'y-crud',
-        element: <YRootLayout />,
-        children: [
-          {
-            index: true,
-            element: <YmaincrudPage />,
-            loader: yLoader,
-          },
-          {
-            path: ':ycrudId',
-            id: 'ycrud-detail',
-            loader: yDetailLoader,
-            children: [
-              {
-                index: true,
-                element: <YDetailPage />,
-                action: deleteYAction,
-              },
-              {
-                path: 'edit',
-                element: <EditYPage />,
-                action: manipulateYAction,
-                loader: checkAuthLoader,
-              },
-            ],
-          },
-          {
-            path: 'new',
-            element: <YNewCRUDPage />,
-            action: manipulateYAction,
             loader: checkAuthLoader,
           },
         ],
@@ -580,6 +548,45 @@ const router = createBrowserRouter([
       },
 // THIS IS THE END OF X-CRUD PATH
 
+// THIS IS THE BEGINING OF Y-CRUD PATH
+      {
+        path: 'y-crud',
+        element: <YcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <YcrudMainPage />,
+            loader: YcrudLoader,
+          },
+          {
+            path: ':ycrudId',
+            id: 'ycrud-detail',
+            loader: YcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <YcrudDetailPage />,
+                action: deleteYcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditYcrudPage />,
+                action: manipulateYcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <YcrudNewPage />,
+            action: manipulateYcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF Y-CRUD PATH
+
+
 
 // THIS IS THE BEGINING OF E-CRUD PATH
       {
@@ -633,6 +640,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 
