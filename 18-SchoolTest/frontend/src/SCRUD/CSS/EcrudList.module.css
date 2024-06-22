@@ -1,6 +1,7 @@
 .ecruds {
   margin: 2rem auto;
   max-width: 40rem;
+  background-color: aqua;
 }
 
 .list {
@@ -13,8 +14,8 @@
   text-decoration: none;
   color: inherit;
   display: flex;
-  /* background-color: var(--color-gray-800); */
-  background-color:brown;
+  background-color: var(--color-gray-800);
+  /* background-color:brown; */
   border-radius: 4px;
   overflow: hidden;
 }

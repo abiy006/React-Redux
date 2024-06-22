@@ -148,6 +148,19 @@ import EditEcrudPage from './ECRUD/pages/EcrudEdit';
 // THIS IS THE END OF ECRUD IMPORT CODES
 
 
+// THIS IS THE BEGINING OF SCRUD IMPORT CODES
+import ScrudRootLayout from './SCRUD/roots/ScrudRoot';
+import ScrudMainPage, { loader as ScrudLoader } from './SCRUD/pages/ScrudMain';
+// import EcrudNewPage from './ECRUD/pages/EcrudNew';
+// import { action as manipulateEcrudAction } from './ECRUD/componets/EcrudForm';
+// import EcrudDetailPage, {
+//   loader as EcrudDetailLoader,
+//   action as deleteEcrudAction,
+// } from './ECRUD/pages/EcrudDetail';
+// import EditEcrudPage from './ECRUD/pages/EcrudEdit';
+// THIS IS THE END OF SCRUD IMPORT CODES
+
+
 
 
 const router = createBrowserRouter([
@@ -625,9 +638,43 @@ const router = createBrowserRouter([
 // THIS IS THE END OF E-CRUD PATH
 
 
-
-
-
+// THIS IS THE BEGINING OF S-CRUD PATH
+{
+  path: 'scrudOperation1',
+  element: <ScrudRootLayout />,
+  children: [
+    {
+      index: true,
+      element: <ScrudMainPage />,
+      loader: ScrudLoader,
+    },
+    // {
+    //   path: ':ecrudId',
+    //   id: 'ecrud-detail',
+    //   loader: EcrudDetailLoader,
+    //   children: [
+    //     {
+    //       index: true,
+    //       element: <EcrudDetailPage />,
+    //       action: deleteEcrudAction,
+    //     },
+    //     {
+    //       path: 'edit',
+    //       element: <EditEcrudPage />,
+    //       action: manipulateEcrudAction,
+    //       loader: checkAuthLoader,
+    //     },
+    //   ],
+    // },
+    // {
+    //   path: 'new',
+    //   element: <EcrudNewPage />,
+    //   action: manipulateEcrudAction,
+    //   loader: checkAuthLoader,
+    // },
+  ],
+},
+// THIS IS THE END OF S-CRUD PATH
 
     ],
   },

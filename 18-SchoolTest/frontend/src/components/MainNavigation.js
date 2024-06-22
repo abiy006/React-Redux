@@ -209,6 +209,19 @@ function MainNavigation() {
             </NavLink>
           </li>
 { /* THIS IS THE END OF E-CRUD NAV LINK */ }
+
+{ /* THIS IS THE BEGINIG OF S-CRUD NAV LINK */ }
+          <li>
+            <NavLink
+              to='/scrudOperation1'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              S-CRUD
+            </NavLink>
+          </li>
+{ /* THIS IS THE END OF E-CRUD NAV LINK */ }
         </ul>
       </nav>
       {/* <NewsletterSignup /> */}
