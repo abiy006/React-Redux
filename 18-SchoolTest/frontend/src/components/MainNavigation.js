@@ -90,7 +90,7 @@ function MainNavigation() {
               StudentCRUD
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to="/z-crud"
               className={({ isActive }) =>
@@ -129,7 +129,8 @@ function MainNavigation() {
             >
               C-CRUD
             </NavLink>
-          </li>
+          </li> */}
+          
 {/* THIS IS THE ENDDDD OF C-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF D-CRUD NAV LINK */ }
