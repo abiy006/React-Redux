@@ -669,15 +669,22 @@ const router = createBrowserRouter([
           //   loader: checkAuthLoader,
           // },
           {
-            path: '1',
+            path: "1",
             element: <ScrudMainPage />,
             loader: ScrudLoader,
-          },          {
-            path: '2',
+          },
+          {
+            path: "2",
             element: <ScrudMainPage />,
             loader: ScrudLoader,
-          },          {
-            path: '3',
+          },
+          {
+            path: "3",
+            element: <ScrudMainPage />,
+            loader: ScrudLoader,
+          },
+          {
+            path: "4",
             element: <ScrudMainPage />,
             loader: ScrudLoader,
           },
