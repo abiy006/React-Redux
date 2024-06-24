@@ -8,22 +8,22 @@ import {
 } from 'react-router-dom';
 
 import EcrudItem from '../componets/EcrudItem';
-import EcrudList from '../componets/EcrudList';
+import EcrudList from '../componets/ScrudList';
 import { getAuthToken } from '../../util/auth';
 
 function StudentDetailPage() {
-  const { ecrud, ecruds } = useRouteLoaderData('ecrud-detail');
+  const { scrud, scruds } = useRouteLoaderData('scrud-detail');
 
   return (
     <>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={ecrud}>
-          {(loadedEvent) => <EcrudItem ecrud={loadedEvent} />}
+        <Await resolve={scrud}>
+          {(loadedEvent) => <EcrudItem scrud={loadedEvent} />}
         </Await>
       </Suspense>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-        <Await resolve={ecruds}>
-          {(loadedEvents) => <EcrudList ecruds={loadedEvents} />}
+        <Await resolve={scruds}>
+          {(loadedEvents) => <EcrudList scruds={loadedEvents} />}
         </Await>
       </Suspense>
     </>
@@ -33,7 +33,7 @@ function StudentDetailPage() {
 export default StudentDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch('http://localhost:8080/ecruds/' + id);
+  const response = await fetch('http://localhost:8080/scruds/' + id);
 
   if (!response.ok) {
     throw json(
@@ -44,12 +44,12 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData.ecrud;
+    return resData.scrud;
   }
 }
 
 async function loadEvents() {
-  const response = await fetch('http://localhost:8080/ecruds');
+  const response = await fetch('http://localhost:8080/scruds');
 
   if (!response.ok) {
     // return { isError: true, message: 'Could not fetch events.' };
@@ -64,24 +64,24 @@ async function loadEvents() {
     );
   } else {
     const resData = await response.json();
-    return resData.ecruds;
+    return resData.scruds;
   }
 }
 
 export async function loader({ request, params }) {
-  const id = params.ecrudId;
+  const id = params.scrudId;
 
   return defer({
-    ecrud: await loadEvent(id),
-    ecruds: loadEvents(),
+    scrud: await loadEvent(id),
+    scruds: loadEvents(),
   });
 }
 
 export async function action({ params, request }) {
-  const ecrudId = params.ecrudId;
+  const scrudId = params.scrudId;
 
   const token = getAuthToken();
-  const response = await fetch('http://localhost:8080/ecruds/' + ecrudId, {
+  const response = await fetch('http://localhost:8080/scruds/' + scrudId, {
     method: request.method,
     headers: {
       'Authorization': 'Bearer ' + token
@@ -96,7 +96,7 @@ export async function action({ params, request }) {
       }
     );
   }
-  return redirect('/e-crud');
+  return redirect('/s-crud');
 }
 
 

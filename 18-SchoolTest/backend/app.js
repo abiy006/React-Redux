@@ -35,7 +35,9 @@ const xcrudRoutes = require('./routes/xcruds');
 const ycrudRoutes = require('./routes/ycruds');
 // THIS IS THE END OF ycruds require
 
- 
+ // THIS IS THE BEGINING OF scruds require
+const scrudRoutes = require('./routes/scruds');
+// THIS IS THE END OF scruds require
 
 
 const app = express();
@@ -85,7 +87,9 @@ app.use('/ecruds', ecrudRoutes);
 // THIS IS THE END OF ecruds use
 
 
-
+// THIS IS THE BEGINING OF scruds use
+app.use('/scruds', scrudRoutes);
+// THIS IS THE END OF scruds use
 
 
 

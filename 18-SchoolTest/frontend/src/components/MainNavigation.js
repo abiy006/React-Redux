@@ -214,7 +214,7 @@ function MainNavigation() {
 { /* THIS IS THE BEGINIG OF S-CRUD NAV LINK */ }
           <li>
             <NavLink
-              to='/scrudOperation1'
+              to='/s-crudX'
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }

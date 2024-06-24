@@ -1,7 +1,7 @@
 // import { NavLink, useRouteLoaderData } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-import classes from '../CSS/ScrudNavigation.module.css';
+import classes from "../CSS/ScrudNavigation.module.css";
 
 function StudentsNavigation() {
   // const token = useRouteLoaderData('root');
@@ -12,7 +12,7 @@ function StudentsNavigation() {
         <ul className={classes.list}>
           <li>
             <NavLink
-              to="/crud1"
+              to="/s-crudX/1"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
@@ -21,26 +21,26 @@ function StudentsNavigation() {
               CRUD 1
             </NavLink>
           </li>
-            <li>
-              <NavLink
-                to="/crud2"
-                className={({ isActive }) =>
-                  isActive ? classes.active : undefined
-                }
-              >
-                CRUD 2
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/crud3"
-                className={({ isActive }) =>
-                  isActive ? classes.active : undefined
-                }
-              >
-                CRUD 3
-              </NavLink>
-            </li>
+          <li>
+            <NavLink
+              to="/s-crudX/2"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              CRUD 2
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/s-crudX/3"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              CRUD 3
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
@@ -48,9 +48,3 @@ function StudentsNavigation() {
 }
 
 export default StudentsNavigation;
-
-
-
-
-
-

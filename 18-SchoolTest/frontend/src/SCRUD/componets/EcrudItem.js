@@ -2,7 +2,7 @@ import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
 
 import classes from '../CSS/EcrudItem.module.css';
 
-function StudentItem({ ecrud }) {
+function StudentItem({ scrud }) {
   const token = useRouteLoaderData('root');
   const submit = useSubmit();
 
@@ -16,10 +16,10 @@ function StudentItem({ ecrud }) {
 
   return (
     <article className={classes.ecrud}>
-      <img src={ecrud.image} alt={ecrud.title} />
-      <h1>{ecrud.title}</h1>
-      <time>{ecrud.date}</time>
-      <p>{ecrud.description}</p>
+      <img src={scrud.image} alt={scrud.title} />
+      <h1>{scrud.title}</h1>
+      <time>{scrud.date}</time>
+      <p>{scrud.description}</p>
       {token && (
         <menu className={classes.actions}>
           <Link to="edit">Edit</Link>
