@@ -670,13 +670,13 @@ const router = createBrowserRouter([
           // },
           {
             path: "1",
-            element: <ScrudMainPage />,
-            loader: ScrudLoader,
+            element: <EcrudMainPage />,
+            loader: EcrudLoader,
           },
           {
             path: "2",
-            element: <ScrudMainPage />,
-            loader: ScrudLoader,
+            element: <XcrudMainPage />,
+            loader: XcrudLoader,
           },
           {
             path: "3",
