@@ -685,8 +685,8 @@ const router = createBrowserRouter([
           },
           {
             path: "4",
-            element: <ScrudMainPage />,
-            loader: ScrudLoader,
+            element: <DcrudMainPage />,
+            loader: DcrudLoader,
           },
         ],
       },

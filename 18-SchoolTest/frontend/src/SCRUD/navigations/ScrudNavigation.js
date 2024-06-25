@@ -41,6 +41,16 @@ function StudentsNavigation() {
               CRUD 3
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/s-crudX/4"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              CRUD 4
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
