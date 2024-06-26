@@ -28,9 +28,10 @@
 }
 
 .item img {
-  width: 15%;
-  object-fit: cover;
-  max-height: 7rem;
+  width: 12%;
+  min-width: 12%;
+  object-fit: contain;
+  max-height: 10rem;
 }
 
 .content {

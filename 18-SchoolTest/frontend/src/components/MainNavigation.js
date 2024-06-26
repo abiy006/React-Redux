@@ -70,7 +70,7 @@ function MainNavigation() {
               SchoolFirstPage
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to="/sudentregistration"
               className={({ isActive }) =>
@@ -79,8 +79,8 @@ function MainNavigation() {
             >
               StudentRegistration
             </NavLink>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <NavLink
               to="/student_crud"
               className={({ isActive }) =>
@@ -89,7 +89,7 @@ function MainNavigation() {
             >
               StudentCRUD
             </NavLink>
-          </li>
+          </li> */}
           {/* <li>
             <NavLink
               to="/z-crud"
