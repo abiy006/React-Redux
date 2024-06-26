@@ -120,5 +120,13 @@ export async function action({ request, params }) {
     throw json({ message: 'Could not save x.' }, { status: 500 });
   }
 
-  return redirect('/y-crud');
+  return redirect('/a-crud');
 }
+
+
+
+
+
+
+
+

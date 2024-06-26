@@ -45,26 +45,6 @@ import ZDetailPage, {
 } from "./ZCRUD/pages/ZDetail";
 import EditZPage from "./ZCRUD/pages/ZEdit";
 
-import ARootLayout from "./ACRUD/roots/AcrudRoot";
-import AmaincrudPage, { loader as ALoader } from "./ACRUD/pages/AcrudMain";
-import ANewCRUDPage from "./ACRUD/pages/AcrudNew";
-import { action as manipulateAAction } from "./ACRUD/componets/AcrudForm";
-import ADetailPage, {
-  loader as ADetailLoader,
-  action as deleteAAction,
-} from "./ACRUD/pages/AcrudDetail";
-import EditAPage from "./ACRUD/pages/AcrudEdit";
-
-import BcrudRootLayout from "./BCRUD/roots/BcrudRoot";
-import BcrudMainPage, { loader as BcrudLoader } from "./BCRUD/pages/BcrudMain";
-import BcrudNewPage from "./BCRUD/pages/BcrudNew";
-import { action as manipulateBcrudAction } from "./BCRUD/componets/BcrudForm";
-import BcrudDetailPage, {
-  loader as BcrudDetailLoader,
-  action as deleteBcrudAction,
-} from "./BCRUD/pages/BcrudDetail";
-import EditBcrudPage from "./BCRUD/pages/BcrudEdit";
-
 import CcrudRootLayout from "./CCRUD/roots/CcrudRoot";
 import CcrudMainPage, { loader as CcrudLoader } from "./CCRUD/pages/CcrudMain";
 import CcrudNewPage from "./CCRUD/pages/CcrudNew";
@@ -124,6 +104,18 @@ import XcrudDetailPage, {
 import EditXcrudPage from "./XCRUD/pages/XcrudEdit";
 // THIS IS THE END OF XCRUD IMPORT CODES
 
+// THIS IS THE BEGINING OF ACRUD IMPORT CODES
+import AcrudRootLayout from "./ACRUD/roots/AcrudRoot";
+import AcrudMainPage, { loader as AcrudLoader } from "./ACRUD/pages/AcrudMain";
+import AcrudNewPage from "./ACRUD/pages/AcrudNew";
+import { action as manipulateAcrudAction } from "./ACRUD/componets/AcrudForm";
+import AcrudDetailPage, {
+  loader as AcrudDetailLoader,
+  action as deleteAcrudAction,
+} from "./ACRUD/pages/AcrudDetail";
+import EditAcrudPage from "./ACRUD/pages/AcrudEdit";
+// THIS IS THE END OF ACRUD IMPORT CODES
+
 // THIS IS THE BEGINING OF YCRUD IMPORT CODES
 import YcrudRootLayout from "./YCRUD/roots/YcrudRoot";
 import YcrudMainPage, { loader as YcrudLoader } from "./YCRUD/pages/YcrudMain";
@@ -153,10 +145,10 @@ import ScrudRootLayout from "./SCRUD/roots/ScrudRoot";
 import ScrudMainPage, { loader as ScrudLoader } from "./SCRUD/pages/ScrudMain";
 // import EcrudNewPage from './ECRUD/pages/EcrudNew';
 // import { action as manipulateEcrudAction } from './ECRUD/componets/EcrudForm';
-import ScrudDetailPage, {
-  loader as ScrudDetailLoader,
-  action as deleteScrudAction,
-} from "./SCRUD/pages/ScrudDetail";
+// import ScrudDetailPage, {
+//   loader as ScrudDetailLoader,
+//   action as deleteScrudAction,
+// } from "./SCRUD/pages/ScrudDetail";
 // import EditEcrudPage from './ECRUD/pages/EcrudEdit';
 // THIS IS THE END OF SCRUD IMPORT CODES
 
@@ -295,76 +287,6 @@ const router = createBrowserRouter([
             path: "new",
             element: <ZNewCRUDPage />,
             action: manipulateZAction,
-            loader: checkAuthLoader,
-          },
-        ],
-      },
-      {
-        path: "a-crud",
-        element: <ARootLayout />,
-        children: [
-          {
-            index: true,
-            element: <AmaincrudPage />,
-            loader: ALoader,
-          },
-          {
-            path: ":acrudId",
-            id: "acrud-detail",
-            loader: ADetailLoader,
-            children: [
-              {
-                index: true,
-                element: <ADetailPage />,
-                action: deleteAAction,
-              },
-              {
-                path: "edit",
-                element: <EditAPage />,
-                action: manipulateAAction,
-                loader: checkAuthLoader,
-              },
-            ],
-          },
-          {
-            path: "new",
-            element: <ANewCRUDPage />,
-            action: manipulateAAction,
-            loader: checkAuthLoader,
-          },
-        ],
-      },
-      {
-        path: "b-crud",
-        element: <BcrudRootLayout />,
-        children: [
-          {
-            index: true,
-            element: <BcrudMainPage />,
-            loader: BcrudLoader,
-          },
-          {
-            path: ":bcrudId",
-            id: "bcrud-detail",
-            loader: BcrudDetailLoader,
-            children: [
-              {
-                index: true,
-                element: <BcrudDetailPage />,
-                action: deleteBcrudAction,
-              },
-              {
-                path: "edit",
-                element: <EditBcrudPage />,
-                action: manipulateBcrudAction,
-                loader: checkAuthLoader,
-              },
-            ],
-          },
-          {
-            path: "new",
-            element: <BcrudNewPage />,
-            action: manipulateBcrudAction,
             loader: checkAuthLoader,
           },
         ],
@@ -558,6 +480,44 @@ const router = createBrowserRouter([
       },
       // THIS IS THE END OF X-CRUD PATH
 
+      // THIS IS THE BEGINING OF A-CRUD PATH
+      {
+        path: "a-crud",
+        element: <AcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <AcrudMainPage />,
+            loader: AcrudLoader,
+          },
+          {
+            path: ":acrudId",
+            id: "acrud-detail",
+            loader: AcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <AcrudDetailPage />,
+                action: deleteAcrudAction,
+              },
+              {
+                path: "edit",
+                element: <EditAcrudPage />,
+                action: manipulateAcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: "new",
+            element: <AcrudNewPage />,
+            action: manipulateAcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+      // THIS IS THE END OF A-CRUD PATH
+
       // THIS IS THE BEGINING OF Y-CRUD PATH
       {
         path: "y-crud",
@@ -685,8 +645,8 @@ const router = createBrowserRouter([
           },
           {
             path: "4",
-            element: <DcrudMainPage />,
-            loader: DcrudLoader,
+            element: <AcrudMainPage />,
+            loader: AcrudLoader,
           },
         ],
       },
