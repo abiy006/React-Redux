@@ -116,6 +116,19 @@ import AcrudDetailPage, {
 import EditAcrudPage from "./ACRUD/pages/AcrudEdit";
 // THIS IS THE END OF ACRUD IMPORT CODES
 
+// THIS IS THE BEGINING OF BCRUD IMPORT CODES
+import BcrudRootLayout from './BCRUD/roots/BcrudRoot';
+import BcrudMainPage, { loader as BcrudLoader } from './BCRUD/pages/BcrudMain';
+import BcrudNewPage from './BCRUD/pages/BcrudNew';
+import { action as manipulateBcrudAction } from './BCRUD/componets/BcrudForm';
+import BcrudDetailPage, {
+  loader as BcrudDetailLoader,
+  action as deleteBcrudAction,
+} from './BCRUD/pages/BcrudDetail';
+import EditBcrudPage from './BCRUD/pages/BcrudEdit';
+// THIS IS THE END OF BCRUD IMPORT CODES
+
+
 // THIS IS THE BEGINING OF YCRUD IMPORT CODES
 import YcrudRootLayout from "./YCRUD/roots/YcrudRoot";
 import YcrudMainPage, { loader as YcrudLoader } from "./YCRUD/pages/YcrudMain";
@@ -518,6 +531,45 @@ const router = createBrowserRouter([
       },
       // THIS IS THE END OF A-CRUD PATH
 
+// THIS IS THE BEGINING OF B-CRUD PATH
+      {
+        path: 'b-crud',
+        element: <BcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <BcrudMainPage />,
+            loader: BcrudLoader,
+          },
+          {
+            path: ':bcrudId',
+            id: 'bcrud-detail',
+            loader: BcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <BcrudDetailPage />,
+                action: deleteBcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditBcrudPage />,
+                action: manipulateBcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <BcrudNewPage />,
+            action: manipulateBcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF B-CRUD PATH
+
+
       // THIS IS THE BEGINING OF Y-CRUD PATH
       {
         path: "y-crud",
@@ -665,3 +717,5 @@ function App() {
 }
 
 export default App;
+
+

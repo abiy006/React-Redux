@@ -30,7 +30,12 @@ const xcrudRoutes = require('./routes/xcruds');
 
 // THIS IS THE BEGINING OF acruds require
 const acrudRoutes = require('./routes/acruds');
-// THIS IS THE END OF acruds require
+// THIS IS THE END OF acruds require 
+
+// THIS IS THE BEGINING OF bcruds require
+const bcrudRoutes = require('./routes/bcruds');
+// THIS IS THE END OF bcruds require
+
  
  
 
@@ -79,7 +84,12 @@ app.use('/xcruds', xcrudRoutes);
 
 // THIS IS THE BEGINING OF acruds use
 app.use('/acruds', acrudRoutes);
-// THIS IS THE END OF acruds use
+// THIS IS THE END OF acruds use 
+
+// THIS IS THE BEGINING OF bcruds use
+app.use('/bcruds', bcrudRoutes);
+// THIS IS THE END OF bcruds use
+
  
  
 
@@ -107,6 +117,8 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
 
 
 
