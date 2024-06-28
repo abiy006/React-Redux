@@ -4,21 +4,21 @@ import {
   useNavigation,
   useActionData,
   json,
-  redirect
-} from 'react-router-dom';
+  redirect,
+} from "react-router-dom";
 
-import { getAuthToken } from '../../util/auth';
-import classes from '../CSS/AcrudForm.module.css';
+import { getAuthToken } from "../../util/auth";
+import classes from "../CSS/AcrudForm.module.css";
 
 function AcrudForm({ method, acrud }) {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
 
-  const isSubmitting = navigation.state === 'submitting';
+  const isSubmitting = navigation.state === "submitting";
 
   function cancelHandler() {
-    navigate('..');
+    navigate("..");
   }
 
   return (
@@ -37,7 +37,7 @@ function AcrudForm({ method, acrud }) {
           type="text"
           name="title"
           required
-          defaultValue={acrud ? acrud.title : ''}
+          defaultValue={acrud ? acrud.title : ""}
         />
       </p>
       <p>
@@ -47,7 +47,7 @@ function AcrudForm({ method, acrud }) {
           type="url"
           name="image"
           required
-          defaultValue={acrud ? acrud.image : ''}
+          defaultValue={acrud ? acrud.image : ""}
         />
       </p>
       <p>
@@ -57,7 +57,7 @@ function AcrudForm({ method, acrud }) {
           type="date"
           name="date"
           required
-          defaultValue={acrud ? acrud.date : ''}
+          defaultValue={acrud ? acrud.date : ""}
         />
       </p>
       <p>
@@ -67,7 +67,7 @@ function AcrudForm({ method, acrud }) {
           name="description"
           rows="5"
           required
-          defaultValue={acrud ? acrud.description : ''}
+          defaultValue={acrud ? acrud.description : ""}
         />
       </p>
       <div className={classes.actions}>
@@ -75,7 +75,7 @@ function AcrudForm({ method, acrud }) {
           Cancel
         </button>
         <button disabled={isSubmitting}>
-          {isSubmitting ? 'Submitting...' : 'Save'}
+          {isSubmitting ? "Submitting..." : "Save"}
         </button>
       </div>
     </Form>
@@ -89,25 +89,25 @@ export async function action({ request, params }) {
   const data = await request.formData();
 
   const AcrudData = {
-    title: data.get('title'),
-    image: data.get('image'),
-    date: data.get('date'),
-    description: data.get('description'),
+    title: data.get("title"),
+    image: data.get("image"),
+    date: data.get("date"),
+    description: data.get("description"),
   };
 
-  let url = 'http://localhost:8080/acruds';
+  let url = "http://localhost:8080/acruds";
 
-  if (method === 'PATCH') {
-    const acrudId = params.acrudId;// link to App.js file
-    url = 'http://localhost:8080/acruds/' + acrudId;
+  if (method === "PATCH") {
+    const acrudId = params.acrudId; // link to App.js file
+    url = "http://localhost:8080/acruds/" + acrudId;
   }
 
   const token = getAuthToken();
   const response = await fetch(url, {
     method: method,
     headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + token
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
     },
     body: JSON.stringify(AcrudData),
   });
@@ -117,16 +117,8 @@ export async function action({ request, params }) {
   }
 
   if (!response.ok) {
-    throw json({ message: 'Could not save x.' }, { status: 500 });
+    throw json({ message: "Could not save x." }, { status: 500 });
   }
 
-  return redirect('/a-crud');
+  return redirect("/a-crud");
 }
-
-
-
-
-
-
-
-

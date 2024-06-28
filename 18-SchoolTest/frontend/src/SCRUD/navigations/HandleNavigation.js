@@ -1,47 +1,84 @@
-import * as React from 'react';
+import * as React from "react";
 
-const HandleNavigation = ({testxyz}) => {
+import { NavLink } from "react-router-dom";
 
-//  const options = [
-//    { label: 'Fruit', value: 'fruit' },
-//    { label: 'Vegetable', value: 'vegetable' },
-//    { label: 'Meat', value: 'meat' },
-//  ];
+import classes from "../CSS/ScrudNavigation.module.css";
 
- const [value, setValue] = React.useState();
+const HandleNavigation = () => {
+  const options = [
+    { label: "Fruit", value: "fruit" },
+    { label: "Vegetable", value: "vegetable" },
+    { label: "Meat", value: "meat" },
+  ];
 
- const handleChange = (event) => {
+  const [value, setValue] = React.useState();
 
-   setValue(event.target.value);
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
- };
+  return (
+    <div>
+      <label>
+        What do we eat?
+        <select value={value} onChange={handleChange}>
+          {options.map((option) => (
+            <>
+              {/* <option value={option.value} key={option.value}>
+                {option.label}
+              </option> */}
 
- return (
+              <option className={classes.list}>
+                <li>
+                  <NavLink
+                    to="/s-crudX/1"
+                    className={({ isActive }) =>
+                      isActive ? classes.active : undefined
+                    }
+                    end
+                  >
+                    CRUD 1
+                  </NavLink>
+                </li>
+                {/* <li>
+                  <NavLink
+                    to="/s-crudX/2"
+                    className={({ isActive }) =>
+                      isActive ? classes.active : undefined
+                    }
+                  >
+                    CRUD 2
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/s-crudX/3"
+                    className={({ isActive }) =>
+                      isActive ? classes.active : undefined
+                    }
+                  >
+                    CRUD 3
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/s-crudX/4"
+                    className={({ isActive }) =>
+                      isActive ? classes.active : undefined
+                    }
+                  >
+                    CRUD 4
+                  </NavLink>
+                </li> */}
+              </option>
+            </>
+          ))}
+        </select>
+      </label>
 
-   <div>
-
-     <label>
-
-       What do we eat?
-
-       <select value={value} onChange={handleChange}>
-
-         {testxyz.map((option) => (
-
-           <option value={option.value}>{option.label}</option>
-
-         ))}
-
-       </select>
-
-     </label>
-
-     <p>We eat {value}!</p>
-
-   </div>
-
- );
-
+      <p>We eat {value}!</p>
+    </div>
+  );
 };
 
 export default HandleNavigation;

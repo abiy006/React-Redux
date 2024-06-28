@@ -20,6 +20,7 @@ function StudentItem({ bcrud }) {
       <h1>{bcrud.title}</h1>
       <time>{bcrud.date}</time>
       <p>{bcrud.description}</p>
+      <p>{bcrud.number}</p>
       {token && (
         <menu className={classes.actions}>
           <Link to="edit">Edit</Link>
