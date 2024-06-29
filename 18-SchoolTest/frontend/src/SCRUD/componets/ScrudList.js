@@ -7,7 +7,11 @@ function StudentsList({scruds}) {
 
   return (
     <div className={classes.scruds}>
-      <h1>All Students</h1>
+      
+      <div>
+        {/* <h1>School Name</h1> */}
+        <h1>Event Name</h1>
+      </div>
       <ul className={classes.list}>
         {scruds.map((scrud) => (
           // <li key={scrud.id} className={classes.item}>

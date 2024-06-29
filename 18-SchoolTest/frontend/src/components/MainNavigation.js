@@ -225,7 +225,7 @@ function MainNavigation() {
                 isActive ? classes.active : undefined
               }
             >
-              ADMINISTRATION
+              SDashboard
             </NavLink>
           </li>
 { /* THIS IS THE END OF E-CRUD NAV LINK */ }

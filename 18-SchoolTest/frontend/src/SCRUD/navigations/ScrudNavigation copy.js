@@ -1,4 +1,4 @@
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import classes from "../CSS/ScrudNavigation.module.css";
 
@@ -12,7 +12,7 @@ function StudentsNavigation() {
       
       <nav>
       {/* <HandleNavigation /> */}
-        {/* <ul className={classes.list}>
+        <ul className={classes.list}>
           <li>
             <NavLink
               to="/s-crudX/1"
@@ -95,9 +95,7 @@ function StudentsNavigation() {
               CRUD 8
             </NavLink>
           </li>
-        </ul> */}
-        {/* <h1>Student Dashboard</h1> */}
-        {/* <h1>Event Dashboard</h1> */}
+        </ul>
       </nav>
     </header>
   );

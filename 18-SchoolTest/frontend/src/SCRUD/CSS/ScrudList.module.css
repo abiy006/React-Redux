@@ -19,6 +19,7 @@
 .item {
   margin: auto;
   width: 25%;
+  height: 9rem;
 }
 
 .item a {
@@ -29,6 +30,7 @@
   /* background-color:brown; */
   border-radius: 4px;
   overflow: hidden;
+  height: 100%;
 }
 
 .item a:hover {
@@ -40,7 +42,7 @@
   width: 35%;
   /* object-fit: cover; */
   /* object-fit: contain; */
-  height: 10rem;
+  height: 100%;
   object-fit: fill;
 }
 
