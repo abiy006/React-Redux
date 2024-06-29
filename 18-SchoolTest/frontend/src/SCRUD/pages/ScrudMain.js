@@ -7,12 +7,22 @@ function StudentCRUD() {
   // const token = true;
 
 const { scruds } = useLoaderData();
+// const { resData } = useLoaderData();
+
 return (
-  <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
+  <>
+  {/* <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading1...</p>}>
     <Await resolve={scruds}>
       {(loadedEvents) => <ScrudList scruds={loadedEvents} />}
     </Await>
-  </Suspense>
+  </Suspense> */}
+
+<Suspense fallback={<p style={{ textAlign: 'center' }}>Loading2...</p>}>
+<Await resolve={scruds}>
+  {(loadedEvents) => <ScrudList scruds={loadedEvents} />}
+</Await>
+</Suspense>
+  </>
 );
 
 }
@@ -31,13 +41,32 @@ if (!response.ok) {
   );
 } else {
   const resData = await response.json();
-  return resData.scruds;
+  // return resData.scruds;
+  return resData;
 }
 }
+
+
+// async function loadEvents2() {
+//   const response = await fetch('http://localhost:8080/scruds');
+  
+//   if (!response.ok) {
+//     throw json(
+//       { message: 'Could not fetch scruds.' },
+//       {
+//         status: 500,
+//       }
+//     );
+//   } else {
+//     const resData = await response.json();
+//     return resData;
+//   }
+//   }
 
 export function loader() {
 return defer({
   scruds: loadEvents(),
+  // resData: loadEvents(),
 });
 }
 

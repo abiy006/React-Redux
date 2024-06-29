@@ -3,12 +3,20 @@ const { v4: generateId } = require('uuid');
 const { NotFoundError } = require('../util/errors');
 const { readData, writeData } = require('./util_scrud');
 
+// async function getAll() {
+//   const storedData = await readData();
+//   if (!storedData.scruds) {
+//     throw new NotFoundError('Could not find any events.');
+//   }
+//   return storedData.scruds;
+// }
+
 async function getAll() {
   const storedData = await readData();
-  if (!storedData.scruds) {
+  if (!storedData) {
     throw new NotFoundError('Could not find any events.');
   }
-  return storedData.scruds;
+  return storedData;
 }
 
 async function get(id) {
