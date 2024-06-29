@@ -1,5 +1,5 @@
-// import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 import classes from "../CSS/BcrudList.module.css";
 
@@ -10,7 +10,7 @@ function StudentsList({ bcruds }) {
       <ul className={classes.list}>
         {bcruds.map((bcrud) => (
           <>
-            {/* <li key={bcrud.id} className={classes.item}>
+            <li key={bcrud.id} className={classes.item}>
               <Link to={`/b-crud/${bcrud.id}`}>
                 <img src={bcrud.image} alt={bcrud.title} />
                 <div className={classes.content}>
@@ -19,13 +19,13 @@ function StudentsList({ bcruds }) {
                   <p>{bcrud.number}</p>
                 </div>
               </Link>
-            </li> */}
-            <li className={classes.item}>
+            </li>
+            {/* <li className={classes.item}>
               <NavLink
                 to={`/s-crudX/${bcrud.number}`}
-                // className={({ isActive }) =>
-                //   isActive ? classes.active : undefined
-                // }
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
               >
                                 <img src={bcrud.image} alt={bcrud.title} />
                 <div className={classes.content}>
@@ -33,9 +33,8 @@ function StudentsList({ bcruds }) {
                   <time>{bcrud.date}</time>
                   <p>{bcrud.number}</p>
                 </div>
-                {/* {`CRUD ${bcrud.number}`} */}
               </NavLink>
-            </li>
+            </li> */}
           </>
         ))}
       </ul>

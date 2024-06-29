@@ -653,8 +653,8 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <BcrudMainPage />,
-            loader: BcrudLoader,
+            element: <ScrudMainPage />,
+            loader: ScrudLoader,
           },
           // {
           //   path: ":scrudId",
@@ -692,8 +692,8 @@ const router = createBrowserRouter([
           },
           {
             path: "3",
-            element: <ScrudMainPage />,
-            loader: ScrudLoader,
+            element: <BcrudMainPage />,
+            loader: BcrudLoader,
           },
           {
             path: "4",
@@ -712,8 +712,8 @@ const router = createBrowserRouter([
           },
           {
             path: "7",
-            element: <ScrudMainPage />,
-            loader: ScrudLoader,
+            element: <BcrudMainPage />,
+            loader: BcrudLoader,
           },
           {
             path: "8",
