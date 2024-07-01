@@ -7,17 +7,11 @@ function StudentCRUD() {
   // const token = true;
 
 const { scruds } = useLoaderData();
-// const { resData } = useLoaderData();
 
 return (
   <>
-  {/* <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading1...</p>}>
-    <Await resolve={scruds}>
-      {(loadedEvents) => <ScrudList scruds={loadedEvents} />}
-    </Await>
-  </Suspense> */}
 
-<Suspense fallback={<p style={{ textAlign: 'center' }}>Loading2...</p>}>
+<Suspense fallback={<p style={{ textAlign: 'center' }}>Loading1...</p>}>
 <Await resolve={scruds}>
   {(loadedEvents) => <ScrudList scruds={loadedEvents} />}
 </Await>
@@ -41,8 +35,8 @@ if (!response.ok) {
   );
 } else {
   const resData = await response.json();
-  // return resData.scruds;
-  return resData;
+  return resData.scruds;
+  // return resData;
 }
 }
 

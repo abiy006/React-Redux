@@ -1,28 +1,26 @@
 // import { Link } from 'react-router-dom';
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 import classes from "../CSS/ScrudList.module.css";
 
-import HandleNavigation from '../navigations/HandleNavigation';
+import StudDashPartA from '../navigations/StudDashPartA';
+import StudDashPartB from '../navigations/StudDashPartB';
 
-// function StudentsList({ resData }) {
   function StudentsList({ scruds }) {
 
   return (
 
-    // console.log("scruds.studs | " + scruds.studs)
-    // console.log("scruds | " + scruds.scruds.studs)
-    // console.log("scruds | " + scruds.scruds.scruds)
-
-    // <div className={classes.scruds}>
     <div className={classes.scruds}>
       <div>
         <h1>Event Settings</h1>
       </div>
-      <HandleNavigation studs={scruds.scruds.studs} />
-      <ul className={classes.list}>
-        {/* {scruds.map((scrud) => ( */}
-        {scruds.scruds.scruds.map((scrud) => (
+      
+      <StudDashPartA studs={scruds.studs} />
+
+      <StudDashPartB scruds={scruds.scruds} />
+
+      {/* <ul className={classes.list}>
+        {scruds.scruds.map((scrud) => (
           // <li key={scrud.id} className={classes.item}>
           //   <Link to={`/s-crudX/${scrud.id}`}>
           //     <img src={scrud.image} alt={scrud.title} />
@@ -43,7 +41,9 @@ import HandleNavigation from '../navigations/HandleNavigation';
             </NavLink>
           </li>
         ))}
-      </ul>
+      </ul> */}
+
+
     </div>
   );
 }
