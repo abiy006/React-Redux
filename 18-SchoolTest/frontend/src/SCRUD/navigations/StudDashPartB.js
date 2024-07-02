@@ -13,7 +13,7 @@ const StudDashPartB = ({ scruds }) => {
           <NavLink to={`/s-crudX/${scrud.number}`}>
             <img src={scrud.image} alt={scrud.title} />
             <div className={classes.content}>
-              <h2>{scrud.title}</h2>
+              <p>{scrud.title}</p>
               <time>{scrud.date}</time>
               <p>{scrud.number}</p>
             </div>

@@ -3,7 +3,7 @@
 
 import classes from "../CSS/TcrudList.module.css";
 
-import StudDashPartA from '../navigations/StudDashPartA';
+// import StudDashPartA from '../navigations/StudDashPartA';
 import StudDashPartB from '../navigations/StudDashPartB';
 
   function StudentsList({ tcruds }) {
@@ -15,7 +15,7 @@ import StudDashPartB from '../navigations/StudDashPartB';
         <h1>Event Dashboard</h1>
       </div>
       
-      <StudDashPartA studs={tcruds.studs} />
+      {/* <StudDashPartA studs={tcruds.studs} /> */}
 
       <StudDashPartB tcruds={tcruds.tcruds} />
 

@@ -114,7 +114,7 @@ function MainNavigation() {
 {/* THIS IS THE ENDDDD OF C-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF A-CRUD NAV LINK */ }
-          <li>
+          {/* <li>
             <NavLink
               to='/a-crud'
               className={({ isActive }) =>
@@ -123,11 +123,11 @@ function MainNavigation() {
             >
               A-CRUD
             </NavLink>
-          </li>
+          </li> */}
 { /* THIS IS THE END OF A-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF B-CRUD NAV LINK */ }
-          <li>
+          {/* <li>
             <NavLink
               to='/b-crud'
               className={({ isActive }) =>
@@ -136,11 +136,11 @@ function MainNavigation() {
             >
               B-CRUD
             </NavLink>
-          </li>
+          </li> */}
 { /* THIS IS THE END OF B-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF D-CRUD NAV LINK */ }
-          <li>
+          {/* <li>
             <NavLink
               to='/d-crud'
               className={({ isActive }) =>
@@ -149,11 +149,11 @@ function MainNavigation() {
             >
               D-CRUD
             </NavLink>
-          </li>
+          </li> */}
 { /* THIS IS THE END OF D-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF F-CRUD NAV LINK */ }
-          <li>
+          {/* <li>
             <NavLink
               to='/f-crud'
               className={({ isActive }) =>
@@ -162,11 +162,11 @@ function MainNavigation() {
             >
               F-CRUD
             </NavLink>
-          </li>
+          </li> */}
 { /* THIS IS THE END OF F-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF G-CRUD NAV LINK */ }
-          <li>
+          {/* <li>
             <NavLink
               to='/g-crud'
               className={({ isActive }) =>
@@ -175,11 +175,11 @@ function MainNavigation() {
             >
               G-CRUD
             </NavLink>
-          </li>
+          </li> */}
 { /* THIS IS THE END OF G-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF X-CRUD NAV LINK */ }
-          <li>
+          {/* <li>
             <NavLink
               to='/x-crud'
               className={({ isActive }) =>
@@ -188,11 +188,11 @@ function MainNavigation() {
             >
               X-CRUD
             </NavLink>
-          </li>
+          </li> */}
 { /* THIS IS THE END OF X-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF Y-CRUD NAV LINK */ }
-          <li>
+          {/* <li>
             <NavLink
               to='/y-crud'
               className={({ isActive }) =>
@@ -201,11 +201,11 @@ function MainNavigation() {
             >
               Y-CRUD
             </NavLink>
-          </li>
+          </li> */}
 { /* THIS IS THE END OF Y-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF E-CRUD NAV LINK */ }
-          <li>
+          {/* <li>
             <NavLink
               to='/e-crud'
               className={({ isActive }) =>
@@ -214,7 +214,7 @@ function MainNavigation() {
             >
               E-CRUD
             </NavLink>
-          </li>
+          </li> */}
 { /* THIS IS THE END OF E-CRUD NAV LINK */ }
 
 { /* THIS IS THE BEGINIG OF S-CRUD NAV LINK */ }
