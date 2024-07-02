@@ -36,8 +36,6 @@ const acrudRoutes = require('./routes/acruds');
 const bcrudRoutes = require('./routes/bcruds');
 // THIS IS THE END OF bcruds require
 
- 
- 
 
 // THIS IS THE BEGINING OF ycruds require
 const ycrudRoutes = require('./routes/ycruds');
@@ -45,7 +43,12 @@ const ycrudRoutes = require('./routes/ycruds');
 
  // THIS IS THE BEGINING OF scruds require
 const scrudRoutes = require('./routes/scruds');
-// THIS IS THE END OF scruds require
+// THIS IS THE END OF scruds require 
+
+// THIS IS THE BEGINING OF tcruds require
+const tcrudRoutes = require('./routes/tcruds');
+// THIS IS THE END OF tcruds require
+ 
 
 
 const app = express();
@@ -106,8 +109,12 @@ app.use('/ecruds', ecrudRoutes);
 
 // THIS IS THE BEGINING OF scruds use
 app.use('/scruds', scrudRoutes);
-// THIS IS THE END OF scruds use
+// THIS IS THE END OF scruds use 
 
+// THIS IS THE BEGINING OF tcruds use
+app.use('/tcruds', tcrudRoutes);
+// THIS IS THE END OF tcruds use
+ 
 
 
 app.use((error, req, res, next) => {
@@ -117,31 +124,6 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

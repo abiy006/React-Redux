@@ -1,10 +1,10 @@
-.ecrud {
+.tcrud {
   max-width: 50rem;
   margin: 2rem auto;
   text-align: center;
 }
 
-.ecrud img {
+.tcrud img {
   width: 30rem;
   border-radius: 4px;
 }

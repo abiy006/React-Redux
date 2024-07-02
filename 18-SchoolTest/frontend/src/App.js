@@ -165,6 +165,19 @@ import ScrudMainPage, { loader as ScrudLoader } from "./SCRUD/pages/ScrudMain";
 // import EditEcrudPage from './ECRUD/pages/EcrudEdit';
 // THIS IS THE END OF SCRUD IMPORT CODES
 
+// THIS IS THE BEGINING OF TCRUD IMPORT CODES
+import TcrudRootLayout from './TCRUD/roots/TcrudRoot';
+import TcrudMainPage, { loader as TcrudLoader } from './TCRUD/pages/TcrudMain';
+import TcrudNewPage from './TCRUD/pages/TcrudNew';
+import { action as manipulateTcrudAction } from './TCRUD/componets/TcrudForm';
+import TcrudDetailPage, {
+  loader as TcrudDetailLoader,
+  action as deleteTcrudAction,
+} from './TCRUD/pages/TcrudDetail';
+import EditTcrudPage from './TCRUD/pages/TcrudEdit';
+// THIS IS THE END OF TCRUD IMPORT CODES
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -728,6 +741,45 @@ const router = createBrowserRouter([
       //   loader: ScrudLoader,
       // },
       // THIS IS THE END OF S-CRUD PATH
+
+// THIS IS THE BEGINING OF T-CRUD PATH
+      {
+        path: 't-crudX',
+        element: <TcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <TcrudMainPage />,
+            loader: TcrudLoader,
+          },
+          {
+            path: ':tcrudId',
+            id: 'tcrud-detail',
+            loader: TcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <TcrudDetailPage />,
+                action: deleteTcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditTcrudPage />,
+                action: manipulateTcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <TcrudNewPage />,
+            action: manipulateTcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF T-CRUD PATH
+
     ],
   },
 ]);
@@ -737,5 +789,7 @@ function App() {
 }
 
 export default App;
+
+
 
 

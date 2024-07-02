@@ -225,10 +225,23 @@ function MainNavigation() {
                 isActive ? classes.active : undefined
               }
             >
-              SDashboard
+              S-CRUD
             </NavLink>
           </li>
-{ /* THIS IS THE END OF E-CRUD NAV LINK */ }
+{ /* THIS IS THE END OF S-CRUD NAV LINK */ }
+
+{ /* THIS IS THE BEGINIG OF T-CRUD NAV LINK */ }
+          <li>
+            <NavLink
+              to='/t-crudX'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              T-CRUD
+            </NavLink>
+          </li>
+{ /* THIS IS THE END OF T-CRUD NAV LINK */ }
         </ul>
       </nav>
       {/* <NewsletterSignup /> */}
@@ -237,6 +250,10 @@ function MainNavigation() {
 }
 
 export default MainNavigation;
+
+
+
+
 
 
 

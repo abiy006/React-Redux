@@ -1,15 +1,17 @@
-.scruds {
+.tcruds {
   margin: 2rem auto;
+  /* max-width: 40rem; */
   background-color: darkcyan;
   padding-bottom: 1rem;
 }
 
-.scruds h1 {
+.tcruds h1 {
   padding: 1rem;
 }
 
 .list {
   display: flex;
+  /* flex-direction: column; */
   gap: 2rem;
   flex-wrap: wrap;
 }
@@ -17,18 +19,18 @@
 .item {
   margin: auto;
   width: 25%;
-  height: 5rem;
+  height: 9rem;
 }
 
 .item a {
   text-decoration: none;
   color: inherit;
   display: flex;
-  /* background-color: var(--color-gray-800); */
+  background-color: var(--color-gray-800);
+  /* background-color:brown; */
   border-radius: 4px;
   overflow: hidden;
   height: 100%;
-  /* border-radius: 1rem; */
 }
 
 .item a:hover {
@@ -38,20 +40,16 @@
 
 .item img {
   width: 35%;
+  /* object-fit: cover; */
+  /* object-fit: contain; */
   height: 100%;
   object-fit: fill;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  padding: 1rem;
 }
 
-.content h2,p, time {
-  margin: 0;
-}
-
-ul {
-  background-color: rgb(22, 22, 22);
+.item h2 {
+  margin: 0 0 1rem 0;
 }

@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom';
 
 import { getAuthToken } from '../../util/auth';
-import classes from '../CSS/EcrudForm.module.css';
+import classes from '../CSS/ScrudForm.module.css';
 
-function EcrudForm({ method, ecrud }) {
+function ScrudForm({ method, scrud }) {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
@@ -37,7 +37,7 @@ function EcrudForm({ method, ecrud }) {
           type="text"
           name="title"
           required
-          defaultValue={ecrud ? ecrud.title : ''}
+          defaultValue={scrud ? scrud.title : ''}
         />
       </p>
       <p>
@@ -47,7 +47,7 @@ function EcrudForm({ method, ecrud }) {
           type="url"
           name="image"
           required
-          defaultValue={ecrud ? ecrud.image : ''}
+          defaultValue={scrud ? scrud.image : ''}
         />
       </p>
       <p>
@@ -57,7 +57,7 @@ function EcrudForm({ method, ecrud }) {
           type="date"
           name="date"
           required
-          defaultValue={ecrud ? ecrud.date : ''}
+          defaultValue={scrud ? scrud.date : ''}
         />
       </p>
       <p>
@@ -67,7 +67,7 @@ function EcrudForm({ method, ecrud }) {
           name="description"
           rows="5"
           required
-          defaultValue={ecrud ? ecrud.description : ''}
+          defaultValue={scrud ? scrud.description : ''}
         />
       </p>
       <div className={classes.actions}>
@@ -82,24 +82,24 @@ function EcrudForm({ method, ecrud }) {
   );
 }
 
-export default EcrudForm;
+export default ScrudForm;
 
 export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
 
-  const EcrudData = {
+  const ScrudData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
     description: data.get('description'),
   };
 
-  let url = 'http://localhost:8080/ecruds';
+  let url = 'http://localhost:8080/scruds';
 
   if (method === 'PATCH') {
-    const ecrudId = params.ecrudId;// link to App.js file
-    url = 'http://localhost:8080/ecruds/' + ecrudId;
+    const scrudId = params.scrudId;// link to App.js file
+    url = 'http://localhost:8080/scruds/' + scrudId;
   }
 
   const token = getAuthToken();
@@ -109,7 +109,7 @@ export async function action({ request, params }) {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify(EcrudData),
+    body: JSON.stringify(ScrudData),
   });
 
   if (response.status === 422) {
