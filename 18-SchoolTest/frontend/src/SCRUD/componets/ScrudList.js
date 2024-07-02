@@ -12,7 +12,7 @@ import StudDashPartB from '../navigations/StudDashPartB';
 
     <div className={classes.scruds}>
       <div>
-        <h1>Event Settings</h1>
+        <h1>Event Dashboard</h1>
       </div>
       
       <StudDashPartA studs={scruds.studs} />

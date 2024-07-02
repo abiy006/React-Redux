@@ -2,13 +2,14 @@ import * as React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import classes from "../CSS/ScrudList.module.css";
+import classes from "../CSS/StudDashPartB.module.css";
 
 const StudDashPartB = ({ scruds }) => {
   return (
     <ul className={classes.list}>
-      {scruds.map((scrud) => (
-        <li key={scrud.id} className={classes.item}>
+      <h2>Student settings</h2>
+      {scruds.map((scrud, index) => (
+        <li key={scrud.id} className={classes.item} style={index % 2 === 0 ? {backgroundColor: 'gray'} : {backgroundColor: '#31302e'}}>
           <NavLink to={`/s-crudX/${scrud.number}`}>
             <img src={scrud.image} alt={scrud.title} />
             <div className={classes.content}>
