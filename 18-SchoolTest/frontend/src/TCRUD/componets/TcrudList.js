@@ -9,7 +9,6 @@ import StudDashPartB from '../navigations/StudDashPartB';
   function StudentsList({ tcruds }) {
 
   return (
-
     <div className={classes.tcruds}>
       <div>
         <h1>Event Dashboard</h1>
@@ -42,8 +41,6 @@ import StudDashPartB from '../navigations/StudDashPartB';
           </li>
         ))}
       </ul> */}
-
-
     </div>
   );
 }
