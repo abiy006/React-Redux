@@ -16,8 +16,8 @@
 
 .item {
   margin: auto;
-  width: 35%;
-  height: 5rem;
+  width: 45%;
+  height: 10rem;
   background-color: transparent;
 }
 
@@ -29,20 +29,20 @@
   border-radius: 4px;
   overflow: hidden;
   height: 100%;
-  /* border-radius: 1rem; */
+  align-items: center;
 }
 
 .item a:hover {
   /* transform: scale(1.02); */
   transform: scale(1.1);
-  background-color: var(--color-gray-700);
+  background-color: var(--color-gray-900);
 }
 
 .item img {
   width: 18%;
-  height: 100%;
-  object-fit: fill;
-  border-radius: 10rem;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 20rem;
 }
 
 .content {
@@ -50,6 +50,8 @@
   flex-direction: column;
   margin-left: 0.5rem;
   padding: 0.5rem;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .content h2,p, time {
