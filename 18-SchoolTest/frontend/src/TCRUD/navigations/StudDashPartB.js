@@ -9,11 +9,11 @@ const StudDashPartB = ({ tcruds }) => {
     <ul className={classes.list}>
       <h2>Student settings</h2>
       {tcruds.map((tcrud, index) => (
-        <li key={tcrud.id} className={classes.item} style={index % 2 === 0 ? {backgroundColor: 'gray'} : {backgroundColor: '#31302e'}}>
+        <li key={tcrud.id} className={classes.item}>
           <NavLink to={`/s-crudX/${tcrud.number}`}>
             <img src={tcrud.image} alt={tcrud.title} />
-            <div className={classes.content}>
-              <h2>{tcrud.title}</h2>
+            <div className={classes.content} style={index % 2 === 0 ? {backgroundColor: "#1f1d1b"} : {backgroundColor: '#1f1d1b'}}>
+              <p>{tcrud.title}</p>
               <time>{tcrud.date}</time>
               <p>{tcrud.number}</p>
             </div>

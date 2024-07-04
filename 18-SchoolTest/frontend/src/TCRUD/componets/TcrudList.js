@@ -11,7 +11,7 @@ import StudDashPartB from '../navigations/StudDashPartB';
   return (
     <div className={classes.tcruds}>
       <div>
-        <h1>Event Dashboard</h1>
+        <h1>Administration</h1>
       </div>
       
       {/* <StudDashPartA studs={tcruds.studs} /> */}
