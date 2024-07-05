@@ -1,15 +1,15 @@
 {
   "tcruds": [
     {
-      "title": "Details",
+      "title": "Student Detail",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2024-06-10",
+      "date": "The complete collection of the student's detailed information and records.",
       "description": "Sample student data",
       "number": "7",
       "id": "3f32e696-d839-4bb3-bcd6-ba812d9e1f10"
     },
     {
-      "title": "Subjects",
+      "title": "Student Subjects",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
       "date": "2024-06-18",
       "description": "The butterfly",
@@ -17,7 +17,7 @@
       "id": "18ee7410-2e48-4e3d-bd2d-1fdd1d9a6b7d"
     },
     {
-      "title": "Attendance",
+      "title": "Student Attendance",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
       "date": "2024-06-13",
       "description": "sfgfdgfd",
@@ -25,40 +25,31 @@
       "id": "9254befd-9568-4b0c-9c9d-ec15abad6252"
     },
     {
-      "title": "Parents",
+      "title": "Student Parent",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
       "date": "2024-06-28",
       "description": "vzbfdgv",
       "number": "3",
       "id": "cbe89473-bb1e-4893-9f69-d6e63050329c"
-    },
+    },    
     {
-      "title": "Activities",
+      "title": "Student Timetable",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2024-06-27",
-      "description": "sadad",
-      "number": "4",
-      "id": "9b2e6a0c-cf51-4096-ba85-6583810d05fa"
-    },
-    {
-      "title": "Messages",
-      "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2024-07-06",
-      "description": "jfjfh",
+      "date": "2022-10-01",
+      "description": "Some awesome student!",
       "number": "5",
-      "id": "bd954c7b-a0f4-489f-9bb4-9efe3032d959"
+      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
     },
     {
-      "title": "Exams",
+      "title": "Student Exams",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
       "date": "2024-06-11",
       "description": "sdfdsfdsfsdfdsfdsfsdfsfdsfd",
       "number": "6",
       "id": "a3e47fd2-4761-47ce-8ef8-1e9dad1c6048"
     },
-
     {
-      "title": "Homeworks",
+      "title": "Student Homeworks",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
       "date": "2024-05-23",
       "description": "sdfdsfdf",
@@ -66,21 +57,30 @@
       "id": "34762af6-6f3c-4e93-89b5-654c400348d0"
     },
     {
-      "title": "Payments",
+      "title": "Student Payments",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
       "date": "2024-05-16",
       "description": "sldhfkjhdsfk",
-      "number": "9",
+      "number": "4",
       "id": "8b9f6bb7-ebf6-4758-a6a6-0c142ff0110b"
     },
     {
-      "title": "Timetable",
+      "title": "Noooooooo Activities",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2022-10-01",
-      "description": "Some awesome student!",
+      "date": "2024-06-27",
+      "description": "sadad",
+      "number": "9",
+      "id": "9b2e6a0c-cf51-4096-ba85-6583810d05fa"
+    },
+    {
+      "title": "Noooooooo Messages",
+      "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
+      "date": "2024-07-06",
+      "description": "jfjfh",
       "number": "10",
-      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
+      "id": "bd954c7b-a0f4-489f-9bb4-9efe3032d959"
     }
+
   ],
   "users": [
     {
