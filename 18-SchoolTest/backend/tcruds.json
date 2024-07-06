@@ -3,7 +3,7 @@
     {
       "title": "Student Detail",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "The complete collection of the student's detailed information and records.",
+      "date": "These section contains the full, comprehensive collection of student detaile, personal information, academic documentation, and any other relevant files and records maintained for individual student.",
       "description": "Sample student data",
       "number": "7",
       "id": "3f32e696-d839-4bb3-bcd6-ba812d9e1f10"
@@ -11,7 +11,7 @@
     {
       "title": "Student Subjects",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2024-06-18",
+      "date": "The academic courses or subjects that the student is enrolled in and studying at the present time.",
       "description": "The butterfly",
       "number": "1",
       "id": "18ee7410-2e48-4e3d-bd2d-1fdd1d9a6b7d"
@@ -19,7 +19,7 @@
     {
       "title": "Student Attendance",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2024-06-13",
+      "date": "The student attendance report, which records and monitors the daily presence, tardiness, and absences of a student",
       "description": "sfgfdgfd",
       "number": "2",
       "id": "9254befd-9568-4b0c-9c9d-ec15abad6252"
@@ -27,7 +27,7 @@
     {
       "title": "Student Parent",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2024-06-28",
+      "date": "These individuals are the parents, guardians, or other adult caregivers who are legally responsible for the students and their wellbeing.",
       "description": "vzbfdgv",
       "number": "3",
       "id": "cbe89473-bb1e-4893-9f69-d6e63050329c"
@@ -35,7 +35,7 @@
     {
       "title": "Student Timetable",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2022-10-01",
+      "date": "These are the detailed timetables and class schedules that specify the daily and weekly educational activities and requirements for each individual student",
       "description": "Some awesome student!",
       "number": "5",
       "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
@@ -43,7 +43,7 @@
     {
       "title": "Student Exams",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2024-06-11",
+      "date": "This section contains the exams, tests, and other assessment materials that evaluate the academic performance and progress of individual students.",
       "description": "sdfdsfdsfsdfdsfdsfsdfsfdsfd",
       "number": "6",
       "id": "a3e47fd2-4761-47ce-8ef8-1e9dad1c6048"
@@ -51,7 +51,7 @@
     {
       "title": "Student Homeworks",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2024-05-23",
+      "date": "This section includes the exams or assessment materials for a student.",
       "description": "sdfdsfdf",
       "number": "8",
       "id": "34762af6-6f3c-4e93-89b5-654c400348d0"
@@ -59,7 +59,7 @@
     {
       "title": "Student Payments",
       "image": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
-      "date": "2024-05-16",
+      "date": "This section presents the payment reports or financial documentation detailing the payments made by the student",
       "description": "sldhfkjhdsfk",
       "number": "4",
       "id": "8b9f6bb7-ebf6-4758-a6a6-0c142ff0110b"
