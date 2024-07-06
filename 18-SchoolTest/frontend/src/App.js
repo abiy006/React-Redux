@@ -117,17 +117,16 @@ import EditAcrudPage from "./ACRUD/pages/AcrudEdit";
 // THIS IS THE END OF ACRUD IMPORT CODES
 
 // THIS IS THE BEGINING OF BCRUD IMPORT CODES
-import BcrudRootLayout from './BCRUD/roots/BcrudRoot';
-import BcrudMainPage, { loader as BcrudLoader } from './BCRUD/pages/BcrudMain';
-import BcrudNewPage from './BCRUD/pages/BcrudNew';
-import { action as manipulateBcrudAction } from './BCRUD/componets/BcrudForm';
+import BcrudRootLayout from "./BCRUD/roots/BcrudRoot";
+import BcrudMainPage, { loader as BcrudLoader } from "./BCRUD/pages/BcrudMain";
+import BcrudNewPage from "./BCRUD/pages/BcrudNew";
+import { action as manipulateBcrudAction } from "./BCRUD/componets/BcrudForm";
 import BcrudDetailPage, {
   loader as BcrudDetailLoader,
   action as deleteBcrudAction,
-} from './BCRUD/pages/BcrudDetail';
-import EditBcrudPage from './BCRUD/pages/BcrudEdit';
+} from "./BCRUD/pages/BcrudDetail";
+import EditBcrudPage from "./BCRUD/pages/BcrudEdit";
 // THIS IS THE END OF BCRUD IMPORT CODES
-
 
 // THIS IS THE BEGINING OF YCRUD IMPORT CODES
 import YcrudRootLayout from "./YCRUD/roots/YcrudRoot";
@@ -166,30 +165,31 @@ import ScrudMainPage, { loader as ScrudLoader } from "./SCRUD/pages/ScrudMain";
 // THIS IS THE END OF SCRUD IMPORT CODES
 
 // THIS IS THE BEGINING OF UCRUD IMPORT CODES
-import UcrudRootLayout from './UCRUD/roots/UcrudRoot';
-import UcrudMainPage, { loader as UcrudLoader } from './UCRUD/pages/UcrudMain';
-import UcrudNewPage from './UCRUD/pages/UcrudNew';
-import { action as manipulateUcrudAction } from './UCRUD/componets/UcrudForm';
-import UcrudDetailPage, {
-  loader as UcrudDetailLoader,
-  action as deleteUcrudAction,
-} from './UCRUD/pages/UcrudDetail';
-import EditUcrudPage from './UCRUD/pages/UcrudEdit';
+import UcrudRootLayout from "./UCRUD/roots/UcrudRoot";
+import UcrudMainPage, { loader as UcrudLoader } from "./UCRUD/pages/UcrudMain";
+import UcrudStudentDetailPage, {
+  loader as UcrudStudentDetailLoader,
+} from "./UCRUD/pages/UcrudStudentDetailPage";
+import UcrudNewPage from "./UCRUD/pages/UcrudNew";
+import { action as manipulateUcrudAction } from "./UCRUD/componets/UcrudForm";
+// import UcrudDetailPage, {
+//   loader as UcrudDetailLoader,
+//   action as deleteUcrudAction,
+// } from "./UCRUD/pages/UcrudDetail";
+// import EditUcrudPage from "./UCRUD/pages/UcrudEdit";
 // THIS IS THE END OF UCRUD IMPORT CODES
 
-
 // THIS IS THE BEGINING OF TCRUD IMPORT CODES
-import TcrudRootLayout from './TCRUD/roots/TcrudRoot';
-import TcrudMainPage, { loader as TcrudLoader } from './TCRUD/pages/TcrudMain';
-import TcrudNewPage from './TCRUD/pages/TcrudNew';
-import { action as manipulateTcrudAction } from './TCRUD/componets/TcrudForm';
+import TcrudRootLayout from "./TCRUD/roots/TcrudRoot";
+import TcrudMainPage, { loader as TcrudLoader } from "./TCRUD/pages/TcrudMain";
+import TcrudNewPage from "./TCRUD/pages/TcrudNew";
+import { action as manipulateTcrudAction } from "./TCRUD/componets/TcrudForm";
 import TcrudDetailPage, {
   loader as TcrudDetailLoader,
   action as deleteTcrudAction,
-} from './TCRUD/pages/TcrudDetail';
-import EditTcrudPage from './TCRUD/pages/TcrudEdit';
+} from "./TCRUD/pages/TcrudDetail";
+import EditTcrudPage from "./TCRUD/pages/TcrudEdit";
 // THIS IS THE END OF TCRUD IMPORT CODES
-
 
 const router = createBrowserRouter([
   {
@@ -557,9 +557,9 @@ const router = createBrowserRouter([
       },
       // THIS IS THE END OF A-CRUD PATH
 
-// THIS IS THE BEGINING OF B-CRUD PATH
+      // THIS IS THE BEGINING OF B-CRUD PATH
       {
-        path: 'b-crud',
+        path: "b-crud",
         element: <BcrudRootLayout />,
         children: [
           {
@@ -568,8 +568,8 @@ const router = createBrowserRouter([
             loader: BcrudLoader,
           },
           {
-            path: ':bcrudId',
-            id: 'bcrud-detail',
+            path: ":bcrudId",
+            id: "bcrud-detail",
             loader: BcrudDetailLoader,
             children: [
               {
@@ -578,7 +578,7 @@ const router = createBrowserRouter([
                 action: deleteBcrudAction,
               },
               {
-                path: 'edit',
+                path: "edit",
                 element: <EditBcrudPage />,
                 action: manipulateBcrudAction,
                 loader: checkAuthLoader,
@@ -586,15 +586,14 @@ const router = createBrowserRouter([
             ],
           },
           {
-            path: 'new',
+            path: "new",
             element: <BcrudNewPage />,
             action: manipulateBcrudAction,
             loader: checkAuthLoader,
           },
         ],
       },
-// THIS IS THE END OF B-CRUD PATH
-
+      // THIS IS THE END OF B-CRUD PATH
 
       // THIS IS THE BEGINING OF Y-CRUD PATH
       {
@@ -755,9 +754,9 @@ const router = createBrowserRouter([
       // },
       // THIS IS THE END OF S-CRUD PATH
 
-// THIS IS THE BEGINING OF U-CRUD PATH
+      // THIS IS THE BEGINING OF U-CRUD PATH
       {
-        path: 'u-crudX',
+        path: "u-crudX",
         element: <UcrudRootLayout />,
         children: [
           {
@@ -765,38 +764,43 @@ const router = createBrowserRouter([
             element: <UcrudMainPage />,
             loader: UcrudLoader,
           },
+          // {
+          //   path: ":ucrudId",
+          //   id: "ucrud-detail",
+          //   loader: UcrudDetailLoader,
+          //   children: [
+          //     {
+          //       index: true,
+          //       element: <UcrudDetailPage />,
+          //       action: deleteUcrudAction,
+          //     },
+          //     {
+          //       path: "edit",
+          //       element: <EditUcrudPage />,
+          //       action: manipulateUcrudAction,
+          //       loader: checkAuthLoader,
+          //     },
+
+          //   ],
+          // },
           {
-            path: ':ucrudId',
-            id: 'ucrud-detail',
-            loader: UcrudDetailLoader,
-            children: [
-              {
-                index: true,
-                element: <UcrudDetailPage />,
-                action: deleteUcrudAction,
-              },
-              {
-                path: 'edit',
-                element: <EditUcrudPage />,
-                action: manipulateUcrudAction,
-                loader: checkAuthLoader,
-              },
-            ],
-          },
-          {
-            path: 'new',
+            path: "new",
             element: <UcrudNewPage />,
             action: manipulateUcrudAction,
             loader: checkAuthLoader,
           },
+          {
+            path: "7",
+            element: <UcrudStudentDetailPage />,
+            loader: UcrudStudentDetailLoader,
+          },
         ],
       },
-// THIS IS THE END OF U-CRUD PATH
+      // THIS IS THE END OF U-CRUD PATH
 
-
-// THIS IS THE BEGINING OF T-CRUD PATH
+      // THIS IS THE BEGINING OF T-CRUD PATH
       {
-        path: 't-crudX',
+        path: "t-crudX",
         element: <TcrudRootLayout />,
         children: [
           {
@@ -805,8 +809,8 @@ const router = createBrowserRouter([
             loader: TcrudLoader,
           },
           {
-            path: ':tcrudId',
-            id: 'tcrud-detail',
+            path: ":tcrudId",
+            id: "tcrud-detail",
             loader: TcrudDetailLoader,
             children: [
               {
@@ -815,7 +819,7 @@ const router = createBrowserRouter([
                 action: deleteTcrudAction,
               },
               {
-                path: 'edit',
+                path: "edit",
                 element: <EditTcrudPage />,
                 action: manipulateTcrudAction,
                 loader: checkAuthLoader,
@@ -823,15 +827,14 @@ const router = createBrowserRouter([
             ],
           },
           {
-            path: 'new',
+            path: "new",
             element: <TcrudNewPage />,
             action: manipulateTcrudAction,
             loader: checkAuthLoader,
           },
         ],
       },
-// THIS IS THE END OF T-CRUD PATH
-
+      // THIS IS THE END OF T-CRUD PATH
     ],
   },
 ]);
@@ -841,9 +844,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-

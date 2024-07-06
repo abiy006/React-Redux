@@ -3,12 +3,20 @@ const { v4: generateId } = require('uuid');
 const { NotFoundError } = require('../util/errors');
 const { readData, writeData } = require('./util_student');
 
+// async function getAll() {
+//   const storedData = await readData();
+//   if (!storedData.students) {
+//     throw new NotFoundError('Could not find any events.');
+//   }
+//   return storedData.students;
+// }
+
 async function getAll() {
   const storedData = await readData();
-  if (!storedData.students) {
+  if (!storedData) {
     throw new NotFoundError('Could not find any events.');
   }
-  return storedData.students;
+  return storedData;
 }
 
 async function get(id) {

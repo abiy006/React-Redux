@@ -10,7 +10,7 @@ const StudDashPartB = ({ ucruds }) => {
       <h2>Student settings</h2>
       {ucruds.map((ucrud, index) => (
         <li key={ucrud.id} className={classes.item}>
-          <NavLink to={`/s-crudX/${ucrud.number}`}>
+          <NavLink to={`/u-crudX/${ucrud.number}`}>
             <img src={ucrud.image} alt={ucrud.title} />
             <div className={classes.content}>
               <h3>{ucrud.title}</h3>

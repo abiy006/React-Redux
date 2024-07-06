@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { useLoaderData, json, defer, Await } from 'react-router-dom';
 
-import BcrudList from '../componets/BcrudList';
+import StudentDetailComponent from '../componets/UcrudStudentDetailComponent';
 
 function StudentCRUD() {
   // const token = true;
@@ -9,8 +9,8 @@ function StudentCRUD() {
 const { students } = useLoaderData();
 return (
   <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-    <Await resolve={bcruds}>
-      {(loadedEvents) => <BcrudList bcruds={loadedEvents} />}
+    <Await resolve={students}>
+      {(loadedEvents) => <StudentDetailComponent students={loadedEvents} />}
     </Await>
   </Suspense>
 );
@@ -20,24 +20,24 @@ return (
 export default StudentCRUD;
 
 async function loadEvents() {
-const response = await fetch('http://localhost:8080/bcruds');
+const response = await fetch('http://localhost:8080/students');
 
 if (!response.ok) {
   throw json(
-    { message: 'Could not fetch bcruds.' },
+    { message: 'Could not fetch students.' },
     {
       status: 500,
     }
   );
 } else {
   const resData = await response.json();
-  return resData.bcruds;
+  return resData.students;
 }
 }
 
 export function loader() {
 return defer({
-  bcruds: loadEvents(),
+  students: loadEvents(),
 });
 }
 
