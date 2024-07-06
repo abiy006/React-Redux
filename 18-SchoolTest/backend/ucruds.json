@@ -1,0 +1,91 @@
+{
+  "ucruds": [
+    {
+      "title": "Student Detail",
+      "image": "https://w7.pngwing.com/pngs/488/1009/png-transparent-graduation-ceremony-silhouette-silhouette-animals-photography-graduation-ceremony-thumbnail.png",
+      "date": "These section contains the full, comprehensive collection of student detaile, personal information, academic documentation, and any other relevant files and records maintained for individual student.",
+      "description": "Sample student data",
+      "number": "7",
+      "id": "3f32e696-d839-4bb3-bcd6-ba812d9e1f10"
+    },
+    {
+      "title": "Student Subjects",
+      "image": "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+      "date": "The academic courses or subjects that the student is enrolled in and studying at the present time.",
+      "description": "The butterfly",
+      "number": "1",
+      "id": "18ee7410-2e48-4e3d-bd2d-1fdd1d9a6b7d"
+    },
+    {
+      "title": "Student Attendance",
+      "image": "https://w7.pngwing.com/pngs/488/1009/png-transparent-graduation-ceremony-silhouette-silhouette-animals-photography-graduation-ceremony-thumbnail.png",
+      "date": "The student attendance report, which records and monitors the daily presence, tardiness, and absences of a student",
+      "description": "sfgfdgfd",
+      "number": "2",
+      "id": "9254befd-9568-4b0c-9c9d-ec15abad6252"
+    },
+    {
+      "title": "Student Parent",
+      "image": "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+      "date": "These individuals are the parents, guardians, or other adult caregivers who are legally responsible for the students and their wellbeing.",
+      "description": "vzbfdgv",
+      "number": "3",
+      "id": "cbe89473-bb1e-4893-9f69-d6e63050329c"
+    },    
+    {
+      "title": "Student Timetable",
+      "image": "https://w7.pngwing.com/pngs/488/1009/png-transparent-graduation-ceremony-silhouette-silhouette-animals-photography-graduation-ceremony-thumbnail.png",
+      "date": "These are the detailed timetables and class schedules that specify the daily and weekly educational activities and requirements for each individual student",
+      "description": "Some awesome student!",
+      "number": "5",
+      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
+    },
+    {
+      "title": "Student Exams",
+      "image": "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+      "date": "This section contains the exams, tests, and other assessment materials that evaluate the academic performance and progress of individual students.",
+      "description": "sdfdsfdsfsdfdsfdsfsdfsfdsfd",
+      "number": "6",
+      "id": "a3e47fd2-4761-47ce-8ef8-1e9dad1c6048"
+    },
+    {
+      "title": "Student Homeworks",
+      "image": "https://w7.pngwing.com/pngs/488/1009/png-transparent-graduation-ceremony-silhouette-silhouette-animals-photography-graduation-ceremony-thumbnail.png",
+      "date": "This section includes the exams or assessment materials for a student.",
+      "description": "sdfdsfdf",
+      "number": "8",
+      "id": "34762af6-6f3c-4e93-89b5-654c400348d0"
+    },
+    {
+      "title": "Student Payments",
+      "image": "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+      "date": "This section presents the payment reports or financial documentation detailing the payments made by the student",
+      "description": "sldhfkjhdsfk",
+      "number": "4",
+      "id": "8b9f6bb7-ebf6-4758-a6a6-0c142ff0110b"
+    }
+  ],
+  "users": [
+    {
+      "email": "lajdslfj@jflkdsf",
+      "password": "$2a$12$9yxspANS4uTuCs36Sn1dJuI./I1OMHPVsq36zRkxEJuA0MjRQU366",
+      "id": "d7959cba-eb70-4393-8e58-4db1af969e36"
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$12$X7FBJ9HWzpHa/A8A5Hyn0OxHHHGY7yG5CZCnrVtH4RKD630t8VZjK",
+      "id": "5ebf2039-adf4-4b37-ab98-1db64672672b"
+    }
+  ],
+  "studs": [
+    {
+      "schoolname": "This is School Name",
+      "studimg": "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
+      "studname1": "Jone",
+      "studname2": "Smith",
+      "studname3": "Alex",
+      "studgrade": "Grade 7",
+      "studsection": "Section B"
+    }
+  ]
+}

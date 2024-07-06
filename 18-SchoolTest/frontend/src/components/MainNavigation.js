@@ -230,6 +230,19 @@ function MainNavigation() {
           </li>
 { /* THIS IS THE END OF S-CRUD NAV LINK */ }
 
+{ /* THIS IS THE BEGINIG OF U-CRUD NAV LINK */ }
+          <li>
+            <NavLink
+              to='/u-crudX'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              U-CRUD
+            </NavLink>
+          </li>
+{ /* THIS IS THE END OF U-CRUD NAV LINK */ }
+
 { /* THIS IS THE BEGINIG OF T-CRUD NAV LINK */ }
           <li>
             <NavLink
@@ -250,6 +263,7 @@ function MainNavigation() {
 }
 
 export default MainNavigation;
+
 
 
 

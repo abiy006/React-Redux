@@ -45,6 +45,11 @@ const ycrudRoutes = require('./routes/ycruds');
 const scrudRoutes = require('./routes/scruds');
 // THIS IS THE END OF scruds require 
 
+// THIS IS THE BEGINING OF ucruds require
+const ucrudRoutes = require('./routes/ucruds');
+// THIS IS THE END OF ucruds require
+ 
+
 // THIS IS THE BEGINING OF tcruds require
 const tcrudRoutes = require('./routes/tcruds');
 // THIS IS THE END OF tcruds require
@@ -111,6 +116,11 @@ app.use('/ecruds', ecrudRoutes);
 app.use('/scruds', scrudRoutes);
 // THIS IS THE END OF scruds use 
 
+// THIS IS THE BEGINING OF ucruds use
+app.use('/ucruds', ucrudRoutes);
+// THIS IS THE END OF ucruds use
+ 
+
 // THIS IS THE BEGINING OF tcruds use
 app.use('/tcruds', tcrudRoutes);
 // THIS IS THE END OF tcruds use
@@ -124,6 +134,8 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
 
 
 

@@ -165,6 +165,19 @@ import ScrudMainPage, { loader as ScrudLoader } from "./SCRUD/pages/ScrudMain";
 // import EditEcrudPage from './ECRUD/pages/EcrudEdit';
 // THIS IS THE END OF SCRUD IMPORT CODES
 
+// THIS IS THE BEGINING OF UCRUD IMPORT CODES
+import UcrudRootLayout from './UCRUD/roots/UcrudRoot';
+import UcrudMainPage, { loader as UcrudLoader } from './UCRUD/pages/UcrudMain';
+import UcrudNewPage from './UCRUD/pages/UcrudNew';
+import { action as manipulateUcrudAction } from './UCRUD/componets/UcrudForm';
+import UcrudDetailPage, {
+  loader as UcrudDetailLoader,
+  action as deleteUcrudAction,
+} from './UCRUD/pages/UcrudDetail';
+import EditUcrudPage from './UCRUD/pages/UcrudEdit';
+// THIS IS THE END OF UCRUD IMPORT CODES
+
+
 // THIS IS THE BEGINING OF TCRUD IMPORT CODES
 import TcrudRootLayout from './TCRUD/roots/TcrudRoot';
 import TcrudMainPage, { loader as TcrudLoader } from './TCRUD/pages/TcrudMain';
@@ -742,6 +755,45 @@ const router = createBrowserRouter([
       // },
       // THIS IS THE END OF S-CRUD PATH
 
+// THIS IS THE BEGINING OF U-CRUD PATH
+      {
+        path: 'u-crudX',
+        element: <UcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <UcrudMainPage />,
+            loader: UcrudLoader,
+          },
+          {
+            path: ':ucrudId',
+            id: 'ucrud-detail',
+            loader: UcrudDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <UcrudDetailPage />,
+                action: deleteUcrudAction,
+              },
+              {
+                path: 'edit',
+                element: <EditUcrudPage />,
+                action: manipulateUcrudAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <UcrudNewPage />,
+            action: manipulateUcrudAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+// THIS IS THE END OF U-CRUD PATH
+
+
 // THIS IS THE BEGINING OF T-CRUD PATH
       {
         path: 't-crudX',
@@ -789,6 +841,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 
