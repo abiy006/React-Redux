@@ -58,8 +58,8 @@
   background-color: transparent;
 }
 
-.content h2,p, time {
-  margin: 0;
+.content h3,p {
+  margin: auto;
 }
 
 ul {
