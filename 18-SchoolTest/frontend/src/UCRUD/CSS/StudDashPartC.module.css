@@ -16,28 +16,44 @@
 
 .item {
   margin: auto;
-  width: 45%;
-  height: 15rem;
+  width: 100%;
+  height: auto;
   /* background-color: var(--color-gray-900); */
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .item a {
   text-decoration: none;
   color: inherit;
   display: flex;
+  flex-direction: column;
   background-color: var(--color-gray-900);
   border-radius: 4px;
   overflow: hidden;
-  height: 100%;
+  /* height: 100%; */
   align-items: center;
 }
 
 .item a:hover {
   /* transform: scale(1.02); */
-  transform: scale(1.09);
+  transform: scale(1.01);
   background-color: var(--color-gray-800);
   /* background-color: darkgray; */
+}
+
+.basicsA {
+  display: flex;
+  margin: 1rem;
+}
+
+.basicsB {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.basicsB p {
+  margin: 1rem;
 }
 
 .item img {

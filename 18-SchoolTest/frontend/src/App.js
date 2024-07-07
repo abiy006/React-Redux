@@ -176,7 +176,7 @@ import { action as manipulateUcrudAction } from "./UCRUD/componets/UcrudForm";
 //   loader as UcrudDetailLoader,
 //   action as deleteUcrudAction,
 // } from "./UCRUD/pages/UcrudDetail";
-// import EditUcrudPage from "./UCRUD/pages/UcrudEdit";
+import EditUcrudPage from "./UCRUD/pages/UcrudEdit";
 // THIS IS THE END OF UCRUD IMPORT CODES
 
 // THIS IS THE BEGINING OF TCRUD IMPORT CODES
@@ -272,6 +272,7 @@ const router = createBrowserRouter([
           {
             path: ":studentId",
             id: "student-detail",
+            // id: "studentRenamed-detail",
             loader: studentDetailLoader,
             children: [
               {
@@ -764,6 +765,38 @@ const router = createBrowserRouter([
             element: <UcrudMainPage />,
             loader: UcrudLoader,
           },
+          {
+            // path: "7",
+            path: ":ucrudId",
+            id: "ucrud-detail",
+            // element: <UcrudStudentDetailPage />,
+            loader: UcrudStudentDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <UcrudStudentDetailPage />,
+                // action: deleteUcrudAction,
+              },
+              {
+                path: "edit",
+                element: <EditUcrudPage />,
+                action: manipulateUcrudAction,
+                // loader: checkAuthLoader,
+              },
+            ],
+          },          
+          {
+            path: "new",
+            element: <UcrudNewPage />,
+            action: manipulateUcrudAction,
+            loader: checkAuthLoader,
+          },
+          // {
+          //   path: "edit",
+          //   element: <EditTcrudPage />,
+          //   action: manipulateTcrudAction,
+          //   loader: checkAuthLoader,
+          // },
           // {
           //   path: ":ucrudId",
           //   id: "ucrud-detail",
@@ -780,20 +813,8 @@ const router = createBrowserRouter([
           //       action: manipulateUcrudAction,
           //       loader: checkAuthLoader,
           //     },
-
           //   ],
           // },
-          {
-            path: "new",
-            element: <UcrudNewPage />,
-            action: manipulateUcrudAction,
-            loader: checkAuthLoader,
-          },
-          {
-            path: "7",
-            element: <UcrudStudentDetailPage />,
-            loader: UcrudStudentDetailLoader,
-          },
         ],
       },
       // THIS IS THE END OF U-CRUD PATH
