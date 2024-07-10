@@ -50,7 +50,8 @@ async function replace(id, data) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
 
-  storedData.ucruds[index] = { ...data, id };
+  // storedData.ucruds[index] = { ...data, id };
+  storedData.students[index] = { ...data, id };
 
   await writeData(storedData);
 }

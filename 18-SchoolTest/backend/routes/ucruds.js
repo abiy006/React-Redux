@@ -38,19 +38,19 @@ router.post('/', async (req, res, next) => {
   let errors = {};
 
   if (!isValidText(data.title)) {
-    errors.title = 'Invalid title.';
+    errors.title = 'post - Invalid title.';
   }
 
   if (!isValidText(data.description)) {
-    errors.description = 'Invalid description.';
+    errors.description = 'post - Invalid description.';
   }
 
   if (!isValidDate(data.date)) {
-    errors.date = 'Invalid date.';
+    errors.date = 'post - Invalid date.';
   }
 
   if (!isValidImageUrl(data.image)) {
-    errors.image = 'Invalid image.';
+    errors.image = 'post - Invalid image.';
   }
 
   if (Object.keys(errors).length > 0) {
@@ -73,21 +73,21 @@ router.patch('/:id', async (req, res, next) => {
 
   let errors = {};
 
-  if (!isValidText(data.title)) {
-    errors.title = 'Invalid title.';
-  }
+  // if (!isValidText(data.title)) {
+  //   errors.title = 'patch - Invalid title.';
+  // }
 
-  if (!isValidText(data.description)) {
-    errors.description = 'Invalid description.';
-  }
+  // if (!isValidText(data.description)) {
+  //   errors.description = 'patch - Invalid description.';
+  // }
 
-  if (!isValidDate(data.date)) {
-    errors.date = 'Invalid date.';
-  }
+  // if (!isValidDate(data.date)) {
+  //   errors.date = 'patch - Invalid date.';
+  // }
 
-  if (!isValidImageUrl(data.image)) {
-    errors.image = 'Invalid image.';
-  }
+  // if (!isValidImageUrl(data.image)) {
+  //   errors.image = 'patch - Invalid image.';
+  // }
 
   if (Object.keys(errors).length > 0) {
     return res.status(422).json({

@@ -18,7 +18,7 @@ import StudDashPartC from '../navigations/StudDashPartC';
       {/* <StudDashPartA studs={students.studs} /> */}
 
       <StudDashPartC students={students.students} />
-
+      {/* <StudDashPartC ucruds={ucruds.students} /> */}
 
     </div>
   );

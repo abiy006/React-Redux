@@ -10,7 +10,7 @@ import {
 import { getAuthToken } from '../../util/auth';
 import classes from '../CSS/UcrudForm.module.css';
 
-function UcrudForm({ method, ucrud }) {
+function UcrudForm({ method, student }) {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
@@ -31,43 +31,63 @@ function UcrudForm({ method, ucrud }) {
         </ul>
       )}
       <p>
-        <label htmlFor="title">Title</label>
+        <label htmlFor="stud_name">Name</label>
         <input
-          id="title"
+          id="stud_name"
           type="text"
-          name="title"
+          name="stud_name"
           required
-          defaultValue={ucrud ? ucrud.title : ''}
+          defaultValue={student ? student.stud_name : ''}
         />
       </p>
       <p>
-        <label htmlFor="image">Image</label>
+        <label htmlFor="stud_image">Image</label>
         <input
-          id="image"
+          id="stud_image"
           type="url"
-          name="image"
+          name="stud_image"
           required
-          defaultValue={ucrud ? ucrud.image : ''}
+          defaultValue={student ? student.stud_image : ''}
         />
       </p>
       <p>
-        <label htmlFor="date">Date</label>
+        <label htmlFor="stud_id">ID</label>
         <input
-          id="date"
-          type="date"
-          name="date"
+          id="stud_id"
+          type="text"
+          name="stud_id"
           required
-          defaultValue={ucrud ? ucrud.date : ''}
+          defaultValue={student ? student.stud_id : ''}
         />
       </p>
       <p>
-        <label htmlFor="description">Description</label>
+        <label htmlFor="stud_grd_sec">Grade and Section</label>
         <textarea
-          id="description"
-          name="description"
+          id="stud_grd_sec"
+          name="stud_grd_sec"
           rows="5"
           required
-          defaultValue={ucrud ? ucrud.description : ''}
+          defaultValue={student ? student.stud_grd_sec : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="stud_cat">Catagory</label>
+        <input
+          id="stud_cat"
+          type="text"
+          name="stud_cat"
+          required
+          defaultValue={student ? student.stud_cat : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="stud_gender">Gender</label>
+        <input
+          id="stud_gender"
+          type="text"
+          name="stud_gender"
+          required
+          defaultValue={student ? student.stud_gender : ''}
         />
       </p>
       <div className={classes.actions}>
@@ -89,17 +109,19 @@ export async function action({ request, params }) {
   const data = await request.formData();
 
   const UcrudData = {
-    title: data.get('title'),
-    image: data.get('image'),
-    date: data.get('date'),
-    description: data.get('description'),
+    stud_name: data.get('stud_name'),
+    stud_image: data.get('stud_image'),
+    stud_id: data.get('stud_id'),
+    stud_grd_sec: data.get('stud_grd_sec'),
+    stud_cat: data.get('stud_cat'),
+    stud_gender: data.get('stud_gender'),
   };
 
-  let url = 'http://localhost:8080/ucruds';
+  let url = 'http://localhost:8080/students';
 
   if (method === 'PATCH') {
     const ucrudId = params.ucrudId;// link to App.js file
-    url = 'http://localhost:8080/ucruds/' + ucrudId;
+    url = 'http://localhost:8080/students/' + ucrudId;
   }
 
   const token = getAuthToken();
@@ -120,7 +142,7 @@ export async function action({ request, params }) {
     throw json({ message: 'Could not save x.' }, { status: 500 });
   }
 
-  return redirect('/e-crud');
+  return redirect('/u-crudX');
 }
 
 

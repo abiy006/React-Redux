@@ -7,19 +7,22 @@ import {
   Await,
 } from 'react-router-dom';
 
-import UcrudItem from '../componets/UcrudItem';
+import StudentUcrudItem from '../componets/StudentUcrudItem';
+// import UcrudItem from '../componets/UcrudItem';
 import { getAuthToken } from '../../util/auth';
 import StudentDetailComponent from "../componets/UcrudStudentDetailComponent";
 
 
 function StudentCRUD() {
   const { student, students } = useRouteLoaderData('ucrud-detail');
+  // const { ucrud, ucruds } = useRouteLoaderData('ucrud-detail');
 
   return (
     <>
+
       <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
         <Await resolve={student}>
-          {(loadedEvent) => <UcrudItem student={loadedEvent} />}
+          {(loadedEvent) => <StudentUcrudItem student={loadedEvent} />}
         </Await>
       </Suspense>
       <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
@@ -27,6 +30,19 @@ function StudentCRUD() {
           {(loadedEvents) => <StudentDetailComponent students={loadedEvents} />}
         </Await>
       </Suspense>
+
+      {/* <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
+        <Await resolve={ucrud}>
+          {(loadedEvent) => <UcrudItem ucrud={loadedEvent} />}
+        </Await>
+      </Suspense>
+      <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
+        <Await resolve={ucruds}>
+          {(loadedEvents) => <StudentDetailComponent ucruds={loadedEvents} />}
+          {(loadedEvent) => <UcrudItem ucrud={loadedEvent} />}
+        </Await>
+      </Suspense> */}
+      
     </>
   );
 }

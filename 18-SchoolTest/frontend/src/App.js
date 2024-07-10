@@ -766,10 +766,8 @@ const router = createBrowserRouter([
             loader: UcrudLoader,
           },
           {
-            // path: "7",
             path: ":ucrudId",
             id: "ucrud-detail",
-            // element: <UcrudStudentDetailPage />,
             loader: UcrudStudentDetailLoader,
             children: [
               {
@@ -789,32 +787,8 @@ const router = createBrowserRouter([
             path: "new",
             element: <UcrudNewPage />,
             action: manipulateUcrudAction,
-            loader: checkAuthLoader,
+            // loader: checkAuthLoader,
           },
-          // {
-          //   path: "edit",
-          //   element: <EditTcrudPage />,
-          //   action: manipulateTcrudAction,
-          //   loader: checkAuthLoader,
-          // },
-          // {
-          //   path: ":ucrudId",
-          //   id: "ucrud-detail",
-          //   loader: UcrudDetailLoader,
-          //   children: [
-          //     {
-          //       index: true,
-          //       element: <UcrudDetailPage />,
-          //       action: deleteUcrudAction,
-          //     },
-          //     {
-          //       path: "edit",
-          //       element: <EditUcrudPage />,
-          //       action: manipulateUcrudAction,
-          //       loader: checkAuthLoader,
-          //     },
-          //   ],
-          // },
         ],
       },
       // THIS IS THE END OF U-CRUD PATH
