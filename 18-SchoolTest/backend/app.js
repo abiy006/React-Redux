@@ -3,6 +3,7 @@ const express = require('express');
 
 const zcrudRoutes = require('./routes/zcruds');
 const studentRoutes = require('./routes/students');
+const paymentRoutes = require('./routes/payments');
 const eventRoutes = require('./routes/events');
 const authRoutes = require('./routes/auth');
 const ccrudRoutes = require('./routes/ccruds');
@@ -45,6 +46,11 @@ const ycrudRoutes = require('./routes/ycruds');
 const scrudRoutes = require('./routes/scruds');
 // THIS IS THE END OF scruds require 
 
+// THIS IS THE BEGINING OF vcruds require
+const vcrudRoutes = require('./routes/vcruds');
+// THIS IS THE END OF vcruds require
+ 
+
 // THIS IS THE BEGINING OF ucruds require
 const ucrudRoutes = require('./routes/ucruds');
 // THIS IS THE END OF ucruds require
@@ -70,6 +76,7 @@ app.use(authRoutes);
 
 app.use('/events', eventRoutes);
 app.use('/students', studentRoutes);
+app.use('/payments', paymentRoutes);
 app.use('/zcruds', zcrudRoutes);
 app.use('/ccruds', ccrudRoutes);
 // THIS IS THE END OF ccruds use 
@@ -116,6 +123,11 @@ app.use('/ecruds', ecrudRoutes);
 app.use('/scruds', scrudRoutes);
 // THIS IS THE END OF scruds use 
 
+// THIS IS THE BEGINING OF vcruds use
+app.use('/vcruds', vcrudRoutes);
+// THIS IS THE END OF vcruds use
+ 
+
 // THIS IS THE BEGINING OF ucruds use
 app.use('/ucruds', ucrudRoutes);
 // THIS IS THE END OF ucruds use
@@ -134,6 +146,8 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
 
 
 

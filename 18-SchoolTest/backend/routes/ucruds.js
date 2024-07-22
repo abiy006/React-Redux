@@ -23,6 +23,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const ucrud = await get(req.params.id);
+    // const ucrud = await get(req.params.number);
     res.json({ ucrud: ucrud });
   } catch (error) {
     next(error);

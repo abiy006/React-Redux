@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getAll, get, add, replace, remove } = require('../data/student');
+const { getAll, get, add, replace, remove } = require('../data/vcrud');
 const { checkAuth } = require('../util/auth');
 const {
   isValidText,
@@ -13,8 +13,8 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
   console.log(req.token);
   try {
-    const students = await getAll();
-    res.json({ students: students });
+    const vcruds = await getAll();
+    res.json({ vcruds: vcruds });
   } catch (error) {
     next(error);
   }
@@ -22,9 +22,8 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const student = await get(req.params.id);
-    // const student = await get(req.params.number);
-    res.json({ student: student });
+    const vcrud = await get(req.params.id);
+    res.json({ vcrud: vcrud });
   } catch (error) {
     next(error);
   }
@@ -38,8 +37,8 @@ router.post('/', async (req, res, next) => {
 
   let errors = {};
 
-  if (!isValidText(data.stud_name)) {
-    errors.stud_name = 'Invalid stud_name.';
+  if (!isValidText(data.title)) {
+    errors.title = 'Invalid title.';
   }
 
   if (!isValidText(data.description)) {
@@ -63,7 +62,7 @@ router.post('/', async (req, res, next) => {
 
   try {
     await add(data);
-    res.status(201).json({ message: 'Event saved.', student: data });
+    res.status(201).json({ message: 'Event saved.', vcrud: data });
   } catch (error) {
     next(error);
   }
@@ -74,21 +73,21 @@ router.patch('/:id', async (req, res, next) => {
 
   let errors = {};
 
-  // if (!isValidText(data.stud_name)) {
-  //   errors.stud_name = 'Invalid stud_name.';
-  // }
+  if (!isValidText(data.title)) {
+    errors.title = 'Invalid title.';
+  }
 
-  // if (!isValidText(data.description)) {
-  //   errors.description = 'Invalid description.';
-  // }
+  if (!isValidText(data.description)) {
+    errors.description = 'Invalid description.';
+  }
 
-  // if (!isValidDate(data.date)) {
-  //   errors.date = 'Invalid date.';
-  // }
+  if (!isValidDate(data.date)) {
+    errors.date = 'Invalid date.';
+  }
 
-  // if (!isValidImageUrl(data.image)) {
-  //   errors.image = 'Invalid image.';
-  // }
+  if (!isValidImageUrl(data.image)) {
+    errors.image = 'Invalid image.';
+  }
 
   if (Object.keys(errors).length > 0) {
     return res.status(422).json({
@@ -99,7 +98,7 @@ router.patch('/:id', async (req, res, next) => {
 
   try {
     await replace(req.params.id, data);
-    res.json({ message: 'Event updated.', student: data });
+    res.json({ message: 'Event updated.', vcrud: data });
   } catch (error) {
     next(error);
   }

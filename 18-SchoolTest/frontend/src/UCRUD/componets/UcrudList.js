@@ -18,6 +18,7 @@ import StudDashPartB from '../navigations/StudDashPartB';
       <StudDashPartA studs={ucruds.studs} />
 
       <StudDashPartB ucruds={ucruds.ucruds} />
+      {/* <StudDashPartB ucruds={ucruds} /> */}
 
       {/* <ul className={classes.list}>
         {ucruds.ucruds.map((ucrud) => (

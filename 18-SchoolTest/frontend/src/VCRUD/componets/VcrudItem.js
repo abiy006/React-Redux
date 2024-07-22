@@ -1,8 +1,8 @@
 import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
 
-import classes from '../CSS/UcrudItem.module.css';
+import classes from '../CSS/VcrudItem.module.css';
 
-function StudentItem({ student }) {
+function StudentItem({ vcrud }) {
   const token = useRouteLoaderData('root');
   const submit = useSubmit();
 
@@ -15,13 +15,11 @@ function StudentItem({ student }) {
   }
 
   return (
-    <article className={classes.ucrud}>
-      <img src={student.stud_image} alt={student.stud_name} />
-      <h1>{student.stud_name}</h1>
-      <p>{student.stud_id}</p>
-      <p>{student.stud_grd_sec}</p>
-      <p>{student.stud_cat}</p>
-      <p>{student.stud_gender}</p>
+    <article className={classes.vcrud}>
+      <img src={vcrud.image} alt={vcrud.title} />
+      <h1>{vcrud.title}</h1>
+      <time>{vcrud.date}</time>
+      <p>{vcrud.description}</p>
       {token && (
         <menu className={classes.actions}>
           <Link to="edit">Edit</Link>

@@ -164,20 +164,55 @@ import ScrudMainPage, { loader as ScrudLoader } from "./SCRUD/pages/ScrudMain";
 // import EditEcrudPage from './ECRUD/pages/EcrudEdit';
 // THIS IS THE END OF SCRUD IMPORT CODES
 
+// THIS IS THE BEGINING OF VCRUD IMPORT CODES
+import VcrudRootLayout from "./VCRUD/roots/VcrudRoot";
+import VcrudMainPage, { loader as VcrudLoader } from "./VCRUD/pages/VcrudMain";
+import VcrudNewPage from "./VCRUD/pages/VcrudNew";
+import { action as manipulateVcrudAction } from "./VCRUD/componets/VcrudForm";
+// import VcrudDetailPage, {
+//   loader as VcrudDetailLoader,
+//   action as deleteVcrudAction,
+// } from './VCRUD/pages/VcrudDetail';
+// import EditVcrudPage from './VCRUD/pages/VcrudEdit';
+// THIS IS THE END OF VCRUD IMPORT CODES
+
 // THIS IS THE BEGINING OF UCRUD IMPORT CODES
 import UcrudRootLayout from "./UCRUD/roots/UcrudRoot";
 import UcrudMainPage, { loader as UcrudLoader } from "./UCRUD/pages/UcrudMain";
 import UcrudStudentDetailPage, {
   loader as UcrudStudentDetailLoader,
 } from "./UCRUD/pages/UcrudStudentDetailPage";
-import UcrudNewPage from "./UCRUD/pages/UcrudNew";
-import { action as manipulateUcrudAction } from "./UCRUD/componets/UcrudForm";
+import UcrudPaymentDetailPage, {
+  loader as UcrudPaymentDetailLoader,
+} from "./UCRUD/pages/UcrudPaymentDetailPage";
+import UcrudDynamicDetailPage, {
+  loader as UcrudDynamicDetailLoader,
+} from "./UCRUD/pages/UcrudXDetailPage";
+// import UcrudNewPage from "./UCRUD/pages/UcrudNew";
+// import { action as manipulateUcrudAction } from "./UCRUD/componets/UcrudForm";
 // import UcrudDetailPage, {
 //   loader as UcrudDetailLoader,
-//   action as deleteUcrudAction,
+//   // action as deleteUcrudAction,
 // } from "./UCRUD/pages/UcrudDetail";
-import EditUcrudPage from "./UCRUD/pages/UcrudEdit";
+// import EditUcrudPage from "./UCRUD/pages/UcrudEdit";
 // THIS IS THE END OF UCRUD IMPORT CODES
+
+// THIS IS THE BEGINING OF STUDENT IMPORT CODES
+// import UcrudRootLayout from "./UCRUD/roots/UcrudRoot";
+import StudentMainPage, {
+  loader as StudentLoader,
+} from "./UCRUD/pages/StudentMain";
+// import UcrudStudentDetailPage, {
+//   loader as UcrudStudentDetailLoader,
+// } from "./UCRUD/pages/UcrudStudentDetailPage";
+// import UcrudNewPage from "./UCRUD/pages/UcrudNew";
+// import { action as manipulateUcrudAction } from "./UCRUD/componets/UcrudForm";
+// import UcrudDetailPage, {
+//   loader as UcrudDetailLoader,
+//   // action as deleteUcrudAction,
+// } from "./UCRUD/pages/UcrudDetail";
+// import EditUcrudPage from "./UCRUD/pages/UcrudEdit";
+// THIS IS THE END OF STUDENT IMPORT CODES
 
 // THIS IS THE BEGINING OF TCRUD IMPORT CODES
 import TcrudRootLayout from "./TCRUD/roots/TcrudRoot";
@@ -755,6 +790,78 @@ const router = createBrowserRouter([
       // },
       // THIS IS THE END OF S-CRUD PATH
 
+      // THIS IS THE BEGINING OF V-CRUD PATH
+      {
+        path: "v-crud",
+        element: <VcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <VcrudMainPage />,
+            loader: VcrudLoader,
+          },
+          {
+            path: "new",
+            element: <VcrudNewPage />,
+            action: manipulateVcrudAction,
+            loader: checkAuthLoader,
+          },
+          {
+            path: "1",
+            element: <EcrudMainPage />,
+            loader: EcrudLoader,
+          },
+          {
+            path: "2",
+            element: <XcrudMainPage />,
+            loader: XcrudLoader,
+          },
+          {
+            path: "3",
+            element: <BcrudMainPage />,
+            loader: BcrudLoader,
+          },
+          {
+            path: "4",
+            element: <AcrudMainPage />,
+            loader: AcrudLoader,
+          },
+          {
+            path: "5",
+            element: <EcrudMainPage />,
+            loader: EcrudLoader,
+          },
+          {
+            path: "6",
+            element: <XcrudMainPage />,
+            loader: XcrudLoader,
+          },
+          // {
+          //   path: "7",
+          //   loader: UcrudStudentDetailLoader,
+          //   children: [
+          //     {
+          //       index: true,
+          //       element: <UcrudStudentDetailPage />,
+          //       // action: deleteUcrudAction,
+          //     },
+          //     {
+          //       path: "edit",
+          //       element: <EditUcrudPage />,
+          //       action: manipulateUcrudAction,
+          //       // loader: checkAuthLoader,
+          //     },
+          //   ],
+          // },
+          {
+            path: "8",
+            element: <AcrudMainPage />,
+            loader: AcrudLoader,
+          },
+        ],
+      },
+      // THIS IS THE END OF V-CRUD PATH
+
       // THIS IS THE BEGINING OF U-CRUD PATH
       {
         path: "u-crudX",
@@ -766,29 +873,143 @@ const router = createBrowserRouter([
             loader: UcrudLoader,
           },
           {
-            path: ":ucrudId",
-            id: "ucrud-detail",
-            loader: UcrudStudentDetailLoader,
+            path: "",
+            // id: "ucrud-dynamic-detail",
             children: [
               {
-                index: true,
-                element: <UcrudStudentDetailPage />,
-                // action: deleteUcrudAction,
+                path: ":ucrudDynamicId",
+                id: "ucrud-dynamic-detail",
+                element: <UcrudDynamicDetailPage />,
+                loader: UcrudDynamicDetailLoader,
               },
-              {
-                path: "edit",
-                element: <EditUcrudPage />,
-                action: manipulateUcrudAction,
-                // loader: checkAuthLoader,
-              },
+              // {
+              //   path: ":ucrudPaymentId",
+              //   id: "ucrud-payment-detail",
+              //   element: <UcrudPaymentDetailPage />,
+              //   loader: UcrudPaymentDetailLoader,
+              // },
+              // {
+              //   path: ":ucrudId",
+              //   id: "ucrud-detail",
+              //   element: <UcrudStudentDetailPage />,
+              //   loader: UcrudStudentDetailLoader,
+              // },
+
             ],
-          },          
-          {
-            path: "new",
-            element: <UcrudNewPage />,
-            action: manipulateUcrudAction,
-            // loader: checkAuthLoader,
           },
+          // {
+          //   path: ":ucrudPaymentId",
+          //   id: "ucrud-payment-detail",
+          //   element: <UcrudPaymentDetailPage />,
+          //   loader: UcrudPaymentDetailLoader,
+          // },
+          // {
+          //   path: ":ucrudId",
+          //   id: "ucrud-detail",
+          //   element: <UcrudStudentDetailPage />,
+          //   loader: UcrudStudentDetailLoader,
+          // },
+
+          // {
+          //   path: ":ucrudId",
+          //   id: "ucrud-detail",
+          //   loader: UcrudStudentDetailLoader,
+          //   children: [
+          //     {
+          //       // index: true,
+          //       path: "7",
+          //       element: <UcrudStudentDetailPage />,
+          //       // action: deleteUcrudAction,
+          //     },
+          //     // {
+          //     //   path: "edit",
+          //     //   element: <EditUcrudPage />,
+          //     //   // action: manipulateUcrudAction,
+          //     //   // loader: checkAuthLoader,
+          //     // },
+          //   ],
+          // },
+          // {
+          //   path: "new",
+          //   element: <UcrudNewPage />,
+          //   action: manipulateUcrudAction,
+          //   // loader: checkAuthLoader,
+          // },
+          // {
+          //   path: "1",
+          //   element: <EcrudMainPage />,
+          //   loader: EcrudLoader,
+          // },
+          // {
+          //   path: "2",
+          //   element: <XcrudMainPage />,
+          //   loader: XcrudLoader,
+          // },
+          // {
+          //   path: "3",
+          //   element: <BcrudMainPage />,
+          //   loader: BcrudLoader,
+          // },
+          // {
+          //   path: "4",
+          //   element: <AcrudMainPage />,
+          //   loader: AcrudLoader,
+          // },
+          // {
+          //   path: "5",
+          //   element: <EcrudMainPage />,
+          //   loader: EcrudLoader,
+          // },
+          // {
+          //   path: "6",
+          //   element: <XcrudMainPage />,
+          //   loader: XcrudLoader,
+          // },
+          // {
+          //   path: "7",
+          //   element: <StudentMainPage />,
+          //   loader: StudentLoader,
+          // },
+
+          // {
+          //   // path: ":ucrudId",
+          //   path: ":ucrudId",
+          //   id: "ucrud-detail",
+          //   element: <UcrudStudentDetailPage />,
+          //   loader: UcrudStudentDetailLoader,
+          //     // element: <StudentMainPage />,
+          //     // loader: StudentLoader,
+          //   // children: [
+          //   // {
+          //   // index: true,
+          //   // path: "7",
+          //   // action: deleteUcrudAction,
+          //   // },
+          //   // {
+          //   //   path: "edit",
+          //   //   element: <EditUcrudPage />,
+          //   //   // action: manipulateUcrudAction,
+          //   //   // loader: checkAuthLoader,
+          //   // },
+          //   // ],
+          // },
+          // {
+          // path: "7",
+          // id: "ucrud-detail",
+          // element: <UcrudStudentDetailPage />,
+          // loader: UcrudStudentDetailLoader,
+          // },
+          // {
+          //   path: ":ucrudPaymentId",
+          //   id: "ucrud-payment-detail",
+          //   element: <UcrudPaymentDetailPage />,
+          //   loader: UcrudPaymentDetailLoader,
+          // },
+          // {
+          //   path: "8",
+          //   element: <AcrudMainPage />,
+          //   loader: AcrudLoader,
+          // },
         ],
       },
       // THIS IS THE END OF U-CRUD PATH

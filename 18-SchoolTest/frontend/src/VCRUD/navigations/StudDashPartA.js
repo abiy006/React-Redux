@@ -8,7 +8,7 @@ const StudDashPartA = ({ studs }) => {
   return (
     <>
       {studs.map((stud) => (
-        <div key={stud.schoolname} className={classes.studDashPartA}>
+        <div className={classes.studDashPartA}>
           <h1>{stud.schoolname}</h1>
 
           <div className={classes.studInfo}>

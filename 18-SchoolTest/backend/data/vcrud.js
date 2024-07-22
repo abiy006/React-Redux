@@ -1,14 +1,14 @@
 const { v4: generateId } = require('uuid');
 
 const { NotFoundError } = require('../util/errors');
-const { readData, writeData } = require('./util_student');
+const { readData, writeData } = require('./util_vcrud');
 
 // async function getAll() {
 //   const storedData = await readData();
-//   if (!storedData.students) {
+//   if (!storedData.vcruds) {
 //     throw new NotFoundError('Could not find any events.');
 //   }
-//   return storedData.students;
+//   return storedData.vcruds;
 // }
 
 async function getAll() {
@@ -21,45 +21,44 @@ async function getAll() {
 
 async function get(id) {
   const storedData = await readData();
-  if (!storedData.students || storedData.students.length === 0) {
+  if (!storedData.vcruds || storedData.vcruds.length === 0) {
     throw new NotFoundError('Could not find any events.');
   }
 
-  const student = storedData.students.find((ev) => ev.id === id);
-  // const student = storedData.students.find((ev) => ev.number === number);
-  if (!student) {
+  const vcrud = storedData.vcruds.find((ev) => ev.id === id);
+  if (!vcrud) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
 
-  return student;
+  return vcrud;
 }
 
 async function add(data) {
   const storedData = await readData();
-  storedData.students.unshift({ ...data, id: generateId() });
+  storedData.vcruds.unshift({ ...data, id: generateId() });
   await writeData(storedData);
 }
 
 async function replace(id, data) {
   const storedData = await readData();
-  if (!storedData.students || storedData.students.length === 0) {
+  if (!storedData.vcruds || storedData.vcruds.length === 0) {
     throw new NotFoundError('Could not find any events.');
   }
 
-  const index = storedData.students.findIndex((ev) => ev.id === id);
+  const index = storedData.vcruds.findIndex((ev) => ev.id === id);
   if (index < 0) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
 
-  storedData.students[index] = { ...data, id };
+  storedData.vcruds[index] = { ...data, id };
 
   await writeData(storedData);
 }
 
 async function remove(id) {
   const storedData = await readData();
-  const updatedData = storedData.students.filter((ev) => ev.id !== id);
-  await writeData({ ...storedData, students: updatedData });
+  const updatedData = storedData.vcruds.filter((ev) => ev.id !== id);
+  await writeData({ ...storedData, vcruds: updatedData });
 }
 
 exports.getAll = getAll;

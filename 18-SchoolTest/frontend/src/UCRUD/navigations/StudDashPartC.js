@@ -9,7 +9,8 @@ const StudDashPartC = ({ students }) => {
     <ul className={classes.list}>
       {students.map((student, index) => (
         <li key={student.id} className={classes.item}>
-          <NavLink to={`/u-crudX/${student.stud_id}`}>
+          {/* <NavLink to={`/u-crudX/${student.id}`}> */}
+          <NavLink to={`/u-crudX/${student.id}`}>
             <div className={classes.basicsA}>
               <img src={student.stud_image} alt={student.stud_name} />
               <div className={classes.content}>

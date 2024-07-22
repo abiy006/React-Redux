@@ -26,6 +26,7 @@ async function get(id) {
   }
 
   const ucrud = storedData.ucruds.find((ev) => ev.id === id);
+  // const ucrud = storedData.ucruds.find((ev) => ev.number === number);
   if (!ucrud) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
