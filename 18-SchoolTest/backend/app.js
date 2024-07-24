@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 
 const zcrudRoutes = require('./routes/zcruds');
+const student_subjectRoutes = require('./routes/student_subjects');
 const studentRoutes = require('./routes/students');
 const paymentRoutes = require('./routes/payments');
 const eventRoutes = require('./routes/events');
@@ -75,6 +76,7 @@ app.use((req, res, next) => {
 app.use(authRoutes);
 
 app.use('/events', eventRoutes);
+app.use('/student_subjects', student_subjectRoutes);
 app.use('/students', studentRoutes);
 app.use('/payments', paymentRoutes);
 app.use('/zcruds', zcrudRoutes);
