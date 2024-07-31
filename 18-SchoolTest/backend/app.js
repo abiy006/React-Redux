@@ -4,11 +4,20 @@ const express = require('express');
 const zcrudRoutes = require('./routes/zcruds');
 const student_subjectRoutes = require('./routes/student_subjects');
 const studentRoutes = require('./routes/students');
-const paymentRoutes = require('./routes/payments');
+
 const eventRoutes = require('./routes/events');
 const authRoutes = require('./routes/auth');
 const ccrudRoutes = require('./routes/ccruds');
-// THIS IS THE END OF ccruds require 
+// THIS IS THE END OF ccruds require
+
+// THIS IS THE BEGINING OF payments require
+const paymentRoutes = require('./routes/payments');
+// THIS IS THE END OF payments require 
+
+// THIS IS THE BEGINING OF homeworks require
+const homeworkRoutes = require('./routes/homeworks');
+// THIS IS THE END OF homeworks require
+ 
 
 // THIS IS THE BEGINING OF dcruds require
 const dcrudRoutes = require('./routes/dcruds');
@@ -78,10 +87,18 @@ app.use(authRoutes);
 app.use('/events', eventRoutes);
 app.use('/student_subjects', student_subjectRoutes);
 app.use('/students', studentRoutes);
-app.use('/payments', paymentRoutes);
 app.use('/zcruds', zcrudRoutes);
 app.use('/ccruds', ccrudRoutes);
 // THIS IS THE END OF ccruds use 
+
+// THIS IS THE BEGINING OF payments use
+app.use('/payments', paymentRoutes);
+// THIS IS THE END OF payments use 
+
+// THIS IS THE BEGINING OF homeworks use
+app.use('/homeworks', homeworkRoutes);
+// THIS IS THE END OF homeworks use
+ 
 
 // THIS IS THE BEGINING OF dcruds use
 app.use('/dcruds', dcrudRoutes);
@@ -107,14 +124,10 @@ app.use('/acruds', acrudRoutes);
 app.use('/bcruds', bcrudRoutes);
 // THIS IS THE END OF bcruds use
 
- 
- 
-
 // THIS IS THE BEGINING OF ycruds use
 app.use('/ycruds', ycrudRoutes);
 // THIS IS THE END OF ycruds use
 
- 
 
 // THIS IS THE BEGINING OF ecruds use
 app.use('/ecruds', ecrudRoutes);
@@ -148,6 +161,9 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
+
 
 
 

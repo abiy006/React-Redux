@@ -18,6 +18,10 @@ import PaymentDetailComponent from "../componets/UcrudPaymentDetailComponent";
 import StudentSubjectUcrudItem from "../componets/StudentSubjectUcrudItem";
 import StudentSubjectDetailComponent from "../componets/UcrudStudentSubjectDetailComponent";
 
+import StudentHomeworkItem from "../componets/StudentHomeworkItem";
+import StudentHomeworkComponent from "../componets/StudentHomeworkComponent";
+
+
 function PaymentCRUD() {
   let {
     payment,
@@ -30,14 +34,14 @@ function PaymentCRUD() {
   // const { payment, payments } = useRouteLoaderData("ucrud-dynamic-detail");
 
   // const { ucrud, ucruds } = useRouteLoaderData('ucrud-detail');
-  console.log("student - " + student);
-  console.log("payment - " + payment);
+  // console.log("student - " + student);
+  // console.log("payment - " + payment);
 
-  console.log("students - " + students);
-  console.log("payments - " + payments);
+  // console.log("students - " + students);
+  // console.log("payments - " + payments);
 
-  console.log("student_subjects - " + student_subjects);
-  console.log("student_subject - " + student_subject);
+  // console.log("student_subjects - " + student_subjects);
+  // console.log("student_subject - " + student_subject);
   return (
     <>
       {(student || students) && (
@@ -213,7 +217,7 @@ export async function loader({ request, params }) {
     });
   } else if (
     id === "8b9f6bb7-ebf6-4758-a6a6-0c142ff0110b" ||
-    id === "3f32e696-d839-4bb3-bcd6-ba812d9e1f11"
+    id === "payment-aaa-001"
   ) {
     return defer({
       payment: await PTloaded(id),

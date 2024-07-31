@@ -12,7 +12,7 @@ import StudDashPartD from '../navigations/StudDashPartD';
 
     <div className={classes.students}>
       <div>
-        <h1>Student detail page</h1>
+        <h1>Student payment page</h1>
       </div>
       
       {/* <StudDashPartA studs={students.studs} /> */}

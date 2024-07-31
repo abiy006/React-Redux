@@ -1,23 +1,23 @@
 {
-  "payments": [
+  "homeworks": [
     {
-      "stud_name": "Payment Abiy Hussen 1",
+      "stud_name": "Homework Abiy Kokebe 1",
       "stud_image": "https://w7.pngwing.com/pngs/488/1009/png-transparent-graduation-ceremony-silhouette-silhouette-animals-photography-graduation-ceremony-thumbnail.png",
       "stud_id": "ID - AA003",
       "stud_grd_sec": "Grage 7 - Section B",
       "stud_cat": "Student Category - Default Student",
       "stud_gender": "Gender - Male",
-      "id": "8b9f6bb7-ebf6-4758-a6a6-0c142ff0110b",
+      "id": "homework-aaa-001",
       "number": "4"
     },
     {
-        "stud_name": "Payment Abiy Hussen 2",
+        "stud_name": "Homework Abiy Kokebe 2",
         "stud_image": "https://w7.pngwing.com/pngs/488/1009/png-transparent-graduation-ceremony-silhouette-silhouette-animals-photography-graduation-ceremony-thumbnail.png",
         "stud_id": "ID - AA004",
         "stud_grd_sec": "Grage 7 - Section B 2",
         "stud_cat": "Student Category - Default Student",
         "stud_gender": "Gender - Male",
-        "id": "payment-aaa-001",
+        "id": "homework-aaa-002",
         "number": "6"
     }
   ],
