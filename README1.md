@@ -1,4 +1,86 @@
 # NUMBER ONE
+
+### Create the xxxx.json from aaaa.json file
+
+$From1 = "payment"
+$To1 = "homework"
+
+$From2 = $From1 + "s"
+$To2 = $To1 + "s"
+
+$From3 = (Get-Culture).TextInfo.ToTitleCase($From1) #"Ccrud"
+$To3 = (Get-Culture).TextInfo.ToTitleCase($To1) #"Dcrud"
+
+$From_Path1 = "backend\$From2.json"
+$To_Path1 = "backend\$To2.json"
+
+Copy-Item -Path $From_Path1 -Destination $To_Path1
+(Get-Content $To_Path1).Replace($From1, $To1) | Set-Content $To_Path1
+(Get-Content $To_Path1).Replace($From3, $To3) | Set-Content $To_Path1
+
+$From_Path2 = "backend\data\$From1.js"
+$To_Path2 = "backend\data\$To1.js"
+
+Copy-Item -Path $From_Path2 -Destination $To_Path2
+(Get-Content $To_Path2).Replace($From1, $To1) | Set-Content $To_Path2
+<!-- (Get-Content $To_Path2).Replace($From3, $To3) | Set-Content $To_Path2 -->
+<!-- (Get-Content $To_Path2).Replace($From1, $To1) | Set-Content $To_Path2
+(Get-Content $To_Path2).Replace($From3, $To3) | Set-Content $To_Path2 -->
+
+$From_var1 = "util_" + $From1 + ".js"
+$To_var1 = "util_" + $To1 + ".js"
+
+$From_Path3 = "backend\data\$From_var1"
+$To_Path3 = "backend\data\$To_var1"
+
+Copy-Item -Path $From_Path3 -Destination $To_Path3
+(Get-Content $To_Path3).Replace($From1, $To1) | Set-Content $To_Path3
+<!-- (Get-Content $To_Path2).Replace($From3, $To3) | Set-Content $To_Path2 -->
+<!-- (Get-Content $To_Path2).Replace($From1, $To1) | Set-Content $To_Path2
+(Get-Content $To_Path2).Replace($From3, $To3) | Set-Content $To_Path2 -->
+
+$From_Path4 = "backend\routes\$From2.js"
+$To_Path4 = "backend\routes\$To2.js"
+
+Copy-Item -Path $From_Path4 -Destination $To_Path4
+(Get-Content $To_Path4).Replace($From1, $To1) | Set-Content $To_Path4
+
+
+$customVar = $To1 + "Routes"
+(Get-Content -path "backend\app.js" -Raw) -replace "THIS IS THE END OF $From2 require","THIS IS THE END OF $From2 require `n`n// THIS IS THE BEGINING OF $To2 require
+const $customVar = require('./routes/$To2');
+// THIS IS THE END OF $To2 require
+" | Set-Content -Path "backend\app.js"
+
+
+(Get-Content -path "backend\app.js" -Raw) -replace "THIS IS THE END OF $From2 use","THIS IS THE END OF $From2 use `n`n// THIS IS THE BEGINING OF $To2 use
+app.use('/$To2', $customVar);
+// THIS IS THE END OF $To2 use
+" | Set-Content -Path "backend\app.js"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $Replace1 = "fcrud"
 $Replace2 = "gcrud"
 
