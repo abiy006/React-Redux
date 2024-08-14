@@ -1,9 +1,9 @@
 import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
 
-import classes from '../CSS/UcrudItem.module.css';
+import classes from '../../CSS/SampleaItem.module.css';
 
-function PaymentItem({ payment }) {
-  // console.log(payment)
+function SampleaItem({ samplea }) {
+  console.log("sampleaItem - samplea - " + samplea);
   const token = useRouteLoaderData('root');
   const submit = useSubmit();
 
@@ -16,13 +16,13 @@ function PaymentItem({ payment }) {
   }
 
   return (
-    <article className={classes.ucrud}>
-      <img src={payment.stud_image} alt={payment.stud_name} />
-      <h1>{payment.stud_name}</h1>
-      <p>{payment.stud_id}</p>
-      <p>{payment.stud_grd_sec}</p>
-      <p>{payment.stud_cat}</p>
-      <p>{payment.stud_gender}</p>
+    <article className={classes.samplea}>
+      <img src={samplea.stud_image} alt={samplea.stud_name} />
+      <h1>{samplea.stud_name}</h1>
+      <p>{samplea.stud_id}</p>
+      <p>{samplea.stud_grd_sec}</p>
+      <p>{samplea.stud_cat}</p>
+      <p>{samplea.stud_gender}</p>
       {token && (
         <menu className={classes.actions}>
           <Link to="edit">Edit</Link>
@@ -33,4 +33,4 @@ function PaymentItem({ payment }) {
   );
 }
 
-export default PaymentItem;
+export default SampleaItem;

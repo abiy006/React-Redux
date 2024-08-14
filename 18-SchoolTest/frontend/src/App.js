@@ -179,12 +179,12 @@ import { action as manipulateVcrudAction } from "./VCRUD/componets/VcrudForm";
 // THIS IS THE BEGINING OF UCRUD IMPORT CODES
 import UcrudRootLayout from "./UCRUD/roots/UcrudRoot";
 import UcrudMainPage, { loader as UcrudLoader } from "./UCRUD/pages/UcrudMain";
-import UcrudStudentDetailPage, {
-  loader as UcrudStudentDetailLoader,
-} from "./UCRUD/pages/UcrudStudentDetailPage";
-import UcrudPaymentDetailPage, {
-  loader as UcrudPaymentDetailLoader,
-} from "./UCRUD/pages/UcrudPaymentDetailPage";
+// import UcrudStudentDetailPage, {
+//   loader as UcrudStudentDetailLoader,
+// } from "./UCRUD/pages/UcrudStudentDetailPage";
+// import UcrudPaymentDetailPage, {
+//   loader as UcrudPaymentDetailLoader,
+// } from "./UCRUD/pages/UcrudPaymentDetailPage";
 import UcrudDynamicDetailPage, {
   loader as UcrudDynamicDetailLoader,
 } from "./UCRUD/pages/UcrudXDetailPage";
@@ -199,9 +199,9 @@ import UcrudDynamicDetailPage, {
 
 // THIS IS THE BEGINING OF STUDENT IMPORT CODES
 // import UcrudRootLayout from "./UCRUD/roots/UcrudRoot";
-import StudentMainPage, {
-  loader as StudentLoader,
-} from "./UCRUD/pages/StudentMain";
+// import StudentMainPage, {
+//   loader as StudentLoader,
+// } from "./UCRUD/pages/StudentMain";
 // import UcrudStudentDetailPage, {
 //   loader as UcrudStudentDetailLoader,
 // } from "./UCRUD/pages/UcrudStudentDetailPage";

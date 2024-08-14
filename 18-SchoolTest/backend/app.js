@@ -14,6 +14,16 @@ const ccrudRoutes = require('./routes/ccruds');
 const paymentRoutes = require('./routes/payments');
 // THIS IS THE END OF payments require 
 
+// THIS IS THE BEGINING OF sampleas require
+const sampleaRoutes = require('./routes/sampleas');
+// THIS IS THE END OF sampleas require
+ 
+
+// THIS IS THE BEGINING OF samples require
+const sampleRoutes = require('./routes/samples');
+// THIS IS THE END OF samples require
+ 
+
 // THIS IS THE BEGINING OF homeworks require
 const homeworkRoutes = require('./routes/homeworks');
 // THIS IS THE END OF homeworks require
@@ -95,6 +105,15 @@ app.use('/ccruds', ccrudRoutes);
 app.use('/payments', paymentRoutes);
 // THIS IS THE END OF payments use 
 
+// THIS IS THE BEGINING OF sampleas use
+app.use('/sampleas', sampleaRoutes);
+// THIS IS THE END OF sampleas use
+ 
+
+// THIS IS THE BEGINING OF samples use
+app.use('/samples', sampleRoutes);
+// THIS IS THE END OF samples use
+
 // THIS IS THE BEGINING OF homeworks use
 app.use('/homeworks', homeworkRoutes);
 // THIS IS THE END OF homeworks use
@@ -161,6 +180,12 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
+
+
+
+
 
 
 

@@ -54,7 +54,7 @@
       "date": "This section includes the exams or assessment materials for a student.",
       "description": "sdfdsfdf",
       "number": "8",
-      "id": "34762af6-6f3c-4e93-89b5-654c400348d0"
+      "id": "homework-aaa-001"
     },
     {
       "title": "Student Payments",
@@ -62,7 +62,23 @@
       "date": "This section presents the payment reports or financial documentation detailing the payments made by the student",
       "description": "sldhfkjhdsfk",
       "number": "4",
-      "id": "8b9f6bb7-ebf6-4758-a6a6-0c142ff0110b"
+      "id": "payment-aaa-001"
+    },
+    {
+      "title": "Sample Details",
+      "image": "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+      "date": "This section presents the sameple",
+      "description": "sldhfkjhdsfk",
+      "number": "9",
+      "id": "sample-aaa-001"
+    },
+    {
+      "title": "Samplea Details",
+      "image": "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+      "date": "This section presents the sameple1",
+      "description": "sldhfkjhdsfk1",
+      "number": "10",
+      "id": "samplea-aaa-001"
     }
   ],
   "users": [
