@@ -38,6 +38,12 @@ const samplehRoutes = require('./routes/samplehs');
 const sampleiRoutes = require('./routes/sampleis');
 // THIS IS THE END OF sampleis require 
 
+// THIS IS THE BEGINING OF student_details require
+const student_detailRoutes = require('./routes/student_details');
+// THIS IS THE END OF student_details require
+ 
+ 
+
 // THIS IS THE BEGINING OF samplejs require
 const samplejRoutes = require('./routes/samplejs');
 // THIS IS THE END OF samplejs require
@@ -169,6 +175,12 @@ app.use('/samplehs', samplehRoutes);
 app.use('/sampleis', sampleiRoutes);
 // THIS IS THE END OF sampleis use 
 
+// THIS IS THE BEGINING OF student_details use
+app.use('/student_details', student_detailRoutes);
+// THIS IS THE END OF student_details use
+ 
+
+
 // THIS IS THE BEGINING OF samplejs use
 app.use('/samplejs', samplejRoutes);
 // THIS IS THE END OF samplejs use
@@ -260,6 +272,10 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
+
+
 
 
 

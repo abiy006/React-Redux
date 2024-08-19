@@ -10,16 +10,6 @@ import {
 // import UcrudItem from '../componets/UcrudItem';
 import { getAuthToken } from "../../util/auth";
 
-import StudentUcrudItem from "../componets/StudentUcrudItem";
-import StudentDetailComponent from "../componets/UcrudStudentDetailComponent";
-
-import StudentSubjectUcrudItem from "../componets/StudentSubjectUcrudItem";
-import StudentSubjectDetailComponent from "../componets/UcrudStudentSubjectDetailComponent";
-
-// THIS IS THE BEGINING OF PAYMENT IMPORT CODES
-import PaymentUcrudItem from "../componets/PaymentUcrudItem";
-import PaymentDetailComponent from "../componets/UcrudPaymentDetailComponent";
-// THIS IS THE END OF PAYMENT IMPORT CODES
 
 // THIS IS THE BEGINING OF samplea IMPORT CODES
 import SampleaItem from '../componets/Samplea/SampleaItem';
@@ -51,15 +41,17 @@ import SampleiItem from '../componets/Samplei/SampleiItem';
 import SampleiList from '../componets/Samplei/SampleiList';
 // THIS IS THE END OF SAMPLEI IMPORT CODES
 
+// THIS IS THE BEGINING OF STUDENT_DETAIL IMPORT CODES
+import Student_DetailItem from '../componets/Student_Detail/Student_DetailItem';
+import Student_DetailList from '../componets/Student_Detail/Student_DetailList';
+// THIS IS THE END OF STUDENT_DETAIL IMPORT CODES
+
+
+
 // THIS IS THE BEGINING OF SAMPLEJ IMPORT CODES
 import SamplejItem from '../componets/Samplej/SamplejItem';
 import SamplejList from '../componets/Samplej/SamplejList';
 // THIS IS THE END OF SAMPLEJ IMPORT CODES
-
-
-
-
-
 
 
 // THIS IS THE BEGINING OF SAMPLEC IMPORT CODES
@@ -82,23 +74,9 @@ import SampleItem from '../componets/Sample/SampleItem';
 import SampleList from '../componets/Sample/SampleList'; 
 // THIS IS THE END OF SAMPLE IMPORT CODES
 
-// THIS IS THE BEGINING OF HOMEWORK IMPORT CODES
-import HomeworkItem from "../componets/HomeworkItem";
-import HomeworkList from "../componets/HomeworkList";
-// THIS IS THE END OF HOMEWORK IMPORT CODES
-
 
 function PaymentCRUD() {
   let {
-    student,
-    students,
-    student_subject,
-    student_subjects,
-
-    // VARIABLE PAYMENT BEGINING
-    payment,
-    payments,
-    // VARIABLE PAYMENT ENDING
 
 // VARIABLE samplea BEGINING
     samplea,
@@ -130,14 +108,16 @@ function PaymentCRUD() {
     sampleis,
 // VARIABLE SAMPLEI ENDING
 
+// VARIABLE STUDENT_DETAIL BEGINING
+    student_detail,
+    student_details,
+// VARIABLE STUDENT_DETAIL ENDING
+
+
 // VARIABLE SAMPLEJ BEGINING
     samplej,
     samplejs,
 // VARIABLE SAMPLEJ ENDING
-
-
-
-
 
 
 
@@ -159,10 +139,6 @@ function PaymentCRUD() {
     samples,
     // VARIABLE SAMPLE ENDING
 
-    // VARIABLE HOMEWORK BEGINING
-    homework,
-    homeworks,
-    // VARIABLE HOMEWORK ENDING
   } = useRouteLoaderData("ucrud-dynamic-detail");
   // const { payment, payments } = useRouteLoaderData("ucrud-dynamic-detail");
 
@@ -183,57 +159,6 @@ function PaymentCRUD() {
   console.log("UcrudXDetailPage - samplefs - " + samplefs);
   return (
     <>
-      {(student || students) && (
-        <Suspense
-          fallback={<p style={{ textAlign: "center" }}>Student Loading...</p>}
-        >
-          <Await resolve={student}>
-            {(loadedEventST) => <StudentUcrudItem student={loadedEventST} />}
-          </Await>
-
-          <Await resolve={students}>
-            {(STSloaded) => <StudentDetailComponent students={STSloaded} />}
-          </Await>
-        </Suspense>
-      )}
-
-      {(student_subject || student_subjects) && (
-        <Suspense
-          fallback={
-            <p style={{ textAlign: "center" }}>Student_Subject Loading...</p>
-          }
-        >
-          <Await resolve={student_subject}>
-            {(StudentSubjectloaded) => (
-              <StudentSubjectUcrudItem student_subject={StudentSubjectloaded} />
-            )}
-          </Await>
-
-          <Await resolve={student_subjects}>
-            {(StudentSubjectsloaded) => (
-              <StudentSubjectDetailComponent
-                student_subjects={StudentSubjectsloaded}
-              />
-            )}
-          </Await>
-        </Suspense>
-      )}
-
-      {/* THIS IS THE BEGINING OF PAYMENT SUSPENSE AND AWAIT */}
-      {(payment || payments) && (
-        <Suspense
-          fallback={<p style={{ textAlign: "center" }}>Payment Loading...</p>}
-        >
-          <Await resolve={payment}>
-            {(loadedEventPT) => <PaymentUcrudItem payment={loadedEventPT} />}
-          </Await>
-
-          <Await resolve={payments}>
-            {(PTSloaded) => <PaymentDetailComponent payments={PTSloaded} />}
-          </Await>
-        </Suspense>
-      )}
-      {/* THIS IS THE END OF PAYMENT SUSPENSE AND AWAIT */ }
 
       { /* THIS IS THE BEGINING OF SAMPLEF SUSPENSE AND AWAIT */ }
       {(samplef || samplefs) && (
@@ -306,6 +231,24 @@ function PaymentCRUD() {
       
   )}
     { /* THIS IS THE END OF SAMPLEI SUSPENSE AND AWAIT */ }
+
+{ /* THIS IS THE BEGINING OF STUDENT_DETAIL SUSPENSE AND AWAIT */ }
+      {(student_detail || student_details) && (
+  
+        <Suspense
+          fallback={<p>Student_Detail Loading...</p>}
+        >
+          <Await resolve={student_detail}>
+            {(Student_DetailLoaded) => <Student_DetailItem student_detail={Student_DetailLoaded} />}
+          </Await>
+
+          <Await resolve={student_details}>
+            {(Student_DetailsLoaded) => <Student_DetailList student_details={Student_DetailsLoaded} />}
+          </Await>
+        </Suspense>
+      
+  )}
+    { /* THIS IS THE END OF STUDENT_DETAIL SUSPENSE AND AWAIT */ }
 
 { /* THIS IS THE BEGINING OF SAMPLEJ SUSPENSE AND AWAIT */ }
       {(samplej || samplejs) && (
@@ -413,21 +356,6 @@ function PaymentCRUD() {
       )}
       {/* THIS IS THE END OF sample SUSPENSE AND AWAIT */}
 
-      {/* THIS IS THE BEGINING OF HOMEWORK SUSPENSE AND AWAIT */}
-      {(homework || homeworks) && (
-        <Suspense
-          fallback={<p style={{ textAlign: "center" }}>Homework Loading...</p>}
-        >
-          <Await resolve={homework}>
-            {(HomeworkLoaded) => <HomeworkItem homework={HomeworkLoaded} />}
-          </Await>
-
-          <Await resolve={homeworks}>
-            {(HomeworksLoaded) => <HomeworkList homeworks={HomeworksLoaded} />}
-          </Await>
-        </Suspense>
-      )}
-      {/* THIS IS THE END OF HOMEWORK SUSPENSE AND AWAIT */}
     </>
   );
 }
@@ -540,6 +468,43 @@ async function PTSloaded() {
   }
 }
 // THIS IS THE END OF PAYMENT AWAIT FUNCTIONS
+
+// THIS IS THE BEGINING OF STUDENT_DETAIL AWAIT FUNCTIONS
+async function Student_DetailLoaded(id) {
+  const response = await fetch('http://localhost:8080/student_details/' + id);
+
+  if (!response.ok) {
+    throw json(
+      { message: 'Could not fetch details for selected student_detail.' },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    const resData = await response.json();
+    return resData.student_detail;
+  }
+}
+
+async function Student_DetailsLoaded() {
+  const response = await fetch('http://localhost:8080/student_details');
+
+  if (!response.ok) {
+    throw json(
+      { message: 'Could not fetch student_details.' },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    const resData = await response.json();
+    return resData.student_details;
+    // return resData;
+  }
+}
+// THIS IS THE END OF STUDENT_DETAIL AWAIT FUNCTIONS
+
+
 
 // THIS IS THE BEGINING OF SAMPLEJ AWAIT FUNCTIONS
 async function SamplejLoaded(id) {
@@ -960,6 +925,20 @@ export async function loader({ request, params }) {
   }
   // THIS IS THE END OF PAYMENT ELSE IF STATEMENT
 
+// THIS IS THE BEGINING OF STUDENT_DETAIL ELSE IF STATEMENT
+  else if (
+    id === 'student_detail-aaa-001' ||
+    id === 'student_detail-aaa-002'
+  ) {
+    return defer({
+      student_detail : await Student_DetailLoaded(id),
+      student_details : Student_DetailsLoaded(),
+    });
+  }
+// THIS IS THE END OF STUDENT_DETAIL ELSE IF STATEMENT
+
+
+
 // THIS IS THE BEGINING OF SAMPLEJ ELSE IF STATEMENT
   else if (
     id === 'samplej-aaa-001' ||
@@ -1118,6 +1097,16 @@ export async function loader({ request, params }) {
 //   }
 //   return redirect("/u-crud");
 // }
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2,9 +2,9 @@ import * as React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import classes from "../../CSS/Sample.module.css";
+import classes from "../../CSS/Sample/SampleDetail.module.css";
 
-const StudDashPartD = ({ samples }) => {
+const SampleDetail = ({ samples }) => {
   return (
     <ul className={classes.list}>
       {samples.map((sample, index) => (
@@ -30,4 +30,4 @@ const StudDashPartD = ({ samples }) => {
   );
 };
 
-export default StudDashPartD;
+export default SampleDetail;

@@ -1,6 +1,6 @@
 
 $From1 = "samplei"
-$To1 = "samplej"
+$To1 = "student_detail"
 
 $From2 = $From1 + "s"
 $To2 = $To1 + "s"
@@ -181,7 +181,7 @@ $var3_sus_wat2 = $To3 + 'List'
 $varA = $To3 + 'Loaded'
 $varB = $To5 + 'Loaded'
 
-(Get-Content -path "frontend\src\UCRUD\pages\UcrudXDetailPage.js" -Raw) -replace "THIS IS THE END OF PAYMENT AWAIT FUNCTIONS","THIS IS THE END OF PAYMENT AWAIT FUNCTIONS`n`n// THIS IS THE BEGINING OF $To4 AWAIT FUNCTIONS
+(Get-Content -path "frontend\src\UCRUD\pages\UcrudXDetailPage.js" -Raw) -replace "THIS IS THE END OF STUDENT_DETAIL AWAIT FUNCTIONS","THIS IS THE END OF STUDENT_DETAIL AWAIT FUNCTIONS`n`n// THIS IS THE BEGINING OF $To4 AWAIT FUNCTIONS
 async function $varA(id) {
   const response = await fetch('http://localhost:8080/$To2/' + id);
 
@@ -229,7 +229,7 @@ $var2_sus_wat = $To5 + 'Loaded'
 $var3_sus_wat = $To1 + '-aaa-001'
 $var4_sus_wat = $To1 + '-aaa-002'
 
-(Get-Content -path "frontend\src\UCRUD\pages\UcrudXDetailPage.js" -Raw) -replace "THIS IS THE END OF PAYMENT ELSE IF STATEMENT","THIS IS THE END OF PAYMENT ELSE IF STATEMENT`n`n// THIS IS THE BEGINING OF $To4 ELSE IF STATEMENT
+(Get-Content -path "frontend\src\UCRUD\pages\UcrudXDetailPage.js" -Raw) -replace "THIS IS THE END OF STUDENT_DETAIL ELSE IF STATEMENT","THIS IS THE END OF STUDENT_DETAIL ELSE IF STATEMENT`n`n// THIS IS THE BEGINING OF $To4 ELSE IF STATEMENT
   else if (
     id === '$var3_sus_wat' ||
     id === '$var4_sus_wat'

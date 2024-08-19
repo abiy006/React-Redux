@@ -1,8 +1,8 @@
-import classes from "../../CSS/UcrudStudentDetailComponent.module.css";
+import classes from "../../CSS/Sample/SampleList.module.css";
 
 import SampleDetail from './SampleDetail';
 
-  function StudentsList({ samples }) {
+  function SampleList({ samples }) {
 // console.log(samples)
   return (
 
@@ -15,5 +15,5 @@ import SampleDetail from './SampleDetail';
   );
 }
 
-export default StudentsList;
+export default SampleList;
 

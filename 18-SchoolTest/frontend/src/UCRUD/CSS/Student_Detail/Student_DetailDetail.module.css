@@ -1,10 +1,10 @@
-.samples {
+.student_details {
   margin: 2rem auto;
-  background-color: darkcyan;
+  background-color: red;
   padding-bottom: 1rem;
 }
 
-.samples h1 {
+.student_details h1 {
   padding: 1rem;
 }
 
