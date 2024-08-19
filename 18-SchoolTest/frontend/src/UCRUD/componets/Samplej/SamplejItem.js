@@ -1,9 +1,9 @@
 import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
 
-import classes from '../../CSS/Samplea/SampleaItem.module.css';
+import classes from '../../CSS/Samplej/SamplejItem.module.css';
 
-function SampleaItem({ samplea }) {
-  console.log("sampleaItem - samplea - " + samplea);
+function SamplejItem({ samplej }) {
+  console.log("samplejItem - samplej - " + samplej);
   const token = useRouteLoaderData('root');
   const submit = useSubmit();
 
@@ -16,13 +16,13 @@ function SampleaItem({ samplea }) {
   }
 
   return (
-    <article className={classes.samplea}>
-      <img src={samplea.stud_image} alt={samplea.stud_name} />
-      <h1>{samplea.stud_name}</h1>
-      <p>{samplea.stud_id}</p>
-      <p>{samplea.stud_grd_sec}</p>
-      <p>{samplea.stud_cat}</p>
-      <p>{samplea.stud_gender}</p>
+    <article className={classes.samplej}>
+      <img src={samplej.stud_image} alt={samplej.stud_name} />
+      <h1>{samplej.stud_name}</h1>
+      <p>{samplej.stud_id}</p>
+      <p>{samplej.stud_grd_sec}</p>
+      <p>{samplej.stud_cat}</p>
+      <p>{samplej.stud_gender}</p>
       {token && (
         <menu className={classes.actions}>
           <Link to="edit">Edit</Link>
@@ -33,4 +33,4 @@ function SampleaItem({ samplea }) {
   );
 }
 
-export default SampleaItem;
+export default SamplejItem;

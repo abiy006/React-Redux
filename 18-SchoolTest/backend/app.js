@@ -16,7 +16,47 @@ const paymentRoutes = require('./routes/payments');
 
 // THIS IS THE BEGINING OF sampleas require
 const sampleaRoutes = require('./routes/sampleas');
-// THIS IS THE END OF sampleas require
+// THIS IS THE END OF sampleas require 
+
+// THIS IS THE BEGINING OF sampleds require
+const sampledRoutes = require('./routes/sampleds');
+// THIS IS THE END OF sampleds require 
+
+// THIS IS THE BEGINING OF samplefs require
+const samplefRoutes = require('./routes/samplefs');
+// THIS IS THE END OF samplefs require 
+
+// THIS IS THE BEGINING OF samplegs require
+const samplegRoutes = require('./routes/samplegs');
+// THIS IS THE END OF samplegs require 
+
+// THIS IS THE BEGINING OF samplehs require
+const samplehRoutes = require('./routes/samplehs');
+// THIS IS THE END OF samplehs require 
+
+// THIS IS THE BEGINING OF sampleis require
+const sampleiRoutes = require('./routes/sampleis');
+// THIS IS THE END OF sampleis require 
+
+// THIS IS THE BEGINING OF samplejs require
+const samplejRoutes = require('./routes/samplejs');
+// THIS IS THE END OF samplejs require
+
+
+
+
+
+ 
+
+// THIS IS THE BEGINING OF samplecs require
+const samplecRoutes = require('./routes/samplecs');
+// THIS IS THE END OF samplecs require
+ 
+
+// THIS IS THE BEGINING OF samplebs require
+const samplebRoutes = require('./routes/samplebs');
+// THIS IS THE END OF samplebs require
+
  
 
 // THIS IS THE BEGINING OF samples require
@@ -107,7 +147,47 @@ app.use('/payments', paymentRoutes);
 
 // THIS IS THE BEGINING OF sampleas use
 app.use('/sampleas', sampleaRoutes);
-// THIS IS THE END OF sampleas use
+// THIS IS THE END OF sampleas use 
+
+// THIS IS THE BEGINING OF sampleds use
+app.use('/sampleds', sampledRoutes);
+// THIS IS THE END OF sampleds use 
+
+// THIS IS THE BEGINING OF samplefs use
+app.use('/samplefs', samplefRoutes);
+// THIS IS THE END OF samplefs use 
+
+// THIS IS THE BEGINING OF samplegs use
+app.use('/samplegs', samplegRoutes);
+// THIS IS THE END OF samplegs use 
+
+// THIS IS THE BEGINING OF samplehs use
+app.use('/samplehs', samplehRoutes);
+// THIS IS THE END OF samplehs use 
+
+// THIS IS THE BEGINING OF sampleis use
+app.use('/sampleis', sampleiRoutes);
+// THIS IS THE END OF sampleis use 
+
+// THIS IS THE BEGINING OF samplejs use
+app.use('/samplejs', samplejRoutes);
+// THIS IS THE END OF samplejs use
+
+
+
+
+
+ 
+
+// THIS IS THE BEGINING OF samplecs use
+app.use('/samplecs', samplecRoutes);
+// THIS IS THE END OF samplecs use
+ 
+
+// THIS IS THE BEGINING OF samplebs use
+app.use('/samplebs', samplebRoutes);
+// THIS IS THE END OF samplebs use
+
  
 
 // THIS IS THE BEGINING OF samples use
@@ -180,6 +260,22 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 // import { Link } from 'react-router-dom';
 // import { NavLink } from "react-router-dom";
 
-import classes from "../../CSS/SampleaList.module.css";
+import classes from "../../CSS/Samplea/SampleaList.module.css";
 
 import SampleaDetail from './SampleaDetail';
 

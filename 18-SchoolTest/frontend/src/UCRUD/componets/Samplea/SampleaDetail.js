@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import classes from "../../CSS/SampleaDetail.module.css";
+import classes from "../../CSS/Samplea/SampleaDetail.module.css";
 
 const StudDashPartD = ({ sampleas }) => {
   console.log("sampleaDetail - sampleas - " + sampleas);
