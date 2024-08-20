@@ -4,12 +4,12 @@ import { NavLink } from "react-router-dom";
 
 import classes from "../CSS/StudDashPartC.module.css";
 
-const StudDashPartD = ({ samples }) => {
+const StudDashPartD = ({ payments }) => {
   return (
     <ul className={classes.list}>
-      {samples.map((payment, index) => (
+      {payments.map((payment, index) => (
         <li key={payment.id} className={classes.item}>
-          <NavLink to={`/u-crudX/${payment.id}`}>
+          <NavLink to={`/w-crudX/${payment.id}`}>
             <div className={classes.basicsA}>
               <img src={payment.stud_image} alt={payment.stud_name} />
               <div className={classes.content}>

@@ -197,6 +197,24 @@ import UcrudDynamicDetailPage, {
 // import EditUcrudPage from "./UCRUD/pages/UcrudEdit";
 // THIS IS THE END OF UCRUD IMPORT CODES
 
+// THIS IS THE BEGINING OF WCRUD IMPORT CODES
+import WcrudRootLayout from './WCRUD/roots/WcrudRoot';
+import WcrudMainPage, { loader as WcrudLoader } from './WCRUD/pages/WcrudMain';
+
+import WcrudDynamicDetailPage, {
+  loader as WcrudDynamicDetailLoader,
+} from "./WCRUD/pages/WcrudXDetailPage";
+
+// import WcrudNewPage from './WCRUD/pages/WcrudNew';
+// import { action as manipulateWcrudAction } from './WCRUD/componets/WcrudForm';
+// import WcrudDetailPage, {
+//   loader as WcrudDetailLoader,
+//   action as deleteWcrudAction,
+// } from './WCRUD/pages/WcrudDetail';
+// import EditWcrudPage from './WCRUD/pages/WcrudEdit';
+// THIS IS THE END OF WCRUD IMPORT CODES
+
+
 // THIS IS THE BEGINING OF STUDENT IMPORT CODES
 // import UcrudRootLayout from "./UCRUD/roots/UcrudRoot";
 // import StudentMainPage, {
@@ -1014,6 +1032,32 @@ const router = createBrowserRouter([
       },
       // THIS IS THE END OF U-CRUD PATH
 
+      // THIS IS THE BEGINING OF W-CRUD PATH
+      {
+        path: "w-crudX",
+        element: <WcrudRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <WcrudMainPage />,
+            loader: WcrudLoader,
+          },
+          {
+            path: "",
+            children: [
+              {
+                path: ":wcrudDynamicId",
+                id: "wcrud-dynamic-detail",
+                element: <WcrudDynamicDetailPage />,
+                loader: WcrudDynamicDetailLoader,
+              },
+            ],
+          },
+        ],
+      },
+      // THIS IS THE END OF W-CRUD PATH
+
+
       // THIS IS THE BEGINING OF T-CRUD PATH
       {
         path: "t-crudX",
@@ -1060,3 +1104,5 @@ function App() {
 }
 
 export default App;
+
+

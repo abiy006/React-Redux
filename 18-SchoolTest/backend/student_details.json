@@ -1,13 +1,24 @@
 {
   "student_details": [
     {
-      "stud_name": "student_detail Abiy Hussen 1",
+      "stud_name": "Abiy Hussen Aman",
       "stud_image": "https://w7.pngwing.com/pngs/488/1009/png-transparent-graduation-ceremony-silhouette-silhouette-animals-photography-graduation-ceremony-thumbnail.png",
-      "stud_id": "ID - AA003",
-      "stud_grd_sec": "Grage 7 - Section B",
-      "stud_cat": "Student Category - Default Student",
+      "stud_id": "Student ID - AA003",
+      "stud_usrName": "UserName - User123",
+      "stud_grd": "Grage 7",
+      "stud_sec": "Section B",
+      "stud_cat": "Default, Sponsored",
+      "stud_sub": "English, Maths, Amharic, Physics, Subject1, Subject2, Subject3, Subject4, Subject5, Subject6, Subject7, Subject8, Subject9, Subject10, Subject11, Subject12",
       "stud_gender": "Gender - Male",
       "id": "student_detail-aaa-001",
+      "stud_mob": "Mobile - +251913535347",
+      "stud_email": "Email - AbiyHussen@gmail.com",
+      "stud_scty": "Sub city - Kality",
+      "stud_cty": "City - Addis Ababa",
+      "stud_cou": "Country - Ethiopia",
+      "stud_bdate": "Birth date - October 2 1988",
+      "stud_rdate": "Registration date - July 21 2023",
+      "stud_pstat": "School presence status - Active",
       "number": "4"
     }
   ],

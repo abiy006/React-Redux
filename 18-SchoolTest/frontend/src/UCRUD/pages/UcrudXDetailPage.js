@@ -242,9 +242,9 @@ function PaymentCRUD() {
             {(Student_DetailLoaded) => <Student_DetailItem student_detail={Student_DetailLoaded} />}
           </Await>
 
-          <Await resolve={student_details}>
+          {/* <Await resolve={student_details}>
             {(Student_DetailsLoaded) => <Student_DetailList student_details={Student_DetailsLoaded} />}
-          </Await>
+          </Await> */}
         </Suspense>
       
   )}
@@ -522,7 +522,6 @@ async function SamplejLoaded(id) {
     return resData.samplej;
   }
 }
-
 async function SamplejsLoaded() {
   const response = await fetch('http://localhost:8080/samplejs');
 
@@ -558,7 +557,6 @@ async function SampleiLoaded(id) {
     return resData.samplei;
   }
 }
-
 async function SampleisLoaded() {
   const response = await fetch('http://localhost:8080/sampleis');
 
@@ -594,7 +592,6 @@ async function SamplehLoaded(id) {
     return resData.sampleh;
   }
 }
-
 async function SamplehsLoaded() {
   const response = await fetch('http://localhost:8080/samplehs');
 
@@ -865,40 +862,6 @@ async function SamplesLoaded() {
 // THIS IS THE END OF SAMPLE AWAIT FUNCTIONS
 
 
-// THIS IS THE BEGINING OF HOMEWORK AWAIT FUNCTIONS
-async function HomeworkLoaded(id) {
-  const response = await fetch("http://localhost:8080/homeworks/" + id);
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch details for selected homework." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.homework;
-  }
-}
-async function HomeworksLoaded() {
-  const response = await fetch("http://localhost:8080/homeworks");
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch homeworks." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.homeworks;
-    // return resData;
-  }
-}
-// THIS IS THE END OF HOMEWORK AWAIT FUNCTIONS
-
 export async function loader({ request, params }) {
   const id = params.ucrudDynamicId;
 
@@ -927,12 +890,11 @@ export async function loader({ request, params }) {
 
 // THIS IS THE BEGINING OF STUDENT_DETAIL ELSE IF STATEMENT
   else if (
-    id === 'student_detail-aaa-001' ||
-    id === 'student_detail-aaa-002'
+    id === 'student_detail-aaa-001'
   ) {
     return defer({
       student_detail : await Student_DetailLoaded(id),
-      student_details : Student_DetailsLoaded(),
+      // student_details : Student_DetailsLoaded(),
     });
   }
 // THIS IS THE END OF STUDENT_DETAIL ELSE IF STATEMENT
@@ -1066,14 +1028,6 @@ export async function loader({ request, params }) {
   }
   // THIS IS THE END OF sample ELSE IF STATEMENT
 
-  // THIS IS THE BEGINING OF HOMEWORK ELSE IF STATEMENT
-  else if (id === "homework-aaa-001" || id === "homework-aaa-002") {
-    return defer({
-      homework: await HomeworkLoaded(id),
-      homeworks: HomeworksLoaded(),
-    });
-  }
-  // THIS IS THE END OF HOMEWORK ELSE IF STATEMENT
 }
 
 // export async function action({ params, request }) {

@@ -1,8 +1,17 @@
 {
     "ucruds":  [
+                   
+                   {
+                       "id":  "student_detail-aaa-001",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "date":  "This section presents the student_detail",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "title":  "Student details"
+                   },
                    {
                        "title":  "Sample Details",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "date":  "This section presents the sameple",
                        "description":  "sldhfkjhdsfk",
                        "number":  "9",
@@ -10,7 +19,7 @@
                    },
                    {
                        "title":  "Samplea Details",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "date":  "This section presents the sameple1",
                        "description":  "sldhfkjhdsfk1",
                        "number":  "10",
@@ -18,7 +27,7 @@
                    },
                    {
                        "title":  "Sampleb Details",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "date":  "This section presents the sameple1",
                        "description":  "sldhfkjhdsfk1",
                        "number":  "10",
@@ -26,7 +35,7 @@
                    },
                    {
                        "title":  "Samplec Details",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "date":  "This section presents the sameplec",
                        "description":  "sldhfkjhdsfk1",
                        "number":  "10",
@@ -34,7 +43,7 @@
                    },
                    {
                        "title":  "Sampled Details",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "date":  "This section presents the samepled",
                        "description":  "sldhfkjhdsfk1",
                        "number":  "10",
@@ -42,7 +51,7 @@
                    },
                    {
                        "title":  "Samplef Details",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "date":  "This section presents the sameplef",
                        "description":  "sldhfkjhdsfk1",
                        "number":  "10",
@@ -50,7 +59,7 @@
                    },
                    {
                        "title":  "Sampleg Details",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "date":  "This section presents the samepleg",
                        "description":  "sldhfkjhdsfk1",
                        "number":  "10",
@@ -58,7 +67,7 @@
                    },
                    {
                        "title":  "Sampleh Details",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "date":  "This section presents the samepleh",
                        "description":  "sldhfkjhdsfk1",
                        "number":  "10",
@@ -69,7 +78,7 @@
                        "description":  "sldhfkjhdsfk1",
                        "number":  "10",
                        "date":  "This section presents the sameplei",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "title":  "Samplei Details"
                    },
                    {
@@ -77,16 +86,8 @@
                        "description":  "sldhfkjhdsfk1",
                        "number":  "10",
                        "date":  "This section presents the samplej",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "title":  "Samplej Details"
-                   },
-                   {
-                       "id":  "student_detail-aaa-001",
-                       "description":  "sldhfkjhdsfk1",
-                       "number":  "10",
-                       "date":  "This section presents the student_detail",
-                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
-                       "title":  "Student Details"
                    }
                ],
     "users":  [
