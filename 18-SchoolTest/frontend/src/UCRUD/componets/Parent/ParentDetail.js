@@ -5,8 +5,9 @@ import { NavLink } from "react-router-dom";
 import classes from "../../CSS/Parent/ParentDetail.module.css";
 
 const StudDashPartD = ({ parents }) => {
-  console.log("parentDetail - parents - " + parents);
+  // console.log("parentDetail - parents - " + parents);
   return (
+<>
     <ul className={classes.list}>
       {parents.map((parent, index) => (
         <li key={parent.id} className={classes.item}>
@@ -28,6 +29,7 @@ const StudDashPartD = ({ parents }) => {
         </li>
       ))}
     </ul>
+</>
   );
 };
 

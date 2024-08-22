@@ -1,23 +1,25 @@
-import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
+import { Link, useRouteLoaderData, useSubmit } from "react-router-dom";
 
-import classes from '../../CSS/Parent/ParentItem.module.css';
+import classes from "../../CSS/Parent/ParentItem.module.css";
 
 function ParentItem({ parent }) {
   console.log("parentItem - parent - " + parent);
-  const token = useRouteLoaderData('root');
+  const token = useRouteLoaderData("root");
   const submit = useSubmit();
 
   function startDeleteHandler() {
-    const proceed = window.confirm('Are you sure?');
+    const proceed = window.confirm("Are you sure?");
 
     if (proceed) {
-      submit(null, { method: 'delete' });
+      submit(null, { method: "delete" });
     }
   }
 
   return (
     <article className={classes.parent}>
-      <img src={parent.stud_image} alt={parent.stud_name} />
+      {parent.id != "parent-aaa-001" && (
+        <div>
+          <img src={parent.stud_image} alt={parent.stud_name} />
       <h1>{parent.stud_name}</h1>
       <p>{parent.stud_id}</p>
       <p>{parent.stud_grd_sec}</p>
@@ -29,7 +31,12 @@ function ParentItem({ parent }) {
           <button onClick={startDeleteHandler}>Delete</button>
         </menu>
       )}
-    </article>
+</div>
+        )
+      
+      }
+      </article>
+    
   );
 }
 

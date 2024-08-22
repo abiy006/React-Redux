@@ -10,135 +10,117 @@ import {
 // import UcrudItem from '../componets/UcrudItem';
 import { getAuthToken } from "../../util/auth";
 
-
 // THIS IS THE BEGINING OF samplea IMPORT CODES
-import SampleaItem from '../componets/Samplea/SampleaItem';
-import SampleaList from '../componets/Samplea/SampleaList';
+import SampleaItem from "../componets/Samplea/SampleaItem";
+import SampleaList from "../componets/Samplea/SampleaList";
 // THIS IS THE END OF SAMPLEA IMPORT CODES
 
 // THIS IS THE BEGINING OF SAMPLED IMPORT CODES
-import SampledItem from '../componets/Sampled/SampledItem';
-import SampledList from '../componets/Sampled/SampledList';
+import SampledItem from "../componets/Sampled/SampledItem";
+import SampledList from "../componets/Sampled/SampledList";
 // THIS IS THE END OF SAMPLED IMPORT CODES
 
 // THIS IS THE BEGINING OF Samplef IMPORT CODES
-import SamplefItem from '../componets/Samplef/SamplefItem';
-import SamplefList from '../componets/Samplef/SamplefList';
+import SamplefItem from "../componets/Samplef/SamplefItem";
+import SamplefList from "../componets/Samplef/SamplefList";
 // THIS IS THE END OF SAMPLEF IMPORT CODES
 
 // THIS IS THE BEGINING OF SAMPLEG IMPORT CODES
-import SamplegItem from '../componets/Sampleg/SamplegItem';
-import SamplegList from '../componets/Sampleg/SamplegList';
+import SamplegItem from "../componets/Sampleg/SamplegItem";
+import SamplegList from "../componets/Sampleg/SamplegList";
 // THIS IS THE END OF SAMPLEG IMPORT CODES
 
 // THIS IS THE BEGINING OF SAMPLEH IMPORT CODES
-import SamplehItem from '../componets/Sampleh/SamplehItem';
-import SamplehList from '../componets/Sampleh/SamplehList';
+import SamplehItem from "../componets/Sampleh/SamplehItem";
+import SamplehList from "../componets/Sampleh/SamplehList";
 // THIS IS THE END OF SAMPLEH IMPORT CODES
 
 // THIS IS THE BEGINING OF SAMPLEI IMPORT CODES
-import SampleiItem from '../componets/Samplei/SampleiItem';
-import SampleiList from '../componets/Samplei/SampleiList';
+import SampleiItem from "../componets/Samplei/SampleiItem";
+import SampleiList from "../componets/Samplei/SampleiList";
 // THIS IS THE END OF SAMPLEI IMPORT CODES
 
 // THIS IS THE BEGINING OF STUDENT_DETAIL IMPORT CODES
-import Student_DetailItem from '../componets/Student_Detail/Student_DetailItem';
-import Student_DetailList from '../componets/Student_Detail/Student_DetailList';
+import Student_DetailItem from "../componets/Student_Detail/Student_DetailItem";
+import Student_DetailList from "../componets/Student_Detail/Student_DetailList";
 // THIS IS THE END OF STUDENT_DETAIL IMPORT CODES
 
-
-
 // THIS IS THE BEGINING OF PARENT IMPORT CODES
-import ParentItem from '../componets/Parent/ParentItem';
-import ParentList from '../componets/Parent/ParentList';
+import ParentItem from "../componets/Parent/ParentItem";
+import ParentList from "../componets/Parent/ParentList";
 // THIS IS THE END OF PARENT IMPORT CODES
 
-
 // THIS IS THE BEGINING OF SAMPLEC IMPORT CODES
-import SamplecItem from '../componets/Samplec/SamplecItem';
-import SamplecList from '../componets/Samplec/SamplecList';
+import SamplecItem from "../componets/Samplec/SamplecItem";
+import SamplecList from "../componets/Samplec/SamplecList";
 // THIS IS THE END OF SAMPLEC IMPORT CODES
 
-
-
 // THIS IS THE BEGINING OF SAMPLEB IMPORT CODES
-import SamplebItem from '../componets/Sampleb/SamplebItem';
-import SamplebList from '../componets/Sampleb/SamplebList';
+import SamplebItem from "../componets/Sampleb/SamplebItem";
+import SamplebList from "../componets/Sampleb/SamplebList";
 // THIS IS THE END OF SAMPLEB IMPORT CODES
 
-
-
-
 // THIS IS THE BEGINING OF SAMPLE IMPORT CODES
-import SampleItem from '../componets/Sample/SampleItem';
-import SampleList from '../componets/Sample/SampleList'; 
+import SampleItem from "../componets/Sample/SampleItem";
+import SampleList from "../componets/Sample/SampleList";
 // THIS IS THE END OF SAMPLE IMPORT CODES
-
 
 function PaymentCRUD() {
   let {
-
-// VARIABLE samplea BEGINING
+    // VARIABLE samplea BEGINING
     samplea,
     sampleas,
-// VARIABLE SAMPLEA ENDING
+    // VARIABLE SAMPLEA ENDING
 
-// VARIABLE SAMPLED BEGINING
+    // VARIABLE SAMPLED BEGINING
     sampled,
     sampleds,
-// VARIABLE SAMPLED ENDING
+    // VARIABLE SAMPLED ENDING
 
-// VARIABLE Samplef BEGINING
+    // VARIABLE Samplef BEGINING
     samplef,
     samplefs,
-// VARIABLE SAMPLEF ENDING
+    // VARIABLE SAMPLEF ENDING
 
-// VARIABLE SAMPLEG BEGINING
+    // VARIABLE SAMPLEG BEGINING
     sampleg,
     samplegs,
-// VARIABLE SAMPLEG ENDING
+    // VARIABLE SAMPLEG ENDING
 
-// VARIABLE SAMPLEH BEGINING
+    // VARIABLE SAMPLEH BEGINING
     sampleh,
     samplehs,
-// VARIABLE SAMPLEH ENDING
+    // VARIABLE SAMPLEH ENDING
 
-// VARIABLE SAMPLEI BEGINING
+    // VARIABLE SAMPLEI BEGINING
     samplei,
     sampleis,
-// VARIABLE SAMPLEI ENDING
+    // VARIABLE SAMPLEI ENDING
 
-// VARIABLE STUDENT_DETAIL BEGINING
+    // VARIABLE STUDENT_DETAIL BEGINING
     student_detail,
     student_details,
-// VARIABLE STUDENT_DETAIL ENDING
+    // VARIABLE STUDENT_DETAIL ENDING
 
-
-// VARIABLE PARENT BEGINING
+    // VARIABLE PARENT BEGINING
     parent,
     parents,
-// VARIABLE PARENT ENDING
+    // VARIABLE PARENT ENDING
 
-
-
-// VARIABLE SAMPLEC BEGINING
+    // VARIABLE SAMPLEC BEGINING
     samplec,
     samplecs,
-// VARIABLE SAMPLEC ENDING
+    // VARIABLE SAMPLEC ENDING
 
-
-// VARIABLE SAMPLEB BEGINING
+    // VARIABLE SAMPLEB BEGINING
     sampleb,
     samplebs,
-// VARIABLE SAMPLEB ENDING
-
-
+    // VARIABLE SAMPLEB ENDING
 
     // VARIABLE SAMPLE BEGINING
     sample,
     samples,
     // VARIABLE SAMPLE ENDING
-
   } = useRouteLoaderData("ucrud-dynamic-detail");
   // const { payment, payments } = useRouteLoaderData("ucrud-dynamic-detail");
 
@@ -159,13 +141,9 @@ function PaymentCRUD() {
   console.log("UcrudXDetailPage - samplefs - " + samplefs);
   return (
     <>
-
-      { /* THIS IS THE BEGINING OF SAMPLEF SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF SAMPLEF SUSPENSE AND AWAIT */}
       {(samplef || samplefs) && (
-  
-        <Suspense
-          fallback={<p>Samplef Loading...</p>}
-        >
+        <Suspense fallback={<p>Samplef Loading...</p>}>
           <Await resolve={samplef}>
             {(SamplefLoaded) => <SamplefItem samplef={SamplefLoaded} />}
           </Await>
@@ -174,16 +152,12 @@ function PaymentCRUD() {
             {(SamplefsLoaded) => <SamplefList samplefs={SamplefsLoaded} />}
           </Await>
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF SAMPLEF SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF SAMPLEF SUSPENSE AND AWAIT */}
 
-{ /* THIS IS THE BEGINING OF SAMPLEG SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF SAMPLEG SUSPENSE AND AWAIT */}
       {(sampleg || samplegs) && (
-  
-        <Suspense
-          fallback={<p>Sampleg Loading...</p>}
-        >
+        <Suspense fallback={<p>Sampleg Loading...</p>}>
           <Await resolve={sampleg}>
             {(SamplegLoaded) => <SamplegItem sampleg={SamplegLoaded} />}
           </Await>
@@ -192,16 +166,12 @@ function PaymentCRUD() {
             {(SamplegsLoaded) => <SamplegList samplegs={SamplegsLoaded} />}
           </Await>
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF SAMPLEG SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF SAMPLEG SUSPENSE AND AWAIT */}
 
-{ /* THIS IS THE BEGINING OF SAMPLEH SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF SAMPLEH SUSPENSE AND AWAIT */}
       {(sampleh || samplehs) && (
-  
-        <Suspense
-          fallback={<p>Sampleh Loading...</p>}
-        >
+        <Suspense fallback={<p>Sampleh Loading...</p>}>
           <Await resolve={sampleh}>
             {(SamplehLoaded) => <SamplehItem sampleh={SamplehLoaded} />}
           </Await>
@@ -210,16 +180,12 @@ function PaymentCRUD() {
             {(SamplehsLoaded) => <SamplehList samplehs={SamplehsLoaded} />}
           </Await>
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF SAMPLEH SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF SAMPLEH SUSPENSE AND AWAIT */}
 
-{ /* THIS IS THE BEGINING OF SAMPLEI SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF SAMPLEI SUSPENSE AND AWAIT */}
       {(samplei || sampleis) && (
-  
-        <Suspense
-          fallback={<p>Samplei Loading...</p>}
-        >
+        <Suspense fallback={<p>Samplei Loading...</p>}>
           <Await resolve={samplei}>
             {(SampleiLoaded) => <SampleiItem samplei={SampleiLoaded} />}
           </Await>
@@ -228,52 +194,43 @@ function PaymentCRUD() {
             {(SampleisLoaded) => <SampleiList sampleis={SampleisLoaded} />}
           </Await>
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF SAMPLEI SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF SAMPLEI SUSPENSE AND AWAIT */}
 
-{ /* THIS IS THE BEGINING OF STUDENT_DETAIL SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF STUDENT_DETAIL SUSPENSE AND AWAIT */}
       {(student_detail || student_details) && (
-  
-        <Suspense
-          fallback={<p>Student_Detail Loading...</p>}
-        >
+        <Suspense fallback={<p>Student_Detail Loading...</p>}>
           <Await resolve={student_detail}>
-            {(Student_DetailLoaded) => <Student_DetailItem student_detail={Student_DetailLoaded} />}
+            {(Student_DetailLoaded) => (
+              <Student_DetailItem student_detail={Student_DetailLoaded} />
+            )}
           </Await>
 
           {/* <Await resolve={student_details}>
             {(Student_DetailsLoaded) => <Student_DetailList student_details={Student_DetailsLoaded} />}
           </Await> */}
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF STUDENT_DETAIL SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF STUDENT_DETAIL SUSPENSE AND AWAIT */}
 
-{ /* THIS IS THE BEGINING OF PARENT SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF PARENT SUSPENSE AND AWAIT */}
       {(parent || parents) && (
-  
-        <Suspense
-          fallback={<p>Parent Loading...</p>}
-        >
-          <Await resolve={parent}>
-            {(ParentLoaded) => <ParentItem parent={ParentLoaded} />}
-          </Await>
-
+        <Suspense fallback={<p>Parent Loading...</p>}>
+            <Await resolve={   parent}>
+              {/* {(ParentLoaded) => <ParentItem parent={ParentLoaded} />} */}
+              {(ParentLoaded) => <ParentItem parent={ParentLoaded} />}
+            </Await>
+          
           <Await resolve={parents}>
             {(ParentsLoaded) => <ParentList parents={ParentsLoaded} />}
           </Await>
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF PARENT SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF PARENT SUSPENSE AND AWAIT */}
 
-{ /* THIS IS THE BEGINING OF SAMPLED SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF SAMPLED SUSPENSE AND AWAIT */}
       {(sampled || sampleds) && (
-  
-        <Suspense
-          fallback={<p>Sampled Loading...</p>}
-        >
+        <Suspense fallback={<p>Sampled Loading...</p>}>
           <Await resolve={sampled}>
             {(SampledLoaded) => <SampledItem sampled={SampledLoaded} />}
           </Await>
@@ -282,16 +239,12 @@ function PaymentCRUD() {
             {(SampledsLoaded) => <SampledList sampleds={SampledsLoaded} />}
           </Await>
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF SAMPLED SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF SAMPLED SUSPENSE AND AWAIT */}
 
-{ /* THIS IS THE BEGINING OF SAMPLEC SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF SAMPLEC SUSPENSE AND AWAIT */}
       {(samplec || samplecs) && (
-  
-        <Suspense
-          fallback={<p>Samplec Loading...</p>}
-        >
+        <Suspense fallback={<p>Samplec Loading...</p>}>
           <Await resolve={samplec}>
             {(SamplecLoaded) => <SamplecItem samplec={SamplecLoaded} />}
           </Await>
@@ -300,16 +253,12 @@ function PaymentCRUD() {
             {(SamplecsLoaded) => <SamplecList samplecs={SamplecsLoaded} />}
           </Await>
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF SAMPLEC SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF SAMPLEC SUSPENSE AND AWAIT */}
 
-{ /* THIS IS THE BEGINING OF SAMPLEB SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF SAMPLEB SUSPENSE AND AWAIT */}
       {(sampleb || samplebs) && (
-  
-        <Suspense
-          fallback={<p>Sampleb Loading...</p>}
-        >
+        <Suspense fallback={<p>Sampleb Loading...</p>}>
           <Await resolve={sampleb}>
             {(SamplebLoaded) => <SamplebItem sampleb={SamplebLoaded} />}
           </Await>
@@ -318,13 +267,11 @@ function PaymentCRUD() {
             {(SamplebsLoaded) => <SamplebList samplebs={SamplebsLoaded} />}
           </Await>
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF SAMPLEB SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF SAMPLEB SUSPENSE AND AWAIT */}
 
-{ /* THIS IS THE BEGINING OF samplea SUSPENSE AND AWAIT */ }
+      {/* THIS IS THE BEGINING OF samplea SUSPENSE AND AWAIT */}
       {(samplea || sampleas) && (
-  
         <Suspense
           fallback={<p style={{ textAlign: "center" }}>Samplea Loading...</p>}
         >
@@ -336,9 +283,8 @@ function PaymentCRUD() {
             {(SampleasLoaded) => <SampleaList sampleas={SampleasLoaded} />}
           </Await>
         </Suspense>
-      
-  )}
-    { /* THIS IS THE END OF samplea SUSPENSE AND AWAIT */ }
+      )}
+      {/* THIS IS THE END OF samplea SUSPENSE AND AWAIT */}
 
       {/* THIS IS THE BEGINING OF sample SUSPENSE AND AWAIT */}
       {(sample || samples) && (
@@ -355,7 +301,6 @@ function PaymentCRUD() {
         </Suspense>
       )}
       {/* THIS IS THE END OF sample SUSPENSE AND AWAIT */}
-
     </>
   );
 }
@@ -471,11 +416,11 @@ async function PTSloaded() {
 
 // THIS IS THE BEGINING OF STUDENT_DETAIL AWAIT FUNCTIONS
 async function Student_DetailLoaded(id) {
-  const response = await fetch('http://localhost:8080/student_details/' + id);
+  const response = await fetch("http://localhost:8080/student_details/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected student_detail.' },
+      { message: "Could not fetch details for selected student_detail." },
       {
         status: 500,
       }
@@ -487,11 +432,11 @@ async function Student_DetailLoaded(id) {
 }
 
 async function Student_DetailsLoaded() {
-  const response = await fetch('http://localhost:8080/student_details');
+  const response = await fetch("http://localhost:8080/student_details");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch student_details.' },
+      { message: "Could not fetch student_details." },
       {
         status: 500,
       }
@@ -504,15 +449,13 @@ async function Student_DetailsLoaded() {
 }
 // THIS IS THE END OF STUDENT_DETAIL AWAIT FUNCTIONS
 
-
-
 // THIS IS THE BEGINING OF PARENT AWAIT FUNCTIONS
 async function ParentLoaded(id) {
-  const response = await fetch('http://localhost:8080/parents/' + id);
+  const response = await fetch("http://localhost:8080/parents/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected parent.' },
+      { message: "Could not fetch details for selected parent." },
       {
         status: 500,
       }
@@ -523,11 +466,11 @@ async function ParentLoaded(id) {
   }
 }
 async function ParentsLoaded() {
-  const response = await fetch('http://localhost:8080/parents');
+  const response = await fetch("http://localhost:8080/parents");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch parents.' },
+      { message: "Could not fetch parents." },
       {
         status: 500,
       }
@@ -540,14 +483,13 @@ async function ParentsLoaded() {
 }
 // THIS IS THE END OF PARENT AWAIT FUNCTIONS
 
-
 // THIS IS THE BEGINING OF SAMPLEI AWAIT FUNCTIONS
 async function SampleiLoaded(id) {
-  const response = await fetch('http://localhost:8080/sampleis/' + id);
+  const response = await fetch("http://localhost:8080/sampleis/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected samplei.' },
+      { message: "Could not fetch details for selected samplei." },
       {
         status: 500,
       }
@@ -558,11 +500,11 @@ async function SampleiLoaded(id) {
   }
 }
 async function SampleisLoaded() {
-  const response = await fetch('http://localhost:8080/sampleis');
+  const response = await fetch("http://localhost:8080/sampleis");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch sampleis.' },
+      { message: "Could not fetch sampleis." },
       {
         status: 500,
       }
@@ -575,14 +517,13 @@ async function SampleisLoaded() {
 }
 // THIS IS THE END OF SAMPLEI AWAIT FUNCTIONS
 
-
 // THIS IS THE BEGINING OF SAMPLEH AWAIT FUNCTIONS
 async function SamplehLoaded(id) {
-  const response = await fetch('http://localhost:8080/samplehs/' + id);
+  const response = await fetch("http://localhost:8080/samplehs/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected sampleh.' },
+      { message: "Could not fetch details for selected sampleh." },
       {
         status: 500,
       }
@@ -593,11 +534,11 @@ async function SamplehLoaded(id) {
   }
 }
 async function SamplehsLoaded() {
-  const response = await fetch('http://localhost:8080/samplehs');
+  const response = await fetch("http://localhost:8080/samplehs");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch samplehs.' },
+      { message: "Could not fetch samplehs." },
       {
         status: 500,
       }
@@ -610,14 +551,13 @@ async function SamplehsLoaded() {
 }
 // THIS IS THE END OF SAMPLEH AWAIT FUNCTIONS
 
-
 // THIS IS THE BEGINING OF SAMPLEG AWAIT FUNCTIONS
 async function SamplegLoaded(id) {
-  const response = await fetch('http://localhost:8080/samplegs/' + id);
+  const response = await fetch("http://localhost:8080/samplegs/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected sampleg.' },
+      { message: "Could not fetch details for selected sampleg." },
       {
         status: 500,
       }
@@ -629,11 +569,11 @@ async function SamplegLoaded(id) {
 }
 
 async function SamplegsLoaded() {
-  const response = await fetch('http://localhost:8080/samplegs');
+  const response = await fetch("http://localhost:8080/samplegs");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch samplegs.' },
+      { message: "Could not fetch samplegs." },
       {
         status: 500,
       }
@@ -646,14 +586,13 @@ async function SamplegsLoaded() {
 }
 // THIS IS THE END OF SAMPLEG AWAIT FUNCTIONS
 
-
 // THIS IS THE BEGINING OF Samplef AWAIT FUNCTIONS
 async function SamplefLoaded(id) {
-  const response = await fetch('http://localhost:8080/samplefs/' + id);
+  const response = await fetch("http://localhost:8080/samplefs/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected samplef.' },
+      { message: "Could not fetch details for selected samplef." },
       {
         status: 500,
       }
@@ -665,11 +604,11 @@ async function SamplefLoaded(id) {
 }
 
 async function SamplefsLoaded() {
-  const response = await fetch('http://localhost:8080/samplefs');
+  const response = await fetch("http://localhost:8080/samplefs");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch samplefs.' },
+      { message: "Could not fetch samplefs." },
       {
         status: 500,
       }
@@ -682,14 +621,13 @@ async function SamplefsLoaded() {
 }
 // THIS IS THE END OF Samplef AWAIT FUNCTIONS
 
-
 // THIS IS THE BEGINING OF SAMPLED AWAIT FUNCTIONS
 async function SampledLoaded(id) {
-  const response = await fetch('http://localhost:8080/sampleds/' + id);
+  const response = await fetch("http://localhost:8080/sampleds/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected sampled.' },
+      { message: "Could not fetch details for selected sampled." },
       {
         status: 500,
       }
@@ -701,11 +639,11 @@ async function SampledLoaded(id) {
 }
 
 async function SampledsLoaded() {
-  const response = await fetch('http://localhost:8080/sampleds');
+  const response = await fetch("http://localhost:8080/sampleds");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch sampleds.' },
+      { message: "Could not fetch sampleds." },
       {
         status: 500,
       }
@@ -718,14 +656,13 @@ async function SampledsLoaded() {
 }
 // THIS IS THE END OF SAMPLED AWAIT FUNCTIONS
 
-
 // THIS IS THE BEGINING OF SAMPLEC AWAIT FUNCTIONS
 async function SamplecLoaded(id) {
-  const response = await fetch('http://localhost:8080/samplecs/' + id);
+  const response = await fetch("http://localhost:8080/samplecs/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected samplec.' },
+      { message: "Could not fetch details for selected samplec." },
       {
         status: 500,
       }
@@ -737,11 +674,11 @@ async function SamplecLoaded(id) {
 }
 
 async function SamplecsLoaded() {
-  const response = await fetch('http://localhost:8080/samplecs');
+  const response = await fetch("http://localhost:8080/samplecs");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch samplecs.' },
+      { message: "Could not fetch samplecs." },
       {
         status: 500,
       }
@@ -754,14 +691,13 @@ async function SamplecsLoaded() {
 }
 // THIS IS THE END OF SAMPLEC AWAIT FUNCTIONS
 
-
 // THIS IS THE BEGINING OF SAMPLEB AWAIT FUNCTIONS
 async function SamplebLoaded(id) {
-  const response = await fetch('http://localhost:8080/samplebs/' + id);
+  const response = await fetch("http://localhost:8080/samplebs/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected sampleb.' },
+      { message: "Could not fetch details for selected sampleb." },
       {
         status: 500,
       }
@@ -773,11 +709,11 @@ async function SamplebLoaded(id) {
 }
 
 async function SamplebsLoaded() {
-  const response = await fetch('http://localhost:8080/samplebs');
+  const response = await fetch("http://localhost:8080/samplebs");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch samplebs.' },
+      { message: "Could not fetch samplebs." },
       {
         status: 500,
       }
@@ -790,14 +726,13 @@ async function SamplebsLoaded() {
 }
 // THIS IS THE END OF SAMPLEB AWAIT FUNCTIONS
 
-
 // THIS IS THE BEGINING OF Samplea AWAIT FUNCTIONS
 async function SampleaLoaded(id) {
-  const response = await fetch('http://localhost:8080/sampleas/' + id);
+  const response = await fetch("http://localhost:8080/sampleas/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected Samplea.' },
+      { message: "Could not fetch details for selected Samplea." },
       {
         status: 500,
       }
@@ -809,11 +744,11 @@ async function SampleaLoaded(id) {
 }
 
 async function SampleasLoaded() {
-  const response = await fetch('http://localhost:8080/sampleas');
+  const response = await fetch("http://localhost:8080/sampleas");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch sampleas.' },
+      { message: "Could not fetch sampleas." },
       {
         status: 500,
       }
@@ -826,14 +761,13 @@ async function SampleasLoaded() {
 }
 // THIS IS THE END OF samplea AWAIT FUNCTIONS
 
-
 // THIS IS THE BEGINING OF SAMPLE AWAIT FUNCTIONS
 async function SampleLoaded(id) {
-  const response = await fetch('http://localhost:8080/samples/' + id);
+  const response = await fetch("http://localhost:8080/samples/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected sample.' },
+      { message: "Could not fetch details for selected sample." },
       {
         status: 500,
       }
@@ -844,11 +778,11 @@ async function SampleLoaded(id) {
   }
 }
 async function SamplesLoaded() {
-  const response = await fetch('http://localhost:8080/samples');
+  const response = await fetch("http://localhost:8080/samples");
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch samples.' },
+      { message: "Could not fetch samples." },
       {
         status: 500,
       }
@@ -860,7 +794,6 @@ async function SamplesLoaded() {
   }
 }
 // THIS IS THE END OF SAMPLE AWAIT FUNCTIONS
-
 
 export async function loader({ request, params }) {
   const id = params.ucrudDynamicId;
@@ -888,136 +821,99 @@ export async function loader({ request, params }) {
   }
   // THIS IS THE END OF PAYMENT ELSE IF STATEMENT
 
-// THIS IS THE BEGINING OF STUDENT_DETAIL ELSE IF STATEMENT
-  else if (
-    id === 'student_detail-aaa-001'
-  ) {
+  // THIS IS THE BEGINING OF STUDENT_DETAIL ELSE IF STATEMENT
+  else if (id === "student_detail-aaa-001") {
     return defer({
-      student_detail : await Student_DetailLoaded(id),
+      student_detail: await Student_DetailLoaded(id),
       // student_details : Student_DetailsLoaded(),
     });
   }
-// THIS IS THE END OF STUDENT_DETAIL ELSE IF STATEMENT
+  // THIS IS THE END OF STUDENT_DETAIL ELSE IF STATEMENT
 
-
-
-// THIS IS THE BEGINING OF PARENT ELSE IF STATEMENT
+  // THIS IS THE BEGINING OF PARENT ELSE IF STATEMENT
   else if (
-    id === 'parent-aaa-001' ||
-    id === 'parent-aaa-002'
+    id === "parent-aaa-001" ||
+    id === "parent-aaa-002" ||
+    id === "parent-aaa-003"
   ) {
     return defer({
-      parent : await ParentLoaded(id),
-      parents : ParentsLoaded(),
+      parent: await ParentLoaded(id),
+      parents: ParentsLoaded(),
     });
   }
-// THIS IS THE END OF PARENT ELSE IF STATEMENT
+  // THIS IS THE END OF PARENT ELSE IF STATEMENT
 
-
-// THIS IS THE BEGINING OF SAMPLEI ELSE IF STATEMENT
-  else if (
-    id === 'samplei-aaa-001' ||
-    id === 'samplei-aaa-002'
-  ) {
+  // THIS IS THE BEGINING OF SAMPLEI ELSE IF STATEMENT
+  else if (id === "samplei-aaa-001" || id === "samplei-aaa-002") {
     return defer({
-      samplei : await SampleiLoaded(id),
-      sampleis : SampleisLoaded(),
+      samplei: await SampleiLoaded(id),
+      sampleis: SampleisLoaded(),
     });
   }
-// THIS IS THE END OF SAMPLEI ELSE IF STATEMENT
+  // THIS IS THE END OF SAMPLEI ELSE IF STATEMENT
 
-
-// THIS IS THE BEGINING OF SAMPLEH ELSE IF STATEMENT
-  else if (
-    id === 'sampleh-aaa-001' ||
-    id === 'sampleh-aaa-002'
-  ) {
+  // THIS IS THE BEGINING OF SAMPLEH ELSE IF STATEMENT
+  else if (id === "sampleh-aaa-001" || id === "sampleh-aaa-002") {
     return defer({
-      sampleh : await SamplehLoaded(id),
-      samplehs : SamplehsLoaded(),
+      sampleh: await SamplehLoaded(id),
+      samplehs: SamplehsLoaded(),
     });
   }
-// THIS IS THE END OF SAMPLEH ELSE IF STATEMENT
+  // THIS IS THE END OF SAMPLEH ELSE IF STATEMENT
 
-
-// THIS IS THE BEGINING OF SAMPLEG ELSE IF STATEMENT
-  else if (
-    id === 'sampleg-aaa-001' ||
-    id === 'sampleg-aaa-002'
-  ) {
+  // THIS IS THE BEGINING OF SAMPLEG ELSE IF STATEMENT
+  else if (id === "sampleg-aaa-001" || id === "sampleg-aaa-002") {
     return defer({
-      sampleg : await SamplegLoaded(id),
-      samplegs : SamplegsLoaded(),
+      sampleg: await SamplegLoaded(id),
+      samplegs: SamplegsLoaded(),
     });
   }
-// THIS IS THE END OF SAMPLEG ELSE IF STATEMENT
+  // THIS IS THE END OF SAMPLEG ELSE IF STATEMENT
 
-
-// THIS IS THE BEGINING OF Samplef ELSE IF STATEMENT
-  else if (
-    id === 'samplef-aaa-001' ||
-    id === 'samplef-aaa-002'
-  ) {
+  // THIS IS THE BEGINING OF Samplef ELSE IF STATEMENT
+  else if (id === "samplef-aaa-001" || id === "samplef-aaa-002") {
     return defer({
-      samplef : await SamplefLoaded(id),
-      samplefs : SamplefsLoaded(),
+      samplef: await SamplefLoaded(id),
+      samplefs: SamplefsLoaded(),
     });
   }
-// THIS IS THE END OF Samplef ELSE IF STATEMENT
+  // THIS IS THE END OF Samplef ELSE IF STATEMENT
 
-
-// THIS IS THE BEGINING OF SAMPLED ELSE IF STATEMENT
-  else if (
-    id === 'sampled-aaa-001' ||
-    id === 'sampled-aaa-002'
-  ) {
+  // THIS IS THE BEGINING OF SAMPLED ELSE IF STATEMENT
+  else if (id === "sampled-aaa-001" || id === "sampled-aaa-002") {
     return defer({
-      sampled : await SampledLoaded(id),
-      sampleds : SampledsLoaded(),
+      sampled: await SampledLoaded(id),
+      sampleds: SampledsLoaded(),
     });
   }
-// THIS IS THE END OF SAMPLED ELSE IF STATEMENT
+  // THIS IS THE END OF SAMPLED ELSE IF STATEMENT
 
-
-// THIS IS THE BEGINING OF SAMPLEC ELSE IF STATEMENT
-  else if (
-    id === 'samplec-aaa-001' ||
-    id === 'samplec-aaa-002'
-  ) {
+  // THIS IS THE BEGINING OF SAMPLEC ELSE IF STATEMENT
+  else if (id === "samplec-aaa-001" || id === "samplec-aaa-002") {
     return defer({
-      samplec : await SamplecLoaded(id),
-      samplecs : SamplecsLoaded(),
+      samplec: await SamplecLoaded(id),
+      samplecs: SamplecsLoaded(),
     });
   }
-// THIS IS THE END OF SAMPLEC ELSE IF STATEMENT
+  // THIS IS THE END OF SAMPLEC ELSE IF STATEMENT
 
-
-// THIS IS THE BEGINING OF SAMPLEB ELSE IF STATEMENT
-  else if (
-    id === 'sampleb-aaa-001' ||
-    id === 'sampleb-aaa-002'
-  ) {
+  // THIS IS THE BEGINING OF SAMPLEB ELSE IF STATEMENT
+  else if (id === "sampleb-aaa-001" || id === "sampleb-aaa-002") {
     return defer({
-      sampleb : await SamplebLoaded(id),
-      samplebs : SamplebsLoaded(),
+      sampleb: await SamplebLoaded(id),
+      samplebs: SamplebsLoaded(),
     });
   }
-// THIS IS THE END OF SAMPLEB ELSE IF STATEMENT
+  // THIS IS THE END OF SAMPLEB ELSE IF STATEMENT
 
-
-// THIS IS THE BEGINING OF  ELSE IF STATEMENT
-  else if (
-    id === "samplea-aaa-001" ||
-    id === "samplea-aaa-002"
-  ) {
+  // THIS IS THE BEGINING OF  ELSE IF STATEMENT
+  else if (id === "samplea-aaa-001" || id === "samplea-aaa-002") {
     return defer({
-      samplea : await SampleaLoaded(id),
-      sampleas : SampleasLoaded(),
+      samplea: await SampleaLoaded(id),
+      sampleas: SampleasLoaded(),
     });
   }
-// THIS IS THE END OF  ELSE IF STATEMENT
-
-
+  // THIS IS THE END OF  ELSE IF STATEMENT
 
   // THIS IS THE BEGINING OF sample ELSE IF STATEMENT
   else if (id === "sample-aaa-001" || id === "sample-aaa-002") {
@@ -1027,7 +923,6 @@ export async function loader({ request, params }) {
     });
   }
   // THIS IS THE END OF sample ELSE IF STATEMENT
-
 }
 
 // export async function action({ params, request }) {
@@ -1051,82 +946,3 @@ export async function loader({ request, params }) {
 //   }
 //   return redirect("/u-crud");
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
