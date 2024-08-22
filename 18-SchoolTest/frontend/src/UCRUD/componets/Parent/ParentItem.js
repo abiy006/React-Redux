@@ -1,9 +1,9 @@
 import { Link, useRouteLoaderData, useSubmit } from 'react-router-dom';
 
-import classes from '../../CSS/Samplej/SamplejItem.module.css';
+import classes from '../../CSS/Parent/ParentItem.module.css';
 
-function SamplejItem({ samplej }) {
-  console.log("samplejItem - samplej - " + samplej);
+function ParentItem({ parent }) {
+  console.log("parentItem - parent - " + parent);
   const token = useRouteLoaderData('root');
   const submit = useSubmit();
 
@@ -16,13 +16,13 @@ function SamplejItem({ samplej }) {
   }
 
   return (
-    <article className={classes.samplej}>
-      <img src={samplej.stud_image} alt={samplej.stud_name} />
-      <h1>{samplej.stud_name}</h1>
-      <p>{samplej.stud_id}</p>
-      <p>{samplej.stud_grd_sec}</p>
-      <p>{samplej.stud_cat}</p>
-      <p>{samplej.stud_gender}</p>
+    <article className={classes.parent}>
+      <img src={parent.stud_image} alt={parent.stud_name} />
+      <h1>{parent.stud_name}</h1>
+      <p>{parent.stud_id}</p>
+      <p>{parent.stud_grd_sec}</p>
+      <p>{parent.stud_cat}</p>
+      <p>{parent.stud_gender}</p>
       {token && (
         <menu className={classes.actions}>
           <Link to="edit">Edit</Link>
@@ -33,4 +33,4 @@ function SamplejItem({ samplej }) {
   );
 }
 
-export default SamplejItem;
+export default ParentItem;

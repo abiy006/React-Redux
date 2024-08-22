@@ -42,11 +42,10 @@ const sampleiRoutes = require('./routes/sampleis');
 const student_detailRoutes = require('./routes/student_details');
 // THIS IS THE END OF student_details require
  
- 
 
-// THIS IS THE BEGINING OF samplejs require
-const samplejRoutes = require('./routes/samplejs');
-// THIS IS THE END OF samplejs require
+// THIS IS THE BEGINING OF parents require
+const parentRoutes = require('./routes/parents');
+// THIS IS THE END OF parents require
 
 
 
@@ -186,15 +185,11 @@ app.use('/student_details', student_detailRoutes);
  
 
 
-// THIS IS THE BEGINING OF samplejs use
-app.use('/samplejs', samplejRoutes);
-// THIS IS THE END OF samplejs use
+// THIS IS THE BEGINING OF parents use
+app.use('/parents', parentRoutes);
+// THIS IS THE END OF parents use
 
 
-
-
-
- 
 
 // THIS IS THE BEGINING OF samplecs use
 app.use('/samplecs', samplecRoutes);

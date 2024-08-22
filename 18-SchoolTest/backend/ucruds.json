@@ -10,6 +10,14 @@
                        "title":  "Student details"
                    },
                    {
+                       "id":  "parent-aaa-001",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "date":  "This section presents the parent",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "title":  "Parents"
+                   },
+                   {
                        "title":  "Sample Details",
                        "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "date":  "This section presents the sameple",
@@ -80,14 +88,6 @@
                        "date":  "This section presents the sameplei",
                        "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
                        "title":  "Samplei Details"
-                   },
-                   {
-                       "id":  "samplej-aaa-001",
-                       "description":  "sldhfkjhdsfk1",
-                       "number":  "10",
-                       "date":  "This section presents the samplej",
-                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
-                       "title":  "Samplej Details"
                    }
                ],
     "users":  [

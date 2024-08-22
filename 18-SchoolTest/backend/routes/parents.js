@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getAll, get, add, replace, remove } = require('../data/samplej');
+const { getAll, get, add, replace, remove } = require('../data/parent');
 const { checkAuth } = require('../util/auth');
 const {
   isValidText,
@@ -13,8 +13,8 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
   console.log(req.token);
   try {
-    const samplejs = await getAll();
-    res.json({ samplejs: samplejs });
+    const parents = await getAll();
+    res.json({ parents: parents });
   } catch (error) {
     next(error);
   }
@@ -22,8 +22,8 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const samplej = await get(req.params.id);
-    res.json({ samplej: samplej });
+    const parent = await get(req.params.id);
+    res.json({ parent: parent });
   } catch (error) {
     next(error);
   }
@@ -62,7 +62,7 @@ router.post('/', async (req, res, next) => {
 
   try {
     await add(data);
-    res.status(201).json({ message: 'Event saved.', samplej: data });
+    res.status(201).json({ message: 'Event saved.', parent: data });
   } catch (error) {
     next(error);
   }
@@ -98,7 +98,7 @@ router.patch('/:id', async (req, res, next) => {
 
   try {
     await replace(req.params.id, data);
-    res.json({ message: 'Event updated.', samplej: data });
+    res.json({ message: 'Event updated.', parent: data });
   } catch (error) {
     next(error);
   }

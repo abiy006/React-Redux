@@ -48,10 +48,10 @@ import Student_DetailList from '../componets/Student_Detail/Student_DetailList';
 
 
 
-// THIS IS THE BEGINING OF SAMPLEJ IMPORT CODES
-import SamplejItem from '../componets/Samplej/SamplejItem';
-import SamplejList from '../componets/Samplej/SamplejList';
-// THIS IS THE END OF SAMPLEJ IMPORT CODES
+// THIS IS THE BEGINING OF PARENT IMPORT CODES
+import ParentItem from '../componets/Parent/ParentItem';
+import ParentList from '../componets/Parent/ParentList';
+// THIS IS THE END OF PARENT IMPORT CODES
 
 
 // THIS IS THE BEGINING OF SAMPLEC IMPORT CODES
@@ -114,10 +114,10 @@ function PaymentCRUD() {
 // VARIABLE STUDENT_DETAIL ENDING
 
 
-// VARIABLE SAMPLEJ BEGINING
-    samplej,
-    samplejs,
-// VARIABLE SAMPLEJ ENDING
+// VARIABLE PARENT BEGINING
+    parent,
+    parents,
+// VARIABLE PARENT ENDING
 
 
 
@@ -250,23 +250,23 @@ function PaymentCRUD() {
   )}
     { /* THIS IS THE END OF STUDENT_DETAIL SUSPENSE AND AWAIT */ }
 
-{ /* THIS IS THE BEGINING OF SAMPLEJ SUSPENSE AND AWAIT */ }
-      {(samplej || samplejs) && (
+{ /* THIS IS THE BEGINING OF PARENT SUSPENSE AND AWAIT */ }
+      {(parent || parents) && (
   
         <Suspense
-          fallback={<p>Samplej Loading...</p>}
+          fallback={<p>Parent Loading...</p>}
         >
-          <Await resolve={samplej}>
-            {(SamplejLoaded) => <SamplejItem samplej={SamplejLoaded} />}
+          <Await resolve={parent}>
+            {(ParentLoaded) => <ParentItem parent={ParentLoaded} />}
           </Await>
 
-          <Await resolve={samplejs}>
-            {(SamplejsLoaded) => <SamplejList samplejs={SamplejsLoaded} />}
+          <Await resolve={parents}>
+            {(ParentsLoaded) => <ParentList parents={ParentsLoaded} />}
           </Await>
         </Suspense>
       
   )}
-    { /* THIS IS THE END OF SAMPLEJ SUSPENSE AND AWAIT */ }
+    { /* THIS IS THE END OF PARENT SUSPENSE AND AWAIT */ }
 
 { /* THIS IS THE BEGINING OF SAMPLED SUSPENSE AND AWAIT */ }
       {(sampled || sampleds) && (
@@ -506,39 +506,39 @@ async function Student_DetailsLoaded() {
 
 
 
-// THIS IS THE BEGINING OF SAMPLEJ AWAIT FUNCTIONS
-async function SamplejLoaded(id) {
-  const response = await fetch('http://localhost:8080/samplejs/' + id);
+// THIS IS THE BEGINING OF PARENT AWAIT FUNCTIONS
+async function ParentLoaded(id) {
+  const response = await fetch('http://localhost:8080/parents/' + id);
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch details for selected samplej.' },
+      { message: 'Could not fetch details for selected parent.' },
       {
         status: 500,
       }
     );
   } else {
     const resData = await response.json();
-    return resData.samplej;
+    return resData.parent;
   }
 }
-async function SamplejsLoaded() {
-  const response = await fetch('http://localhost:8080/samplejs');
+async function ParentsLoaded() {
+  const response = await fetch('http://localhost:8080/parents');
 
   if (!response.ok) {
     throw json(
-      { message: 'Could not fetch samplejs.' },
+      { message: 'Could not fetch parents.' },
       {
         status: 500,
       }
     );
   } else {
     const resData = await response.json();
-    return resData.samplejs;
+    return resData.parents;
     // return resData;
   }
 }
-// THIS IS THE END OF SAMPLEJ AWAIT FUNCTIONS
+// THIS IS THE END OF PARENT AWAIT FUNCTIONS
 
 
 // THIS IS THE BEGINING OF SAMPLEI AWAIT FUNCTIONS
@@ -901,17 +901,17 @@ export async function loader({ request, params }) {
 
 
 
-// THIS IS THE BEGINING OF SAMPLEJ ELSE IF STATEMENT
+// THIS IS THE BEGINING OF PARENT ELSE IF STATEMENT
   else if (
-    id === 'samplej-aaa-001' ||
-    id === 'samplej-aaa-002'
+    id === 'parent-aaa-001' ||
+    id === 'parent-aaa-002'
   ) {
     return defer({
-      samplej : await SamplejLoaded(id),
-      samplejs : SamplejsLoaded(),
+      parent : await ParentLoaded(id),
+      parents : ParentsLoaded(),
     });
   }
-// THIS IS THE END OF SAMPLEJ ELSE IF STATEMENT
+// THIS IS THE END OF PARENT ELSE IF STATEMENT
 
 
 // THIS IS THE BEGINING OF SAMPLEI ELSE IF STATEMENT

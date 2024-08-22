@@ -1,10 +1,10 @@
-.samplej {
+.parent {
   max-width: 50rem;
   margin: 2rem auto;
   text-align: center;
 }
 
-.samplej img {
+.parent img {
   width: 30rem;
   border-radius: 4px;
 }
