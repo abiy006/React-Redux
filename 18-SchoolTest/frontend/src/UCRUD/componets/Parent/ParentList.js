@@ -9,14 +9,14 @@ import ParentDetail from './ParentDetail';
 function ParentList({ parents }) {
 
   // console.log("parentList - parents.parents[0].id - " + parents.parents[0].id);
-
-
 return (
 
   <div className={classes.parents}>
     <div>
       <h1>Student parent page</h1>
     </div>
+
+      {/* <ParentDetail parents={parents.parents} /> */}
       <ParentDetail parents={parents.parents} />
   </div>
 );

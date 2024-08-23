@@ -4,12 +4,11 @@ import { NavLink } from "react-router-dom";
 
 import classes from "../../CSS/Parent/ParentDetail.module.css";
 
-const StudDashPartD = ({ parents }) => {
+const ParentDetail = ({ parents }) => {
   // console.log("parentDetail - parents - " + parents);
   return (
-<>
     <ul className={classes.list}>
-      {parents.map((parent, index) => (
+      {parents.map((parent, index) => (parent.id != "parent-aaa-001" &&
         <li key={parent.id} className={classes.item}>
           <NavLink to={`/u-crudX/${parent.id}`}>
             <div className={classes.basicsA}>
@@ -29,8 +28,9 @@ const StudDashPartD = ({ parents }) => {
         </li>
       ))}
     </ul>
-</>
+    
+
   );
 };
 
-export default StudDashPartD;
+export default ParentDetail;
