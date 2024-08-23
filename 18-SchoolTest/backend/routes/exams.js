@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getAll, get, add, replace, remove } = require('../data/sampleb');
+const { getAll, get, add, replace, remove } = require('../data/exam');
 const { checkAuth } = require('../util/auth');
 const {
   isValidText,
@@ -13,8 +13,8 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
   console.log(req.token);
   try {
-    const samplebs = await getAll();
-    res.json({ samplebs: samplebs });
+    const exams = await getAll();
+    res.json({ exams: exams });
   } catch (error) {
     next(error);
   }
@@ -22,8 +22,8 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const sampleb = await get(req.params.id);
-    res.json({ sampleb: sampleb });
+    const exam = await get(req.params.id);
+    res.json({ exam: exam });
   } catch (error) {
     next(error);
   }
@@ -62,7 +62,7 @@ router.post('/', async (req, res, next) => {
 
   try {
     await add(data);
-    res.status(201).json({ message: 'Event saved.', sampleb: data });
+    res.status(201).json({ message: 'Event saved.', exam: data });
   } catch (error) {
     next(error);
   }
@@ -98,7 +98,7 @@ router.patch('/:id', async (req, res, next) => {
 
   try {
     await replace(req.params.id, data);
-    res.json({ message: 'Event updated.', sampleb: data });
+    res.json({ message: 'Event updated.', exam: data });
   } catch (error) {
     next(error);
   }

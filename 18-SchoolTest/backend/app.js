@@ -58,9 +58,9 @@ const samplecRoutes = require('./routes/samplecs');
 // THIS IS THE END OF samplecs require
  
 
-// THIS IS THE BEGINING OF samplebs require
-const samplebRoutes = require('./routes/samplebs');
-// THIS IS THE END OF samplebs require
+// THIS IS THE BEGINING OF exams require
+const examRoutes = require('./routes/exams');
+// THIS IS THE END OF exams require
 
  
 
@@ -196,9 +196,9 @@ app.use('/samplecs', samplecRoutes);
 // THIS IS THE END OF samplecs use
  
 
-// THIS IS THE BEGINING OF samplebs use
-app.use('/samplebs', samplebRoutes);
-// THIS IS THE END OF samplebs use
+// THIS IS THE BEGINING OF exams use
+app.use('/exams', examRoutes);
+// THIS IS THE END OF exams use
 
  
 
