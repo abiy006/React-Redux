@@ -1,14 +1,14 @@
 const { v4: generateId } = require('uuid');
 
 const { NotFoundError } = require('../util/errors');
-const { readData, writeData } = require('./util_samplea');
+const { readData, writeData } = require('./util_teacher');
 
 // async function getAll() {
 //   const storedData = await readData();
-//   if (!storedData.sampleas) {
+//   if (!storedData.teachers) {
 //     throw new NotFoundError('Could not find any events.');
 //   }
-//   return storedData.sampleas;
+//   return storedData.teachers;
 // }
 
 async function getAll() {
@@ -21,44 +21,44 @@ async function getAll() {
 
 async function get(id) {
   const storedData = await readData();
-  if (!storedData.sampleas || storedData.sampleas.length === 0) {
+  if (!storedData.teachers || storedData.teachers.length === 0) {
     throw new NotFoundError('Could not find any events.');
   }
 
-  const samplea = storedData.sampleas.find((ev) => ev.id === id);
-  if (!samplea) {
+  const teacher = storedData.teachers.find((ev) => ev.id === id);
+  if (!teacher) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
 
-  return samplea;
+  return teacher;
 }
 
 async function add(data) {
   const storedData = await readData();
-  storedData.sampleas.unshift({ ...data, id: generateId() });
+  storedData.teachers.unshift({ ...data, id: generateId() });
   await writeData(storedData);
 }
 
 async function replace(id, data) {
   const storedData = await readData();
-  if (!storedData.sampleas || storedData.sampleas.length === 0) {
+  if (!storedData.teachers || storedData.teachers.length === 0) {
     throw new NotFoundError('Could not find any events.');
   }
 
-  const index = storedData.sampleas.findIndex((ev) => ev.id === id);
+  const index = storedData.teachers.findIndex((ev) => ev.id === id);
   if (index < 0) {
     throw new NotFoundError('Could not find event for id ' + id);
   }
 
-  storedData.sampleas[index] = { ...data, id };
+  storedData.teachers[index] = { ...data, id };
 
   await writeData(storedData);
 }
 
 async function remove(id) {
   const storedData = await readData();
-  const updatedData = storedData.sampleas.filter((ev) => ev.id !== id);
-  await writeData({ ...storedData, sampleas: updatedData });
+  const updatedData = storedData.teachers.filter((ev) => ev.id !== id);
+  await writeData({ ...storedData, teachers: updatedData });
 }
 
 exports.getAll = getAll;

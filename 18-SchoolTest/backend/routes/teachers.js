@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getAll, get, add, replace, remove } = require('../data/samplea');
+const { getAll, get, add, replace, remove } = require('../data/teacher');
 const { checkAuth } = require('../util/auth');
 const {
   isValidText,
@@ -13,8 +13,8 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
   console.log(req.token);
   try {
-    const sampleas = await getAll();
-    res.json({ sampleas: sampleas });
+    const teachers = await getAll();
+    res.json({ teachers: teachers });
   } catch (error) {
     next(error);
   }
@@ -22,8 +22,8 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const samplea = await get(req.params.id);
-    res.json({ samplea: samplea });
+    const teacher = await get(req.params.id);
+    res.json({ teacher: teacher });
   } catch (error) {
     next(error);
   }
@@ -62,7 +62,7 @@ router.post('/', async (req, res, next) => {
 
   try {
     await add(data);
-    res.status(201).json({ message: 'Event saved.', samplea: data });
+    res.status(201).json({ message: 'Event saved.', teacher: data });
   } catch (error) {
     next(error);
   }
@@ -98,7 +98,7 @@ router.patch('/:id', async (req, res, next) => {
 
   try {
     await replace(req.params.id, data);
-    res.json({ message: 'Event updated.', samplea: data });
+    res.json({ message: 'Event updated.', teacher: data });
   } catch (error) {
     next(error);
   }

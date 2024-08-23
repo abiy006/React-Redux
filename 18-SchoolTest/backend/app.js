@@ -14,9 +14,9 @@ const ccrudRoutes = require('./routes/ccruds');
 const paymentRoutes = require('./routes/payments');
 // THIS IS THE END OF payments require 
 
-// THIS IS THE BEGINING OF sampleas require
-const sampleaRoutes = require('./routes/sampleas');
-// THIS IS THE END OF sampleas require 
+// THIS IS THE BEGINING OF teachers require
+const teacherRoutes = require('./routes/teachers');
+// THIS IS THE END OF teachers require 
 
 // THIS IS THE BEGINING OF sampleds require
 const sampledRoutes = require('./routes/sampleds');
@@ -155,9 +155,9 @@ app.use('/ccruds', ccrudRoutes);
 app.use('/payments', paymentRoutes);
 // THIS IS THE END OF payments use 
 
-// THIS IS THE BEGINING OF sampleas use
-app.use('/sampleas', sampleaRoutes);
-// THIS IS THE END OF sampleas use 
+// THIS IS THE BEGINING OF teachers use
+app.use('/teachers', teacherRoutes);
+// THIS IS THE END OF teachers use 
 
 // THIS IS THE BEGINING OF sampleds use
 app.use('/sampleds', sampledRoutes);

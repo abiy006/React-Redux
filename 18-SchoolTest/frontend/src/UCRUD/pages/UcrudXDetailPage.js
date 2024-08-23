@@ -10,10 +10,10 @@ import {
 // import UcrudItem from '../componets/UcrudItem';
 import { getAuthToken } from "../../util/auth";
 
-// THIS IS THE BEGINING OF samplea IMPORT CODES
-import SampleaItem from "../componets/Samplea/SampleaItem";
-import SampleaList from "../componets/Samplea/SampleaList";
-// THIS IS THE END OF SAMPLEA IMPORT CODES
+// THIS IS THE BEGINING OF teacher IMPORT CODES
+import TeacherItem from "../componets/Teacher/TeacherItem";
+import TeacherList from "../componets/Teacher/TeacherList";
+// THIS IS THE END OF TEACHER IMPORT CODES
 
 // THIS IS THE BEGINING OF SAMPLED IMPORT CODES
 import SampledItem from "../componets/Sampled/SampledItem";
@@ -67,10 +67,10 @@ import SampleList from "../componets/Sample/SampleList";
 
 function PaymentCRUD() {
   let {
-    // VARIABLE samplea BEGINING
-    samplea,
-    sampleas,
-    // VARIABLE SAMPLEA ENDING
+    // VARIABLE teacher BEGINING
+    teacher,
+    teachers,
+    // VARIABLE TEACHER ENDING
 
     // VARIABLE SAMPLED BEGINING
     sampled,
@@ -216,8 +216,7 @@ function PaymentCRUD() {
       {/* THIS IS THE BEGINING OF PARENT SUSPENSE AND AWAIT */}
       {(parent || parents) && (
         <Suspense fallback={<p>Parent Loading...</p>}>
-            <Await resolve={   parent}>
-              {/* {(ParentLoaded) => <ParentItem parent={ParentLoaded} />} */}
+            <Await resolve={parent}>
               {(ParentLoaded) => <ParentItem parent={ParentLoaded} />}
             </Await>
           
@@ -270,21 +269,21 @@ function PaymentCRUD() {
       )}
       {/* THIS IS THE END OF SAMPLEB SUSPENSE AND AWAIT */}
 
-      {/* THIS IS THE BEGINING OF samplea SUSPENSE AND AWAIT */}
-      {(samplea || sampleas) && (
+      {/* THIS IS THE BEGINING OF teacher SUSPENSE AND AWAIT */}
+      {(teacher || teachers) && (
         <Suspense
-          fallback={<p style={{ textAlign: "center" }}>Samplea Loading...</p>}
+          fallback={<p style={{ textAlign: "center" }}>Teacher Loading...</p>}
         >
-          <Await resolve={samplea}>
-            {(SampleaLoaded) => <SampleaItem samplea={SampleaLoaded} />}
+          <Await resolve={teacher}>
+            {(TeacherLoaded) => <TeacherItem teacher={TeacherLoaded} />}
           </Await>
 
-          <Await resolve={sampleas}>
-            {(SampleasLoaded) => <SampleaList sampleas={SampleasLoaded} />}
+          <Await resolve={teachers}>
+            {(TeachersLoaded) => <TeacherList teachers={TeachersLoaded} />}
           </Await>
         </Suspense>
       )}
-      {/* THIS IS THE END OF samplea SUSPENSE AND AWAIT */}
+      {/* THIS IS THE END OF teacher SUSPENSE AND AWAIT */}
 
       {/* THIS IS THE BEGINING OF sample SUSPENSE AND AWAIT */}
       {(sample || samples) && (
@@ -726,40 +725,40 @@ async function SamplebsLoaded() {
 }
 // THIS IS THE END OF SAMPLEB AWAIT FUNCTIONS
 
-// THIS IS THE BEGINING OF Samplea AWAIT FUNCTIONS
-async function SampleaLoaded(id) {
-  const response = await fetch("http://localhost:8080/sampleas/" + id);
+// THIS IS THE BEGINING OF Teacher AWAIT FUNCTIONS
+async function TeacherLoaded(id) {
+  const response = await fetch("http://localhost:8080/teachers/" + id);
 
   if (!response.ok) {
     throw json(
-      { message: "Could not fetch details for selected Samplea." },
+      { message: "Could not fetch details for selected Teacher." },
       {
         status: 500,
       }
     );
   } else {
     const resData = await response.json();
-    return resData.samplea;
+    return resData.teacher;
   }
 }
 
-async function SampleasLoaded() {
-  const response = await fetch("http://localhost:8080/sampleas");
+async function TeachersLoaded() {
+  const response = await fetch("http://localhost:8080/teachers");
 
   if (!response.ok) {
     throw json(
-      { message: "Could not fetch sampleas." },
+      { message: "Could not fetch teachers." },
       {
         status: 500,
       }
     );
   } else {
     const resData = await response.json();
-    return resData.sampleas;
+    return resData.teachers;
     // return resData;
   }
 }
-// THIS IS THE END OF samplea AWAIT FUNCTIONS
+// THIS IS THE END OF teacher AWAIT FUNCTIONS
 
 // THIS IS THE BEGINING OF SAMPLE AWAIT FUNCTIONS
 async function SampleLoaded(id) {
@@ -907,10 +906,21 @@ export async function loader({ request, params }) {
   // THIS IS THE END OF SAMPLEB ELSE IF STATEMENT
 
   // THIS IS THE BEGINING OF  ELSE IF STATEMENT
-  else if (id === "samplea-aaa-001" || id === "samplea-aaa-002") {
+  else if ( id === "teacher-aaa-001" || 
+            id === "teacher-aaa-002" || 
+            id === "teacher-aaa-003" || 
+            id === "teacher-aaa-004" || 
+            id === "teacher-aaa-005" || 
+            id === "teacher-aaa-006" || 
+            id === "teacher-aaa-007" || 
+            id === "teacher-aaa-008" || 
+            id === "teacher-aaa-009" || 
+            id === "teacher-aaa-010" || 
+            id === "teacher-aaa-011"
+  ) {
     return defer({
-      samplea: await SampleaLoaded(id),
-      sampleas: SampleasLoaded(),
+      teacher: await TeacherLoaded(id),
+      teachers: TeachersLoaded(),
     });
   }
   // THIS IS THE END OF  ELSE IF STATEMENT
