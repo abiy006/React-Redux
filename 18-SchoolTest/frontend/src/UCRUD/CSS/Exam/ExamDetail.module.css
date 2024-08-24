@@ -10,14 +10,14 @@
 
 .list {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 .item {
   margin: auto;
-  width: 100%;
-  height: auto;
+  width: 40%;
+  height: 10%;
   /* background-color: var(--color-gray-900); */
   padding: 1rem;
 }
@@ -53,7 +53,7 @@
 }
 
 .basicsB p {
-  margin: 1rem;
+  margin: 0.25rem;
 }
 
 .item img {
@@ -71,7 +71,7 @@
   justify-content: center;
   gap: 1rem;
   height: 100%;
-  background-color: transparent;
+  background-color: transexam;
 }
 
 .content h3,p {
