@@ -5,8 +5,9 @@ import axios from 'axios';
 
 import classes from "../../CSS/Exam/ExamItem.module.css";
 
-function DropItem({ exam_subject }) {
-  console.log("exam_subject.exams_subjects) - " + exam_subject.exams_subjects);
+function DropItem({ exams_names }) {
+  // console.log("exam_name - " + exam_name);
+  console.log("exams_names - " + exams_names);
 
   const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState('');
@@ -16,7 +17,8 @@ function DropItem({ exam_subject }) {
   };
 
   const fetchData = () => {
-    setOptions(exam_subject.exams_subjects);
+    setOptions(exams_names.exams_names);
+    // console.log("exams_subjects - " + exams_subjects);
   };
   
   return (
@@ -26,6 +28,7 @@ function DropItem({ exam_subject }) {
           {/* <img src={exam.stud_image} alt={exam.stud_name} /> */}
 
           <div>
+            {/* <button onClick={fetchData}>Fetch Data</button> */}
             <button onClick={fetchData}>Fetch Data</button>
             <label htmlFor="dropdown">Select an option:</label>
             <select

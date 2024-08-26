@@ -116,7 +116,8 @@ function PaymentCRUD() {
     // VARIABLE Exam BEGINING
     exam,
     exams,
-    exam_subject,
+    exam_name,
+    exams_names,
     // VARIABLE exam ENDING
 
     // VARIABLE SAMPLE BEGINING
@@ -218,10 +219,10 @@ function PaymentCRUD() {
       {/* THIS IS THE BEGINING OF PARENT SUSPENSE AND AWAIT */}
       {(parent || parents) && (
         <Suspense fallback={<p>Parent Loading...</p>}>
-            <Await resolve={parent}>
-              {(ParentLoaded) => <ParentItem parent={ParentLoaded} />}
-            </Await>
-          
+          <Await resolve={parent}>
+            {(ParentLoaded) => <ParentItem parent={ParentLoaded} />}
+          </Await>
+
           <Await resolve={parents}>
             {(ParentsLoaded) => <ParentList parents={ParentsLoaded} />}
           </Await>
@@ -260,14 +261,24 @@ function PaymentCRUD() {
       {/* THIS IS THE BEGINING OF exam SUSPENSE AND AWAIT */}
       {(exam || exams) && (
         <Suspense fallback={<p>exam Loading...</p>}>
-          <Await resolve={exam_subject}>
+          {/* <Await resolve={exam_subject}>
             {(DropDownLoaded) => <DropItem exam_subject={DropDownLoaded} />}
+          </Await>
+          <Await resolve={exams_subjects}>
+            {(DropDownsLoaded) => <DropItem exams_subjects={DropDownsLoaded} />}
+          </Await> */}
+
+          {/* 
+          <Await resolve={exam_name}>
+            {(ExamNameLoaded) => <DropItem exam_name={ExamNameLoaded} />}
+          </Await> */}
+          <Await resolve={exams_names}>
+            {(ExamsNamesLoaded) => <DropItem exams_names={ExamsNamesLoaded} />}
           </Await>
 
           <Await resolve={exam}>
             {(ExamLoaded) => <ExamItem exam={ExamLoaded} />}
           </Await>
-
           <Await resolve={exams}>
             {(ExamsLoaded) => <ExamList exams={ExamsLoaded} />}
           </Await>
@@ -712,7 +723,6 @@ async function ExamLoaded(id) {
     return resData.exam;
   }
 }
-
 async function ExamsLoaded() {
   const response = await fetch("http://localhost:8080/exams");
 
@@ -730,9 +740,39 @@ async function ExamsLoaded() {
   }
 }
 
+async function ExamNameLoaded(id) {
+  const response = await fetch("http://localhost:8080/exams_names/" + id);
+
+  if (!response.ok) {
+    throw json(
+      { message: "Could not fetch details for selected exam." },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    const resData = await response.json();
+    return resData.exam_name;
+  }
+}
+async function ExamsNamesLoaded() {
+  const response = await fetch("http://localhost:8080/exams_names");
+
+  if (!response.ok) {
+    throw json(
+      { message: "Could not fetch exams." },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    const resData = await response.json();
+    return resData.exams_names;
+    // return resData;
+  }
+}
 
 async function DropDownLoaded(id) {
-
   const response = await fetch("http://localhost:8080/exams_subjects/" + id);
 
   if (!response.ok) {
@@ -747,9 +787,24 @@ async function DropDownLoaded(id) {
     return resData.exam_subject;
   }
 }
+async function DropDownsLoaded() {
+  const response = await fetch("http://localhost:8080/exams_subjects");
+
+  if (!response.ok) {
+    throw json(
+      { message: "Could not fetch exams." },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    const resData = await response.json();
+    return resData.exams_subjects;
+    // return resData;
+  }
+}
 
 // THIS IS THE END OF exam AWAIT FUNCTIONS
-
 
 // THIS IS THE BEGINING OF Teacher AWAIT FUNCTIONS
 async function TeacherLoaded(id) {
@@ -924,34 +979,40 @@ export async function loader({ request, params }) {
 
   // THIS IS THE BEGINING OF exam ELSE IF STATEMENT
   else if (
-    id === "exam-aaa-001" || 
-    id === "exam-aaa-002" || 
-    id === "exam-aaa-003" || 
-    id === "exam-aaa-004" || 
-    id === "exam-aaa-005" || 
-    id === "exam-aaa-006" || 
+    id === "exam-aaa-001" ||
+    id === "exam-aaa-002" ||
+    id === "exam-aaa-003" ||
+    id === "exam-aaa-004" ||
+    id === "exam-aaa-005" ||
+    id === "exam-aaa-006" ||
     id === "exam-aaa-007"
   ) {
     return defer({
       exam: await ExamLoaded(id),
       exams: ExamsLoaded(),
+
       exam_subject: DropDownLoaded(id),
+      exams_subjects: DropDownsLoaded(),
+
+      // exam_name: ExamNameLoaded(id),
+      exams_names: ExamsNamesLoaded(),
     });
   }
   // THIS IS THE END OF exam ELSE IF STATEMENT
 
   // THIS IS THE BEGINING OF  ELSE IF STATEMENT
-  else if ( id === "teacher-aaa-001" || 
-            id === "teacher-aaa-002" || 
-            id === "teacher-aaa-003" || 
-            id === "teacher-aaa-004" || 
-            id === "teacher-aaa-005" || 
-            id === "teacher-aaa-006" || 
-            id === "teacher-aaa-007" || 
-            id === "teacher-aaa-008" || 
-            id === "teacher-aaa-009" || 
-            id === "teacher-aaa-010" || 
-            id === "teacher-aaa-011"
+  else if (
+    id === "teacher-aaa-001" ||
+    id === "teacher-aaa-002" ||
+    id === "teacher-aaa-003" ||
+    id === "teacher-aaa-004" ||
+    id === "teacher-aaa-005" ||
+    id === "teacher-aaa-006" ||
+    id === "teacher-aaa-007" ||
+    id === "teacher-aaa-008" ||
+    id === "teacher-aaa-009" ||
+    id === "teacher-aaa-010" ||
+    id === "teacher-aaa-011"
   ) {
     return defer({
       teacher: await TeacherLoaded(id),

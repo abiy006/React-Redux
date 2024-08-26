@@ -63,6 +63,11 @@ const exam_subjectRoutes = require('./routes/exams_subjects');
 // THIS IS THE END OF exams_subjects require
 
  
+// THIS IS THE BEGINING OF exams_names require
+const exam_nameRoutes = require('./routes/exams_names');
+// THIS IS THE END OF exams_names require
+
+
 
 // THIS IS THE BEGINING OF samples require
 const sampleRoutes = require('./routes/samples');
@@ -204,6 +209,11 @@ app.use('/exams', examRoutes);
 // THIS IS THE BEGINING OF exams_subjects use
 app.use('/exams_subjects', exam_subjectRoutes);
 // THIS IS THE END OF exams_subjects use
+
+
+// THIS IS THE BEGINING OF exams_names use
+app.use('/exams_names', exam_nameRoutes);
+// THIS IS THE END OF exams_names use
 
  
 
