@@ -56,6 +56,7 @@ import SamplecList from "../componets/Samplec/SamplecList";
 // THIS IS THE END OF SAMPLEC IMPORT CODES
 
 // THIS IS THE BEGINING OF exam IMPORT CODES
+import DropItem from "../componets/Exam/DropItem";
 import ExamItem from "../componets/Exam/ExamItem";
 import ExamList from "../componets/Exam/ExamList";
 // THIS IS THE END OF Exam IMPORT CODES
@@ -115,6 +116,7 @@ function PaymentCRUD() {
     // VARIABLE Exam BEGINING
     exam,
     exams,
+    exam_subject,
     // VARIABLE exam ENDING
 
     // VARIABLE SAMPLE BEGINING
@@ -258,6 +260,10 @@ function PaymentCRUD() {
       {/* THIS IS THE BEGINING OF exam SUSPENSE AND AWAIT */}
       {(exam || exams) && (
         <Suspense fallback={<p>exam Loading...</p>}>
+          <Await resolve={exam_subject}>
+            {(DropDownLoaded) => <DropItem exam_subject={DropDownLoaded} />}
+          </Await>
+
           <Await resolve={exam}>
             {(ExamLoaded) => <ExamItem exam={ExamLoaded} />}
           </Await>
@@ -723,7 +729,27 @@ async function ExamsLoaded() {
     // return resData;
   }
 }
+
+
+async function DropDownLoaded(id) {
+
+  const response = await fetch("http://localhost:8080/exams_subjects/" + id);
+
+  if (!response.ok) {
+    throw json(
+      { message: "Could not fetch details for selected exam." },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    const resData = await response.json();
+    return resData.exam_subject;
+  }
+}
+
 // THIS IS THE END OF exam AWAIT FUNCTIONS
+
 
 // THIS IS THE BEGINING OF Teacher AWAIT FUNCTIONS
 async function TeacherLoaded(id) {
@@ -897,10 +923,19 @@ export async function loader({ request, params }) {
   // THIS IS THE END OF SAMPLEC ELSE IF STATEMENT
 
   // THIS IS THE BEGINING OF exam ELSE IF STATEMENT
-  else if (id === "exam-aaa-001" || id === "exam-aaa-002") {
+  else if (
+    id === "exam-aaa-001" || 
+    id === "exam-aaa-002" || 
+    id === "exam-aaa-003" || 
+    id === "exam-aaa-004" || 
+    id === "exam-aaa-005" || 
+    id === "exam-aaa-006" || 
+    id === "exam-aaa-007"
+  ) {
     return defer({
       exam: await ExamLoaded(id),
       exams: ExamsLoaded(),
+      exam_subject: DropDownLoaded(id),
     });
   }
   // THIS IS THE END OF exam ELSE IF STATEMENT

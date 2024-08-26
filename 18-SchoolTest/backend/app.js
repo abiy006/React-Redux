@@ -49,10 +49,6 @@ const parentRoutes = require('./routes/parents');
 
 
 
-
-
- 
-
 // THIS IS THE BEGINING OF samplecs require
 const samplecRoutes = require('./routes/samplecs');
 // THIS IS THE END OF samplecs require
@@ -61,6 +57,10 @@ const samplecRoutes = require('./routes/samplecs');
 // THIS IS THE BEGINING OF exams require
 const examRoutes = require('./routes/exams');
 // THIS IS THE END OF exams require
+
+// THIS IS THE BEGINING OF exams_subjects require
+const exam_subjectRoutes = require('./routes/exams_subjects');
+// THIS IS THE END OF exams_subjects require
 
  
 
@@ -199,6 +199,11 @@ app.use('/samplecs', samplecRoutes);
 // THIS IS THE BEGINING OF exams use
 app.use('/exams', examRoutes);
 // THIS IS THE END OF exams use
+
+
+// THIS IS THE BEGINING OF exams_subjects use
+app.use('/exams_subjects', exam_subjectRoutes);
+// THIS IS THE END OF exams_subjects use
 
  
 
