@@ -4,7 +4,7 @@ import { Link, useRouteLoaderData, useSubmit } from "react-router-dom";
 import classes from "../../CSS/Exam/ExamItem.module.css";
 
 function ExamItem({ exam }) {
-  console.log("examItem - exam.stud_name - " + exam.stud_name);
+  console.log("examItem - exam - " + exam);
   const token = useRouteLoaderData("root");
   const submit = useSubmit();
 

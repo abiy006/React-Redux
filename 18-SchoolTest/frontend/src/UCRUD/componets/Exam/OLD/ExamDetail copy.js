@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import classes from "../../CSS/Exam/ExamDetail.module.css";
 
 const ExamDetail = ({ exams }) => {
-  // console.log("examDetail - exams - " + exams);
+  console.log("examDetail - exams - " + exams);
   return (
     <ul className={classes.list}>
       {exams.map((exam, index) => 
@@ -30,8 +30,6 @@ const ExamDetail = ({ exams }) => {
       )
       )}
     </ul>
-    
-
   );
 };
 

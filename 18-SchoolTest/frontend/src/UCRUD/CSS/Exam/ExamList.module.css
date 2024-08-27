@@ -13,7 +13,7 @@
 
 .item {
   margin: auto;
-  width: 25%;
+  width: 45%;
   height: 9rem;
 }
 
@@ -47,4 +47,45 @@
 
 .item h2 {
   margin: 0 0 1rem 0;
+}
+
+.basicsA {
+  display: flex;
+  margin: 1rem;
+}
+
+.basicsB {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.basicsB p {
+  margin: 0.25rem;
+}
+
+.item img {
+  width: 20%;
+  height: 100%;
+  object-fit: fill;
+  /* border-radius: 20rem; */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+  background-color: transexam;
+}
+
+.content h3,p {
+  margin: auto;
+}
+
+ul {
+  background-color: rgb(22, 22, 22);
 }

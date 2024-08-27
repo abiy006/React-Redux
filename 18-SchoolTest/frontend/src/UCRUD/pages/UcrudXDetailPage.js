@@ -140,8 +140,8 @@ function PaymentCRUD() {
   // console.log("homeworks - " + homeworks);
   // console.log("homework - " + homework);
 
-  console.log("UcrudXDetailPage - samplef - " + samplef);
-  console.log("UcrudXDetailPage - samplefs - " + samplefs);
+  // console.log("UcrudXDetailPage - samplef - " + samplef);
+  // console.log("UcrudXDetailPage - samplefs - " + samplefs);
   return (
     <>
       {/* THIS IS THE BEGINING OF SAMPLEF SUSPENSE AND AWAIT */}
