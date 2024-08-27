@@ -89,5 +89,17 @@
       "password": "$2a$12$X7FBJ9HWzpHa/A8A5Hyn0OxHHHGY7yG5CZCnrVtH4RKD630t8VZjK",
       "id": "5ebf2039-adf4-4b37-ab98-1db64672672b"
     }
+  ],
+  "exams_names_header": [
+    {
+      "exams_names_header": "This is exam subject 1 selection header",
+      "exams_names_drop": true,
+      "id": "d7959cba-eb70-4393-8e58-4db1af969e36"
+    },
+    {
+      "exams_names_header": "test@test.com",
+      "exams_names_drop": true,
+      "id": "5ebf2039-adf4-4b37-ab98-1db64672672b"
+    }
   ]
 }

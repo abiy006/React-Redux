@@ -272,13 +272,32 @@ function PaymentCRUD() {
           <Await resolve={exam_name}>
             {(ExamNameLoaded) => <DropItem exam_name={ExamNameLoaded} />}
           </Await> */}
-          <Await resolve={exams_names}>
-            {(ExamsNamesLoaded) => <DropItem exams_names={ExamsNamesLoaded} />}
-          </Await>
 
+            {/* <Await resolve={exams_names}>
+              {(ExamsNamesLoaded) => (
+                <DropItem exams_names={ExamsNamesLoaded} />
+              )}
+            </Await> */}
+
+          {/* <Await resolve={exam}>
+            {(ExamLoaded) => <ExamItem exam={ExamLoaded} />}
+          </Await>
+          <Await resolve={exams}>
+            {(ExamsLoaded) => <ExamList exams={ExamsLoaded} />}
+          </Await> */}
+        </Suspense>
+      )}
+
+      {exam && (
+        <Suspense fallback={<p>exam Loading...</p>}>
           <Await resolve={exam}>
             {(ExamLoaded) => <ExamItem exam={ExamLoaded} />}
           </Await>
+        </Suspense>
+      )}
+
+      {exams && (
+        <Suspense fallback={<p>exam Loading...</p>}>
           <Await resolve={exams}>
             {(ExamsLoaded) => <ExamList exams={ExamsLoaded} />}
           </Await>

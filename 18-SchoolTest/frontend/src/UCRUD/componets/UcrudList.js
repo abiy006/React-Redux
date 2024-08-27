@@ -18,32 +18,6 @@ import StudDashPartB from '../navigations/StudDashPartB';
       <StudDashPartA studs={ucruds.studs} />
 
       <StudDashPartB ucruds={ucruds.ucruds} />
-      {/* <StudDashPartB ucruds={ucruds} /> */}
-
-      {/* <ul className={classes.list}>
-        {ucruds.ucruds.map((ucrud) => (
-          // <li key={ucrud.id} className={classes.item}>
-          //   <Link to={`/u-crudX/${ucrud.id}`}>
-          //     <img src={ucrud.image} alt={ucrud.title} />
-          //     <div className={classes.content}>
-          //       <h2>{ucrud.title}</h2>
-          //       <time>{ucrud.date}</time>
-          //     </div>
-          //   </Link>
-          // </li>
-          <li key={ucrud.id} className={classes.item}>
-            <NavLink to={`/u-crudX/${ucrud.number}`}>
-              <img src={ucrud.image} alt={ucrud.title} />
-              <div className={classes.content}>
-                <h2>{ucrud.title}</h2>
-                <time>{ucrud.date}</time>
-                <p>{ucrud.number}</p>
-              </div>
-            </NavLink>
-          </li>
-        ))}
-      </ul> */}
-
 
     </div>
   );

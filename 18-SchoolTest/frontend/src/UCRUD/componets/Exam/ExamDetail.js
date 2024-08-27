@@ -8,7 +8,8 @@ const ExamDetail = ({ exams }) => {
   // console.log("examDetail - exams - " + exams);
   return (
     <ul className={classes.list}>
-      {exams.map((exam, index) => (exam.id != "exam-aaa-001" &&
+      {exams.map((exam, index) => 
+      (exam.id != "exam-aaa-001" &&
         <li key={exam.id} className={classes.item}>
           <NavLink to={`/u-crudX/${exam.id}`}>
             <div className={classes.basicsA}>
@@ -26,7 +27,8 @@ const ExamDetail = ({ exams }) => {
             </div>
           </NavLink>
         </li>
-      ))}
+      )
+      )}
     </ul>
     
 

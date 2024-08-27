@@ -1,12 +1,14 @@
+import React, { useState } from "react";
 import { Link, useRouteLoaderData, useSubmit } from "react-router-dom";
 
 import classes from "../../CSS/Exam/ExamItem.module.css";
 
 function ExamItem({ exam }) {
-  console.log("examItem - exam - " + exam);
+  console.log("examItem - exam.stud_name - " + exam.stud_name);
   const token = useRouteLoaderData("root");
   const submit = useSubmit();
 
+  
   function startDeleteHandler() {
     const proceed = window.confirm("Are you sure?");
 
@@ -15,13 +17,12 @@ function ExamItem({ exam }) {
     }
   }
 
-
   return (
-    <article className={classes.exam}>
-      {exam.id != "exam-aaa-001" && (
-        <div>
-          {/* <img src={exam.stud_image} alt={exam.stud_name} /> */}
 
+    
+    <article className={classes.exam}>
+      {exam.id !== "exam-aaa-001" && (
+        <div>
           <h1>{exam.stud_name}</h1>
           <p>{exam.stud_id}</p>
           <p>{exam.stud_grd_sec}</p>

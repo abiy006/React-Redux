@@ -6,10 +6,10 @@ import axios from 'axios';
 import classes from "../../CSS/Exam/ExamItem.module.css";
 
 function DropItem({ exams_names }) {
-  // console.log("exam_name - " + exam_name);
-  console.log("exams_names - " + exams_names);
+  // console.log("exams_names.exams_names[0].id - DropItem - " + exams_names.exams_names[0].id);
 
   const [options, setOptions] = useState([]);
+  const [isiton, setIsiton] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleChange = (event) => {
@@ -18,15 +18,14 @@ function DropItem({ exams_names }) {
 
   const fetchData = () => {
     setOptions(exams_names.exams_names);
+    setIsiton(true);
     // console.log("exams_subjects - " + exams_subjects);
   };
   
   return (
     <article className={classes.exam}>
-      {/* {exam.id != "exam-aaa-001" && ( */}
-        {/* <div> */}
-          {/* <img src={exam.stud_image} alt={exam.stud_name} /> */}
-
+      {/* {exams_names.exams_names[0].id === "exam-aaa-001" && ( */}
+       {/* {isiton && (  */}
           <div>
             {/* <button onClick={fetchData}>Fetch Data</button> */}
             <button onClick={fetchData}>Fetch Data</button>
@@ -37,6 +36,7 @@ function DropItem({ exams_names }) {
               onChange={handleChange}
             >
               <option value="">Select an option</option>
+              {/* <option value="">{exams_names.exams_names_header}</option> */}
               {/* {console.error('options1', options)} */}
               {options.map((option) => (
                 <option key={option.id} value={option.id}>
@@ -45,20 +45,7 @@ function DropItem({ exams_names }) {
               ))}
             </select>
           </div>
-
-          {/* <h1>{exam.stud_name}</h1>
-          <p>{exam.stud_id}</p>
-          <p>{exam.stud_grd_sec}</p>
-          <p>{exam.stud_cat}</p>
-          <p>{exam.stud_gender}</p>
-          {token && (
-            <menu className={classes.actions}>
-              <Link to="edit">Edit</Link>
-              <button onClick={startDeleteHandler}>Delete</button>
-            </menu>
-          )} */}
-        {/* </div> */}
-       {/* )} */}
+        {/* )} */}
     </article>
   );
 }
