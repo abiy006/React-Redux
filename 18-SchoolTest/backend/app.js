@@ -67,7 +67,17 @@ const exam_subjectRoutes = require('./routes/exams_subjects');
 const exam_nameRoutes = require('./routes/exams_names');
 // THIS IS THE END OF exams_names require
 
+// THIS IS THE BEGINING OF exams_names require
+const exam1_nameRoutes = require('./routes/exam1_names');
+// THIS IS THE END OF exams_names require
 
+// THIS IS THE BEGINING OF exams_names require
+const exam2_nameRoutes = require('./routes/exam2_names');
+// THIS IS THE END OF exams_names require
+
+// THIS IS THE BEGINING OF exams_names require
+const exam3_nameRoutes = require('./routes/exam3_names');
+// THIS IS THE END OF exams_names require
 
 // THIS IS THE BEGINING OF samples require
 const sampleRoutes = require('./routes/samples');
@@ -213,6 +223,18 @@ app.use('/exams_subjects', exam_subjectRoutes);
 
 // THIS IS THE BEGINING OF exams_names use
 app.use('/exams_names', exam_nameRoutes);
+// THIS IS THE END OF exams_names use
+
+// THIS IS THE BEGINING OF exams_names use
+app.use('/exam1_names', exam1_nameRoutes);
+// THIS IS THE END OF exams_names use
+
+// THIS IS THE BEGINING OF exams_names use
+app.use('/exam2_names', exam2_nameRoutes);
+// THIS IS THE END OF exams_names use
+
+// THIS IS THE BEGINING OF exams_names use
+app.use('/exam3_names', exam3_nameRoutes);
 // THIS IS THE END OF exams_names use
 
  

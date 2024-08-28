@@ -59,6 +59,7 @@ import SamplecList from "../componets/Samplec/SamplecList";
 import DropItem from "../componets/Exam/DropItem";
 import ExamItem from "../componets/Exam/ExamItem";
 import ExamList from "../componets/Exam/ExamList";
+import ExamName from "../componets/Exam/ExamName";
 // THIS IS THE END OF Exam IMPORT CODES
 
 // THIS IS THE BEGINING OF SAMPLE IMPORT CODES
@@ -118,6 +119,9 @@ function PaymentCRUD() {
     exams,
     exam_name,
     exams_names,
+    exam1_names,
+    exam2_names,
+    exam3_names,
     // VARIABLE exam ENDING
 
     // VARIABLE SAMPLE BEGINING
@@ -259,32 +263,35 @@ function PaymentCRUD() {
       {/* THIS IS THE END OF SAMPLEC SUSPENSE AND AWAIT */}
 
       {/* THIS IS THE BEGINING OF exam SUSPENSE AND AWAIT */}
-      {(exam || exams) && (
+      {/* {(exam || exams) && (
         <Suspense fallback={<p>exam Loading...</p>}>
-          {/* <Await resolve={exam_subject}>
+          <Await resolve={exam_subject}>
             {(DropDownLoaded) => <DropItem exam_subject={DropDownLoaded} />}
           </Await>
           <Await resolve={exams_subjects}>
             {(DropDownsLoaded) => <DropItem exams_subjects={DropDownsLoaded} />}
-          </Await> */}
+          </Await>
 
-          {/* 
-          <Await resolve={exam_name}>
-            {(ExamNameLoaded) => <DropItem exam_name={ExamNameLoaded} />}
-          </Await> */}
-
-            {/* <Await resolve={exams_names}>
-              {(ExamsNamesLoaded) => (
-                <DropItem exams_names={ExamsNamesLoaded} />
-              )}
-            </Await> */}
-
-          {/* <Await resolve={exam}>
+          <Await resolve={exam}>
             {(ExamLoaded) => <ExamItem exam={ExamLoaded} />}
           </Await>
           <Await resolve={exams}>
             {(ExamsLoaded) => <ExamList exams={ExamsLoaded} />}
-          </Await> */}
+          </Await>
+        </Suspense>
+      )} */}
+
+      {/* {exam_name && (
+      <Await resolve={exam_name}>
+        {(ExamNameLoaded) => <ExamName exam_name={ExamNameLoaded} />}
+      </Await>
+      )} */}
+
+      {exams_names && (
+        <Suspense fallback={<p>exam Loading...</p>}>
+          <Await resolve={exams_names}>
+            {(ExamsNamesLoaded) => <ExamName exams_names={ExamsNamesLoaded} />}
+          </Await>
         </Suspense>
       )}
 
@@ -998,20 +1005,39 @@ export async function loader({ request, params }) {
 
   // THIS IS THE BEGINING OF exam ELSE IF STATEMENT
   else if (
-    id === "exam-aaa-001" ||
-    id === "exam-aaa-002" ||
-    id === "exam-aaa-003" ||
-    id === "exam-aaa-004" ||
-    id === "exam-aaa-005" ||
-    id === "exam-aaa-006" ||
-    id === "exam-aaa-007"
+    id === "exam-aaa-001"
+    // id === "exam-aaa-002" ||
+    // id === "exam-aaa-003" ||
+    // id === "exam-aaa-004" ||
+    // id === "exam-aaa-005" ||
+    // id === "exam-aaa-006" ||
+    // id === "exam-aaa-007"
   ) {
     return defer({
-      exam: await ExamLoaded(id),
+      // exam: await ExamLoaded(id),
       exams: ExamsLoaded(),
 
-      exam_subject: DropDownLoaded(id),
-      exams_subjects: DropDownsLoaded(),
+      // exam_subject: DropDownLoaded(id),
+      // exams_subjects: DropDownsLoaded(),
+
+      // exam_name: ExamNameLoaded(id),
+      // exams_names: ExamsNamesLoaded(),
+    });
+  }
+  // THIS IS THE END OF exam ELSE IF STATEMENT
+
+  // THIS IS THE BEGINING OF exam ELSE IF STATEMENT
+  else if (
+    // id === "exam-aaa-001" ||
+    id === "exam_aaa_002" ||
+    id === "exam_aaa_003"
+  ) {
+    return defer({
+      // exam: await ExamLoaded(id),
+      // exams: ExamsLoaded(),
+
+      // exam_subject: DropDownLoaded(id),
+      // exams_subjects: DropDownsLoaded(),
 
       // exam_name: ExamNameLoaded(id),
       exams_names: ExamsNamesLoaded(),

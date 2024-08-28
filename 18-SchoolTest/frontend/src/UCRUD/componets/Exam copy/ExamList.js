@@ -12,6 +12,7 @@ import * as React from "react";
 import { NavLink } from "react-router-dom";
 
 import classes from "../../CSS/Exam/ExamList.module.css";
+import ExamItem from "./ExamItem";
 
 
 const ExamList = ({ exams }) => {
