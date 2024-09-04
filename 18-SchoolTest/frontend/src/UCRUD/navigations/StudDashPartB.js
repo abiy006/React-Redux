@@ -15,8 +15,8 @@ const StudDashPartB = ({ ucruds }) => {
             <img src={ucrud.image} alt={ucrud.title} />
             <div className={classes.content}>
               <h3>{ucrud.title}</h3>
-              <p>{ucrud.date}</p>
-              <p>{ucrud.number}</p>
+              <p>{ucrud.description}</p>
+              <p>{ucrud.description}</p>
             </div>
           </NavLink>
         </li>

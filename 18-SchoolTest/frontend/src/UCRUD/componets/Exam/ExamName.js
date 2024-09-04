@@ -13,16 +13,23 @@ import { NavLink } from "react-router-dom";
 
 import classes from "../../CSS/Exam/ExamList.module.css";
 
-const ExamName = ({ exams_names }) => {
-  console.log("examName - exams_names - " + exams_names);
+const ExamName = ({ exams_names, exams_names_id }) => {
+  console.log("examName - exams_names " + exams_names.exams_names);
+  console.log("examName - exams_names_id " + exams_names.exams_names_id);
+  let var1 = ""
+  if(exams_names.exams_names){
+    var1 = exams_names.exams_names;
+  }else if(exams_names.exam3_names){
+    var1 = exams_names.exam3_names;
+  }
+  
   return (
     <>
       <div className={classes.exams}>
         <h1>Student exam page</h1>
         <ul className={classes.list}>
-          {exams_names.exams_names
-            .map(
-              (exam_map) =>(
+          {
+          var1.map((exam_map) =>(
                   <li key={exam_map.id} className={classes.item}>
                     <NavLink to={`/u-crudX/${exam_map.id}`}>
                       {/* <div className={classes.basicsA}>

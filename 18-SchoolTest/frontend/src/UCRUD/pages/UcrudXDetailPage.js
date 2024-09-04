@@ -69,10 +69,6 @@ import SampleList from "../componets/Sample/SampleList";
 
 function PaymentCRUD() {
   let {
-    // VARIABLE teacher BEGINING
-    teacher,
-    teachers,
-    // VARIABLE TEACHER ENDING
 
     // VARIABLE SAMPLED BEGINING
     sampled,
@@ -84,21 +80,6 @@ function PaymentCRUD() {
     samplefs,
     // VARIABLE SAMPLEF ENDING
 
-    // VARIABLE SAMPLEG BEGINING
-    sampleg,
-    samplegs,
-    // VARIABLE SAMPLEG ENDING
-
-    // VARIABLE SAMPLEH BEGINING
-    sampleh,
-    samplehs,
-    // VARIABLE SAMPLEH ENDING
-
-    // VARIABLE SAMPLEI BEGINING
-    samplei,
-    sampleis,
-    // VARIABLE SAMPLEI ENDING
-
     // VARIABLE STUDENT_DETAIL BEGINING
     student_detail,
     student_details,
@@ -109,19 +90,10 @@ function PaymentCRUD() {
     parents,
     // VARIABLE PARENT ENDING
 
-    // VARIABLE SAMPLEC BEGINING
-    samplec,
-    samplecs,
-    // VARIABLE SAMPLEC ENDING
-
     // VARIABLE Exam BEGINING
     exam,
     exams,
-    exam_name,
     exams_names,
-    exam1_names,
-    exam2_names,
-    exam3_names,
     // VARIABLE exam ENDING
 
     // VARIABLE SAMPLE BEGINING
@@ -131,21 +103,6 @@ function PaymentCRUD() {
   } = useRouteLoaderData("ucrud-dynamic-detail");
   // const { payment, payments } = useRouteLoaderData("ucrud-dynamic-detail");
 
-  // const { ucrud, ucruds } = useRouteLoaderData('ucrud-detail');
-  // console.log("student - " + student);
-  // console.log("payment - " + payment);
-
-  // console.log("students - " + students);
-  // console.log("payments - " + payments);
-
-  // console.log("student_subjects - " + student_subjects);
-  // console.log("student_subject - " + student_subject);
-
-  // console.log("homeworks - " + homeworks);
-  // console.log("homework - " + homework);
-
-  // console.log("UcrudXDetailPage - samplef - " + samplef);
-  // console.log("UcrudXDetailPage - samplefs - " + samplefs);
   return (
     <>
       {/* THIS IS THE BEGINING OF SAMPLEF SUSPENSE AND AWAIT */}
@@ -161,48 +118,6 @@ function PaymentCRUD() {
         </Suspense>
       )}
       {/* THIS IS THE END OF SAMPLEF SUSPENSE AND AWAIT */}
-
-      {/* THIS IS THE BEGINING OF SAMPLEG SUSPENSE AND AWAIT */}
-      {(sampleg || samplegs) && (
-        <Suspense fallback={<p>Sampleg Loading...</p>}>
-          <Await resolve={sampleg}>
-            {(SamplegLoaded) => <SamplegItem sampleg={SamplegLoaded} />}
-          </Await>
-
-          <Await resolve={samplegs}>
-            {(SamplegsLoaded) => <SamplegList samplegs={SamplegsLoaded} />}
-          </Await>
-        </Suspense>
-      )}
-      {/* THIS IS THE END OF SAMPLEG SUSPENSE AND AWAIT */}
-
-      {/* THIS IS THE BEGINING OF SAMPLEH SUSPENSE AND AWAIT */}
-      {(sampleh || samplehs) && (
-        <Suspense fallback={<p>Sampleh Loading...</p>}>
-          <Await resolve={sampleh}>
-            {(SamplehLoaded) => <SamplehItem sampleh={SamplehLoaded} />}
-          </Await>
-
-          <Await resolve={samplehs}>
-            {(SamplehsLoaded) => <SamplehList samplehs={SamplehsLoaded} />}
-          </Await>
-        </Suspense>
-      )}
-      {/* THIS IS THE END OF SAMPLEH SUSPENSE AND AWAIT */}
-
-      {/* THIS IS THE BEGINING OF SAMPLEI SUSPENSE AND AWAIT */}
-      {(samplei || sampleis) && (
-        <Suspense fallback={<p>Samplei Loading...</p>}>
-          <Await resolve={samplei}>
-            {(SampleiLoaded) => <SampleiItem samplei={SampleiLoaded} />}
-          </Await>
-
-          <Await resolve={sampleis}>
-            {(SampleisLoaded) => <SampleiList sampleis={SampleisLoaded} />}
-          </Await>
-        </Suspense>
-      )}
-      {/* THIS IS THE END OF SAMPLEI SUSPENSE AND AWAIT */}
 
       {/* THIS IS THE BEGINING OF STUDENT_DETAIL SUSPENSE AND AWAIT */}
       {(student_detail || student_details) && (
@@ -248,19 +163,6 @@ function PaymentCRUD() {
       )}
       {/* THIS IS THE END OF SAMPLED SUSPENSE AND AWAIT */}
 
-      {/* THIS IS THE BEGINING OF SAMPLEC SUSPENSE AND AWAIT */}
-      {(samplec || samplecs) && (
-        <Suspense fallback={<p>Samplec Loading...</p>}>
-          <Await resolve={samplec}>
-            {(SamplecLoaded) => <SamplecItem samplec={SamplecLoaded} />}
-          </Await>
-
-          <Await resolve={samplecs}>
-            {(SamplecsLoaded) => <SamplecList samplecs={SamplecsLoaded} />}
-          </Await>
-        </Suspense>
-      )}
-      {/* THIS IS THE END OF SAMPLEC SUSPENSE AND AWAIT */}
 
       {/* THIS IS THE BEGINING OF exam SUSPENSE AND AWAIT */}
       {/* {(exam || exams) && (
@@ -287,13 +189,6 @@ function PaymentCRUD() {
       </Await>
       )} */}
 
-      {exams_names && (
-        <Suspense fallback={<p>exam Loading...</p>}>
-          <Await resolve={exams_names}>
-            {(ExamsNamesLoaded) => <ExamName exams_names={ExamsNamesLoaded} />}
-          </Await>
-        </Suspense>
-      )}
 
       {exam && (
         <Suspense fallback={<p>exam Loading...</p>}>
@@ -312,21 +207,6 @@ function PaymentCRUD() {
       )}
       {/* THIS IS THE END OF exam SUSPENSE AND AWAIT */}
 
-      {/* THIS IS THE BEGINING OF teacher SUSPENSE AND AWAIT */}
-      {(teacher || teachers) && (
-        <Suspense
-          fallback={<p style={{ textAlign: "center" }}>Teacher Loading...</p>}
-        >
-          <Await resolve={teacher}>
-            {(TeacherLoaded) => <TeacherItem teacher={TeacherLoaded} />}
-          </Await>
-
-          <Await resolve={teachers}>
-            {(TeachersLoaded) => <TeacherList teachers={TeachersLoaded} />}
-          </Await>
-        </Suspense>
-      )}
-      {/* THIS IS THE END OF teacher SUSPENSE AND AWAIT */}
 
       {/* THIS IS THE BEGINING OF sample SUSPENSE AND AWAIT */}
       {(sample || samples) && (
@@ -421,44 +301,10 @@ async function StudentSubjectsloaded() {
   }
 }
 
-// THIS IS THE BEGINING OF PAYMENT AWAIT FUNCTIONS
-async function PTloaded(id) {
-  const response = await fetch("http://localhost:8080/payments/" + id);
-  // const response = await fetch("http://localhost:8080/students/" + id);
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch details for selected payment." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.payment;
-  }
-}
-async function PTSloaded() {
-  const response = await fetch("http://localhost:8080/payments");
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch payments." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.payments;
-    // return resData;
-  }
-}
-// THIS IS THE END OF PAYMENT AWAIT FUNCTIONS
-
 // THIS IS THE BEGINING OF STUDENT_DETAIL AWAIT FUNCTIONS
 async function Student_DetailLoaded(id) {
-  const response = await fetch("http://localhost:8080/student_details/" + id);
+  // const response = await fetch("http://localhost:8080/student_details/" + id);
+  const response = await fetch("http://localhost/School-Demo/student_detail.php?id=" + id);
 
   if (!response.ok) {
     throw json(
@@ -469,24 +315,8 @@ async function Student_DetailLoaded(id) {
     );
   } else {
     const resData = await response.json();
-    return resData.student_detail;
-  }
-}
-
-async function Student_DetailsLoaded() {
-  const response = await fetch("http://localhost:8080/student_details");
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch student_details." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.student_details;
-    // return resData;
+    // return resData.student_detail;
+    return resData;
   }
 }
 // THIS IS THE END OF STUDENT_DETAIL AWAIT FUNCTIONS
@@ -525,109 +355,6 @@ async function ParentsLoaded() {
 }
 // THIS IS THE END OF PARENT AWAIT FUNCTIONS
 
-// THIS IS THE BEGINING OF SAMPLEI AWAIT FUNCTIONS
-async function SampleiLoaded(id) {
-  const response = await fetch("http://localhost:8080/sampleis/" + id);
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch details for selected samplei." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.samplei;
-  }
-}
-async function SampleisLoaded() {
-  const response = await fetch("http://localhost:8080/sampleis");
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch sampleis." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.sampleis;
-    // return resData;
-  }
-}
-// THIS IS THE END OF SAMPLEI AWAIT FUNCTIONS
-
-// THIS IS THE BEGINING OF SAMPLEH AWAIT FUNCTIONS
-async function SamplehLoaded(id) {
-  const response = await fetch("http://localhost:8080/samplehs/" + id);
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch details for selected sampleh." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.sampleh;
-  }
-}
-async function SamplehsLoaded() {
-  const response = await fetch("http://localhost:8080/samplehs");
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch samplehs." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.samplehs;
-    // return resData;
-  }
-}
-// THIS IS THE END OF SAMPLEH AWAIT FUNCTIONS
-
-// THIS IS THE BEGINING OF SAMPLEG AWAIT FUNCTIONS
-async function SamplegLoaded(id) {
-  const response = await fetch("http://localhost:8080/samplegs/" + id);
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch details for selected sampleg." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.sampleg;
-  }
-}
-
-async function SamplegsLoaded() {
-  const response = await fetch("http://localhost:8080/samplegs");
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch samplegs." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.samplegs;
-    // return resData;
-  }
-}
-// THIS IS THE END OF SAMPLEG AWAIT FUNCTIONS
-
 // THIS IS THE BEGINING OF Samplef AWAIT FUNCTIONS
 async function SamplefLoaded(id) {
   const response = await fetch("http://localhost:8080/samplefs/" + id);
@@ -644,7 +371,6 @@ async function SamplefLoaded(id) {
     return resData.samplef;
   }
 }
-
 async function SamplefsLoaded() {
   const response = await fetch("http://localhost:8080/samplefs");
 
@@ -697,41 +423,6 @@ async function SampledsLoaded() {
   }
 }
 // THIS IS THE END OF SAMPLED AWAIT FUNCTIONS
-
-// THIS IS THE BEGINING OF SAMPLEC AWAIT FUNCTIONS
-async function SamplecLoaded(id) {
-  const response = await fetch("http://localhost:8080/samplecs/" + id);
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch details for selected samplec." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.samplec;
-  }
-}
-
-async function SamplecsLoaded() {
-  const response = await fetch("http://localhost:8080/samplecs");
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch samplecs." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.samplecs;
-    // return resData;
-  }
-}
-// THIS IS THE END OF SAMPLEC AWAIT FUNCTIONS
 
 // THIS IS THE BEGINING OF exam AWAIT FUNCTIONS
 async function ExamLoaded(id) {
@@ -832,41 +523,6 @@ async function DropDownsLoaded() {
 
 // THIS IS THE END OF exam AWAIT FUNCTIONS
 
-// THIS IS THE BEGINING OF Teacher AWAIT FUNCTIONS
-async function TeacherLoaded(id) {
-  const response = await fetch("http://localhost:8080/teachers/" + id);
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch details for selected Teacher." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.teacher;
-  }
-}
-
-async function TeachersLoaded() {
-  const response = await fetch("http://localhost:8080/teachers");
-
-  if (!response.ok) {
-    throw json(
-      { message: "Could not fetch teachers." },
-      {
-        status: 500,
-      }
-    );
-  } else {
-    const resData = await response.json();
-    return resData.teachers;
-    // return resData;
-  }
-}
-// THIS IS THE END OF teacher AWAIT FUNCTIONS
-
 // THIS IS THE BEGINING OF SAMPLE AWAIT FUNCTIONS
 async function SampleLoaded(id) {
   const response = await fetch("http://localhost:8080/samples/" + id);
@@ -918,14 +574,6 @@ export async function loader({ request, params }) {
       student_subjects: StudentSubjectsloaded(),
     });
   }
-  // THIS IS THE BEGINING OF PAYMENT ELSE IF STATEMENT
-  else if (id === "payment-aaa-001" || id === "payment-aaa-002") {
-    return defer({
-      payment: await PTloaded(id),
-      payments: PTSloaded(),
-    });
-  }
-  // THIS IS THE END OF PAYMENT ELSE IF STATEMENT
 
   // THIS IS THE BEGINING OF STUDENT_DETAIL ELSE IF STATEMENT
   else if (id === "student_detail-aaa-001") {
@@ -949,33 +597,6 @@ export async function loader({ request, params }) {
   }
   // THIS IS THE END OF PARENT ELSE IF STATEMENT
 
-  // THIS IS THE BEGINING OF SAMPLEI ELSE IF STATEMENT
-  else if (id === "samplei-aaa-001" || id === "samplei-aaa-002") {
-    return defer({
-      samplei: await SampleiLoaded(id),
-      sampleis: SampleisLoaded(),
-    });
-  }
-  // THIS IS THE END OF SAMPLEI ELSE IF STATEMENT
-
-  // THIS IS THE BEGINING OF SAMPLEH ELSE IF STATEMENT
-  else if (id === "sampleh-aaa-001" || id === "sampleh-aaa-002") {
-    return defer({
-      sampleh: await SamplehLoaded(id),
-      samplehs: SamplehsLoaded(),
-    });
-  }
-  // THIS IS THE END OF SAMPLEH ELSE IF STATEMENT
-
-  // THIS IS THE BEGINING OF SAMPLEG ELSE IF STATEMENT
-  else if (id === "sampleg-aaa-001" || id === "sampleg-aaa-002") {
-    return defer({
-      sampleg: await SamplegLoaded(id),
-      samplegs: SamplegsLoaded(),
-    });
-  }
-  // THIS IS THE END OF SAMPLEG ELSE IF STATEMENT
-
   // THIS IS THE BEGINING OF Samplef ELSE IF STATEMENT
   else if (id === "samplef-aaa-001" || id === "samplef-aaa-002") {
     return defer({
@@ -993,15 +614,6 @@ export async function loader({ request, params }) {
     });
   }
   // THIS IS THE END OF SAMPLED ELSE IF STATEMENT
-
-  // THIS IS THE BEGINING OF SAMPLEC ELSE IF STATEMENT
-  else if (id === "samplec-aaa-001" || id === "samplec-aaa-002") {
-    return defer({
-      samplec: await SamplecLoaded(id),
-      samplecs: SamplecsLoaded(),
-    });
-  }
-  // THIS IS THE END OF SAMPLEC ELSE IF STATEMENT
 
   // THIS IS THE BEGINING OF exam ELSE IF STATEMENT
   else if (
@@ -1028,43 +640,19 @@ export async function loader({ request, params }) {
 
   // THIS IS THE BEGINING OF exam ELSE IF STATEMENT
   else if (
-    // id === "exam-aaa-001" ||
     id === "exam_aaa_002" ||
-    id === "exam_aaa_003"
+    id === "exam_aaa_003" ||
+    id === "exam-aaa-004" ||
+    id === "exam-aaa-005" ||
+    id === "exam-aaa-006" ||
+    id === "exam-aaa-007"
   ) {
     return defer({
-      // exam: await ExamLoaded(id),
-      // exams: ExamsLoaded(),
-
-      // exam_subject: DropDownLoaded(id),
-      // exams_subjects: DropDownsLoaded(),
-
-      // exam_name: ExamNameLoaded(id),
       exams_names: ExamsNamesLoaded(),
+      exams_names_id: id,
     });
   }
   // THIS IS THE END OF exam ELSE IF STATEMENT
-
-  // THIS IS THE BEGINING OF  ELSE IF STATEMENT
-  else if (
-    id === "teacher-aaa-001" ||
-    id === "teacher-aaa-002" ||
-    id === "teacher-aaa-003" ||
-    id === "teacher-aaa-004" ||
-    id === "teacher-aaa-005" ||
-    id === "teacher-aaa-006" ||
-    id === "teacher-aaa-007" ||
-    id === "teacher-aaa-008" ||
-    id === "teacher-aaa-009" ||
-    id === "teacher-aaa-010" ||
-    id === "teacher-aaa-011"
-  ) {
-    return defer({
-      teacher: await TeacherLoaded(id),
-      teachers: TeachersLoaded(),
-    });
-  }
-  // THIS IS THE END OF  ELSE IF STATEMENT
 
   // THIS IS THE BEGINING OF sample ELSE IF STATEMENT
   else if (id === "sample-aaa-001" || id === "sample-aaa-002") {

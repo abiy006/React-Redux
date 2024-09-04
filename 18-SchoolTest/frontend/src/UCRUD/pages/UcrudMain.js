@@ -6,14 +6,14 @@ import UcrudList from '../componets/UcrudList';
 function StudentCRUD() {
   // const token = true;
 
-const { ucruds } = useLoaderData();
+const { data_ucruds } = useLoaderData();
 
 return (
   <>
 
 <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading1...</p>}>
-<Await resolve={ucruds}>
-  {(loadedEvents) => <UcrudList ucruds={loadedEvents} />}
+<Await resolve={data_ucruds}>
+  {(loadedEvents) => <UcrudList data_ucruds={loadedEvents} />}
 </Await>
 </Suspense>
   </>
@@ -24,7 +24,8 @@ return (
 export default StudentCRUD;
 
 async function loadEvents() {
-const response = await fetch('http://localhost:8080/ucruds');
+// const response = await fetch('http://localhost:8080/ucruds');
+const response = await fetch('http://localhost/School-Demo/index.php');
 
 if (!response.ok) {
   throw json(
@@ -35,31 +36,14 @@ if (!response.ok) {
   );
 } else {
   const resData = await response.json();
-  return resData.ucruds;
-  // return resData;
+  // return resData.ucruds;
+  return resData;
 }
 }
-
-
-// async function loadEvents2() {
-//   const response = await fetch('http://localhost:8080/ucruds');
-  
-//   if (!response.ok) {
-//     throw json(
-//       { message: 'Could not fetch ucruds.' },
-//       {
-//         status: 500,
-//       }
-//     );
-//   } else {
-//     const resData = await response.json();
-//     return resData;
-//   }
-//   }
 
 export function loader() {
 return defer({
-  ucruds: loadEvents(),
+  data_ucruds: loadEvents(),
   // resData: loadEvents(),
 });
 }
