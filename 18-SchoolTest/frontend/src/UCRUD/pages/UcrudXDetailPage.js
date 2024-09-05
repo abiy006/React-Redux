@@ -69,7 +69,6 @@ import SampleList from "../componets/Sample/SampleList";
 
 function PaymentCRUD() {
   let {
-
     // VARIABLE SAMPLED BEGINING
     sampled,
     sampleds,
@@ -127,26 +126,26 @@ function PaymentCRUD() {
               <Student_DetailItem student_detail={Student_DetailLoaded} />
             )}
           </Await>
-
-          {/* <Await resolve={student_details}>
-            {(Student_DetailsLoaded) => <Student_DetailList student_details={Student_DetailsLoaded} />}
-          </Await> */}
         </Suspense>
       )}
       {/* THIS IS THE END OF STUDENT_DETAIL SUSPENSE AND AWAIT */}
 
       {/* THIS IS THE BEGINING OF PARENT SUSPENSE AND AWAIT */}
-      {(parent || parents) && (
+      {parent && (
         <Suspense fallback={<p>Parent Loading...</p>}>
           <Await resolve={parent}>
             {(ParentLoaded) => <ParentItem parent={ParentLoaded} />}
           </Await>
-
+        </Suspense>
+      )}
+      {parents && (
+        <Suspense fallback={<p>Parent Loading...</p>}>
           <Await resolve={parents}>
             {(ParentsLoaded) => <ParentList parents={ParentsLoaded} />}
           </Await>
         </Suspense>
       )}
+
       {/* THIS IS THE END OF PARENT SUSPENSE AND AWAIT */}
 
       {/* THIS IS THE BEGINING OF SAMPLED SUSPENSE AND AWAIT */}
@@ -162,7 +161,6 @@ function PaymentCRUD() {
         </Suspense>
       )}
       {/* THIS IS THE END OF SAMPLED SUSPENSE AND AWAIT */}
-
 
       {/* THIS IS THE BEGINING OF exam SUSPENSE AND AWAIT */}
       {/* {(exam || exams) && (
@@ -189,7 +187,6 @@ function PaymentCRUD() {
       </Await>
       )} */}
 
-
       {exam && (
         <Suspense fallback={<p>exam Loading...</p>}>
           <Await resolve={exam}>
@@ -206,7 +203,6 @@ function PaymentCRUD() {
         </Suspense>
       )}
       {/* THIS IS THE END OF exam SUSPENSE AND AWAIT */}
-
 
       {/* THIS IS THE BEGINING OF sample SUSPENSE AND AWAIT */}
       {(sample || samples) && (
@@ -304,7 +300,9 @@ async function StudentSubjectsloaded() {
 // THIS IS THE BEGINING OF STUDENT_DETAIL AWAIT FUNCTIONS
 async function Student_DetailLoaded(id) {
   // const response = await fetch("http://localhost:8080/student_details/" + id);
-  const response = await fetch("http://localhost/School-Demo/student_detail.php?id=" + id);
+  const response = await fetch(
+    "http://localhost/School-Demo/student_detail.php?id=" + id
+  );
 
   if (!response.ok) {
     throw json(
@@ -323,7 +321,10 @@ async function Student_DetailLoaded(id) {
 
 // THIS IS THE BEGINING OF PARENT AWAIT FUNCTIONS
 async function ParentLoaded(id) {
-  const response = await fetch("http://localhost:8080/parents/" + id);
+  // const response = await fetch("http://localhost:8080/parents/" + id);
+  const response = await fetch(
+    "http://localhost/School-Demo/parents.php?id=" + id
+  );
 
   if (!response.ok) {
     throw json(
@@ -334,11 +335,13 @@ async function ParentLoaded(id) {
     );
   } else {
     const resData = await response.json();
-    return resData.parent;
+    // return resData.parent;
+    return resData;
   }
 }
 async function ParentsLoaded() {
-  const response = await fetch("http://localhost:8080/parents");
+  // const response = await fetch("http://localhost:8080/parents");
+  const response = await fetch("http://localhost/School-Demo/parents.php");
 
   if (!response.ok) {
     throw json(
@@ -349,8 +352,8 @@ async function ParentsLoaded() {
     );
   } else {
     const resData = await response.json();
-    return resData.parents;
-    // return resData;
+    // return resData.parents;
+    return resData;
   }
 }
 // THIS IS THE END OF PARENT AWAIT FUNCTIONS
@@ -586,12 +589,18 @@ export async function loader({ request, params }) {
 
   // THIS IS THE BEGINING OF PARENT ELSE IF STATEMENT
   else if (
+    // id === "parent-aaa-000" ||
     id === "parent-aaa-001" ||
     id === "parent-aaa-002" ||
     id === "parent-aaa-003"
   ) {
     return defer({
       parent: await ParentLoaded(id),
+      parents: ParentsLoaded(),
+    });
+  } else if (id === "parent-aaa-000") {
+    return defer({
+      // parent: await ParentLoaded(id),
       parents: ParentsLoaded(),
     });
   }

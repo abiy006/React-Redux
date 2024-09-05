@@ -17,7 +17,7 @@ return (
     </div>
 
       {/* <ParentDetail parents={parents.parents} /> */}
-      <ParentDetail parents={parents.parents} />
+      <ParentDetail parents={parents['parents']} />
   </div>
 );
 }
