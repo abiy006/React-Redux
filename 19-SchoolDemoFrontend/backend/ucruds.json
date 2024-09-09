@@ -1,0 +1,116 @@
+{
+    "ucruds":  [
+                   
+                   {
+                       "id":  "student_detail-aaa-001",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "date":  "This section presents the student_detail",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "title":  "Student details"
+                   },
+                   {
+                       "id":  "parent-aaa-001",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "date":  "This section presents the parent",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "title":  "Parents"
+                   },
+                   {
+                       "title":  "Teachers",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "date":  "This section presents the teacher",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "teacher-aaa-001"
+                   },
+                   {
+                       "title":  "Exams",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "date":  "This section presents the exam",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "exam-aaa-001"
+                   },
+                   {
+                       "title":  "Samplec Details",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "date":  "This section presents the sameplec",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "samplec-aaa-001"
+                   },
+                   {
+                       "title":  "Sampled Details",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "date":  "This section presents the samepled",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "sampled-aaa-001"
+                   },
+                   {
+                       "title":  "Samplef Details",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "date":  "This section presents the sameplef",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "samplef-aaa-001"
+                   },
+                   {
+                       "title":  "Sampleg Details",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "date":  "This section presents the samepleg",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "sampleg-aaa-001"
+                   },
+                   {
+                       "title":  "Sampleh Details",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "date":  "This section presents the samepleh",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "sampleh-aaa-001"
+                   },
+                   {
+                       "id":  "samplei-aaa-001",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "date":  "This section presents the sameplei",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "title":  "Samplei Details"
+                   },
+                   {
+                       "title":  "Sample Details",
+                       "image":  "https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg",
+                       "date":  "This section presents the sameple",
+                       "description":  "sldhfkjhdsfk",
+                       "number":  "9",
+                       "id":  "sample-aaa-001"
+                   }
+               ],
+    "users":  [
+                  {
+                      "email":  "lajdslfj@jflkdsf",
+                      "password":  "$2a$12$9yxspANS4uTuCs36Sn1dJuI./I1OMHPVsq36zRkxEJuA0MjRQU366",
+                      "id":  "d7959cba-eb70-4393-8e58-4db1af969e36"
+                  },
+                  {
+                      "email":  "test@test.com",
+                      "password":  "$2a$12$X7FBJ9HWzpHa/A8A5Hyn0OxHHHGY7yG5CZCnrVtH4RKD630t8VZjK",
+                      "id":  "5ebf2039-adf4-4b37-ab98-1db64672672b"
+                  }
+              ],
+    "studs":  [
+                  {
+                      "schoolname":  "This is School Name",
+                      "studimg":  "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
+                      "studname1":  "Jone",
+                      "studname2":  "Smith",
+                      "studname3":  "Alex",
+                      "studgrade":  "Grade 7",
+                      "studsection":  "Section B"
+                  }
+              ]
+}

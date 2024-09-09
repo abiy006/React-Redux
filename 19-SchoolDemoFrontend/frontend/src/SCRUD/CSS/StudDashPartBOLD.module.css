@@ -1,0 +1,57 @@
+.scruds {
+  margin: 2rem auto;
+  background-color: darkcyan;
+  padding-bottom: 1rem;
+}
+
+.scruds h1 {
+  padding: 1rem;
+}
+
+.list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.item {
+  margin: auto;
+  width: 25%;
+  height: 5rem;
+}
+
+.item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  /* background-color: var(--color-gray-800); */
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+  /* border-radius: 1rem; */
+}
+
+.item a:hover {
+  transform: scale(1.02);
+  background-color: var(--color-gray-700);
+}
+
+.item img {
+  width: 35%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.content h2,p, time {
+  margin: 0;
+}
+
+ul {
+  background-color: rgb(22, 22, 22);
+}

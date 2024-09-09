@@ -1,0 +1,116 @@
+{
+    "wcruds":  [
+                   
+                   {
+                       "id":  "student_detail-aaa-001",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "date":  "This section presents the student_detail",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "title":  "Student details"
+                   },
+                   {
+                       "title":  "Sample Details",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "date":  "This section presents the sameple",
+                       "description":  "sldhfkjhdsfk",
+                       "number":  "9",
+                       "id":  "sample-aaa-001"
+                   },
+                   {
+                       "title":  "Samplea Details",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "date":  "This section presents the sameple1",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "samplea-aaa-001"
+                   },
+                   {
+                       "title":  "Sampleb Details",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "date":  "This section presents the sameple1",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "sampleb-aaa-001"
+                   },
+                   {
+                       "title":  "Samplec Details",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "date":  "This section presents the sameplec",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "samplec-aaa-001"
+                   },
+                   {
+                       "title":  "Sampled Details",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "date":  "This section presents the samepled",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "sampled-aaa-001"
+                   },
+                   {
+                       "title":  "Samplef Details",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "date":  "This section presents the sameplef",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "samplef-aaa-001"
+                   },
+                   {
+                       "title":  "Sampleg Details",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "date":  "This section presents the samepleg",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "sampleg-aaa-001"
+                   },
+                   {
+                       "title":  "Sampleh Details",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "date":  "This section presents the samepleh",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "id":  "sampleh-aaa-001"
+                   },
+                   {
+                       "id":  "samplei-aaa-001",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "date":  "This section presents the sameplei",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "title":  "Samplei Details"
+                   },
+                   {
+                       "id":  "samplej-aaa-001",
+                       "description":  "sldhfkjhdsfk1",
+                       "number":  "10",
+                       "date":  "This section presents the samplej",
+                       "image":  "https://t4.ftcdn.net/jpg/03/80/35/01/360_F_380350187_6FQowremgHWVZerY4k3pVDwNWj238yr5.jpg",
+                       "title":  "Samplej Details"
+                   }
+               ],
+    "users":  [
+                  {
+                      "email":  "lajdslfj@jflkdsf",
+                      "password":  "$2a$12$9yxspANS4uTuCs36Sn1dJuI./I1OMHPVsq36zRkxEJuA0MjRQU366",
+                      "id":  "d7959cba-eb70-4393-8e58-4db1af969e36"
+                  },
+                  {
+                      "email":  "test@test.com",
+                      "password":  "$2a$12$X7FBJ9HWzpHa/A8A5Hyn0OxHHHGY7yG5CZCnrVtH4RKD630t8VZjK",
+                      "id":  "5ebf2039-adf4-4b37-ab98-1db64672672b"
+                  }
+              ],
+    "studs":  [
+                  {
+                      "schoolname":  "This is School Name",
+                      "studimg":  "https://img.freepik.com/premium-photo/photographer-clicking-picture_107420-80440.jpg",
+                      "studname1":  "Jone",
+                      "studname2":  "Smith",
+                      "studname3":  "Alex",
+                      "studgrade":  "Grade 7",
+                      "studsection":  "Section B"
+                  }
+              ]
+}

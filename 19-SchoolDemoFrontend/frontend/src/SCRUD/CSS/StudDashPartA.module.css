@@ -1,0 +1,61 @@
+/* .header {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: cyan;
+}
+
+
+.list a {
+  background-color: var(--color-gray-500);
+  color: var(--color-gray-900);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.list a:hover,
+.list a:active,
+.list a.active {
+  background-color: var(--color-primary-600);
+} */
+
+.studDashPartA {
+background-color:darkslateblue;
+}
+
+.studInfo {
+  display: flex;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: 10rem;
+}
+
+.studImg {
+  width: 10%;
+    margin: 1rem;
+}
+
+.studName {
+  width: 30%;
+  display: flex;
+}
+
+.studGrdSec {
+  display: flex;
+  width: 50%;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+}
+
+.studGrdSec p {
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+
