@@ -1,14 +1,11 @@
-
-
 import * as React from "react";
-import ExamFuture from './ExamFuture';
-import ExamPast from './ExamPast';
+import ExamFuture from "./ExamFuture";
+import ExamPast from "./ExamPast";
 
 import classes from "../../CSS/Exam/ExamList.module.css";
 
-
 const ExamList = ({ exams }) => {
-  console.log("examList - exams - " + exams);
+  // console.log("examList - exams - " + exams);
 
   // return (
   //   <>
@@ -41,16 +38,14 @@ const ExamList = ({ exams }) => {
   // );
 
   return (
-
     <div className={classes.exams}>
       <div>
-        <h1>Exams list page</h1>
+        <p>Exams list page</p>
       </div>
-        <ExamFuture exams={exams['exams']} />
-        <ExamPast exams={exams['pastexams']} />
+      <ExamFuture exams={exams["exams"]} />
+      <ExamPast exams={exams["pastexams"]} />
     </div>
   );
-
 };
 
 export default ExamList;

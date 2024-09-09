@@ -42,7 +42,7 @@ const ExamPast = ({ exams }) => {
   return (
     <>
     <div className={classes.exams}>
-        <h1>Past exams</h1>
+        <p>Past exams</p>
         <div>
       <label htmlFor="dropdown">Select an option:</label>
       <select id="dropdown" value={selectedOption} onChange={handleChange}>

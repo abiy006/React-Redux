@@ -10,13 +10,12 @@ import {
 
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import CustomDropdown from './CustomDropdown';
 
 import classes from "../../CSS/Exam/ExamList.module.css";
 
 const ExamFuture = ({ exams }) => {
   // console.log("examList - exams - " + exams);
-  const [selectedOption, setSelectedOption] = useState(exams[0] || {});
+  const [selectedOption, setSelectedOption] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -25,11 +24,6 @@ const ExamFuture = ({ exams }) => {
     if (value) {
       navigate(`/u-crudX/${value}`); // Navigate to the selected exam's route
     }
-  };
-
-  const handleSelect = (option) => {
-    setSelectedOption(option);
-    navigate(`/u-crudX/${option.id}`); // Navigate on selection
   };
 
   function handleNavLink(param_exam) {
@@ -57,7 +51,7 @@ const ExamFuture = ({ exams }) => {
   return (
     <>
       <div className={classes.exams}>
-        <p>Future exams</p>
+        <h1>Future exams</h1>
         <div>
           <label htmlFor="dropdown">Select an option:</label>
           <select id="dropdown" value={selectedOption} onChange={handleChange}>
@@ -65,20 +59,18 @@ const ExamFuture = ({ exams }) => {
               Select an option
             </option>
             {exams.map((exam) => (
-              // <option key={exam.id} value={exam.id}>
-              //   {exam.stud_name}
-              // </option>
-              <CustomDropdown options={exams} onSelect={handleSelect} />
+              <option key={exam.id} value={exam.id}>
+                {exam.stud_name}
+              </option>
             ))}
           </select>
           {selectedOption && <p>You selected: {selectedOption}</p>}
         </div>
 
-        <p>You have {exams.length} comming exams...</p>
-        {/* <ul className={classes.list}>
+        <ul className={classes.list}>
           {exams.map((exam) => (
             <div>
-              <NavLink to={`/u-crudX/${exam.id}`}>
+              {/* <NavLink to={`/u-crudX/${exam.id}`}>
                 <div className={classes.basicsA}>
                   <img src={exam.stud_image} alt={exam.stud_name} />
                   <div className={classes.content}>
@@ -91,11 +83,11 @@ const ExamFuture = ({ exams }) => {
                   <p>{exam.stud_cat}</p>
                   <p>{exam.stud_gender}</p>
                 </div>
-              </NavLink>
+              </NavLink> */}
               {handleNavLink(exam)}
             </div>
           ))}
-        </ul> */}
+        </ul>
       </div>
     </>
   );

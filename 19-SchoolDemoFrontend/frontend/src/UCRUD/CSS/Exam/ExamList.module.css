@@ -1,7 +1,7 @@
 .exams {
   margin: 2rem auto;
   /* max-width: 40rem; */
-  background-color:chartreuse;
+  background-color:gray;
   padding-bottom: 1rem;
 }
 
@@ -88,4 +88,46 @@
 
 ul {
   background-color: rgb(22, 22, 22);
+}
+
+.dropdown {
+  position: relative;
+  width: 200px;
+  margin: 20px 0;
+}
+
+.selected {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  transition: border-color 0.3s;
+}
+
+.selected:hover {
+  border-color: #007bff;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
 }
