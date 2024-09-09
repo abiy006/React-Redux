@@ -21,7 +21,22 @@ function ExamItem({ exam }) {
 
     
     <article className={classes.exam}>
-      {exam["exams"].map((exam, index) => (
+      {exam["exams"] && exam["exams"].map((exam, index) => (
+        <li key={exam.id}>
+          <h1>{exam.stud_name}</h1>
+          <p>{exam.stud_id}</p>
+          <p>{exam.stud_grd_sec}</p>
+          <p>{exam.stud_cat}</p>
+          <p>{exam.stud_gender}</p>
+          {token && (
+            <menu className={classes.actions}>
+              <Link to="edit">Edit</Link>
+              <button onClick={startDeleteHandler}>Delete</button>
+            </menu>
+          )}
+        </li>
+      ))}
+            {exam["pastexams"] && exam["pastexams"].map((exam, index) => (
         <li key={exam.id}>
           <h1>{exam.stud_name}</h1>
           <p>{exam.stud_id}</p>

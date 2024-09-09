@@ -468,7 +468,9 @@ export async function loader({ request, params }) {
   else if (
     id === "exam-aaa-001" ||
     id === "exam-aaa-002" ||
-    id === "exam-aaa-003" 
+    id === "exam-aaa-003" ||
+    id === "past-exam-001" ||
+    id === "past-exam-002" 
   ) {
     return defer({
       exam: await ExamLoaded(id),
